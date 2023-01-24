@@ -10,4 +10,12 @@ function isLetter(character: string) {
     return new RegExp("^[a-z]|[A-Z]").test(character);
 }
 
-export default { isDigit, isNonZeroDigit, isLetter };
+function isAlphanum(character: string): boolean {
+    return new RegExp("^[0-9][a-z]|[A-Z]| _").test(character);
+}
+
+function isWhiteSpace(character: string): boolean {
+    return new RegExp("\\s").test(character);
+}
+
+export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace };
