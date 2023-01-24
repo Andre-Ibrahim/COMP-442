@@ -11,11 +11,15 @@ function isLetter(character: string) {
 }
 
 function isAlphanum(character: string): boolean {
-    return new RegExp("^[0-9][a-z]|[A-Z]| _").test(character);
+    return new RegExp("^[0-9]|[a-z]|[A-Z]|_").test(character);
 }
 
 function isWhiteSpace(character: string): boolean {
     return new RegExp("\\s").test(character);
 }
 
-export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace };
+function isInAlaphabet(character: string): boolean {
+    return new RegExp("^[0-9]|[a-z]|[A-Z]|[+()<>=\/*{}\[\];,:]||[.]|[_]|[\\s]").test(character);
+}
+
+export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace, isInAlaphabet };
