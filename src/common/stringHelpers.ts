@@ -19,7 +19,7 @@ function isWhiteSpace(character: string): boolean {
 }
 
 function isInAlaphabet(character: string): boolean {
-    return new RegExp("^[0-9]|[a-z]|[A-Z]|[+()<>=\/*{}\[\];,:]||[.]|[_]|[\\s]").test(character);
+    return new RegExp("^[0-9]|[a-z]|[A-Z]|[+()<>=/*{}[];,:]||[.]|[_]").test(character);
 }
 
 export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace, isInAlaphabet };

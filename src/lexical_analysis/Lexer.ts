@@ -1,7 +1,6 @@
 import AbstractLexer from "./AbstractLexer";
 import TokenType from "./TokenType";
-import { isWhiteSpace, isDigit, isInAlaphabet, isLetter, isAlphanum } from "../common/stringHelpers";
-import { Token } from "./Token";
+import { isWhiteSpace, isInAlaphabet, isLetter, isAlphanum } from "../common/stringHelpers";
 
 export default class Lexer extends AbstractLexer {
     private content: string;
@@ -17,16 +16,15 @@ export default class Lexer extends AbstractLexer {
         // checking for EOF
 
         if (this.content.charAt(this.cursor).length > 0) {
-
             let tokenType = TokenType.VOID;
             let character: string;
 
-            while(true){
+            while (true) {
                 character = this.content.charAt(this.cursor);
                 this.cursor++;
-                if(!isWhiteSpace(character)){
+                if (!isWhiteSpace(character)) {
                     break;
-                }else if(character === "\n"){
+                } else if (character === "\n") {
                     this.line++;
                 }
             }
@@ -34,22 +32,21 @@ export default class Lexer extends AbstractLexer {
             let value = character;
 
             // checking if character is part of the alphabet
-            if(!isInAlaphabet(character)){
+            if (!isInAlaphabet(character)) {
                 return `[error ${character} is not in the alphabet]`;
             }
-            
+
             // potential id
-            if(isLetter(character) || character == "_"){
-                
+            if (isLetter(character) || character == "_") {
                 // first character _ resolves into invalid character
                 tokenType = TokenType.ID;
 
-                if(character === "_"){
+                if (character === "_") {
                     tokenType = TokenType.INVALIDID;
                 }
 
-                while(isAlphanum(this.peak())){
-                    let character = this.content.charAt(this.cursor);
+                while (isAlphanum(this.peak())) {
+                    const character = this.content.charAt(this.cursor);
                     value += character;
                     this.cursor++;
                 }

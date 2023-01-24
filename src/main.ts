@@ -8,4 +8,3 @@ console.log(lexer.nextToken());
 console.log(lexer.nextToken());
 console.log(lexer.nextToken());
 console.log(lexer.nextToken());
-
