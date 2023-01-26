@@ -68,11 +68,21 @@ const oneCharOperatorsToTokenType = new Map([
     [",", TokenType.COMMA],
     [".", TokenType.DOT],
     [":", TokenType.COLON],
-])
+]);
 
 function tokenToString(token: Token): string {
     const lexeme = token.lexeme.replace(new RegExp("\\n", "g"), "\\n").replace(new RegExp("\\r", "g"), "\\r");
     return `[${token.type}, ${lexeme}, ${token.position}]`;
 }
 
-export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace, isInAlaphabet, stringToKeywordTokenType, oneCharOperatorsToTokenType, tokenToString };
+export {
+    isDigit,
+    isNonZeroDigit,
+    isLetter,
+    isAlphanum,
+    isWhiteSpace,
+    isInAlaphabet,
+    stringToKeywordTokenType,
+    oneCharOperatorsToTokenType,
+    tokenToString,
+};
