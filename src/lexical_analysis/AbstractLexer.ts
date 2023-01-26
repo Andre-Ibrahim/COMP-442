@@ -1,5 +1,7 @@
+import { Token } from "./Token";
+
 abstract class AbstractLexer {
-    abstract nextToken(): string;
+    abstract nextToken(): Token;
 }
 
 export default AbstractLexer;

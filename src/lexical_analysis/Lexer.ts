@@ -9,6 +9,7 @@ import {
     stringToKeywordTokenType,
     oneCharOperatorsToTokenType,
 } from "../common/stringHelpers";
+import { Token } from "./Token";
 
 export default class Lexer extends AbstractLexer {
     private content: string;
@@ -20,7 +21,7 @@ export default class Lexer extends AbstractLexer {
         this.content = content;
     }
 
-    nextToken(): string {
+    nextToken(): Token {
         // checking for EOF
         if (this.content.charAt(this.cursor).length > 0) {
             let tokenType = TokenType.VOID;
@@ -41,7 +42,7 @@ export default class Lexer extends AbstractLexer {
 
             // checking if character is part of the alphabet
             if (!isInAlaphabet(character)) {
-                return `[error ${character} is not in the alphabet]`;
+                return {type: TokenType.INVALIDCHAR, lexeme: character, position: this.line};
             }
 
             // potential id
@@ -63,8 +64,7 @@ export default class Lexer extends AbstractLexer {
                 if (reservedKeyword) {
                     tokenType = reservedKeyword;
                 }
-
-                return `${tokenType} ${lexeme} ${this.line}`;
+                return {type: tokenType, lexeme, position: this.line};
             }
 
             // potential integer or fraction
@@ -139,7 +139,7 @@ export default class Lexer extends AbstractLexer {
                     tokenType = TokenType.INVALIDNUM;
                 }
 
-                return `${tokenType} ${lexeme} ${this.line}`;
+                return {type: tokenType, lexeme, position: this.line};
             }
 
             const oneCharOperator = oneCharOperatorsToTokenType.get(character);
@@ -176,12 +176,57 @@ export default class Lexer extends AbstractLexer {
                     this.cursor++;
                 }
 
+                if(tokenType === TokenType.COLON && this.peak() === ":"){
+                    tokenType = TokenType.SCOPEOP;
+                    lexeme += this.peak();
+                    this.cursor++;
+                }
+
+                if(tokenType === TokenType.DIV && this.peak() === "/"){
+                    tokenType = TokenType.INLINECMT;
+                    lexeme += this.content.charAt(this.cursor++);
+
+                    while(this.peak() !== "\n"){
+                        lexeme += this.content.charAt(this.cursor++);
+                    }
+
+                    return {type: tokenType, lexeme, position: this.line};
+                }
+
+                if(tokenType === TokenType.DIV && this.peak() === "*"){
+                    tokenType = TokenType.BLOCKCMT;
+                    const lineStartOfComment = this.line;
+                    lexeme += this.content.charAt(this.cursor++);
+                    // increment counter when /* is read and decrement when */ is read
+                    let counter = 1;
+
+                    while(true){
+                        lexeme += this.content.charAt(this.cursor++);
+                        if(lexeme.split("").pop() === "/" && this.peak() === "*"){
+                            counter++;
+                        }
+                        if(lexeme.split("").pop() === "*" && this.peak() === "/"){
+                            counter--;
+                        }
+
+                        if(counter === 0){
+                            lexeme += this.content.charAt(this.cursor++);
+                            this.line += lexeme.split("\n").length - 1;
+                            break;
+                        }
+                    }
+
+                    return {type: tokenType, lexeme, position: lineStartOfComment};
+
+                }
+
+                return {type: tokenType, lexeme, position: this.line};
+                
             }
 
-            return `${tokenType} ${lexeme} ${this.line}`;
         }
 
-        return "";
+        return {type: TokenType.EOF, lexeme: "", position: this.line};
     }
 
     private peak(): string {

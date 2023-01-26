@@ -1,3 +1,4 @@
+import { Token } from "../lexical_analysis/Token";
 import TokenType from "../lexical_analysis/TokenType";
 
 function isDigit(charcter: string): boolean {
@@ -69,4 +70,9 @@ const oneCharOperatorsToTokenType = new Map([
     [":", TokenType.COLON],
 ])
 
-export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace, isInAlaphabet, stringToKeywordTokenType, oneCharOperatorsToTokenType };
+function tokenToString(token: Token): string {
+    const lexeme = token.lexeme.replace(new RegExp("\\n", "g"), "\\n").replace(new RegExp("\\r", "g"), "\\r");
+    return `[${token.type}, ${lexeme}, ${token.position}]`;
+}
+
+export { isDigit, isNonZeroDigit, isLetter, isAlphanum, isWhiteSpace, isInAlaphabet, stringToKeywordTokenType, oneCharOperatorsToTokenType, tokenToString };

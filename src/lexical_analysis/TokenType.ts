@@ -50,6 +50,10 @@ enum TokenType {
     FUNCTION = "function",
     PUBLIC = "public",
     PRIVATE = "private",
+    INLINECMT = "inlinecmt",
+    BLOCKCMT = "blockcmt",
+    EOF = "EOF",
+    INVALIDCHAR = "invalidchar",
 }
 
 export default TokenType;
