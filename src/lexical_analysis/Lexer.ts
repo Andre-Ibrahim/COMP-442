@@ -1,6 +1,14 @@
 import AbstractLexer from "./AbstractLexer";
 import TokenType from "./TokenType";
-import { isWhiteSpace, isInAlaphabet, isLetter, isAlphanum, isDigit } from "../common/stringHelpers";
+import {
+    isWhiteSpace,
+    isInAlaphabet,
+    isLetter,
+    isAlphanum,
+    isDigit,
+    stringToKeywordTokenType,
+    oneCharOperatorsToTokenType,
+} from "../common/stringHelpers";
 
 export default class Lexer extends AbstractLexer {
     private content: string;
@@ -50,6 +58,13 @@ export default class Lexer extends AbstractLexer {
                     lexeme += character;
                     this.cursor++;
                 }
+
+                const reservedKeyword = stringToKeywordTokenType.get(lexeme);
+                if (reservedKeyword) {
+                    tokenType = reservedKeyword;
+                }
+
+                return `${tokenType} ${lexeme} ${this.line}`;
             }
 
             // potential integer or fraction
@@ -123,6 +138,44 @@ export default class Lexer extends AbstractLexer {
                 ) {
                     tokenType = TokenType.INVALIDNUM;
                 }
+
+                return `${tokenType} ${lexeme} ${this.line}`;
+            }
+
+            const oneCharOperator = oneCharOperatorsToTokenType.get(character);
+
+            if(oneCharOperator){
+                tokenType = oneCharOperator;
+
+                if(tokenType === TokenType.EQUAL && this.peak() === "="){
+                    tokenType = TokenType.EQ;
+                    this.cursor++;
+                }
+
+                if(tokenType === TokenType.LT && this.peak() === ">"){
+                    tokenType = TokenType.NOTEQ;
+                    lexeme += this.peak();
+                    this.cursor++;
+                }
+
+                if(tokenType === TokenType.LT && this.peak() === "="){
+                    tokenType = TokenType.LEQ;
+                    lexeme += this.peak();
+                    this.cursor++;
+                }
+
+                if(tokenType === TokenType.GT && this.peak() === "="){
+                    tokenType = TokenType.GEQ;
+                    lexeme += this.peak();
+                    this.cursor++;
+                }
+
+                if(tokenType === TokenType.EQUAL && this.peak() === ">"){
+                    tokenType = TokenType.RETURNTYPE;
+                    lexeme += this.peak();
+                    this.cursor++;
+                }
+
             }
 
             return `${tokenType} ${lexeme} ${this.line}`;
