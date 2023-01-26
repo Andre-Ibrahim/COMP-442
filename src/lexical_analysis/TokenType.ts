@@ -1,6 +1,8 @@
 enum TokenType {
     ID = "id",
     INVALIDID = "invalidid",
+    INVALIDNUM = "invalidnum",
+    INVALIDFLOAT = "invalidfloat",
     INTNUM = "intnum",
     FLOATNUM = "floatnum",
     EQ = "==",

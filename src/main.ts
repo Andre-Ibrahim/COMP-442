@@ -1,10 +1,6 @@
 import AbstractLexer from "./lexical_analysis/AbstractLexer";
 import Lexer from "./lexical_analysis/Lexer";
 
-const lexer: AbstractLexer = new Lexer("_andre.._ \n test_");
+const lexer: AbstractLexer = new Lexer("\n 1.23e02");
 
-console.log(lexer.nextToken());
-console.log(lexer.nextToken());
-console.log(lexer.nextToken());
-console.log(lexer.nextToken());
 console.log(lexer.nextToken());
