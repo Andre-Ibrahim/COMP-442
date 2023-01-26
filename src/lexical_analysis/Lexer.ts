@@ -71,9 +71,13 @@ export default class Lexer extends AbstractLexer {
             if (isDigit(character)) {
                 tokenType = TokenType.INTNUM;
 
+                let conatainsLetter = false;
                 // reading all digits will validate for leading 0s later
-                while (isDigit(this.peak())) {
+                while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
                     const character = this.content.charAt(this.cursor);
+                    if(isLetter(character)){
+                        conatainsLetter = true;
+                    }
                     lexeme += character;
                     this.cursor++;
                 }
@@ -127,15 +131,23 @@ export default class Lexer extends AbstractLexer {
                 }
 
                 while (isScientificNotation && isDigit(this.peak())) {
-                    tokenType = TokenType.FLOAT;
+                        tokenType = TokenType.FLOATNUM;
                     lexeme += this.content.charAt(this.cursor++);
                 }
 
+                const [int, float] = lexeme.split("e")[0].split(".");
+
                 if (
                     isScientificNotation &&
-                    tokenType === TokenType.FLOAT &&
-                    lexeme.split("e").pop()?.charAt(0) === "0"
+                    tokenType === TokenType.FLOATNUM &&
+                    lexeme.split("e").pop()?.charAt(0) === "0" &&
+                    int.charAt(0) === "0" &&
+                    float.charAt(float.length - 1) === "0"
                 ) {
+                    tokenType = TokenType.INVALIDNUM;
+                }
+
+                if(conatainsLetter){
                     tokenType = TokenType.INVALIDNUM;
                 }
 

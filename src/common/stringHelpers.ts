@@ -22,7 +22,14 @@ function isWhiteSpace(character: string): boolean {
 }
 
 function isInAlaphabet(character: string): boolean {
-    return new RegExp("^[0-9]|[a-z]|[A-Z]|[+()<>=/*{}[];,:]||[.]|[_]").test(character);
+    return (
+        new RegExp("^[0-9]|[a-z]|[A-Z]|[-]|[+]|[(]|[)]|[<]|[>]|[=]|[/]|[*]|[{]|[}]|[;]|[,]|[:]|[.]|[_]").test(
+            character,
+        ) ||
+        character === "[" ||
+        character === "]" ||
+        character === ""
+    );
 }
 
 const stringToKeywordTokenType = new Map([

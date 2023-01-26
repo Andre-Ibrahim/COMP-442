@@ -4,7 +4,7 @@ import { readFileSync } from "fs";
 import TokenType from "./lexical_analysis/TokenType";
 import { tokenToString } from "./common/stringHelpers";
 
-const file = readFileSync("./src/examples/lexpositivegrading.src", "utf-8");
+const file = readFileSync("./src/examples/example-polynomial.src", "utf-8");
 
 const lexer: AbstractLexer = new Lexer(file);
 
