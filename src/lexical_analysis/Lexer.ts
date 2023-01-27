@@ -75,7 +75,7 @@ export default class Lexer extends AbstractLexer {
                 // reading all digits will validate for leading 0s later
                 while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
                     const character = this.content.charAt(this.cursor);
-                    if(isLetter(character)){
+                    if (isLetter(character)) {
                         conatainsLetter = true;
                     }
                     lexeme += character;
@@ -131,7 +131,7 @@ export default class Lexer extends AbstractLexer {
                 }
 
                 while (isScientificNotation && isDigit(this.peak())) {
-                        tokenType = TokenType.FLOATNUM;
+                    tokenType = TokenType.FLOATNUM;
                     lexeme += this.content.charAt(this.cursor++);
                 }
 
@@ -140,14 +140,14 @@ export default class Lexer extends AbstractLexer {
                 if (
                     isScientificNotation &&
                     tokenType === TokenType.FLOATNUM &&
-                    lexeme.split("e").pop()?.charAt(0) === "0" &&
-                    int.charAt(0) === "0" &&
-                    float.charAt(float.length - 1) === "0"
+                    (lexeme.split("e").pop()?.charAt(0) === "0" ||
+                        int.charAt(0) === "0" ||
+                        float.charAt(float.length - 1) === "0")
                 ) {
                     tokenType = TokenType.INVALIDNUM;
                 }
 
-                if(conatainsLetter){
+                if (conatainsLetter) {
                     tokenType = TokenType.INVALIDNUM;
                 }
 
@@ -198,7 +198,7 @@ export default class Lexer extends AbstractLexer {
                     tokenType = TokenType.INLINECMT;
                     lexeme += this.content.charAt(this.cursor++);
 
-                    while (this.peak() !== "\n") {
+                    while (this.peak() !== "\n" && this.peak() !== "") {
                         lexeme += this.content.charAt(this.cursor++);
                     }
 
@@ -227,7 +227,7 @@ export default class Lexer extends AbstractLexer {
                             break;
                         }
 
-                        if(this.peak() === ""){
+                        if (this.peak() === "") {
                             tokenType = TokenType.INVALIDBLOCKCMT;
                             break;
                         }
