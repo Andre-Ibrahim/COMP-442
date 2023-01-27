@@ -226,6 +226,11 @@ export default class Lexer extends AbstractLexer {
                             this.line += lexeme.split("\n").length - 1;
                             break;
                         }
+
+                        if(this.peak() === ""){
+                            tokenType = TokenType.INVALIDBLOCKCMT;
+                            break;
+                        }
                     }
 
                     return { type: tokenType, lexeme, position: lineStartOfComment };

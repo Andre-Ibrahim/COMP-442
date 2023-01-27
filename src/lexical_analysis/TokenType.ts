@@ -54,6 +54,7 @@ enum TokenType {
     BLOCKCMT = "blockcmt",
     EOF = "EOF",
     INVALIDCHAR = "invalidchar",
+    INVALIDBLOCKCMT = "ivalidblockcmt",
 }
 
 export default TokenType;
