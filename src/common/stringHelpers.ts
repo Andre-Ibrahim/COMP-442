@@ -82,6 +82,25 @@ function tokenToString(token: Token): string {
     return `[${token.type}, ${lexeme}, ${token.position}]`;
 }
 
+const invalidTokenTypeToString = new Map([
+    [TokenType.INVALIDCHAR, "Invalid character"],
+    [TokenType.INVALIDFLOAT, "Invalid float"],
+    [TokenType.INVALIDNUM, "Invalid number"],
+    [TokenType.INVALIDID, "Invalid identifier"],
+    [TokenType.INVALIDBLOCKCMT, "Invalid block comment"],
+])
+
+function invalidTokenToString(token: Token): string {
+    const invalidString = invalidTokenTypeToString.get(token.type);
+
+    if(invalidString){
+        return `Lexical error: ${invalidString}: "${token.lexeme}": line ${token.position}\n`;
+    }
+
+    return "";
+
+}
+
 export {
     isDigit,
     isNonZeroDigit,
@@ -92,4 +111,5 @@ export {
     stringToKeywordTokenType,
     oneCharOperatorsToTokenType,
     tokenToString,
+    invalidTokenToString,
 };

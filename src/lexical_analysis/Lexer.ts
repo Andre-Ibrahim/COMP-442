@@ -2,12 +2,12 @@ import AbstractLexer from "./AbstractLexer";
 import TokenType from "./TokenType";
 import {
     isWhiteSpace,
-    isInAlaphabet,
     isLetter,
     isAlphanum,
     isDigit,
     stringToKeywordTokenType,
     oneCharOperatorsToTokenType,
+    isInAlaphabet,
 } from "../common/stringHelpers";
 import { Token } from "./Token";
 
