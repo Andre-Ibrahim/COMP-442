@@ -136,13 +136,14 @@ export default class Lexer extends AbstractLexer {
                 }
 
                 const [int, float] = lexeme.split("e")[0].split(".");
+                const exponent = lexeme.split("e").pop() || "";
 
                 if (
                     isScientificNotation &&
                     tokenType === TokenType.FLOATNUM &&
-                    (lexeme.split("e").pop()?.charAt(0) === "0" ||
-                        int.charAt(0) === "0" ||
-                        float.charAt(float.length - 1) === "0")
+                    ((exponent.charAt(0) === "0" && exponent.length > 1) ||
+                        (int.charAt(0) === "0" && int.length > 1)||
+                        (float.charAt(float.length - 1) === "0") && float.length > 1)
                 ) {
                     tokenType = TokenType.INVALIDNUM;
                 }

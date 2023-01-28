@@ -96,6 +96,19 @@ describe("Lexer nextToken", () => {
         expect(token.lexeme).toBe(text);
     });
 
+    it("should return a FLOATNUM token type for float decimal point value", () => {
+        //arrange
+        const text = "0.0e0";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+
+        // assert
+        expect(token.type).toBe(TokenType.FLOATNUM);
+        expect(token.lexeme).toBe(text);
+    });
+
     it("should return a INVALIDNUM token type  for leading 0", () => {
         //arrange
         const text = "012.11";
