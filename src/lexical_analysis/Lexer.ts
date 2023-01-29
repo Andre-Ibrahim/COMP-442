@@ -45,6 +45,7 @@ export default class Lexer extends AbstractLexer {
                 return this.integerOrFractionState();
             }
 
+            // operator or comment
             if (specialCharToTokenType.get(this.character)) {
                 return this.specialCharState();
             }
@@ -110,19 +111,16 @@ export default class Lexer extends AbstractLexer {
             const character = this.content.charAt(this.cursor);
             this.lexeme += character;
             this.cursor++;
-        }
 
-        // reading more digits if we detected a dot
-        while (
-            (this.tokenType === TokenType.FLOATNUM && isDigit(this.peak())) ||
-            (isLetter(this.peak()) && this.peak() !== "e")
-        ) {
-            const character = this.content.charAt(this.cursor);
-            if (isLetter(character)) {
-                conatainsLetter = true;
+            // reading more digits if we detected a dot
+            while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
+                const character = this.content.charAt(this.cursor);
+                if (isLetter(character)) {
+                    conatainsLetter = true;
+                }
+                this.lexeme += character;
+                this.cursor++;
             }
-            this.lexeme += character;
-            this.cursor++;
         }
 
         // getting the integer and fraction to validate
@@ -142,38 +140,34 @@ export default class Lexer extends AbstractLexer {
             this.tokenType = TokenType.INVALIDNUM;
         }
 
-        let isScientificNotation = false;
-
         // reading for scientific notation setting tokenType to invalid num until we detect a integer
         if (this.peak() === "e") {
             this.tokenType = TokenType.INVALIDNUM;
-            isScientificNotation = true;
             const character = this.content.charAt(this.cursor);
             this.lexeme += character;
             this.cursor++;
-        }
 
-        // checking if there is a + or a minus this symbols don't affect the state since they are optional
-        if (isScientificNotation && (this.peak() === "+" || this.peak() === "-")) {
-            this.lexeme += this.content.charAt(this.cursor++);
-        }
+            // checking if there is a + or a minus this symbols don't affect the state since they are optional
+            if ((this.peak() === "+" || this.peak() === "-")) {
+                this.lexeme += this.content.charAt(this.cursor++);
+            }
 
-        while (isScientificNotation && isDigit(this.peak())) {
-            this.tokenType = TokenType.FLOATNUM;
-            this.lexeme += this.content.charAt(this.cursor++);
-        }
+            while (isDigit(this.peak())) {
+                this.tokenType = TokenType.FLOATNUM;
+                this.lexeme += this.content.charAt(this.cursor++);
+            }
 
-        const [int, float] = this.lexeme.split("e")[0].split(".");
-        const exponent = this.lexeme.split("e").pop() || "";
+            const [int, float] = this.lexeme.split("e")[0].split(".");
+            const exponent = this.lexeme.split("e").pop() || "";
 
-        if (
-            isScientificNotation &&
-            this.tokenType === TokenType.FLOATNUM &&
-            ((exponent.charAt(0) === "0" && exponent.length > 1) ||
-                (int.charAt(0) === "0" && int.length > 1) ||
-                (float.charAt(float.length - 1) === "0" && float.length > 1))
-        ) {
-            this.tokenType = TokenType.INVALIDNUM;
+            if (
+                this.tokenType === TokenType.FLOATNUM &&
+                ((exponent.charAt(0) === "0" && exponent.length > 1) ||
+                    (int.charAt(0) === "0" && int.length > 1) ||
+                    (float.charAt(float.length - 1) === "0" && float.length > 1))
+            ) {
+                this.tokenType = TokenType.INVALIDNUM;
+            }
         }
 
         if (conatainsLetter) {
