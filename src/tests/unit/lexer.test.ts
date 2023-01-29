@@ -155,7 +155,6 @@ describe("Lexer nextToken", () => {
 
         //act
         const token = lexer.nextToken();
-        console.log(token.lexeme);
 
         // assert
         expect(token.type).toBe(TokenType.INVALIDNUM);
@@ -220,10 +219,77 @@ describe("Lexer nextToken", () => {
         expect(identifierToken.type).toBe(TokenType.ID);
         expect(identifierToken.lexeme).toBe("myvar");
 
-        expect(equalToken.type).toBe(TokenType.EQUAL);
+        expect(equalToken.type).toBe(TokenType.ASSIGN);
         expect(equalToken.lexeme).toBe("=");
 
         expect(floatToken.type).toBe(TokenType.FLOATNUM);
         expect(floatToken.lexeme).toBe("12.1");
+    });
+});
+
+describe("Lexer nextToken edge cases", () =>{
+
+    let lexer: AbstractLexer;
+
+    it("should return invalid num if num contains characters outside the alphabet", () => {
+        //arrange
+        const text = "123@";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDNUM);
+        expect(token.lexeme).toBe(text);
+    });
+
+    it("should return invalid num if num contains characters outside the alphabet", () => {
+        //arrange
+        const text = "123.1@3";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDNUM);
+        expect(token.lexeme).toBe(text);
+    });
+
+    it("should return invalid num if num contains characters outside the alphabet", () => {
+        //arrange
+        const text = "123.13e12@3";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDNUM);
+        expect(token.lexeme).toBe(text);
+    });
+
+    it("should return a INTNUM, GT and INTNUM", () => {
+        //arrange
+        const text = "12>13";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        const idToken = lexer.nextToken();
+
+        // assert
+        expect(token.type).toBe(TokenType.INTNUM);
+        expect(token.lexeme).toBe("12");
+    });
+
+    it("should return a INVALIDID because contains invalid character", () => {
+        //arrange
+        const text = "abc@12";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDID);
+        expect(token.lexeme).toBe(text);
     });
 });

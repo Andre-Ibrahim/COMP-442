@@ -73,20 +73,29 @@ export default class Lexer extends AbstractLexer {
     private identifierState(): Token {
         this.tokenType = TokenType.ID;
 
+        let isInvalid = false;
+
         // first character _ resolves into invalid character
         if (this.character === "_") {
-            this.tokenType = TokenType.INVALIDID;
+            isInvalid = true;
         }
 
-        while (isAlphanum(this.peak())) {
+        while (isAlphanum(this.peak()) || (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
             const character = this.content.charAt(this.cursor);
             this.lexeme += character;
             this.cursor++;
+            if(!isInAlaphabet(character)){
+                isInvalid = true;
+            }
         }
 
         const reservedKeyword = stringToKeywordTokenType.get(this.lexeme);
         if (reservedKeyword) {
             this.tokenType = reservedKeyword;
+        }
+
+        if(isInvalid){
+            this.tokenType = TokenType.INVALIDID;
         }
         return { type: this.tokenType, lexeme: this.lexeme, position: this.line };
     }
@@ -94,12 +103,12 @@ export default class Lexer extends AbstractLexer {
     private integerOrFractionState(): Token {
         this.tokenType = TokenType.INTNUM;
 
-        let conatainsLetter = false;
+        let isInvalid = false;
         // reading all digits will validate for leading 0s later
-        while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
+        while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")|| (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
             const character = this.content.charAt(this.cursor);
-            if (isLetter(character)) {
-                conatainsLetter = true;
+            if (isLetter(character) || !isInAlaphabet(this.peak())) {
+                isInvalid = true;
             }
             this.lexeme += character;
             this.cursor++;
@@ -113,10 +122,10 @@ export default class Lexer extends AbstractLexer {
             this.cursor++;
 
             // reading more digits if we detected a dot
-            while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
+            while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")|| (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
                 const character = this.content.charAt(this.cursor);
-                if (isLetter(character)) {
-                    conatainsLetter = true;
+                if (isLetter(character) || !isInAlaphabet(this.peak())) {
+                    isInvalid = true;
                 }
                 this.lexeme += character;
                 this.cursor++;
@@ -152,7 +161,10 @@ export default class Lexer extends AbstractLexer {
                 this.lexeme += this.content.charAt(this.cursor++);
             }
 
-            while (isDigit(this.peak())) {
+            while (isDigit(this.peak()) || isLetter(this.peak()) || (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
+                if(isLetter(this.peak()) || !isInAlaphabet(this.peak())){
+                    isInvalid = true;
+                }
                 this.tokenType = TokenType.FLOATNUM;
                 this.lexeme += this.content.charAt(this.cursor++);
             }
@@ -170,7 +182,7 @@ export default class Lexer extends AbstractLexer {
             }
         }
 
-        if (conatainsLetter) {
+        if (isInvalid) {
             this.tokenType = TokenType.INVALIDNUM;
         }
 
@@ -180,7 +192,7 @@ export default class Lexer extends AbstractLexer {
     private specialCharState(): Token {
         this.tokenType = specialCharToTokenType.get(this.character) || TokenType.COMMA;
 
-        if (this.tokenType === TokenType.EQUAL && this.peak() === "=") {
+        if (this.tokenType === TokenType.ASSIGN && this.peak() === "=") {
             this.tokenType = TokenType.EQ;
             this.cursor++;
         }
@@ -203,7 +215,7 @@ export default class Lexer extends AbstractLexer {
             this.cursor++;
         }
 
-        if (this.tokenType === TokenType.EQUAL && this.peak() === ">") {
+        if (this.tokenType === TokenType.ASSIGN && this.peak() === ">") {
             this.tokenType = TokenType.RETURNTYPE;
             this.lexeme += this.peak();
             this.cursor++;

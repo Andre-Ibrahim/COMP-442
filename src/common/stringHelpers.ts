@@ -62,7 +62,7 @@ const specialCharToTokenType = new Map([
     ["-", TokenType.MINUS],
     ["*", TokenType.MULT],
     ["/", TokenType.DIV],
-    ["=", TokenType.EQUAL],
+    ["=", TokenType.ASSIGN],
     ["<", TokenType.LT],
     [">", TokenType.GT],
     ["(", TokenType.OPENPAR],
@@ -94,7 +94,7 @@ function invalidTokenToString(token: Token): string {
     const invalidString = invalidTokenTypeToString.get(token.type);
 
     if (invalidString) {
-        return `Lexical error: ${invalidString}: "${token.lexeme}": line ${token.position}\n`;
+        return `Lexical error: ${invalidString}: "${token.lexeme}": line ${token.position}.\n`;
     }
 
     return "";

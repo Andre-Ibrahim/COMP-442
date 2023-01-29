@@ -16,7 +16,7 @@ enum TokenType {
     MINUS = "minus",
     MULT = "mult",
     DIV = "div",
-    EQUAL = "equal",
+    ASSIGN = "assign",
     SEMI = "semi",
     COMMA = "comma",
     COLON = "colon",
