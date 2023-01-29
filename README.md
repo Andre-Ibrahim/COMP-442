@@ -2,9 +2,13 @@
 
 To run the project
 
-`npm install`
+```sh
+npm install
+```
 
-`npm start`
+```sh
+npm start
+```
 
 output files will be written into the ./output directory
 

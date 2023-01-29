@@ -160,7 +160,8 @@ export default class Lexer extends AbstractLexer {
             if ((this.peak() === "+" || this.peak() === "-")) {
                 this.lexeme += this.content.charAt(this.cursor++);
             }
-
+            
+            // reading for digits but allowing invalid characters or letter to validate later
             while (isDigit(this.peak()) || isLetter(this.peak()) || (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
                 if(isLetter(this.peak()) || !isInAlaphabet(this.peak())){
                     isInvalid = true;
@@ -169,9 +170,11 @@ export default class Lexer extends AbstractLexer {
                 this.lexeme += this.content.charAt(this.cursor++);
             }
 
+            // disecting the float to validate
             const [int, float] = this.lexeme.split("e")[0].split(".");
             const exponent = this.lexeme.split("e").pop() || "";
 
+            // checking the different cases that would make the float invalid
             if (
                 this.tokenType === TokenType.FLOATNUM &&
                 ((exponent.charAt(0) === "0" && exponent.length > 1) ||
