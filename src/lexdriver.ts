@@ -8,7 +8,7 @@ import { isInvalidTokenType } from "./common/tokenHelpers";
 const files = ["example-polynomial", "example-bubblesort", "lexnegativegrading", "lexpositivegrading"];
 
 files.forEach((filename) => {
-    const file = readFileSync(`./src/examples/${filename}.src`, "utf-8");
+    const file = readFileSync(`./test_files/${filename}.src`, "utf-8");
     const lexer: AbstractLexer = new Lexer(file);
 
     let token = lexer.nextToken();
@@ -38,6 +38,6 @@ files.forEach((filename) => {
 
         token = lexer.nextToken();
     }
-    writeFileSync(`./src/output/${filename}.outlexerrors`, errorFile);
-    writeFileSync(`./src/output/${filename}.outlextokens`, outputFile);
+    writeFileSync(`./output/${filename}.outlexerrors`, errorFile);
+    writeFileSync(`./output/${filename}.outlextokens`, outputFile);
 });
