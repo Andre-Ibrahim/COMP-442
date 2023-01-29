@@ -148,6 +148,20 @@ describe("Lexer nextToken", () => {
         expect(token.lexeme).toBe(text);
     });
 
+    it("should return a INVALIDNUM token type letter in float", () => {
+        //arrange
+        const text = "12.11c";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        console.log(token.lexeme);
+
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDNUM);
+        expect(token.lexeme).toBe(text);
+    });
+
     it("should return a ID with underscore after first letter", () => {
         //arrange
         const text = "a_";

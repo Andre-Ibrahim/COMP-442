@@ -57,7 +57,7 @@ const stringToKeywordTokenType = new Map([
     ["private", TokenType.PRIVATE],
 ]);
 
-const oneCharOperatorsToTokenType = new Map([
+const specialCharToTokenType = new Map([
     ["+", TokenType.PLUS],
     ["-", TokenType.MINUS],
     ["*", TokenType.MULT],
@@ -88,17 +88,16 @@ const invalidTokenTypeToString = new Map([
     [TokenType.INVALIDNUM, "Invalid number"],
     [TokenType.INVALIDID, "Invalid identifier"],
     [TokenType.INVALIDBLOCKCMT, "Invalid block comment"],
-])
+]);
 
 function invalidTokenToString(token: Token): string {
     const invalidString = invalidTokenTypeToString.get(token.type);
 
-    if(invalidString){
+    if (invalidString) {
         return `Lexical error: ${invalidString}: "${token.lexeme}": line ${token.position}\n`;
     }
 
     return "";
-
 }
 
 export {
@@ -109,7 +108,7 @@ export {
     isWhiteSpace,
     isInAlaphabet,
     stringToKeywordTokenType,
-    oneCharOperatorsToTokenType,
+    specialCharToTokenType,
     tokenToString,
     invalidTokenToString,
 };

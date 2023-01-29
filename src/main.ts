@@ -21,7 +21,7 @@ files.forEach((filename) => {
             if (token.position > currentLine) {
                 outputFile += "\n";
             }
-            if(isInvalidTokenType(token.type)){
+            if (isInvalidTokenType(token.type)) {
                 errorFile += invalidTokenToString(token);
             }
             outputFile += tokenToString(token);

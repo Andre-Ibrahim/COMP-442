@@ -10,5 +10,4 @@ function isInvalidTokenType(tokenType: TokenType) {
     );
 }
 
-
-export { isInvalidTokenType }
+export { isInvalidTokenType };
