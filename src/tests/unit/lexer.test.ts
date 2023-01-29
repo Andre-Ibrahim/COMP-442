@@ -227,3 +227,48 @@ describe("Lexer nextToken", () => {
         expect(floatToken.lexeme).toBe("12.1");
     });
 });
+
+describe("Lexer nextToken edge cases", () =>{
+    
+    let lexer: AbstractLexer;
+
+    it("should return invalid num if num contains characters outside the alphabet", () => {
+        //arrange
+        const text = "12@";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDNUM);
+        expect(token.lexeme).toBe(text);
+    });
+
+    it("should return a INVALIDNUM, DOT and ID", () => {
+        //arrange
+        const text = "12>13";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        const idToken = lexer.nextToken();
+
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDNUM);
+        expect(token.lexeme).toBe("12.abv");
+    });
+
+    it("should return a INVALIDNUM token type because of leading 0", () => {
+        //arrange
+        const text = "abc@12";
+        lexer = new Lexer(text);
+
+        //act
+        const token = lexer.nextToken();
+        console.log(token.lexeme);
+        // assert
+        expect(token.type).toBe(TokenType.INVALIDID);
+        expect(token.lexeme).toBe(text);
+    });
+});

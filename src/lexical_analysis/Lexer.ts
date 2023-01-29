@@ -8,6 +8,7 @@ import {
     stringToKeywordTokenType,
     specialCharToTokenType,
     isInAlaphabet,
+    isNonZeroDigit,
 } from "../common/stringHelpers";
 import { Token } from "./Token";
 
@@ -58,6 +59,16 @@ export default class Lexer extends AbstractLexer {
         return this.content.charAt(this.cursor);
     }
 
+    private lookAhead(): string {
+        return this.content.charAt(this.cursor + 1);
+    }
+
+    private nextChar(): void {
+        const character = this.content.charAt(this.cursor);
+        this.lexeme += character;
+        this.cursor++;
+    }
+
     private skipWhiteSpace(): void {
         while (true) {
             this.character = this.content.charAt(this.cursor);
@@ -72,10 +83,9 @@ export default class Lexer extends AbstractLexer {
 
     private identifierState(): Token {
         this.tokenType = TokenType.ID;
-
         // first character _ resolves into invalid character
         if (this.character === "_") {
-            this.tokenType = TokenType.INVALIDID;
+            return { type: TokenType.INVALIDCHAR, lexeme: this.lexeme, position: this.line };
         }
 
         while (isAlphanum(this.peak())) {
@@ -88,39 +98,33 @@ export default class Lexer extends AbstractLexer {
         if (reservedKeyword) {
             this.tokenType = reservedKeyword;
         }
+
         return { type: this.tokenType, lexeme: this.lexeme, position: this.line };
     }
 
     private integerOrFractionState(): Token {
         this.tokenType = TokenType.INTNUM;
 
-        let conatainsLetter = false;
-        // reading all digits will validate for leading 0s later
-        while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
-            const character = this.content.charAt(this.cursor);
-            if (isLetter(character)) {
-                conatainsLetter = true;
+        if(!(this.peak() === "0")){
+            while (isDigit(this.peak())) {
+                this.nextChar();
             }
-            this.lexeme += character;
-            this.cursor++;
+        }else{
+            this.nextChar();
         }
 
         // checking if there is a . for a fraction
         if (this.peak() === ".") {
-            this.tokenType = TokenType.FLOATNUM;
-            const character = this.content.charAt(this.cursor);
-            this.lexeme += character;
-            this.cursor++;
-
-            // reading more digits if we detected a dot
-            while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")) {
-                const character = this.content.charAt(this.cursor);
-                if (isLetter(character)) {
-                    conatainsLetter = true;
+            if(isDigit(this.lookAhead())){
+                // consuming the . only if lookahead is number
+                this.tokenType = TokenType.FLOATNUM;
+                this.nextChar();
+                // reading more digits if we detected a dot
+                while (isDigit(this.peak())) {
+                    this.nextChar();
                 }
-                this.lexeme += character;
-                this.cursor++;
             }
+
         }
 
         // getting the integer and fraction to validate
@@ -168,10 +172,6 @@ export default class Lexer extends AbstractLexer {
             ) {
                 this.tokenType = TokenType.INVALIDNUM;
             }
-        }
-
-        if (conatainsLetter) {
-            this.tokenType = TokenType.INVALIDNUM;
         }
 
         return { type: this.tokenType, lexeme: this.lexeme, position: this.line };
