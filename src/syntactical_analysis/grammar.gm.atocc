@@ -52,25 +52,26 @@ funcHead -> 'function' 'id' 'sr' 'constructor' '(' fParams ')'
 opt-funcHead1 -> 'id' 'sr' 
 opt-funcHead1 -> EPSILON 
 
-functionCall -> 'id' rept-functionCall0
-rept-functionCall0 -> idnest1 rept-functionCall0 '(' aParams ')' 
+functionCall -> rept-functionCall0 id' '(' aParams ')' 
+rept-functionCall0 -> 'id' rept-variable2 funCallMiddle
+funCallMiddle -> '.'
+funcCallMiddle -> rept-functionCall1
 rept-functionCall0 -> EPSILON 
+rept-functionCall1 -> idnest1 rept-variable0 '.'
+rept-functionCall1 -> EPSILON
 
 variable -> 'id' rept-variable2 rept-variable0
-rept-variable0 -> idnest1 rept-variable0 
-rept-variable0 -> EPSILON 
+rept-variable0 -> idnest1 rept-variable0
+rept-varaible0 -> EPSILON
 rept-variable2 -> indice rept-variable2 
+rept-variable2  -> '(' aParams ')'
 rept-variable2 -> EPSILON 
 
-idnest -> 'id' rightidnest 
-rightidnest -> rept-idnest1 '.' 
-rightidnest -> '(' aParams ')' '.' 
-rept-idnest1 -> indice rept-idnest1 
-rept-idnest1 -> EPSILON 
-
-idnest1 -> '.''id' idnest2 
-idnest2 -> indice idnest2
+idnest1 -> '.''id' idnest2
+idnest2 -> '[' arithExpr ']' idnest2
 idnest2 -> '(' aParams ')'
+idnest2 -> EPSILON
+
 
 indice -> '[' arithExpr ']' 
 
