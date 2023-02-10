@@ -46,11 +46,13 @@ funcBody -> '{' rept-funcBody1 '}'
 
 funcDef -> funcHead funcBody
 
-funcHead -> 'function' opt-funcHead1 'id' '(' fParams ')' 'arrow' returnType 
-funcHead -> 'function' 'id' 'sr' 'constructor' '(' fParams ')' 
+funcHead -> 'function' 'id' funcHead3
 
-opt-funcHead1 -> 'id' 'sr' 
-opt-funcHead1 -> EPSILON 
+funcHead2 -> 'id' '(' fParams ')' 'arrow' returnType 
+funcHead2 -> 'constructor' '(' fParams ')' 
+
+funcHead3 -> 'sr' funcHead2
+funcHead3 -> '(' fParams ')' 'arrow' returnType 
 
 functionCall -> rept-functionCall0 id' '(' aParams ')' 
 rept-functionCall0 -> 'id' rept-variable2 funCallMiddle
