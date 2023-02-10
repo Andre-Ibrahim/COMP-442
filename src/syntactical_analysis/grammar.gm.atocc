@@ -54,13 +54,14 @@ funcHead2 -> 'constructor' '(' fParams ')'
 funcHead3 -> 'sr' funcHead2
 funcHead3 -> '(' fParams ')' 'arrow' returnType 
 
-functionCall -> rept-functionCall0 id' '(' aParams ')' 
-rept-functionCall0 -> 'id' rept-variable2 funCallMiddle
-funCallMiddle -> '.'
-funcCallMiddle -> rept-functionCall1
-rept-functionCall0 -> EPSILON 
-rept-functionCall1 -> idnest1 rept-variable0 '.'
-rept-functionCall1 -> EPSILON
+functionCall -> 'id' funCall3
+funCall3 -> '(' aParams ')'
+funCall3 -> funCall2
+funCall2 -> '.''id' funCall4
+funCall4 -> indice funCall2
+funCall4 -> '(' aParams ')' funCall5
+funCall5 -> funCall2
+funCall5 -> EPSILON
 
 variable -> 'id' rept-variable2 rept-variable0
 rept-variable0 -> idnest1 rept-variable0
