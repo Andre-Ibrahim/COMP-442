@@ -17,8 +17,6 @@ arraySize2 -> ']'
 
 assignOp -> '=' 
 
-assignStat -> variable assignOp expr 
-
 classDecl -> 'class' 'id' opt-classDecl2 '{' rept-classDecl4 '}' ';' 
 
 classDeclOrFuncDef -> classDecl 
@@ -34,8 +32,7 @@ fParams -> EPSILON
 
 fParamsTail -> ',' 'id' ':' type rept-fParamsTail4 
 
-factor -> variable 
-factor -> functionCall 
+factor -> functionCallOrVariable 
 factor -> 'intLit' 
 factor -> 'floatLit' 
 factor -> '(' arithExpr ')' 
@@ -54,6 +51,8 @@ funcHead2 -> 'constructor' '(' fParams ')'
 funcHead3 -> 'sr' funcHead2
 funcHead3 -> '(' fParams ')' 'arrow' returnType 
 
+assignStat -> variable assignOp expr 
+
 functionCall -> 'id' funCall3
 funCall3 -> '(' aParams ')'
 funCall3 -> funCall2
@@ -63,18 +62,28 @@ funCall4 -> '(' aParams ')' funCall5
 funCall5 -> funCall2
 funCall5 -> EPSILON
 
-variable -> 'id' rept-variable2 rept-variable0
-rept-variable0 -> idnest1 rept-variable0
-rept-varaible0 -> EPSILON
-rept-variable2 -> indice rept-variable2 
-rept-variable2  -> '(' aParams ')'
-rept-variable2 -> EPSILON 
+variable -> 'id' variable3
+variable3 -> indice
+variable3 -> variable2
+variable2 -> '.''id' variable4
+variable4 -> '(' aParams ')' variable2
+variable4 -> indice variable5
+variable5 -> variable2
+variable5 -> EPSILON
+
+functionCallOrVariable -> 'id' functionCallOrVariable1
+functionCallOrVariable1 -> indice
+functionCallOrVariable1 -> '(' aParams ')'
+functionCallOrVariable1 -> functionCallOrVariable2
+functionCallOrVariable2 -> '.''id' functionCallOrVariable3
+functionCallOrVariable2 -> EPSILON
+functionCallOrVariable3 -> indice functionCallOrVariable2
+functionCallOrVariable3 -> '(' aParams ')' functionCallOrVariable2
 
 idnest1 -> '.''id' idnest2
 idnest2 -> '[' arithExpr ']' idnest2
 idnest2 -> '(' aParams ')'
 idnest2 -> EPSILON
-
 
 indice -> '[' arithExpr ']' 
 
@@ -158,13 +167,21 @@ statBlock -> '{' rept-statBlock1 '}'
 statBlock -> statement 
 statBlock -> EPSILON 
 
-statement -> assignStat ';' 
+statement -> functionCallOrAsignStat ';' 
 statement -> 'if' '(' relExpr ')' 'then' statBlock 'else' statBlock ';' 
 statement -> 'while' '(' relExpr ')' statBlock ';' 
 statement -> 'read' '(' variable ')' ';' 
 statement -> 'write' '(' expr ')' ';' 
-statement -> 'return' '(' expr ')' ';' 
-statement -> functionCall ';' 
+statement -> 'return' '(' expr ')' ';'
+
+functionCallOrAsignStat -> 'id' functionCallOrAsignStat2
+functionCallOrAsignStat2 -> assignOp expr
+functionCallOrAsignStat2 -> '.' 'id' functionCallOrAsignStat4
+functionCallOrAsignStat3 -> '.' 'id' indice functionCallOrAsignStat2
+functionCallOrAsignStat4 -> indice functionCallOrAsignStat2
+functionCallOrAsignStat4 -> '(' aParams ')' functionCallOrAsignStat5
+functionCallOrAsignStat5 -> functionCallOrAsignStat3
+functionCallOrAsignStat5 -> EPSILON
 
 term -> factor rightrec-term 
 
