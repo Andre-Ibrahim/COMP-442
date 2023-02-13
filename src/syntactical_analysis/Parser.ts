@@ -15,7 +15,7 @@ export default class Parser {
         this.paringTable = new ParsingTable();
     }
 
-    parse(){
+    parse(): boolean{
         this.stack.push("$");
 
         this.stack.push("START");
@@ -24,7 +24,7 @@ export default class Parser {
 
         while(this.top() != "$"){
             console.log(this.stack);
-            
+
             let x = this.top();
 
             const tableLookUp = this.paringTable.get(x).get(a.type) ?? [];
