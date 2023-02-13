@@ -174,14 +174,23 @@ statement -> 'read' '(' variable ')' ';'
 statement -> 'write' '(' expr ')' ';' 
 statement -> 'return' '(' expr ')' ';'
 
-functionCallOrAsignStat -> 'id' functionCallOrAsignStat2
-functionCallOrAsignStat2 -> assignOp expr
-functionCallOrAsignStat2 -> '.' 'id' functionCallOrAsignStat4
-functionCallOrAsignStat3 -> '.' 'id' indice functionCallOrAsignStat2
-functionCallOrAsignStat4 -> indice functionCallOrAsignStat2
-functionCallOrAsignStat4 -> '(' aParams ')' functionCallOrAsignStat5
-functionCallOrAsignStat5 -> functionCallOrAsignStat3
-functionCallOrAsignStat5 -> EPSILON
+functionCallOrAsignStat -> 'id' isFunctionCallOrVariable
+
+isFunctionCallOrVariable -> '(' aParams ')' afterFunctionCall
+isFunctionCallOrVariable -> indiceLoop afterVariable
+
+afterFunctionCall -> '.' 'id' middleState
+afterVariable -> '.' 'id' middleState
+
+middleState -> indiceLoop afterVariable
+middleState -> '(' aParams ')' afterFunctionCall
+
+afterVariable -> endAssign
+afterFunctionCall -> EPSILON
+
+indiceLoop -> indice indiceLoop
+indiceLoop -> EPSILON
+endAssign -> assignOp expr
 
 term -> factor rightrec-term 
 
@@ -192,5 +201,3 @@ type -> 'id'
 visibility -> 'public' 
 visibility -> 'private' 
 visibility -> EPSILON 
-
-
