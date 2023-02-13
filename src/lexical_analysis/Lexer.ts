@@ -84,7 +84,7 @@ export default class Lexer extends AbstractLexer {
             const character = this.content.charAt(this.cursor);
             this.lexeme += character;
             this.cursor++;
-            if(!isInAlaphabet(character)){
+            if (!isInAlaphabet(character)) {
                 isInvalid = true;
             }
         }
@@ -94,7 +94,7 @@ export default class Lexer extends AbstractLexer {
             this.tokenType = reservedKeyword;
         }
 
-        if(isInvalid){
+        if (isInvalid) {
             this.tokenType = TokenType.INVALIDID;
         }
         return { type: this.tokenType, lexeme: this.lexeme, position: this.line };
@@ -105,7 +105,11 @@ export default class Lexer extends AbstractLexer {
 
         let isInvalid = false;
         // reading all digits will validate for leading 0s later
-        while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")|| (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
+        while (
+            isDigit(this.peak()) ||
+            (isLetter(this.peak()) && this.peak() !== "e") ||
+            (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))
+        ) {
             const character = this.content.charAt(this.cursor);
             if (isLetter(character) || !isInAlaphabet(this.peak())) {
                 isInvalid = true;
@@ -122,7 +126,11 @@ export default class Lexer extends AbstractLexer {
             this.cursor++;
 
             // reading more digits if we detected a dot
-            while (isDigit(this.peak()) || (isLetter(this.peak()) && this.peak() !== "e")|| (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
+            while (
+                isDigit(this.peak()) ||
+                (isLetter(this.peak()) && this.peak() !== "e") ||
+                (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))
+            ) {
                 const character = this.content.charAt(this.cursor);
                 if (isLetter(character) || !isInAlaphabet(this.peak())) {
                     isInvalid = true;
@@ -157,13 +165,17 @@ export default class Lexer extends AbstractLexer {
             this.cursor++;
 
             // checking if there is a + or a minus this symbols don't affect the state since they are optional
-            if ((this.peak() === "+" || this.peak() === "-")) {
+            if (this.peak() === "+" || this.peak() === "-") {
                 this.lexeme += this.content.charAt(this.cursor++);
             }
-            
+
             // reading for digits but allowing invalid characters or letter to validate later
-            while (isDigit(this.peak()) || isLetter(this.peak()) || (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))) {
-                if(isLetter(this.peak()) || !isInAlaphabet(this.peak())){
+            while (
+                isDigit(this.peak()) ||
+                isLetter(this.peak()) ||
+                (!isInAlaphabet(this.peak()) && !isWhiteSpace(this.peak()))
+            ) {
+                if (isLetter(this.peak()) || !isInAlaphabet(this.peak())) {
                     isInvalid = true;
                 }
                 this.tokenType = TokenType.FLOATNUM;

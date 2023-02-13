@@ -65,6 +65,7 @@ funCall5 -> EPSILON
 variable -> 'id' variable3
 variable3 -> indice
 variable3 -> variable2
+variable3 -> EPSILON
 variable2 -> '.''id' variable4
 variable4 -> '(' aParams ')' variable2
 variable4 -> indice variable5

@@ -100,11 +100,48 @@ function invalidTokenToString(token: Token): string {
     return "";
 }
 
+function terminals(): string[] {
+    return Object.values(TokenType);
+}
+
+function grammarToToken(terminal: string): string {
+    switch(terminal){
+        case "intlit":
+            return TokenType.INTNUM;
+        case "floatlit":
+            return TokenType.FLOATNUM;
+        case "rpar":
+            return TokenType.CLOSEPAR;
+        case "lpar":
+            return TokenType.OPENPAR;
+        case "rcurbr":
+            return TokenType.CLOSECUBR;
+        case "lcurbr":
+            return TokenType.OPENCUBR;
+        case "neq":
+            return TokenType.NOTEQ;
+        case "rsqbr":
+            return TokenType.CLOSESQBR;
+        case "lsqbr":
+            return TokenType.OPENSQBR;
+        case "arrow":
+            return TokenType.RETURNTYPE;
+        case "equal":
+            return TokenType.ASSIGN;
+        case "sr":
+            return TokenType.SCOPEOP;
+    }
+
+    return terminal;
+}
+
 export {
     isDigit,
     isNonZeroDigit,
     isLetter,
     isAlphanum,
+    terminals,
+    grammarToToken,
     isWhiteSpace,
     isInAlaphabet,
     stringToKeywordTokenType,
