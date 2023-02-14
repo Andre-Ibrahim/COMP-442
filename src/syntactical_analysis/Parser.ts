@@ -63,7 +63,7 @@ export default class Parser {
                 tableLookUp.reverse();
 
             }else {
-                console.log(top);
+                console.log(this.stack);
 
                 console.log(a);
                 
