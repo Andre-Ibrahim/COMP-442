@@ -16,35 +16,61 @@ export default class Parser {
     }
 
     parse(): boolean{
-        this.stack.push("$");
+        this.stack.push(TokenType.EOF);
 
         this.stack.push("START");
 
         let a = this.lexer.nextToken();
 
-        while(this.top() != "$"){
-            console.log(this.stack);
+        // skipping comments
+        if(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
+            a = this.lexer.nextToken();
+        }
 
-            let x = this.top();
+        let productions = "";
 
-            const tableLookUp = this.paringTable.get(x).get(a.type) ?? [];
+        while(a.type != TokenType.EOF){
 
-            if(terminals().includes(x)){
-                if(x === a.type){
-                    this.stack.pop();
+            let top = this.top();
+
+            if(top === "&epsilon"){
+                this.stack.pop();
+                top = this.top();
+            }
+
+            let tableLookUp = this.paringTable.get(top).get(a.type) ?? [];
+
+            if(terminals().includes(top)){
+                if(top === a.type){
+                    productions += this.stack.pop() + " ";
+                    console.log(productions);
                     a = this.lexer.nextToken();
+                    // skipping comments
+                    if(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
+                        a = this.lexer.nextToken();
+                    }
                 } else {
+                    console.log(top);
                     // to do skip error
+                    console.log("error ");
                     this.hasError = true;
+                    return false;
                 }
             // if it is not an error 
-            }else if( tableLookUp.length > 0){
+            }else if( tableLookUp.length > 0 ){
                 this.stack.pop();
-                this.stack.push(...tableLookUp.reverse())
+                this.stack.push(...tableLookUp.reverse());
+                tableLookUp.reverse();
 
             }else {
+                console.log(top);
+
+                console.log(a);
+                
                 // to do skip error
+                console.log("error not a terminal and does not have entry in table");
                 this.hasError = true;
+                return false;
             }
 
         }

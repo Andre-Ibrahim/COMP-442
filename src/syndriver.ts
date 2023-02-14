@@ -1,5 +1,13 @@
+import { readFileSync } from "fs";
 import ParseTable from "./syntactical_analysis/parsingTable";
+import Parser from "./syntactical_analysis/Parser";
 
 const pt = new ParseTable();
 
-console.log(pt.table.get("FACTOR"));
+
+
+const file = readFileSync(`./test_files/example-polynomial.src`, "utf-8");
+
+const parser = new Parser(file);
+
+parser.parse();

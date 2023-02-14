@@ -1,5 +1,4 @@
 import { readFileSync } from "fs";
-import * as csv from "csv-parser";
 import { grammarToToken } from "../common/stringHelpers";
 
 export default class ParsingTable {
@@ -24,7 +23,7 @@ export default class ParsingTable {
     private functionBuildTable(csv: string): void {
        const rows = csv.split("\n");
 
-       const headers = rows[0].split(",").slice(1);
+       const headers = rows[0].split(",").slice(1).map((s) => grammarToToken(s));
 
        const results = rows.slice(1);
 

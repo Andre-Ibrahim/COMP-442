@@ -52,7 +52,7 @@ enum TokenType {
     PRIVATE = "private",
     INLINECMT = "inlinecmt",
     BLOCKCMT = "blockcmt",
-    EOF = "EOF",
+    EOF = "$",
     INVALIDCHAR = "invalidchar",
     INVALIDBLOCKCMT = "ivalidblockcmt",
 }

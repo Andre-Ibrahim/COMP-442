@@ -12,7 +12,7 @@ ADDOP -> or   .
 ARITHEXPR -> TERM RIGHTRECARITHEXPR   . 
 
 ARRAYSIZE -> lsqbr ARRAYSIZE2  . 
-ARRAYSIZE2 -> intnum rsqbr  . 
+ARRAYSIZE2 -> intlit rsqbr  . 
 ARRAYSIZE2 -> rsqbr  . 
 
 ASSIGNOP -> equal   . 
@@ -174,6 +174,7 @@ STATEMENT -> while lpar RELEXPR rpar STATBLOCK semi   .
 STATEMENT -> read lpar VARIABLE rpar semi   . 
 STATEMENT -> write lpar EXPR rpar semi   . 
 STATEMENT -> return lpar EXPR rpar semi  . 
+
 
 FUNCTIONCALLORASIGNSTAT -> id ISFUNCTIONCALLORVARIABLE  .
 
