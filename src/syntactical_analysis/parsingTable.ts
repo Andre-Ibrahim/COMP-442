@@ -3,14 +3,21 @@ import { grammarToToken } from "../common/stringHelpers";
 
 export default class ParsingTable {
     table: Map<string, Map<string, string[]>>;
+    firstSet: Map<string, string[]>;
+    followSet: Map<string, string[]>;
 
     constructor() {
         const results: any = [];
 
         this.table = new Map<string, Map<string, string[]>>();
-        const csvFile = readFileSync("./src/syntactical_analysis/parsingTable.csv").toString("utf8");
+        const tableCsvFile = readFileSync("./src/syntactical_analysis/parsingTable.csv").toString("utf8");
+        this.functionBuildTable(tableCsvFile);
 
-        this.functionBuildTable(csvFile);
+        this.firstSet = new Map<string, string[]>();
+        this.followSet = new Map<string, string[]>();
+
+        const firstAndFollowCsvFile = readFileSync("./src/syntactical_analysis/firstAndFollowSets.csv").toString("utf8");
+        this.functionBuildFirstAndFollow(firstAndFollowCsvFile);
 
     }
 
@@ -19,6 +26,19 @@ export default class ParsingTable {
         return this.table.get(key) ?? new Map<string, string[]>;
     }
 
+    private functionBuildFirstAndFollow(csv: string): void {
+        const results = csv.split("\n").splice(1);
+        results.forEach((result) => {
+
+            const list = result.split(",");
+
+            const nonTerminal = list[0];
+
+            this.firstSet.set(nonTerminal, list[1].split(" ").map((s) => grammarToToken(s)).filter((e) => e !== "∅"));
+            this.followSet.set(nonTerminal, list[2].split(" ").map((s) => grammarToToken(s)).filter((e) => e !== "∅"));
+        })
+
+    }
 
     private functionBuildTable(csv: string): void {
        const rows = csv.split("\n");

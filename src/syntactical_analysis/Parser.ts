@@ -9,13 +9,14 @@ export default class Parser {
     stack: string[] = [];
     paringTable: parsingTable;
     hasError: boolean = false;
+    derivations: string = "";
 
     constructor(file: string){
         this.lexer = new Lexer(file);
         this.paringTable = new ParsingTable();
     }
 
-    parse(): boolean{
+    parse(): boolean {
         this.stack.push(TokenType.EOF);
 
         this.stack.push("START");
@@ -43,7 +44,7 @@ export default class Parser {
             if(terminals().includes(top)){
                 if(top === a.type){
                     productions += this.stack.pop() + " ";
-                    console.log(productions);
+                    //console.log(productions);
                     a = this.lexer.nextToken();
                     // skipping comments
                     if(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
@@ -58,9 +59,13 @@ export default class Parser {
                 }
             // if it is not an error 
             }else if( tableLookUp.length > 0 ){
-                this.stack.pop();
+                this.derivations += this.stack.pop() + " => ";
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
+
+
+
+                this.derivations += tableLookUp.join(" ") + "\n";
 
             }else {
                 console.log(this.stack);
@@ -74,6 +79,8 @@ export default class Parser {
             }
 
         }
+
+        console.log( !(a.type !== TokenType.EOF || this.hasError) );
 
         return !(a.type !== TokenType.EOF || this.hasError);
 
