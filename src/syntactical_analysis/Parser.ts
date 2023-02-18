@@ -17,9 +17,10 @@ export default class Parser {
     }
 
     parse(): boolean {
-        this.stack.push(TokenType.EOF);
+        this.stack.push("$");
 
         this.stack.push("START");
+        
 
         let a = this.lexer.nextToken();
 
@@ -30,21 +31,28 @@ export default class Parser {
 
         let productions = "";
 
-        while(a.type != TokenType.EOF){
+
+        let derivation = "START";
+        while("$" != this.top()){
 
             let top = this.top();
+
 
             if(top === "&epsilon"){
                 this.stack.pop();
                 top = this.top();
             }
 
+            if(top === "$"){
+                break;
+            }
+
             let tableLookUp = this.paringTable.get(top).get(a.type) ?? [];
 
             if(terminals().includes(top)){
                 if(top === a.type){
-                    productions += this.stack.pop() + " ";
-                    //console.log(productions);
+
+                    this.stack.pop();
                     a = this.lexer.nextToken();
                     // skipping comments
                     if(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
@@ -59,15 +67,18 @@ export default class Parser {
                 }
             // if it is not an error 
             }else if( tableLookUp.length > 0 ){
-                this.derivations += this.stack.pop() + " => ";
+                const nonTerminal = this.stack.pop();
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
 
+                //this.derivations += `replace ${nonTerminal}\nwith: ${[...tableLookUp].join(" ")} \nin: ${derivation}\n`;
 
+                derivation = derivation.replace(nonTerminal ?? "x", `${[...tableLookUp].join(" ")}`).replace("&epsilon", "");
 
-                this.derivations += tableLookUp.join(" ") + "\n";
+                this.derivations += `START => ${derivation}\n`;
 
             }else {
+
                 console.log(this.stack);
 
                 console.log(a);
@@ -80,7 +91,7 @@ export default class Parser {
 
         }
 
-        console.log( !(a.type !== TokenType.EOF || this.hasError) );
+        //console.log( !(a.type !== TokenType.EOF || this.hasError) );
 
         return !(a.type !== TokenType.EOF || this.hasError);
 

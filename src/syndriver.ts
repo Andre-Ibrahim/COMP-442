@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import ParseTable from "./syntactical_analysis/parsingTable";
 import Parser from "./syntactical_analysis/Parser";
 
@@ -12,4 +12,4 @@ const parser = new Parser(file);
 
 parser.parse();
 
-console.log(parser.derivations);
+writeFileSync(`./output/$example-polynomial.outderivations`, parser.derivations);
