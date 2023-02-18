@@ -1,5 +1,6 @@
 import { terminals } from "../common/stringHelpers";
 import Lexer from "../lexical_analysis/Lexer";
+import { Token } from "../lexical_analysis/Token";
 import TokenType from "../lexical_analysis/TokenType";
 import ParsingTable from "./parsingTable";
 import parsingTable from "./parsingTable";
@@ -10,6 +11,7 @@ export default class Parser {
     paringTable: parsingTable;
     hasError: boolean = false;
     derivations: string = "";
+    errors: string = "";
 
     constructor(file: string){
         this.lexer = new Lexer(file);
@@ -59,11 +61,9 @@ export default class Parser {
                         a = this.lexer.nextToken();
                     }
                 } else {
-                    console.log(top);
-                    // to do skip error
-                    console.log("error ");
+                    // error
+                    a = this.skipError(a);
                     this.hasError = true;
-                    return false;
                 }
             // if it is not an error 
             }else if( tableLookUp.length > 0 ){
@@ -78,15 +78,8 @@ export default class Parser {
                 this.derivations += `START => ${derivation}\n`;
 
             }else {
-
-                console.log(this.stack);
-
-                console.log(a);
-                
-                // to do skip error
-                console.log("error not a terminal and does not have entry in table");
+                a = this.skipError(a);
                 this.hasError = true;
-                return false;
             }
 
         }
@@ -99,5 +92,26 @@ export default class Parser {
 
     private top(): string{
         return this.stack[this.stack.length - 1];
+    }
+
+    private skipError(lookahead: Token){
+        this.errors += `syntax error at ${lookahead.position}\n`;
+        const top = this.top();
+        let token = lookahead;
+
+        if(token.type === TokenType.EOF || this.paringTable.getFollow(top).includes(token.type)){
+            this.stack.pop();
+        }else {
+            while(
+                !this.paringTable.getFirst(top).includes(token.type) 
+                && !(this.paringTable.getFirst(top).includes("&epsilon")
+                && this.paringTable.getFollow(top).includes(token.type))
+                && token.type !== TokenType.EOF
+            ){
+                token = this.lexer.nextToken();
+            }
+        }
+
+        return token;
     }
 }

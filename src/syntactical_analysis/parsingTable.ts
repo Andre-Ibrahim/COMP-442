@@ -26,6 +26,17 @@ export default class ParsingTable {
         return this.table.get(key) ?? new Map<string, string[]>;
     }
 
+    public getFirst(key: string): string[] {
+
+        return this.firstSet.get(key) ?? [];
+    }
+
+    public getFollow(key: string): string[] {
+
+        return this.followSet.get(key) ?? [];
+    }
+
+
     private functionBuildFirstAndFollow(csv: string): void {
         const results = csv.split("\n").splice(1);
         results.forEach((result) => {
@@ -34,7 +45,13 @@ export default class ParsingTable {
 
             const nonTerminal = list[0];
 
-            this.firstSet.set(nonTerminal, list[1].split(" ").map((s) => grammarToToken(s)).filter((e) => e !== "∅"));
+            const firstList = list[1].split(" ").map((s) => grammarToToken(s)).filter((e) => e !== "∅");
+
+            if(list[3] === "yes"){
+                firstList.push("&epsilon");
+            }
+
+            this.firstSet.set(nonTerminal, firstList);
             this.followSet.set(nonTerminal, list[2].split(" ").map((s) => grammarToToken(s)).filter((e) => e !== "∅"));
         })
 
