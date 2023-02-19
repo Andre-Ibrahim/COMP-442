@@ -1,0 +1,95 @@
+/*
+    functions: definitions
+    --------------------------------------
+|X| no main function definition
+| | main function definition
+| | no free function definition
+|X| free function definition
+|X| multiple free function definitions
+| | no member function definition
+|X| member function definition
+|X| multiple member function definitions
+|X| return type: void
+|X| return type: integer
+|X| return type: float
+|X| return type: id
+| | return type: array (not allowed)
+
+    functions: formal parameters
+    --------------------------------------
+|X| type: integer
+|X| type: float
+|X| type: id
+|X| type: 1-dim array 
+|X| type: n-dim array
+|X| type: array (with size)
+|X| type: array (without size)
+*/
+
+function VOIDReturnType(arr: integer[], size: integer) => void 
+{
+  localvar n: integer;
+} 
+
+function FLOATReturnType(arr: integer[], size: integer) => float 
+{
+  localvar n: integer;
+  read(n);
+  write(n);
+  
+  return (n+1.111);
+} 
+
+function VOIDReturnType(arr: integer[1], size: integer) => void 
+{
+  localvar n: integer;
+} 
+
+function VOIDReturnType(arr: integer[][], size: float) => void 
+{
+  localvar n: integer;
+} 
+
+function functionParams(x: integer, y: float, z: id, a: integer[10]) => void {} 
+
+function printArray(x: float) => integer {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 
+
+function printArray(x: id) => integer {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 
+
+function printArray(x: id) => id {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 
+
+function printArray(x: float[]) => integer {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 
+
+function printArray(x: float[5]) => float {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 
+
+function printArray(x: float[][]) => float {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 
+
+function printArray(x: float[10][111]) => float {
+  localvar i: integer; 
+  i = 0; 
+  return (i);
+} 

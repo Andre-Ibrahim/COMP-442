@@ -1,0 +1,25 @@
+/*    variable declaration
+    --------------------------------------
+|X| type: integer
+|X| type: float
+| | type: string
+|X| type: id
+|X| type: 1-dim array 
+|X| type: n-dim array
+|X| type: array (with size)
+|X| type: array (without size) (not allowed)
+*/
+
+function variableDeclarations(x: integer) => void {
+   localvar i: integer; 
+   localvar i: float; 
+   localvar i: id; 
+   localvar i: integer[]; 
+   localvar i: integer[10]; 
+   localvar i: float[]; 
+   localvar i: float[10]; 
+   localvar i: integer[][]; 
+   localvar i: float[][]; 
+   localvar i: float[2][]; 
+   localvar i: integer[9][3]; 
+} 

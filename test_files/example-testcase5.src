@@ -1,0 +1,57 @@
+/*    function body: local variable declarations
+    --------------------------------------
+| | no local variable declarations
+|X| local variable declarations
+|X| intertwined statements and variable declarations
+
+    function body: statements
+    --------------------------------------
+|X| no statement
+|X| 1 statement
+|X| n statements
+|X| if statement
+|X| if: empty then or else blocks
+|X| if: 1-statement then or else blocks
+|X| if: n-statements then or else blocks
+|X| while statement
+|X| while: empty block
+|X| while: 1-statement block
+|X| while: n-statement block
+|X| read(<variable>) statement
+|X| write(<expr>) statement
+|X| return(<expr>) statement
+|X| assignment statement
+*/
+
+function functionBlocks(arr: integer[], size: integer) => void 
+{
+  localvar n: integer;
+  n = size;
+  localvar i: integer; 
+  i = 0; 
+  while (i<n) { 
+    write(arr[i]);
+    i = i+1;
+  };
+
+  read(n);
+  
+    while (i<n) { 
+      write(arr[i]);
+    };
+  
+    while (i<n) { };
+
+    if (arr[j] > arr[j+1]) 
+      then {
+        temp = arr[j];
+      } else ;
+      
+ if (arr[j] > arr[j+1]) 
+   then {
+   } else {
+        temp = arr[j];
+   };
+
+   return (n);
+} 

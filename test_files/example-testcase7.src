@@ -1,0 +1,52 @@
+/*
+    expressions
+    --------------------------------------
+|X| single variable
+|X| involving addop
+|X| involving multop
+|X| involving relop
+|X| involving addop + multop
+|X| involving multop + relop
+|X| involving addop + multop + relop
+|X| involving parentheses
+|X| involving nested parentheses
+|X| involving not
+|X| involving sign
+|X| involving literals
+|X| involving variable + idnest
+|X| involving function calls
+|X| involving all the above in one expression
+*/
+function expressionsTest() => void 
+{
+  localvar n: integer;
+  localvar i: integer;
+  
+  x = i;
+  x = x + 2;
+  x = x - 2;
+  x = x * 10;
+  x = x / 10;
+  x = x > 5;
+  x = x < 5;
+  x = x >= 5;
+  x = x <= 5;
+  x = x <> 5;
+  x = x + 5 * 10;
+  x = x - 5 * 10;
+  x = x * 10 / 5;
+  x = x * 6 / 44 > 9;
+  x = x * 6 / 44 > i;
+  x = (x+10) * 8;
+  x = (x + (8 * i) / 9);
+  x = -x;
+  x = -19 + -x;
+  x = 2 - -x;
+  x = 2 - --x;
+  x = 17 * -x;
+  x = 10.99 * 0.99 + i;
+  x = not 8 > i;
+  x = 7 > 0 and i;
+  x = 7 > 0 or i;
+  x = x[9] * 9 + x[i*2];
+} 

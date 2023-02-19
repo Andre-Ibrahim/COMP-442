@@ -1,0 +1,59 @@
+/*
+    classes
+    --------------------------------------
+| | no class declaration
+|X| class declaration
+|X| multiple class declarations
+|X| no data member declaration
+|X| data member declaration
+|X| multiple data member declaration
+|X| no member function declaration
+|X| member function declaration
+|X| multiple member function declaration
+|X| no member
+|X| no inherited class
+|X| one inherited class
+|X| multiple inherited classes
+|X| private member specifier
+|X| public member specifier
+
+*/
+
+class CLASS1 {
+  private attribute a: float;
+};
+
+class CLASS2 {
+  public attribute a: float;
+  public attribute a: float;
+};
+
+class CLASS3 {
+  public function evaluate: (x: float) => float;
+  public function evaluate: (x: float) => float;
+};
+
+class CLASS4 isa CLASS2, CLASS3 {
+  private function evaluate: (x: float) => float;
+};
+
+class EMPTYCLASS { };
+
+class POLYNOMIAL {
+  public function evaluate: (x: float) => float;
+};
+
+class LINEAR isa POLYNOMIAL {
+  private attribute a: float;
+  private attribute b: float;
+  public  constructor: (A: float, B: float);
+  public  function evaluate: (x: float) => float;
+};
+
+class QUADRATIC isa POLYNOMIAL {
+  private attribute a: float;
+  private attribute b: float;
+  private attribute c: float;
+  public  constructor: (A: float, B: float, C: float);
+  private  function evaluate: (x: float) => float;
+};

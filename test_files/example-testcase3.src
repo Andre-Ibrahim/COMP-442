@@ -1,0 +1,32 @@
+/*
+    functions: calls
+    --------------------------------------
+|X| free function call
+| | member function call
+|X| parameters:0
+|X| parameters:1
+|X| parameters:n
+|X| array parameter - 1-dim
+|X| array parameter - n-dim
+|X| array parameter - with size
+|X| array parameter - without size
+|X| function call as statement
+|X| function call as expression factor
+|X| expression as parameter
+*/
+
+function funcCallsParameters(x: integer) => integer {
+  localvar i: integer; 
+  i = 0; 
+  funcCall(x);
+  funcCall(x, y);
+  funcCall(x, y, z, a, b, c);
+  funcCall(0, 1.0, arr[i], a, b, c);
+  funcCall(0, 1.0, arr[i], a, arr[1][i], c);
+  funcCall(a, funcCall(x, y, z));
+  
+  i = funcCall(77);
+  funcCall(i+1, arr[i]);
+  funcCall(i+1);
+  return (i);
+} 

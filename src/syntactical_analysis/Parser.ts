@@ -27,7 +27,7 @@ export default class Parser {
         let a = this.lexer.nextToken();
 
         // skipping comments
-        if(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
+        while(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
             a = this.lexer.nextToken();
         }
 
@@ -36,7 +36,7 @@ export default class Parser {
 
         let derivation = "START";
         while("$" != this.top()){
-
+            
             let top = this.top();
 
 
@@ -60,6 +60,7 @@ export default class Parser {
                     if(a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT){
                         a = this.lexer.nextToken();
                     }
+
                 } else {
                     // error
                     a = this.skipError(a);
@@ -67,6 +68,7 @@ export default class Parser {
                 }
             // if it is not an error 
             }else if( tableLookUp.length > 0 ){
+
                 const nonTerminal = this.stack.pop();
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
@@ -84,8 +86,6 @@ export default class Parser {
 
         }
 
-        //console.log( !(a.type !== TokenType.EOF || this.hasError) );
-
         return !(a.type !== TokenType.EOF || this.hasError);
 
     }
@@ -95,9 +95,11 @@ export default class Parser {
     }
 
     private skipError(lookahead: Token){
-        this.errors += `syntax error at ${lookahead.position}\n`;
+        if(lookahead.type !== TokenType.EOF){
+            this.errors += `syntax error at ${lookahead.position}: for TokenType: ${lookahead.type} and lexeme: ${lookahead.lexeme}\n`;
+        }
         const top = this.top();
-        let token = lookahead;
+        let token = this.lexer.nextToken();
 
         if(token.type === TokenType.EOF || this.paringTable.getFollow(top).includes(token.type)){
             this.stack.pop();
@@ -108,7 +110,11 @@ export default class Parser {
                 && this.paringTable.getFollow(top).includes(token.type))
                 && token.type !== TokenType.EOF
             ){
+                this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
                 token = this.lexer.nextToken();
+                while(token.type === TokenType.BLOCKCMT || token.type === TokenType.INLINECMT){
+                    token = this.lexer.nextToken();
+                }
             }
         }
 
