@@ -14,7 +14,7 @@ testCases.forEach((testCase) => {
 
     if (!parser.parse()) {
         console.log(
-            `The ./test_files/${testCase} contains errors see ./output/${testCase}.outparseerror for more information`,
+            `The ./test_files/${testCase} contains errors see ./output/${testCase}.outsyntaxerror for more information`,
         );
     } else {
         console.log(`The file ./test_files/${testCase} was parsed succefully`);
