@@ -111,7 +111,9 @@ export default class Parser {
                 while (token.type === TokenType.BLOCKCMT || token.type === TokenType.INLINECMT) {
                     token = this.lexer.nextToken();
                 }
-                this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
+                if(TokenType.EOF != token.type){
+                    this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
+                }
             }
         }
 

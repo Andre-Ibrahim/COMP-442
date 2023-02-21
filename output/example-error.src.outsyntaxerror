@@ -39,4 +39,3 @@ syntax error at 52: for TokenType: intnum and lexeme: 7
 syntax error at 52: for TokenType: closepar and lexeme: )
 syntax error at 52: for TokenType: semi and lexeme: ;
 syntax error at 53: for TokenType: closecubr and lexeme: }
-syntax error at 184: for TokenType: $ and lexeme: 
