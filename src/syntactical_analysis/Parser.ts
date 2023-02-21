@@ -31,7 +31,6 @@ export default class Parser {
             a = this.lexer.nextToken();
         }
 
-        const productions = "";
         this.currentDerivation = "START";
         while ("$" != this.top()) {
             let top = this.top();
@@ -65,8 +64,6 @@ export default class Parser {
                 const nonTerminal = this.stack.pop();
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
-
-                //this.derivations += `replace ${nonTerminal}\nwith: ${[...tableLookUp].join(" ")} \nin: ${derivation}\n`;
 
                 this.currentDerivation = this.currentDerivation
                     .replace(nonTerminal ?? "x", `${[...tableLookUp].join(" ")}`)
