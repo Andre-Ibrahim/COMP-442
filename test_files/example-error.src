@@ -9,7 +9,7 @@ function bubbleSort(arr: integer[], size: integer) => void
   i = 0;
   j = 0;
   temp = 0;
-  while (i < n-1) { 
+  while (i < n-1) { ()
     while (j < n-i-1) {
       if (arr[j] > arr[j+1]) 
         then {
@@ -46,9 +46,10 @@ function main() => void
   arr[3] = 12;
   arr[4] = 22;
   arr[5] = 11;
-  arr[6] =,, 90;
+  arr[6] = 90;
   printarray(arr,, 7); 
   bubbleSort(arr, 7);
+    arr[6] =,, 90;
   printarray(arr, 7); 
 }
 

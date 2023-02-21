@@ -93,6 +93,7 @@ export default class Parser {
         }
         const top = this.top();
         let token = lookahead;
+        let first = true;
 
         if (token.type === TokenType.EOF || this.paringTable.getFollow(top).includes(token.type)) {
             const nonTerminal = this.stack.pop();
@@ -107,12 +108,13 @@ export default class Parser {
                 ) &&
                 token.type !== TokenType.EOF
             ) {
+                if(!first){
+                    this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
+                }
+                first = false;
                 token = this.lexer.nextToken();
                 while (token.type === TokenType.BLOCKCMT || token.type === TokenType.INLINECMT) {
                     token = this.lexer.nextToken();
-                }
-                if(TokenType.EOF != token.type){
-                    this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
                 }
             }
         }
