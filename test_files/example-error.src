@@ -49,7 +49,7 @@ function main() => void
   arr[6] = 90;
   printarray(arr,, 7); 
   bubbleSort(arr, 7);
-    arr[6] =,, 90;
+    arr[6] = 90;
   printarray(arr, 7); 
 }
 

@@ -9,16 +9,3 @@ syntax error at 18: for TokenType: openpar and lexeme: (
 syntax error at 18: for TokenType: closepar and lexeme: )
 syntax error at 19: for TokenType: comma and lexeme: ,
 syntax error at 50: for TokenType: comma and lexeme: ,
-syntax error at 52: for TokenType: comma and lexeme: ,
-syntax error at 52: for TokenType: comma and lexeme: ,
-syntax error at 52: for TokenType: comma and lexeme: ,
-syntax error at 52: for TokenType: intnum and lexeme: 90
-syntax error at 52: for TokenType: semi and lexeme: ;
-syntax error at 53: for TokenType: id and lexeme: printarray
-syntax error at 53: for TokenType: openpar and lexeme: (
-syntax error at 53: for TokenType: id and lexeme: arr
-syntax error at 53: for TokenType: comma and lexeme: ,
-syntax error at 53: for TokenType: intnum and lexeme: 7
-syntax error at 53: for TokenType: closepar and lexeme: )
-syntax error at 53: for TokenType: semi and lexeme: ;
-syntax error at 54: for TokenType: closecubr and lexeme: }
