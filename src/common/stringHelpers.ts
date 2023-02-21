@@ -101,11 +101,17 @@ function invalidTokenToString(token: Token): string {
 }
 
 function terminals(): string[] {
-    return Object.values(TokenType);
+    return Object.values(TokenType)
+        .filter((t) => t !== TokenType.INVALIDCHAR)
+        .filter((t) => t !== TokenType.INVALIDFLOAT)
+        .filter((t) => t !== TokenType.INVALIDID)
+        .filter((t) => t !== TokenType.INVALIDBLOCKCMT)
+        .filter((t) => t !== TokenType.INLINECMT)
+        .filter((t) => t !== TokenType.BLOCKCMT);
 }
 
 function grammarToToken(terminal: string): string {
-    switch(terminal){
+    switch (terminal) {
         case "intlit":
             return TokenType.INTNUM;
         case "floatlit":

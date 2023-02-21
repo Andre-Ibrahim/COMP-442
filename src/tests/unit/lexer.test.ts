@@ -227,8 +227,7 @@ describe("Lexer nextToken", () => {
     });
 });
 
-describe("Lexer nextToken edge cases", () =>{
-
+describe("Lexer nextToken edge cases", () => {
     let lexer: AbstractLexer;
 
     it("should return invalid num if num contains characters outside the alphabet", () => {
