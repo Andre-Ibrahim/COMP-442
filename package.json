@@ -18,7 +18,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "npx ts-node ./src/parserdriver.ts",
+    "start": "npx ts-node ./src/astdriver.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint:check": "eslint '*/**/*.{js,jsx,ts,tsx,json}' --max-warnings=0",

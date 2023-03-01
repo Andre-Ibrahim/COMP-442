@@ -1,3 +1,5 @@
+import { Concept, TreeNode } from "../common/Tree";
+import { TreeFactory } from "../common/TreeFactory";
 import { terminals } from "../common/stringHelpers";
 import Lexer from "../lexical_analysis/Lexer";
 import { Token } from "../lexical_analysis/Token";
@@ -8,6 +10,7 @@ import parsingTable from "./parsingTable";
 export default class Parser {
     lexer: Lexer;
     stack: string[] = [];
+    semanticStack: TreeNode[] = [];
     paringTable: parsingTable;
     hasError = false;
     derivations = "";
@@ -25,6 +28,7 @@ export default class Parser {
         this.stack.push("START");
 
         let a = this.lexer.nextToken();
+        let previousToken = a;
 
         // skipping comments
         while (a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT) {
@@ -33,10 +37,17 @@ export default class Parser {
 
         this.currentDerivation = "START";
         while ("$" != this.top()) {
+            
             let top = this.top();
 
             if (top === "&epsilon") {
                 this.stack.pop();
+                top = this.top();
+            }
+
+            while(top.includes("SEMANTIC")){ 
+                const treeFactory = new TreeFactory();
+                this.semanticStack.push(treeFactory.get(this.stack.pop() ?? "", previousToken, this.semanticStack));
                 top = this.top();
             }
 
@@ -45,10 +56,11 @@ export default class Parser {
             }
 
             const tableLookUp = this.paringTable.get(top).get(a.type) ?? [];
-
+            
             if (terminals().includes(top)) {
                 if (top === a.type) {
                     this.stack.pop();
+                    previousToken = a;
                     a = this.lexer.nextToken();
                     // skipping comments
                     if (a.type === TokenType.BLOCKCMT || a.type === TokenType.INLINECMT) {
@@ -60,7 +72,8 @@ export default class Parser {
                     this.hasError = true;
                 }
                 // if it is not an error
-            } else if (tableLookUp.length > 0) {
+            }
+            else if (tableLookUp.length > 0) {
                 const nonTerminal = this.stack.pop();
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
@@ -71,11 +84,14 @@ export default class Parser {
                     .replace("&epsilon", "");
 
                 this.derivations += `START => ${this.currentDerivation}\n`;
-            } else {
+            }
+            else {
                 a = this.skipError(a);
                 this.hasError = true;
             }
         }
+
+        this.semanticStack[0].print();
 
         return !(a.type !== TokenType.EOF || this.hasError);
     }
