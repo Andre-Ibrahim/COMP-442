@@ -9,7 +9,7 @@ export class TreeFactory {
         }
 
         // atomic values
-        if(semantic == "SEMANTICID" || semantic == "SEMANTICTYPE"){
+        if(semantic == "SEMANTICID" || semantic == "SEMANTICTYPE" || semantic == "SEMANTICINTLIT"){
             return this.createLeaf(token);
         }
 
@@ -28,7 +28,7 @@ export class TreeFactory {
 
             semanticStack.pop();
             
-            return this.createSubTree(Concept.SEMANTICARRAYSIZE, children);
+            return this.createSubTree(Concept.SEMANTICARRAYSIZE, [...children].reverse());
         }
 
         if(semantic == Concept.SEMANTICVARDECL){

@@ -46,14 +46,14 @@ export class TreeNode {
         let str = "\n";
       
         node.children.forEach((child) => {
-            str += `${"|".repeat(spaceCount)}${JSON.stringify(child.value)}${this.getTreeString(child, spaceCount + 2)}`
+            str += `${"| ".repeat(spaceCount)}${JSON.stringify(child.value)}${this.getTreeString(child, spaceCount + 1)}`
         })
     
         return str;
       }
     
       print() {
-        console.log(`\n${JSON.stringify(this.value)}${this.getTreeString(this, 2)}`);
+        console.log(`\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`);
       }
     
 }

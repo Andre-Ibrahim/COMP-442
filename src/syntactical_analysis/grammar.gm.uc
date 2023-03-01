@@ -12,8 +12,9 @@ ADDOP -> or   .
 ARITHEXPR -> TERM RIGHTRECARITHEXPR   . 
 
 ARRAYSIZE -> lsqbr ARRAYSIZE2  . 
-ARRAYSIZE2 -> intlit rsqbr  . 
+ARRAYSIZE2 -> intlit SEMANTICINTLIT rsqbr  . 
 ARRAYSIZE2 -> rsqbr  . 
+SEMANTICINTLIT ->   .
 
 ASSIGNOP -> equal   . 
 

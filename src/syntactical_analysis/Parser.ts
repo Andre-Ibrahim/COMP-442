@@ -91,6 +91,7 @@ export default class Parser {
             }
         }
 
+        console.log(this.semanticStack.length);
         this.semanticStack[0].print();
 
         return !(a.type !== TokenType.EOF || this.hasError);

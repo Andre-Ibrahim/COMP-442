@@ -61,16 +61,46 @@ START =>
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON ARRAYSIZE REPTLOCALVARDECL4 SEMANTICARRAYSIZE SEMANTICVARDECL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr ARRAYSIZE2 REPTLOCALVARDECL4 SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr REPTLOCALVARDECL4 SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr ARRAYSIZE REPTLOCALVARDECL4 SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr opensqbr ARRAYSIZE2 REPTLOCALVARDECL4 SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr opensqbr intnum SEMANTICINTLIT closesqbr REPTLOCALVARDECL4 SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr opensqbr intnum SEMANTICINTLIT closesqbr SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr opensqbr intnum SEMANTICINTLIT closesqbr SEMANTICARRAYSIZE SEMANTICVARDECL semi
  closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON SEMANTICARRAYSIZE SEMANTICVARDECL semi
+ localvar id SEMANTICID colon integer SEMANTICTYPE SEMANTICEPSILON opensqbr intnum SEMANTICINTLIT closesqbr opensqbr intnum SEMANTICINTLIT closesqbr SEMANTICARRAYSIZE SEMANTICVARDECL semi
  closecubr
  
