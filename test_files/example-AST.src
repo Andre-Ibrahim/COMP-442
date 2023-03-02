@@ -1,4 +1,4 @@
 function bubbleSort(arr: integer[], size: integer) => void 
 {
-  localvar n    : integer[1][2];
+  return (3+1);
 }

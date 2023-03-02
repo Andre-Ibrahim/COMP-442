@@ -46,6 +46,7 @@ export default class Parser {
             }
 
             while(top.includes("SEMANTIC")){ 
+                console.log("before factory",top);
                 const treeFactory = new TreeFactory();
                 this.semanticStack.push(treeFactory.get(this.stack.pop() ?? "", previousToken, this.semanticStack));
                 top = this.top();
