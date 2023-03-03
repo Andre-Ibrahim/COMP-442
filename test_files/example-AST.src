@@ -1,8 +1,9 @@
 function bubbleSort(arr: integer[], size: integer) => void 
 {
-  localvar n    : integer[1][2];
-  localvar x    : integer;
-  read(test);
-  write(id * test);
-  return(x);
+  test = object[1].something;
+  read(id);
+
+  write(1+2);
+
+  return (id);
 }
