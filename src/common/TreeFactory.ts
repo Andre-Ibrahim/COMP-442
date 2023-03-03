@@ -53,7 +53,10 @@ export class TreeFactory {
         if(semantic == Concept.SEMANTICEXPR){
             const children: TreeNode[] = [];
             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
-            children.push(...[node1].reverse());
+            if(node1.value !== Concept.SEMANTICEPSILON){
+                children.push(...[node1].reverse());
+            }
+            
 
             popUntilEpsilon(children);
 
@@ -62,10 +65,13 @@ export class TreeFactory {
 
         if(semantic == Concept.SEMANTICARITHEXPR){
             const children: TreeNode[] = [];
-            const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
-            children.push(...[node1].reverse());
 
             popUntilEpsilon(children);
+
+             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+             if(node1.value !== Concept.SEMANTICEPSILON){
+                 children.push(...[node1].reverse());
+             }
 
             return this.createSubTree(Concept.SEMANTICARITHEXPR, children);
         }
@@ -86,6 +92,42 @@ export class TreeFactory {
 
             return this.createSubTree(Concept.SEMANTICFACTORINT, children);
         }
+
+        if(semantic == Concept.SEMANTICVARIABLE){
+            const children: TreeNode[] = [];
+
+            // for indiceloop
+            popUntilEpsilon(children);
+
+            const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+
+            console.log(node1);
+
+            if(node1.value !== Concept.SEMANTICEPSILON){
+                children.push(...[node1].reverse());
+            }
+
+            return this.createSubTree(Concept.SEMANTICVARIABLE, children);
+        }
+
+        if(semantic == Concept.SEMANTICFUNCTIONCALL){
+            const children: TreeNode[] = [];
+            const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+            //const node2 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+            children.push(...[node1].reverse());
+
+            return this.createSubTree(Concept.SEMANTICVARIABLE, children);
+        }
+
+        if(semantic == Concept.SEMANTICFACTORCALLORCAR){
+            const children: TreeNode[] = [];
+            
+            popUntilEpsilon(children); 
+            
+            return this.createSubTree(Concept.SEMANTICFACTORCALLORCAR, children);
+        }
+
+
 
         // default return should never run
         console.log("bruv", semantic);

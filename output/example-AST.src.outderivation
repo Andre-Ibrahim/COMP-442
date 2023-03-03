@@ -48,76 +48,161 @@ START =>
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar EXPR closepar SEMANTICRETURNSTAT semi
+ return openpar EXPR closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar ARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar ARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar TERM SEMANTICEPSILON RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON FACTOR RIGHTRECTERM SEMANTICTERM SEMANTICEPSILON RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICFACTORINT RIGHTRECTERM SEMANTICTERM SEMANTICEPSILON RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICFACTORINT SEMANTICTERM SEMANTICEPSILON RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICFACTORINT SEMANTICTERM SEMANTICEPSILON ADDOP SEMANTICTOKEN TERM RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICFACTORINT SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id INDICE INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICFACTORINT SEMANTICSEMANTICEPSILON FACTOR RIGHTRECTERM SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr ARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICintnum SEMANTICTOKEN SEMANTICFACTORINTINT SEMANTICSEMANTICEPSILON FACTOR RIGHTRECTERM SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr TERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICintnum SEMANTICTOKEN SEMANTICFACTORINTINT SEMANTICSEMANTICEPSILON FACTOR SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM RIGHTRECARITHEXPR SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICintnum SEMANTICTOKEN SEMANTICFACTORINTINT SEMANTICSEMANTICEPSILON FACTOR SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM SEMANTICARITHEXPR SEMANTICEPSILON EXPR2 SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr intnum RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICintnum SEMANTICTOKEN SEMANTICFACTORINTINT SEMANTICSEMANTICEPSILON FACTOR SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM SEMANTICARITHEXPR SEMANTICEPSILON SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr intnum RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICintnum SEMANTICTOKEN SEMANTICFACTORINTINT SEMANTICSEMANTICEPSILON FACTOR SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM SEMANTICARITHEXPR SEMANTICEPSILON SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr intnum ADDOP TERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus TERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id FUNCTIONCALLORVARIABLE3 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id FUNCTIONCALLORVARIABLE3 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id closepar semi
  closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- return openpar SEMANTICEPSILON intnum SEMANTICTOKEN SEMANTICintnum SEMANTICTOKEN SEMANTICFACTORINTINT SEMANTICSEMANTICEPSILON FACTOR SEMANTICTERM SEMANTICEPSILON plus SEMANTICTOKEN TERM SEMANTICARITHEXPR SEMANTICEPSILON SEMANTICEXPR closepar SEMANTICRETURNSTAT semi
+ return openpar id opensqbr intnum minus intnum closesqbr dot id dot id closepar semi
  closecubr
  

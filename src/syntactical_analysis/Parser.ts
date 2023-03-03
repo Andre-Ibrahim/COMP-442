@@ -46,7 +46,7 @@ export default class Parser {
             }
 
             while(top.includes("SEMANTIC")){ 
-                console.log("before factory",top);
+                //console.log("before factory",top);
                 const treeFactory = new TreeFactory();
                 this.semanticStack.push(treeFactory.get(this.stack.pop() ?? "", previousToken, this.semanticStack));
                 top = this.top();
@@ -78,9 +78,13 @@ export default class Parser {
                 const nonTerminal = this.stack.pop();
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
+                
+                const tempTableLookUp = tableLookUp.filter((e)=> !e.includes("SEMANTIC"));
+
+                //console.log(tempTableLookUp);
 
                 this.currentDerivation = this.currentDerivation
-                    .replace(nonTerminal ?? "x", `${[...tableLookUp].join(" ")}`)
+                    .replace(nonTerminal ?? "x", `${[...tempTableLookUp].join(" ")}`)
                     .replace(" &epsilon ", " ")
                     .replace("&epsilon", "");
 
