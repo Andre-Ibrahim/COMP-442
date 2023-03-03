@@ -199,6 +199,32 @@ export class TreeFactory {
             return this.createSubTree(Concept.SEMANTICFUNCTIONCALLSTAT, children);
         }
 
+        if(semantic == Concept.SEMANTICRELEXPR){
+            const children: TreeNode[] = [];
+            const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+            const node2 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+            const node3 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+            children.push(...[node1, node2, node3].reverse());
+
+            return this.createSubTree(Concept.SEMANTICRELEXPR, children);
+        }
+
+        if(semantic == Concept.SEMANTICIFSTAT){
+            const children: TreeNode[] = [];
+            
+            popUntilEpsilon(children); 
+
+            return this.createSubTree(Concept.SEMANTICIFSTAT, children);
+        }
+
+        if(semantic == Concept.SEMANTICWHILESTAT){
+            const children: TreeNode[] = [];
+            
+            popUntilEpsilon(children); 
+
+            return this.createSubTree(Concept.SEMANTICWHILESTAT, children);
+        }
+
         // default return should never run
         console.log("bruv", semantic);
 
