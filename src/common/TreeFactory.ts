@@ -150,6 +150,30 @@ export class TreeFactory {
         }
 
 
+        if(semantic == Concept.SEMANTICREADSTAT){
+            const children: TreeNode[] = [];
+            
+            const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
+            children.push(...[node1].reverse());
+            
+            return this.createSubTree(Concept.SEMANTICREADSTAT, children);
+        }
+
+        if(semantic == Concept.SEMANTICSTATBLOCK){
+            const children: TreeNode[] = [];
+            
+            popUntilEpsilon(children); 
+            
+            return this.createSubTree(Concept.SEMANTICSTATBLOCK, children);
+        }
+
+        if(semantic == Concept.SEMANTICFUNCBODY){
+            const children: TreeNode[] = [];
+            
+            popUntilEpsilon(children); 
+            
+            return this.createSubTree(Concept.SEMANTICFUNCBODY, children);
+        }
 
         // default return should never run
         console.log("bruv", semantic);
