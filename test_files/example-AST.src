@@ -1,4 +1,4 @@
 function bubbleSort(arr: integer[], size: integer) => void 
 {
-  return (id[2-1].test.fe);
+  write(id);
 }
