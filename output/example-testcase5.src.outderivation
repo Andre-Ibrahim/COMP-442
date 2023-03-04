@@ -25,9 +25,9 @@ START =>
 START =>
  function id openpar id colon integer opensqbr closesqbr FPARAMSTAIL REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar id colon integer opensqbr closesqbr comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer REPTFPARAMSTAIL4 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
@@ -56,7 +56,7 @@ START =>
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- localvar id colon integer REPTLOCALVARDECL4 semi
+ localvar id colon integer REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -210,7 +210,7 @@ START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
  localvar id colon integer semi
  id assign id semi
- localvar id colon integer REPTLOCALVARDECL4 semi
+ localvar id colon integer REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>

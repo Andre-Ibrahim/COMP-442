@@ -16,6 +16,7 @@ export default class Parser {
     derivations = "";
     currentDerivation = "";
     errors = "";
+    abstractSyntaxTree: TreeNode = new TreeNode(Concept.SEMANTICEPSILON);
 
     constructor(file: string) {
         this.lexer = new Lexer(file);
@@ -97,7 +98,9 @@ export default class Parser {
         }
 
         console.log(this.semanticStack.length);
-        this.semanticStack[0].print();
+        
+        this.semanticStack[0].reverse();
+        this.abstractSyntaxTree = this.semanticStack[0];
 
         return !(a.type !== TokenType.EOF || this.hasError);
     }

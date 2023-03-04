@@ -3,8 +3,10 @@ import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
 import TokenType from "./lexical_analysis/TokenType";
 
-const testCases = [];
+const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
+testCases.push(`example-bubblesort.src`);
+testCases.push(`example-polynomial.src`);
 testCases.push(`example-AST.src`);
 
 testCases.forEach((testCase) => {
@@ -29,6 +31,8 @@ testCases.forEach((testCase) => {
 			.replace(/closecubr/g, "closecubr\n"),
     );
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
+
+    writeFileSync(`./ASTOutput/${testCase}.AST`, parser.abstractSyntaxTree.toString());
 });
 
 // const root = new TreeNode(Concept.SEMANTICARRAYSIZE);

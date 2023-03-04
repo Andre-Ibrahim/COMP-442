@@ -36,7 +36,7 @@ START =>
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
- localvar id colon integer REPTLOCALVARDECL4 semi
+ localvar id colon integer REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -67,7 +67,7 @@ START =>
 START =>
  function id openpar closepar returntype void opencubr
  localvar id colon integer semi
- localvar id colon integer REPTLOCALVARDECL4 semi
+ localvar id colon integer REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>

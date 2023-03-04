@@ -149,7 +149,7 @@ START =>
  closecubr
  semi
  class id isa id opencubr
- private attribute id colon TYPE REPTMEMBERVARDECL4 semi
+ private attribute id colon TYPE REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -159,7 +159,7 @@ START =>
  closecubr
  semi
  class id isa id opencubr
- private attribute id colon float REPTMEMBERVARDECL4 semi
+ private attribute id colon float REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -210,7 +210,7 @@ START =>
  semi
  class id isa id opencubr
  private attribute id colon float semi
- private attribute id colon TYPE REPTMEMBERVARDECL4 semi
+ private attribute id colon TYPE REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -221,7 +221,7 @@ START =>
  semi
  class id isa id opencubr
  private attribute id colon float semi
- private attribute id colon float REPTMEMBERVARDECL4 semi
+ private attribute id colon float REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -337,7 +337,7 @@ START =>
  class id isa id opencubr
  private attribute id colon float semi
  private attribute id colon float semi
- public constructor colon openpar id colon float comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar semi
+ public constructor colon openpar id colon float comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -349,7 +349,7 @@ START =>
  class id isa id opencubr
  private attribute id colon float semi
  private attribute id colon float semi
- public constructor colon openpar id colon float comma id colon float REPTFPARAMSTAIL4 REPTFPARAMS4 closepar semi
+ public constructor colon openpar id colon float comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -652,7 +652,7 @@ START =>
  closecubr
  semi
  class id isa id opencubr
- private attribute id colon TYPE REPTMEMBERVARDECL4 semi
+ private attribute id colon TYPE REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -669,7 +669,7 @@ START =>
  closecubr
  semi
  class id isa id opencubr
- private attribute id colon float REPTMEMBERVARDECL4 semi
+ private attribute id colon float REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -755,7 +755,7 @@ START =>
  semi
  class id isa id opencubr
  private attribute id colon float semi
- private attribute id colon TYPE REPTMEMBERVARDECL4 semi
+ private attribute id colon TYPE REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -773,7 +773,7 @@ START =>
  semi
  class id isa id opencubr
  private attribute id colon float semi
- private attribute id colon float REPTMEMBERVARDECL4 semi
+ private attribute id colon float REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -864,7 +864,7 @@ START =>
  class id isa id opencubr
  private attribute id colon float semi
  private attribute id colon float semi
- private attribute id colon TYPE REPTMEMBERVARDECL4 semi
+ private attribute id colon TYPE REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -883,7 +883,7 @@ START =>
  class id isa id opencubr
  private attribute id colon float semi
  private attribute id colon float semi
- private attribute id colon float REPTMEMBERVARDECL4 semi
+ private attribute id colon float REPTFPARAMS3 semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -1079,7 +1079,7 @@ START =>
  private attribute id colon float semi
  private attribute id colon float semi
  private attribute id colon float semi
- public constructor colon openpar id colon float comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar semi
+ public constructor colon openpar id colon float comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -1099,7 +1099,7 @@ START =>
  private attribute id colon float semi
  private attribute id colon float semi
  private attribute id colon float semi
- public constructor colon openpar id colon float comma id colon float REPTFPARAMSTAIL4 REPTFPARAMS4 closepar semi
+ public constructor colon openpar id colon float comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -1159,7 +1159,7 @@ START =>
  private attribute id colon float semi
  private attribute id colon float semi
  private attribute id colon float semi
- public constructor colon openpar id colon float comma id colon float comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar semi
+ public constructor colon openpar id colon float comma id colon float comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -1179,7 +1179,7 @@ START =>
  private attribute id colon float semi
  private attribute id colon float semi
  private attribute id colon float semi
- public constructor colon openpar id colon float comma id colon float comma id colon float REPTFPARAMSTAIL4 REPTFPARAMS4 closepar semi
+ public constructor colon openpar id colon float comma id colon float comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar semi
  REPTCLASSDECL4 closecubr
  semi
  REPTSTART0
@@ -2430,7 +2430,7 @@ START =>
  return openpar intnum closepar semi
  closecubr
  function id scopeop id openpar id colon float closepar returntype float opencubr
- localvar id colon float REPTLOCALVARDECL4 semi
+ localvar id colon float REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5941,7 +5941,7 @@ START =>
  id assign id mult id plus id semi
  return openpar id closepar semi
  closecubr
- function id scopeop constructor openpar id colon float comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
+ function id scopeop constructor openpar id colon float comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
 START =>
  class id opencubr
  public function id colon openpar id colon float closepar returntype float semi
@@ -5972,7 +5972,7 @@ START =>
  id assign id mult id plus id semi
  return openpar id closepar semi
  closecubr
- function id scopeop constructor openpar id colon float comma id colon float REPTFPARAMSTAIL4 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
+ function id scopeop constructor openpar id colon float comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
 START =>
  class id opencubr
  public function id colon openpar id colon float closepar returntype float semi
@@ -6065,7 +6065,7 @@ START =>
  id assign id mult id plus id semi
  return openpar id closepar semi
  closecubr
- function id scopeop constructor openpar id colon float comma id colon float comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
+ function id scopeop constructor openpar id colon float comma id colon float comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
 START =>
  class id opencubr
  public function id colon openpar id colon float closepar returntype float semi
@@ -6096,7 +6096,7 @@ START =>
  id assign id mult id plus id semi
  return openpar id closepar semi
  closecubr
- function id scopeop constructor openpar id colon float comma id colon float comma id colon float REPTFPARAMSTAIL4 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
+ function id scopeop constructor openpar id colon float comma id colon float comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
 START =>
  class id opencubr
  public function id colon openpar id colon float closepar returntype float semi
@@ -8717,7 +8717,7 @@ START =>
  id assign id semi
  id assign id semi
  closecubr
- function id scopeop constructor openpar id colon float comma id colon TYPE REPTFPARAMSTAIL4 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
+ function id scopeop constructor openpar id colon float comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
 START =>
  class id opencubr
  public function id colon openpar id colon float closepar returntype float semi
@@ -8753,7 +8753,7 @@ START =>
  id assign id semi
  id assign id semi
  closecubr
- function id scopeop constructor openpar id colon float comma id colon float REPTFPARAMSTAIL4 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
+ function id scopeop constructor openpar id colon float comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar FUNCBODY REPTSTART0
 START =>
  class id opencubr
  public function id colon openpar id colon float closepar returntype float semi
@@ -11210,7 +11210,7 @@ START =>
  id assign id semi
  closecubr
  function id scopeop id openpar id colon float closepar returntype float opencubr
- localvar id colon float REPTLOCALVARDECL4 semi
+ localvar id colon float REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>

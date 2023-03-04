@@ -51,9 +51,27 @@ export class TreeNode {
     
         return str;
       }
+
+      reverseTree = (node: TreeNode) => {
+
+        node.children = new Map(Array.from(node.children, (a) => a).reverse());
+      
+        node.children.forEach((child) => {
+          this.reverseTree(child);
+        })
+
+      }
+
+      reverse(){
+        this.reverseTree(this);
+      }
     
       print() {
         console.log(`\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`);
+      }
+
+      toString(): string{
+        return (`\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`);
       }
     
 }

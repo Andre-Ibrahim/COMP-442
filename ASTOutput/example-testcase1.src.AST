@@ -1,0 +1,134 @@
+
+"SEMANTICCLASSDECLORFUNCDEF"
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"CLASS1","position":22}
+| | {"type":"private","lexeme":"private","position":23}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"a","position":23}
+| | | {"type":"float","lexeme":"float","position":23}
+| | | "SEMANTICARRAYSIZE"
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"CLASS2","position":26}
+| | {"type":"public","lexeme":"public","position":27}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"a","position":27}
+| | | {"type":"float","lexeme":"float","position":27}
+| | | "SEMANTICARRAYSIZE"
+| | {"type":"public","lexeme":"public","position":28}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"a","position":28}
+| | | {"type":"float","lexeme":"float","position":28}
+| | | "SEMANTICARRAYSIZE"
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"CLASS3","position":31}
+| | {"type":"public","lexeme":"public","position":32}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | {"type":"id","lexeme":"evaluate","position":32}
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"x","position":32}
+| | | | {"type":"float","lexeme":"float","position":32}
+| | | | "SEMANTICARRAYSIZE"
+| | | {"type":"float","lexeme":"float","position":32}
+| | {"type":"public","lexeme":"public","position":33}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | {"type":"id","lexeme":"evaluate","position":33}
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"x","position":33}
+| | | | {"type":"float","lexeme":"float","position":33}
+| | | | "SEMANTICARRAYSIZE"
+| | | {"type":"float","lexeme":"float","position":33}
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"CLASS4","position":36}
+| | "SEMANTICISA"
+| | | {"type":"id","lexeme":"CLASS2","position":36}
+| | | {"type":"id","lexeme":"CLASS3","position":36}
+| | {"type":"private","lexeme":"private","position":37}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | {"type":"id","lexeme":"evaluate","position":37}
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"x","position":37}
+| | | | {"type":"float","lexeme":"float","position":37}
+| | | | "SEMANTICARRAYSIZE"
+| | | {"type":"float","lexeme":"float","position":37}
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"EMPTYCLASS","position":40}
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"POLYNOMIAL","position":42}
+| | {"type":"public","lexeme":"public","position":43}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | {"type":"id","lexeme":"evaluate","position":43}
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"x","position":43}
+| | | | {"type":"float","lexeme":"float","position":43}
+| | | | "SEMANTICARRAYSIZE"
+| | | {"type":"float","lexeme":"float","position":43}
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"LINEAR","position":46}
+| | "SEMANTICISA"
+| | | {"type":"id","lexeme":"POLYNOMIAL","position":46}
+| | {"type":"private","lexeme":"private","position":47}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"a","position":47}
+| | | {"type":"float","lexeme":"float","position":47}
+| | | "SEMANTICARRAYSIZE"
+| | {"type":"private","lexeme":"private","position":48}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"b","position":48}
+| | | {"type":"float","lexeme":"float","position":48}
+| | | "SEMANTICARRAYSIZE"
+| | {"type":"public","lexeme":"public","position":49}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"A","position":49}
+| | | | {"type":"float","lexeme":"float","position":49}
+| | | | "SEMANTICARRAYSIZE"
+| | | | {"type":"id","lexeme":"B","position":49}
+| | | | {"type":"float","lexeme":"float","position":49}
+| | | | "SEMANTICARRAYSIZE"
+| | {"type":"public","lexeme":"public","position":50}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | {"type":"id","lexeme":"evaluate","position":50}
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"x","position":50}
+| | | | {"type":"float","lexeme":"float","position":50}
+| | | | "SEMANTICARRAYSIZE"
+| | | {"type":"float","lexeme":"float","position":50}
+| "SEMANTICCLASSDECL"
+| | {"type":"id","lexeme":"QUADRATIC","position":53}
+| | "SEMANTICISA"
+| | | {"type":"id","lexeme":"POLYNOMIAL","position":53}
+| | {"type":"private","lexeme":"private","position":54}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"a","position":54}
+| | | {"type":"float","lexeme":"float","position":54}
+| | | "SEMANTICARRAYSIZE"
+| | {"type":"private","lexeme":"private","position":55}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"b","position":55}
+| | | {"type":"float","lexeme":"float","position":55}
+| | | "SEMANTICARRAYSIZE"
+| | {"type":"private","lexeme":"private","position":56}
+| | "SEMANTICMEMBERVARDECL"
+| | | {"type":"id","lexeme":"c","position":56}
+| | | {"type":"float","lexeme":"float","position":56}
+| | | "SEMANTICARRAYSIZE"
+| | {"type":"public","lexeme":"public","position":57}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"A","position":57}
+| | | | {"type":"float","lexeme":"float","position":57}
+| | | | "SEMANTICARRAYSIZE"
+| | | | {"type":"id","lexeme":"B","position":57}
+| | | | {"type":"float","lexeme":"float","position":57}
+| | | | "SEMANTICARRAYSIZE"
+| | | | {"type":"id","lexeme":"C","position":57}
+| | | | {"type":"float","lexeme":"float","position":57}
+| | | | "SEMANTICARRAYSIZE"
+| | {"type":"private","lexeme":"private","position":58}
+| | "SEMANTICMEMBERFUNCDECL"
+| | | {"type":"id","lexeme":"evaluate","position":58}
+| | | "SEMANTICFPARAMS"
+| | | | {"type":"id","lexeme":"x","position":58}
+| | | | {"type":"float","lexeme":"float","position":58}
+| | | | "SEMANTICARRAYSIZE"
+| | | {"type":"float","lexeme":"float","position":58}
