@@ -32,7 +32,7 @@ testCases.forEach((testCase) => {
     );
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
 
-    writeFileSync(`./ASTOutput/${testCase}.AST`, parser.abstractSyntaxTree.toString());
+    writeFileSync(`./ASTOutput/${testCase}.outast`, parser.abstractSyntaxTree.toString());
 });
 
 // const root = new TreeNode(Concept.SEMANTICARRAYSIZE);
