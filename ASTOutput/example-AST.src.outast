@@ -7,28 +7,10 @@
 | | | | {"type":"id","lexeme":"arr","position":1}
 | | | | {"type":"integer","lexeme":"integer","position":1}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":1}
 | | | | {"type":"integer","lexeme":"integer","position":1}
 | | | | "SEMANTICARRAYSIZE"
 | | | {"type":"void","lexeme":"void","position":1}
 | | "SEMANTICFUNCBODY"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"x","position":3}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":3}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"id","position":3}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | | | | | {"type":"intnum","lexeme":"1","position":3}
-| | | | | | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | | | | | {"type":"intnum","lexeme":"2","position":3}

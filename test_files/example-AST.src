@@ -1,5 +1,4 @@
-function variableIdNest(arr: integer[], size: integer) => void 
+function variableIdNest(arr: integer[][], size: integer) => void 
 {
-  x = id[1][2];
 
 } 

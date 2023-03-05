@@ -7,6 +7,7 @@
 | | | | {"type":"id","lexeme":"arr","position":19}
 | | | | {"type":"integer","lexeme":"integer","position":19}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":19}
 | | | | {"type":"integer","lexeme":"integer","position":19}
 | | | | "SEMANTICARRAYSIZE"

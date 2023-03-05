@@ -7,6 +7,7 @@
 | | | | {"type":"id","lexeme":"arr","position":2}
 | | | | {"type":"integer","lexeme":"integer","position":2}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":2}
 | | | | {"type":"integer","lexeme":"integer","position":2}
 | | | | "SEMANTICARRAYSIZE"
@@ -265,6 +266,7 @@
 | | | | {"type":"id","lexeme":"arr","position":28}
 | | | | {"type":"integer","lexeme":"integer","position":28}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":28}
 | | | | {"type":"integer","lexeme":"integer","position":28}
 | | | | "SEMANTICARRAYSIZE"

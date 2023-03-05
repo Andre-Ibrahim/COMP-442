@@ -7,6 +7,7 @@
 | | | | {"type":"id","lexeme":"arr","position":29}
 | | | | {"type":"integer","lexeme":"integer","position":29}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":29}
 | | | | {"type":"integer","lexeme":"integer","position":29}
 | | | | "SEMANTICARRAYSIZE"
@@ -23,6 +24,7 @@
 | | | | {"type":"id","lexeme":"arr","position":34}
 | | | | {"type":"integer","lexeme":"integer","position":34}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":34}
 | | | | {"type":"integer","lexeme":"integer","position":34}
 | | | | "SEMANTICARRAYSIZE"
@@ -81,6 +83,8 @@
 | | | | {"type":"id","lexeme":"arr","position":48}
 | | | | {"type":"integer","lexeme":"integer","position":48}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"id","lexeme":"size","position":48}
 | | | | {"type":"float","lexeme":"float","position":48}
 | | | | "SEMANTICARRAYSIZE"
@@ -209,6 +213,7 @@
 | | | | {"type":"id","lexeme":"x","position":73}
 | | | | {"type":"float","lexeme":"float","position":73}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | {"type":"integer","lexeme":"integer","position":73}
 | | "SEMANTICFUNCBODY"
 | | | "SEMANTICVARDECL"
@@ -272,6 +277,8 @@
 | | | | {"type":"id","lexeme":"x","position":85}
 | | | | {"type":"float","lexeme":"float","position":85}
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | {"type":"float","lexeme":"float","position":85}
 | | "SEMANTICFUNCBODY"
 | | | "SEMANTICVARDECL"

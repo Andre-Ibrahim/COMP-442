@@ -52,6 +52,11 @@ export class TreeFactory {
             return this.createSubTree(Concept.SEMANTICRETURNSTAT, children);
         }
 
+        if (semantic == Concept.SEMANTICEMPTYARRAYSIZE) {
+
+            return this.createSubTree(Concept.SEMANTICEMPTYARRAYSIZE, []);
+        }
+
         if (semantic == Concept.SEMANTICEXPR) {
             const children: TreeNode[] = [];
 

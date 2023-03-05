@@ -23,6 +23,7 @@
 | | | | {"type":"id","lexeme":"i","position":16}
 | | | "SEMANTICVARDECL"
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"integer","lexeme":"integer","position":17}
 | | | | {"type":"id","lexeme":"i","position":17}
 | | | "SEMANTICVARDECL"
@@ -32,6 +33,7 @@
 | | | | {"type":"id","lexeme":"i","position":18}
 | | | "SEMANTICVARDECL"
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"float","lexeme":"float","position":19}
 | | | | {"type":"id","lexeme":"i","position":19}
 | | | "SEMANTICVARDECL"
@@ -41,14 +43,19 @@
 | | | | {"type":"id","lexeme":"i","position":20}
 | | | "SEMANTICVARDECL"
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"integer","lexeme":"integer","position":21}
 | | | | {"type":"id","lexeme":"i","position":21}
 | | | "SEMANTICVARDECL"
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | {"type":"float","lexeme":"float","position":22}
 | | | | {"type":"id","lexeme":"i","position":22}
 | | | "SEMANTICVARDECL"
 | | | | "SEMANTICARRAYSIZE"
+| | | | | "SEMANTICEMPTYARRAYSIZE"
 | | | | | {"type":"intnum","lexeme":"2","position":23}
 | | | | {"type":"float","lexeme":"float","position":23}
 | | | | {"type":"id","lexeme":"i","position":23}
