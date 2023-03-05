@@ -28,11 +28,6 @@
 | | | | | | | | | | | | "SEMANTICTERM"
 | | | | | | | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | | | | | | | {"type":"intnum","lexeme":"1","position":3}
-| | | | | | | | | "SEMANTICFUNCTIONCALL"
-| | | | | | | | | | {"type":"id","lexeme":"id","position":3}
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"id","position":3}
-| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | | | | | "SEMANTICARITHEXPR"
 | | | | | | | | | | | | "SEMANTICTERM"
 | | | | | | | | | | | | | "SEMANTICFACTOR"
