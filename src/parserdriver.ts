@@ -26,7 +26,7 @@ testCases.forEach((testCase) => {
             .replace(/=>/g, "=>\n")
             .replace(/opencubr/g, "opencubr\n")
             .replace(/semi/g, "semi\n")
-			.replace(/closecubr/g, "closecubr\n"),
+            .replace(/closecubr/g, "closecubr\n"),
     );
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
 });

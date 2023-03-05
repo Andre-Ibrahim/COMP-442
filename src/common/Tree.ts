@@ -2,17 +2,17 @@ import { Token } from "../lexical_analysis/Token";
 
 const uniqueId = (() => {
     function* uniqueIdGenerator() {
-      let id = Date.now();
-      
-      while(true) {
-        yield id++;
-      }
+        let id = Date.now();
+
+        while (true) {
+            yield id++;
+        }
     }
-    
+
     const gen = uniqueIdGenerator();
-    
+
     return () => gen.next().value;
-  })()
+})();
 
 export class TreeNode {
     value: Token | Concept;
@@ -20,7 +20,7 @@ export class TreeNode {
     parentNode: TreeNode | null = null;
     id = uniqueId();
 
-    constructor(value: Token | Concept){
+    constructor(value: Token | Concept) {
         this.value = value;
     }
 
@@ -32,7 +32,7 @@ export class TreeNode {
         const newNode = new TreeNode(token);
         this.children.set(newNode.id, newNode);
         newNode.parentNode = this;
-        
+
         return newNode;
     }
 
@@ -44,38 +44,37 @@ export class TreeNode {
 
     getTreeString = (node: TreeNode, spaceCount = 0) => {
         let str = "\n";
-      
+
         node.children.forEach((child) => {
-            str += `${"| ".repeat(spaceCount)}${JSON.stringify(child.value)}${this.getTreeString(child, spaceCount + 1)}`
-        })
-    
+            str += `${"| ".repeat(spaceCount)}${JSON.stringify(child.value)}${this.getTreeString(
+                child,
+                spaceCount + 1,
+            )}`;
+        });
+
         return str;
-      }
+    };
 
-      reverseTree = (node: TreeNode) => {
-
+    reverseTree = (node: TreeNode) => {
         node.children = new Map(Array.from(node.children, (a) => a).reverse());
-      
+
         node.children.forEach((child) => {
-          this.reverseTree(child);
-        })
+            this.reverseTree(child);
+        });
+    };
 
-      }
-
-      reverse(){
+    reverse() {
         this.reverseTree(this);
-      }
-    
-      print() {
+    }
+
+    print() {
         console.log(`\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`);
-      }
+    }
 
-      toString(): string{
-        return (`\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`);
-      }
-    
+    toString(): string {
+        return `\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`;
+    }
 }
-
 
 export enum Concept {
     SEMANTICVARDECL = "SEMANTICVARDECL",
@@ -88,7 +87,7 @@ export enum Concept {
     SEMANTICFACTOR = "SEMANTICFACTOR",
     SEMANTICVARIABLE = "SEMANTICVARIABLE",
     SEMANTICFACTORCALLORVAR = "SEMANTICFACTORCALLORVAR",
-    SEMANTICFUNCTIONCALL= "SEMANTICFUNCTIONCALL",
+    SEMANTICFUNCTIONCALL = "SEMANTICFUNCTIONCALL",
     SEMANTICAPARAMS = "SEMANTICAPARAMS",
     SEMANTICWRITESTAT = "SEMANTICWRITESTAT",
     SEMANTICREADSTAT = "SEMANTICREADSTAT",
@@ -96,19 +95,17 @@ export enum Concept {
     SEMANTICFUNCBODY = "SEMANTICFUNCBODY",
     SEMANTICINDICELIST = "SEMANTICINDICELIST",
     SEMANTICASSIGNSTAT = "SEMANTICASSIGNSTAT",
-    SEMANTICFUNCTIONCALLSTAT= "SEMANTICFUNCTIONCALLSTAT",
+    SEMANTICFUNCTIONCALLSTAT = "SEMANTICFUNCTIONCALLSTAT",
     SEMANTICRELEXPR = "SEMANTICRELEXPR",
     SEMANTICIFSTAT = "SEMANTICIFSTAT",
     SEMANTICWHILESTAT = "SEMANTICWHILESTAT",
     SEMANTICFUNCDEF = "SEMANTICFUNCDEF",
     SEMANTICFUNCARROW = "SEMANTICFUNCARROW",
-    SEMANTICFUNCCONSTSTRUCT ="SEMANTICFUNCCONSTSTRUCT",
+    SEMANTICFUNCCONSTSTRUCT = "SEMANTICFUNCCONSTSTRUCT",
     SEMANTICFPARAMS = "SEMANTICFPARAMS",
     SEMANTICCLASSDECL = "SEMANTICCLASSDECL",
     SEMANTICMEMBERFUNCDECL = "SEMANTICMEMBERFUNCDECL",
     SEMANTICMEMBERVARDECL = "SEMANTICMEMBERVARDECL",
     SEMANTICISA = "SEMANTICISA",
-    SEMANTICCLASSDECLORFUNCDEF = "SEMANTICCLASSDECLORFUNCDEF"
-
-
+    SEMANTICCLASSDECLORFUNCDEF = "SEMANTICCLASSDECLORFUNCDEF",
 }

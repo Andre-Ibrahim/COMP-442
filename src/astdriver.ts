@@ -1,7 +1,5 @@
-import { Concept, TreeNode } from "./common/Tree";
 import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
-import TokenType from "./lexical_analysis/TokenType";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -28,7 +26,7 @@ testCases.forEach((testCase) => {
             .replace(/=>/g, "=>\n")
             .replace(/opencubr/g, "opencubr\n")
             .replace(/semi/g, "semi\n")
-			.replace(/closecubr/g, "closecubr\n"),
+            .replace(/closecubr/g, "closecubr\n"),
     );
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
 

@@ -38,7 +38,6 @@ export default class Parser {
 
         this.currentDerivation = "START";
         while ("$" != this.top()) {
-            
             let top = this.top();
 
             if (top === "&epsilon") {
@@ -46,7 +45,7 @@ export default class Parser {
                 top = this.top();
             }
 
-            while(top.includes("SEMANTIC")){ 
+            while (top.includes("SEMANTIC")) {
                 //console.log("before factory",top);
                 const treeFactory = new TreeFactory();
                 this.semanticStack.push(treeFactory.get(this.stack.pop() ?? "", previousToken, this.semanticStack));
@@ -58,7 +57,7 @@ export default class Parser {
             }
 
             const tableLookUp = this.paringTable.get(top).get(a.type) ?? [];
-            
+
             if (terminals().includes(top)) {
                 if (top === a.type) {
                     this.stack.pop();
@@ -74,13 +73,12 @@ export default class Parser {
                     this.hasError = true;
                 }
                 // if it is not an error
-            }
-            else if (tableLookUp.length > 0) {
+            } else if (tableLookUp.length > 0) {
                 const nonTerminal = this.stack.pop();
                 this.stack.push(...tableLookUp.reverse());
                 tableLookUp.reverse();
-                
-                const tempTableLookUp = tableLookUp.filter((e)=> !e.includes("SEMANTIC"));
+
+                const tempTableLookUp = tableLookUp.filter((e) => !e.includes("SEMANTIC"));
 
                 //console.log(tempTableLookUp);
 
@@ -90,15 +88,14 @@ export default class Parser {
                     .replace("&epsilon", "");
 
                 this.derivations += `START => ${this.currentDerivation}\n`;
-            }
-            else {
+            } else {
                 a = this.skipError(a);
                 this.hasError = true;
             }
         }
 
         console.log(this.semanticStack.length);
-        
+
         this.semanticStack[0].reverse();
         this.abstractSyntaxTree = this.semanticStack[0];
 
@@ -120,7 +117,6 @@ export default class Parser {
         if (token.type === TokenType.EOF || this.paringTable.getFollow(top).includes(token.type)) {
             const nonTerminal = this.stack.pop();
             this.currentDerivation = this.currentDerivation.replace(nonTerminal ?? "x", ``);
-
         } else {
             while (
                 !this.paringTable.getFirst(top).includes(token.type) &&
@@ -130,7 +126,7 @@ export default class Parser {
                 ) &&
                 token.type !== TokenType.EOF
             ) {
-                if(!first){
+                if (!first) {
                     this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
                 }
                 first = false;
