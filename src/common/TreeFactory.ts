@@ -117,12 +117,12 @@ export class TreeFactory {
             return this.createSubTree(Concept.SEMANTICFUNCTIONCALL, children);
         }
 
-        if(semantic == Concept.SEMANTICFACTORCALLORCAR){
+        if(semantic == Concept.SEMANTICFACTORCALLORVAR){
             const children: TreeNode[] = [];
             
             popUntilEpsilon(children); 
             
-            return this.createSubTree(Concept.SEMANTICFACTORCALLORCAR, children);
+            return this.createSubTree(Concept.SEMANTICFACTORCALLORVAR, children);
         }
 
         if(semantic == Concept.SEMANTICAPARAMS){

@@ -20,7 +20,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"id","position":3}
 | | | | | | | | | | "SEMANTICINDICELIST"

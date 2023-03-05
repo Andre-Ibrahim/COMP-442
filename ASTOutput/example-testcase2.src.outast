@@ -40,7 +40,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"n","position":38}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -49,7 +49,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"n","position":40}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -136,7 +136,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":58}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -167,7 +167,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":64}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -198,7 +198,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":70}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -229,7 +229,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":76}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -261,7 +261,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":82}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -292,7 +292,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":88}
 | | | | | | | | | | "SEMANTICINDICELIST"
@@ -325,7 +325,7 @@
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | "SEMANTICFACTORCALLORVAR"
 | | | | | | | | | "SEMANTICVARIABLE"
 | | | | | | | | | | {"type":"id","lexeme":"i","position":94}
 | | | | | | | | | | "SEMANTICINDICELIST"
