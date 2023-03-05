@@ -52,13 +52,8 @@ export class TreeFactory {
 
         if(semantic == Concept.SEMANTICEXPR){
             const children: TreeNode[] = [];
-            const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
-            if(node1.value !== Concept.SEMANTICEPSILON){
-                children.push(...[node1].reverse());
-            }
             
-
-            //popUntilEpsilon(children);
+            popUntilEpsilon(children);
 
             return this.createSubTree(Concept.SEMANTICEXPR, children);
         }

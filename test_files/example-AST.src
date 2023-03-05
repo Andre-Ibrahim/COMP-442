@@ -1,23 +1,5 @@
 function variableIdNest(arr: integer[], size: integer) => void 
 {
-  localvar x: integer;
-  x = x;
-  x = x.x;
-  n = x.x();
-  x = x.x(1.0);
-  x = x.x(x);
-  x = x(x).x;
-  x = x(x).x();
-  x = x(x).x(1.0);
-  x = x.x[x];
-  x = x.x[1*9];
-  x = x[x].x;
-  x = x[x].x[x];
-  x = x.x[x][x];
-  x = x[x][x].x;
-  x = x[x][x].x[x][x];
-  x = x(x).x[x];
-  x = x(x).x[x][x];
-  
-  x = x[a][b][10 / 9 ][c];
+  x = 1 >= 2;
+
 } 

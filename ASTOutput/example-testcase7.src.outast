@@ -20,10 +20,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"i","position":25}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"i","position":25}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":26}
 | | | | "SEMANTICINDICELIST"
@@ -31,10 +32,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":26}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":26}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | {"type":"plus","lexeme":"+","position":26}
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -46,10 +48,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":27}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":27}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | {"type":"minus","lexeme":"-","position":27}
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -61,10 +64,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":28}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":28}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | {"type":"mult","lexeme":"*","position":28}
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | {"type":"intnum","lexeme":"10","position":28}
@@ -75,10 +79,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":29}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":29}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | {"type":"div","lexeme":"/","position":29}
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | {"type":"intnum","lexeme":"10","position":29}
@@ -86,14 +91,15 @@
 | | | | {"type":"id","lexeme":"x","position":30}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":30}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":30}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | {"type":"gt","lexeme":">","position":30}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":30}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | {"type":"gt","lexeme":">","position":30}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -102,14 +108,15 @@
 | | | | {"type":"id","lexeme":"x","position":31}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":31}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":31}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | {"type":"lt","lexeme":"<","position":31}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":31}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | {"type":"lt","lexeme":"<","position":31}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -118,14 +125,15 @@
 | | | | {"type":"id","lexeme":"x","position":32}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":32}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":32}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | {"type":"geq","lexeme":">=","position":32}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":32}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | {"type":"geq","lexeme":">=","position":32}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -134,14 +142,15 @@
 | | | | {"type":"id","lexeme":"x","position":33}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":33}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":33}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | {"type":"leq","lexeme":"<=","position":33}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":33}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | {"type":"leq","lexeme":"<=","position":33}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -150,14 +159,15 @@
 | | | | {"type":"id","lexeme":"x","position":34}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":34}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":34}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | {"type":"noteq","lexeme":"<>","position":34}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":34}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | {"type":"noteq","lexeme":"<>","position":34}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -169,10 +179,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":35}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":35}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | {"type":"plus","lexeme":"+","position":35}
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -187,10 +198,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":36}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":36}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | {"type":"minus","lexeme":"-","position":36}
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -205,10 +217,11 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":37}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":37}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | {"type":"mult","lexeme":"*","position":37}
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | {"type":"intnum","lexeme":"10","position":37}
@@ -219,20 +232,21 @@
 | | | | {"type":"id","lexeme":"x","position":38}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":38}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":38}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | | | {"type":"mult","lexeme":"*","position":38}
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | {"type":"intnum","lexeme":"6","position":38}
-| | | | | | {"type":"div","lexeme":"/","position":38}
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | {"type":"intnum","lexeme":"44","position":38}
-| | | | {"type":"gt","lexeme":">","position":38}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":38}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | {"type":"mult","lexeme":"*","position":38}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | {"type":"intnum","lexeme":"6","position":38}
+| | | | | | | {"type":"div","lexeme":"/","position":38}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | {"type":"intnum","lexeme":"44","position":38}
+| | | | | {"type":"gt","lexeme":">","position":38}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
@@ -241,26 +255,28 @@
 | | | | {"type":"id","lexeme":"x","position":39}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":39}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | {"type":"id","lexeme":"x","position":39}
-| | | | | | | | "SEMANTICINDICELIST"
-| | | | | | {"type":"mult","lexeme":"*","position":39}
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | {"type":"intnum","lexeme":"6","position":39}
-| | | | | | {"type":"div","lexeme":"/","position":39}
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | {"type":"intnum","lexeme":"44","position":39}
-| | | | {"type":"gt","lexeme":">","position":39}
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"i","position":39}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":39}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | {"type":"mult","lexeme":"*","position":39}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | {"type":"intnum","lexeme":"6","position":39}
+| | | | | | | {"type":"div","lexeme":"/","position":39}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | {"type":"intnum","lexeme":"44","position":39}
+| | | | | {"type":"gt","lexeme":">","position":39}
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"i","position":39}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":40}
 | | | | "SEMANTICINDICELIST"
@@ -271,10 +287,11 @@
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | "SEMANTICARITHEXPR"
 | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | {"type":"id","lexeme":"x","position":40}
-| | | | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | | | {"type":"id","lexeme":"x","position":40}
+| | | | | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | | | {"type":"plus","lexeme":"+","position":40}
 | | | | | | | | | "SEMANTICTERM"
 | | | | | | | | | | "SEMANTICFACTOR"
@@ -292,10 +309,11 @@
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | "SEMANTICARITHEXPR"
 | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | {"type":"id","lexeme":"x","position":41}
-| | | | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | | | {"type":"id","lexeme":"x","position":41}
+| | | | | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | | | {"type":"plus","lexeme":"+","position":41}
 | | | | | | | | | "SEMANTICTERM"
 | | | | | | | | | | "SEMANTICFACTOR"
@@ -304,10 +322,11 @@
 | | | | | | | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | | | | | | | {"type":"intnum","lexeme":"8","position":41}
 | | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":41}
-| | | | | | | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":41}
-| | | | | | | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":41}
+| | | | | | | | | | | | | | | | "SEMANTICINDICELIST"
 | | | | | | | | | | {"type":"div","lexeme":"/","position":41}
 | | | | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":41}
@@ -320,10 +339,11 @@
 | | | | | | "SEMANTICTERM"
 | | | | | | | {"type":"minus","lexeme":"-","position":42}
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":42}
-| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | {"type":"id","lexeme":"x","position":42}
+| | | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":43}
 | | | | "SEMANTICINDICELIST"
@@ -339,10 +359,11 @@
 | | | | | | "SEMANTICTERM"
 | | | | | | | {"type":"minus","lexeme":"-","position":43}
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":43}
-| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | {"type":"id","lexeme":"x","position":43}
+| | | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":44}
 | | | | "SEMANTICINDICELIST"
@@ -356,10 +377,11 @@
 | | | | | | "SEMANTICTERM"
 | | | | | | | {"type":"minus","lexeme":"-","position":44}
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":44}
-| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | {"type":"id","lexeme":"x","position":44}
+| | | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":45}
 | | | | "SEMANTICINDICELIST"
@@ -375,10 +397,11 @@
 | | | | | | | {"type":"minus","lexeme":"-","position":45}
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | {"type":"id","lexeme":"x","position":45}
-| | | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | | {"type":"id","lexeme":"x","position":45}
+| | | | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":46}
 | | | | "SEMANTICINDICELIST"
@@ -391,10 +414,11 @@
 | | | | | | | {"type":"mult","lexeme":"*","position":46}
 | | | | | | | {"type":"minus","lexeme":"-","position":46}
 | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":46}
-| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | {"type":"id","lexeme":"x","position":46}
+| | | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":47}
 | | | | "SEMANTICINDICELIST"
@@ -409,67 +433,71 @@
 | | | | | | | | {"type":"floatnum","lexeme":"0.99","position":47}
 | | | | | | {"type":"plus","lexeme":"+","position":47}
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"i","position":47}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"i","position":47}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":48}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":48}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | {"type":"not","lexeme":"not","position":48}
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | {"type":"intnum","lexeme":"8","position":48}
-| | | | {"type":"gt","lexeme":">","position":48}
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"i","position":48}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | {"type":"not","lexeme":"not","position":48}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | {"type":"intnum","lexeme":"8","position":48}
+| | | | | {"type":"gt","lexeme":">","position":48}
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"i","position":48}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":49}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":49}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | {"type":"intnum","lexeme":"7","position":49}
-| | | | {"type":"gt","lexeme":">","position":49}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | {"type":"intnum","lexeme":"7","position":49}
+| | | | | {"type":"gt","lexeme":">","position":49}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | {"type":"intnum","lexeme":"0","position":49}
 | | | | | | | {"type":"and","lexeme":"and","position":49}
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"i","position":49}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"i","position":49}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":50}
 | | | | "SEMANTICINDICELIST"
 | | | | {"type":"assign","lexeme":"=","position":50}
-| | | | "SEMANTICARITHEXPR"
-| | | | | "SEMANTICTERM"
-| | | | | | "SEMANTICFACTOR"
-| | | | | | | {"type":"intnum","lexeme":"7","position":50}
-| | | | {"type":"gt","lexeme":">","position":50}
 | | | | "SEMANTICEXPR"
+| | | | | "SEMANTICARITHEXPR"
+| | | | | | "SEMANTICTERM"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | {"type":"intnum","lexeme":"7","position":50}
+| | | | | {"type":"gt","lexeme":">","position":50}
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | {"type":"intnum","lexeme":"0","position":50}
 | | | | | | {"type":"or","lexeme":"or","position":50}
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"i","position":50}
-| | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"i","position":50}
+| | | | | | | | | | "SEMANTICINDICELIST"
 | | | "SEMANTICASSIGNSTAT"
 | | | | {"type":"id","lexeme":"x","position":51}
 | | | | "SEMANTICINDICELIST"
@@ -477,29 +505,32 @@
 | | | | "SEMANTICEXPR"
 | | | | | "SEMANTICARITHEXPR"
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":51}
-| | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":51}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":51}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | | | "SEMANTICARITHEXPR"
+| | | | | | | | | | | | "SEMANTICTERM"
+| | | | | | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":51}
 | | | | | | | {"type":"mult","lexeme":"*","position":51}
 | | | | | | | "SEMANTICFACTOR"
 | | | | | | | | {"type":"intnum","lexeme":"9","position":51}
 | | | | | | {"type":"plus","lexeme":"+","position":51}
 | | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | {"type":"id","lexeme":"x","position":51}
-| | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | | | "SEMANTICFACTORCALLORCAR"
-| | | | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":51}
-| | | | | | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | | | | | | {"type":"mult","lexeme":"*","position":51}
-| | | | | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | | | | {"type":"intnum","lexeme":"2","position":51}
+| | | | | | | "SEMANTICFACTOR"
+| | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | {"type":"id","lexeme":"x","position":51}
+| | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | | | "SEMANTICARITHEXPR"
+| | | | | | | | | | | | "SEMANTICTERM"
+| | | | | | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | | | | | "SEMANTICFACTORCALLORCAR"
+| | | | | | | | | | | | | | | "SEMANTICVARIABLE"
+| | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":51}
+| | | | | | | | | | | | | | | | "SEMANTICINDICELIST"
+| | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":51}
+| | | | | | | | | | | | | "SEMANTICFACTOR"
+| | | | | | | | | | | | | | {"type":"intnum","lexeme":"2","position":51}
