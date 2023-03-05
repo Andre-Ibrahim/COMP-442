@@ -17,6 +17,7 @@ testCases.forEach((testCase) => {
             `The ./test_files/${testCase} contains errors see ./output/${testCase}.outsyntaxerror for more information`,
         );
     } else {
+        console.log("Semantic stack size: ", parser.semanticStack.length);
         console.log(`The file ./test_files/${testCase} was parsed succefully`);
     }
 

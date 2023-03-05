@@ -93,11 +93,10 @@ export default class Parser {
                 this.hasError = true;
             }
         }
-
-        console.log(this.semanticStack.length);
-
-        this.semanticStack[0].reverse();
-        this.abstractSyntaxTree = this.semanticStack[0];
+        
+        const ast = this.semanticStack[0] ?? new TreeNode(Concept.SEMANTICEPSILON);
+        ast.reverse();
+        this.abstractSyntaxTree = ast;
 
         return !(a.type !== TokenType.EOF || this.hasError);
     }
