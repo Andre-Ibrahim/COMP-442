@@ -1,16 +1,38 @@
 
-"SEMANTICCLASSDECLORFUNCDEF"
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"variableIdNest","position":1}
-| | "SEMANTICFUNCARROW"
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"arr","position":1}
-| | | | {"type":"integer","lexeme":"integer","position":1}
-| | | | "SEMANTICARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | {"type":"id","lexeme":"size","position":1}
-| | | | {"type":"integer","lexeme":"integer","position":1}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"void","lexeme":"void","position":1}
-| | "SEMANTICFUNCBODY"
+CLASSDECLORFUNCDEF
+| FUNCDEF
+| | {type:id,lexeme:variableIdNest,position:1}
+| | FUNCARROW
+| | | FPARAMS
+| | | | {type:id,lexeme:arr,position:1}
+| | | | {type:integer,lexeme:integer,position:1}
+| | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | {type:id,lexeme:size,position:1}
+| | | | {type:integer,lexeme:integer,position:1}
+| | | | ARRAYSIZE
+| | | {type:void,lexeme:void,position:1}
+| | FUNCBODY
+| | | WHILESTAT
+| | | | RELEXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {type:intnum,lexeme:9,position:3}
+| | | | | {type:lt,lexeme:<,position:3}
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:i,position:3}
+| | | | | | | | | | INDICELIST
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:x,position:5}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:5}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {type:intnum,lexeme:3,position:5}

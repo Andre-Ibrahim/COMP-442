@@ -46,7 +46,7 @@ export class TreeNode {
         let str = "\n";
 
         node.children.forEach((child) => {
-            str += `${"| ".repeat(spaceCount)}${JSON.stringify(child.value)}${this.getTreeString(
+            str += `${"| ".repeat(spaceCount)}${JSON.stringify(child.value).replace("SEMANTIC", "").replace(/\"/g, "")}${this.getTreeString(
                 child,
                 spaceCount + 1,
             )}`;
@@ -72,7 +72,7 @@ export class TreeNode {
     }
 
     toString(): string {
-        return `\n${JSON.stringify(this.value)}${this.getTreeString(this, 1)}`;
+        return `\n${JSON.stringify(this.value).replace("SEMANTIC", "").replace(/\"/g, "")}${this.getTreeString(this, 1)}`;
     }
 }
 

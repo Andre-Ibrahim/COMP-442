@@ -1,67 +1,67 @@
 
-"SEMANTICCLASSDECLORFUNCDEF"
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"variableDeclarations","position":13}
-| | "SEMANTICFUNCARROW"
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":13}
-| | | | {"type":"integer","lexeme":"integer","position":13}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"void","lexeme":"void","position":13}
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"integer","lexeme":"integer","position":14}
-| | | | {"type":"id","lexeme":"i","position":14}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"float","lexeme":"float","position":15}
-| | | | {"type":"id","lexeme":"i","position":15}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"id","position":16}
-| | | | {"type":"id","lexeme":"i","position":16}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | {"type":"integer","lexeme":"integer","position":17}
-| | | | {"type":"id","lexeme":"i","position":17}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | {"type":"intnum","lexeme":"10","position":18}
-| | | | {"type":"integer","lexeme":"integer","position":18}
-| | | | {"type":"id","lexeme":"i","position":18}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | {"type":"float","lexeme":"float","position":19}
-| | | | {"type":"id","lexeme":"i","position":19}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | {"type":"intnum","lexeme":"10","position":20}
-| | | | {"type":"float","lexeme":"float","position":20}
-| | | | {"type":"id","lexeme":"i","position":20}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | {"type":"integer","lexeme":"integer","position":21}
-| | | | {"type":"id","lexeme":"i","position":21}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | {"type":"float","lexeme":"float","position":22}
-| | | | {"type":"id","lexeme":"i","position":22}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | "SEMANTICEMPTYARRAYSIZE"
-| | | | | {"type":"intnum","lexeme":"2","position":23}
-| | | | {"type":"float","lexeme":"float","position":23}
-| | | | {"type":"id","lexeme":"i","position":23}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | | {"type":"intnum","lexeme":"3","position":24}
-| | | | | {"type":"intnum","lexeme":"9","position":24}
-| | | | {"type":"integer","lexeme":"integer","position":24}
-| | | | {"type":"id","lexeme":"i","position":24}
+CLASSDECLORFUNCDEF
+| FUNCDEF
+| | {type:id,lexeme:variableDeclarations,position:13}
+| | FUNCARROW
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:13}
+| | | | {type:integer,lexeme:integer,position:13}
+| | | | ARRAYSIZE
+| | | {type:void,lexeme:void,position:13}
+| | FUNCBODY
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | {type:integer,lexeme:integer,position:14}
+| | | | {type:id,lexeme:i,position:14}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | {type:float,lexeme:float,position:15}
+| | | | {type:id,lexeme:i,position:15}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:id,position:16}
+| | | | {type:id,lexeme:i,position:16}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | {type:integer,lexeme:integer,position:17}
+| | | | {type:id,lexeme:i,position:17}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | {type:intnum,lexeme:10,position:18}
+| | | | {type:integer,lexeme:integer,position:18}
+| | | | {type:id,lexeme:i,position:18}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | {type:float,lexeme:float,position:19}
+| | | | {type:id,lexeme:i,position:19}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | {type:intnum,lexeme:10,position:20}
+| | | | {type:float,lexeme:float,position:20}
+| | | | {type:id,lexeme:i,position:20}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | {type:integer,lexeme:integer,position:21}
+| | | | {type:id,lexeme:i,position:21}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | {type:float,lexeme:float,position:22}
+| | | | {type:id,lexeme:i,position:22}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
+| | | | | {type:intnum,lexeme:2,position:23}
+| | | | {type:float,lexeme:float,position:23}
+| | | | {type:id,lexeme:i,position:23}
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | | {type:intnum,lexeme:3,position:24}
+| | | | | {type:intnum,lexeme:9,position:24}
+| | | | {type:integer,lexeme:integer,position:24}
+| | | | {type:id,lexeme:i,position:24}

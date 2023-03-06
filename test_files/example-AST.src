@@ -1,4 +1,6 @@
-function variableIdNest(arr: integer[][], size: integer) => void 
+function variableIdNest(arr: integer[], size: integer) => void 
 {
+  while(i < 9);
 
+  x = 3;
 } 

@@ -1,429 +1,429 @@
 
-"SEMANTICCLASSDECLORFUNCDEF"
-| "SEMANTICCLASSDECL"
-| | {"type":"id","lexeme":"POLYNOMIAL","position":2}
-| | {"type":"public","lexeme":"public","position":3}
-| | "SEMANTICMEMBERFUNCDECL"
-| | | {"type":"id","lexeme":"evaluate","position":3}
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":3}
-| | | | {"type":"float","lexeme":"float","position":3}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"float","lexeme":"float","position":3}
-| "SEMANTICCLASSDECL"
-| | {"type":"id","lexeme":"LINEAR","position":6}
-| | "SEMANTICISA"
-| | | {"type":"id","lexeme":"POLYNOMIAL","position":6}
-| | {"type":"private","lexeme":"private","position":7}
-| | "SEMANTICMEMBERVARDECL"
-| | | {"type":"id","lexeme":"a","position":7}
-| | | {"type":"float","lexeme":"float","position":7}
-| | | "SEMANTICARRAYSIZE"
-| | {"type":"private","lexeme":"private","position":8}
-| | "SEMANTICMEMBERVARDECL"
-| | | {"type":"id","lexeme":"b","position":8}
-| | | {"type":"float","lexeme":"float","position":8}
-| | | "SEMANTICARRAYSIZE"
-| | {"type":"public","lexeme":"public","position":9}
-| | "SEMANTICMEMBERFUNCDECL"
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"A","position":9}
-| | | | {"type":"float","lexeme":"float","position":9}
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"B","position":9}
-| | | | {"type":"float","lexeme":"float","position":9}
-| | | | "SEMANTICARRAYSIZE"
-| | {"type":"public","lexeme":"public","position":10}
-| | "SEMANTICMEMBERFUNCDECL"
-| | | {"type":"id","lexeme":"evaluate","position":10}
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":10}
-| | | | {"type":"float","lexeme":"float","position":10}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"float","lexeme":"float","position":10}
-| "SEMANTICCLASSDECL"
-| | {"type":"id","lexeme":"QUADRATIC","position":13}
-| | "SEMANTICISA"
-| | | {"type":"id","lexeme":"POLYNOMIAL","position":13}
-| | {"type":"private","lexeme":"private","position":14}
-| | "SEMANTICMEMBERVARDECL"
-| | | {"type":"id","lexeme":"a","position":14}
-| | | {"type":"float","lexeme":"float","position":14}
-| | | "SEMANTICARRAYSIZE"
-| | {"type":"private","lexeme":"private","position":15}
-| | "SEMANTICMEMBERVARDECL"
-| | | {"type":"id","lexeme":"b","position":15}
-| | | {"type":"float","lexeme":"float","position":15}
-| | | "SEMANTICARRAYSIZE"
-| | {"type":"private","lexeme":"private","position":16}
-| | "SEMANTICMEMBERVARDECL"
-| | | {"type":"id","lexeme":"c","position":16}
-| | | {"type":"float","lexeme":"float","position":16}
-| | | "SEMANTICARRAYSIZE"
-| | {"type":"public","lexeme":"public","position":17}
-| | "SEMANTICMEMBERFUNCDECL"
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"A","position":17}
-| | | | {"type":"float","lexeme":"float","position":17}
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"B","position":17}
-| | | | {"type":"float","lexeme":"float","position":17}
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"C","position":17}
-| | | | {"type":"float","lexeme":"float","position":17}
-| | | | "SEMANTICARRAYSIZE"
-| | {"type":"public","lexeme":"public","position":18}
-| | "SEMANTICMEMBERFUNCDECL"
-| | | {"type":"id","lexeme":"evaluate","position":18}
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":18}
-| | | | {"type":"float","lexeme":"float","position":18}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"float","lexeme":"float","position":18}
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"POLYNOMIAL","position":22}
-| | "SEMANTICFUNCARROW"
-| | | {"type":"id","lexeme":"evaluate","position":22}
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":22}
-| | | | {"type":"float","lexeme":"float","position":22}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"float","lexeme":"float","position":22}
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICRETURNSTAT"
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | {"type":"intnum","lexeme":"0","position":24}
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"QUADRATIC","position":27}
-| | "SEMANTICFUNCARROW"
-| | | {"type":"id","lexeme":"evaluate","position":27}
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":27}
-| | | | {"type":"float","lexeme":"float","position":27}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"float","lexeme":"float","position":27}
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"float","lexeme":"float","position":29}
-| | | | {"type":"id","lexeme":"result","position":29}
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"result","position":31}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":31}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"a","position":31}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"result","position":32}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":32}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"result","position":32}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | {"type":"mult","lexeme":"*","position":32}
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":32}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | {"type":"plus","lexeme":"+","position":32}
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"b","position":32}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"result","position":33}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":33}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"result","position":33}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | {"type":"mult","lexeme":"*","position":33}
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":33}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | {"type":"plus","lexeme":"+","position":33}
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"c","position":33}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICRETURNSTAT"
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"result","position":34}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"QUADRATIC","position":37}
-| | "SEMANTICFUNCCONSTSTRUCT"
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"A","position":37}
-| | | | {"type":"float","lexeme":"float","position":37}
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"B","position":37}
-| | | | {"type":"float","lexeme":"float","position":37}
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"C","position":37}
-| | | | {"type":"float","lexeme":"float","position":37}
-| | | | "SEMANTICARRAYSIZE"
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"a","position":39}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":39}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"A","position":39}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"b","position":40}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":40}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"B","position":40}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"c","position":41}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":41}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"C","position":41}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"LINEAR","position":44}
-| | "SEMANTICFUNCCONSTSTRUCT"
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"A","position":44}
-| | | | {"type":"float","lexeme":"float","position":44}
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"id","lexeme":"B","position":44}
-| | | | {"type":"float","lexeme":"float","position":44}
-| | | | "SEMANTICARRAYSIZE"
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"a","position":46}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":46}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"A","position":46}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"b","position":47}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":47}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"B","position":47}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"LINEAR","position":50}
-| | "SEMANTICFUNCARROW"
-| | | {"type":"id","lexeme":"evaluate","position":50}
-| | | "SEMANTICFPARAMS"
-| | | | {"type":"id","lexeme":"x","position":50}
-| | | | {"type":"float","lexeme":"float","position":50}
-| | | | "SEMANTICARRAYSIZE"
-| | | {"type":"float","lexeme":"float","position":50}
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICARRAYSIZE"
-| | | | {"type":"float","lexeme":"float","position":52}
-| | | | {"type":"id","lexeme":"result","position":52}
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"result","position":53}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":53}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | {"type":"floatnum","lexeme":"0.0","position":53}
-| | | "SEMANTICASSIGNSTAT"
-| | | | {"type":"id","lexeme":"result","position":54}
-| | | | "SEMANTICINDICELIST"
-| | | | {"type":"assign","lexeme":"=","position":54}
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"a","position":54}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | {"type":"mult","lexeme":"*","position":54}
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"x","position":54}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | {"type":"plus","lexeme":"+","position":54}
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"b","position":54}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | "SEMANTICRETURNSTAT"
-| | | | "SEMANTICEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"result","position":55}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| "SEMANTICFUNCDEF"
-| | {"type":"id","lexeme":"main","position":59}
-| | "SEMANTICFUNCARROW"
-| | | {"type":"void","lexeme":"void","position":59}
-| | "SEMANTICFUNCBODY"
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICAPARAMS"
-| | | | | "SEMANTICEXPR"
-| | | | | | "SEMANTICARITHEXPR"
-| | | | | | | "SEMANTICTERM"
-| | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | {"type":"intnum","lexeme":"2","position":61}
-| | | | | "SEMANTICEXPR"
-| | | | | | "SEMANTICARITHEXPR"
-| | | | | | | "SEMANTICTERM"
-| | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | {"type":"floatnum","lexeme":"3.5","position":61}
-| | | | {"type":"id","lexeme":"LINEAR","position":61}
-| | | | {"type":"id","lexeme":"f1","position":61}
-| | | "SEMANTICVARDECL"
-| | | | "SEMANTICAPARAMS"
-| | | | | "SEMANTICEXPR"
-| | | | | | "SEMANTICARITHEXPR"
-| | | | | | | "SEMANTICTERM"
-| | | | | | | | {"type":"minus","lexeme":"-","position":62}
-| | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | {"type":"floatnum","lexeme":"2.0","position":62}
-| | | | | "SEMANTICEXPR"
-| | | | | | "SEMANTICARITHEXPR"
-| | | | | | | "SEMANTICTERM"
-| | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | {"type":"floatnum","lexeme":"1.0","position":62}
-| | | | | "SEMANTICEXPR"
-| | | | | | "SEMANTICARITHEXPR"
-| | | | | | | "SEMANTICTERM"
-| | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | {"type":"floatnum","lexeme":"0.0","position":62}
-| | | | {"type":"id","lexeme":"QUADRATIC","position":62}
-| | | | {"type":"id","lexeme":"f2","position":62}
-| | | "SEMANTICWHILESTAT"
-| | | | "SEMANTICRELEXPR"
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | {"type":"intnum","lexeme":"10","position":64}
-| | | | | {"type":"leq","lexeme":"<=","position":64}
-| | | | | "SEMANTICARITHEXPR"
-| | | | | | "SEMANTICTERM"
-| | | | | | | "SEMANTICFACTOR"
-| | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | {"type":"id","lexeme":"counter","position":64}
-| | | | | | | | | | "SEMANTICINDICELIST"
-| | | | "SEMANTICSTATBLOCK"
-| | | | | "SEMANTICWRITESTAT"
-| | | | | | "SEMANTICEXPR"
-| | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | "SEMANTICTERM"
-| | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | {"type":"id","lexeme":"counter","position":66}
-| | | | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | "SEMANTICWRITESTAT"
-| | | | | | "SEMANTICEXPR"
-| | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | "SEMANTICTERM"
-| | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | {"type":"id","lexeme":"f1","position":67}
-| | | | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | | | | | "SEMANTICFUNCTIONCALL"
-| | | | | | | | | | | | {"type":"id","lexeme":"evaluate","position":67}
-| | | | | | | | | | | | "SEMANTICAPARAMS"
-| | | | | | | | | | | | | "SEMANTICEXPR"
-| | | | | | | | | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | | | | | | | | {"type":"id","lexeme":"counter","position":67}
-| | | | | | | | | | | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | "SEMANTICWRITESTAT"
-| | | | | | "SEMANTICEXPR"
-| | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | "SEMANTICTERM"
-| | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | {"type":"id","lexeme":"f2","position":68}
-| | | | | | | | | | | | "SEMANTICINDICELIST"
-| | | | | | | | | | | "SEMANTICFUNCTIONCALL"
-| | | | | | | | | | | | {"type":"id","lexeme":"evaluate","position":68}
-| | | | | | | | | | | | "SEMANTICAPARAMS"
-| | | | | | | | | | | | | "SEMANTICEXPR"
-| | | | | | | | | | | | | | "SEMANTICARITHEXPR"
-| | | | | | | | | | | | | | | "SEMANTICTERM"
-| | | | | | | | | | | | | | | | "SEMANTICFACTOR"
-| | | | | | | | | | | | | | | | | "SEMANTICFACTORCALLORVAR"
-| | | | | | | | | | | | | | | | | | "SEMANTICVARIABLE"
-| | | | | | | | | | | | | | | | | | | {"type":"id","lexeme":"counter","position":68}
-| | | | | | | | | | | | | | | | | | | "SEMANTICINDICELIST"
+CLASSDECLORFUNCDEF
+| CLASSDECL
+| | {type:id,lexeme:POLYNOMIAL,position:2}
+| | {type:public,lexeme:public,position:3}
+| | MEMBERFUNCDECL
+| | | {type:id,lexeme:evaluate,position:3}
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:3}
+| | | | {type:float,lexeme:float,position:3}
+| | | | ARRAYSIZE
+| | | {type:float,lexeme:float,position:3}
+| CLASSDECL
+| | {type:id,lexeme:LINEAR,position:6}
+| | ISA
+| | | {type:id,lexeme:POLYNOMIAL,position:6}
+| | {type:private,lexeme:private,position:7}
+| | MEMBERVARDECL
+| | | {type:id,lexeme:a,position:7}
+| | | {type:float,lexeme:float,position:7}
+| | | ARRAYSIZE
+| | {type:private,lexeme:private,position:8}
+| | MEMBERVARDECL
+| | | {type:id,lexeme:b,position:8}
+| | | {type:float,lexeme:float,position:8}
+| | | ARRAYSIZE
+| | {type:public,lexeme:public,position:9}
+| | MEMBERFUNCDECL
+| | | FPARAMS
+| | | | {type:id,lexeme:A,position:9}
+| | | | {type:float,lexeme:float,position:9}
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:B,position:9}
+| | | | {type:float,lexeme:float,position:9}
+| | | | ARRAYSIZE
+| | {type:public,lexeme:public,position:10}
+| | MEMBERFUNCDECL
+| | | {type:id,lexeme:evaluate,position:10}
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:10}
+| | | | {type:float,lexeme:float,position:10}
+| | | | ARRAYSIZE
+| | | {type:float,lexeme:float,position:10}
+| CLASSDECL
+| | {type:id,lexeme:QUADRATIC,position:13}
+| | ISA
+| | | {type:id,lexeme:POLYNOMIAL,position:13}
+| | {type:private,lexeme:private,position:14}
+| | MEMBERVARDECL
+| | | {type:id,lexeme:a,position:14}
+| | | {type:float,lexeme:float,position:14}
+| | | ARRAYSIZE
+| | {type:private,lexeme:private,position:15}
+| | MEMBERVARDECL
+| | | {type:id,lexeme:b,position:15}
+| | | {type:float,lexeme:float,position:15}
+| | | ARRAYSIZE
+| | {type:private,lexeme:private,position:16}
+| | MEMBERVARDECL
+| | | {type:id,lexeme:c,position:16}
+| | | {type:float,lexeme:float,position:16}
+| | | ARRAYSIZE
+| | {type:public,lexeme:public,position:17}
+| | MEMBERFUNCDECL
+| | | FPARAMS
+| | | | {type:id,lexeme:A,position:17}
+| | | | {type:float,lexeme:float,position:17}
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:B,position:17}
+| | | | {type:float,lexeme:float,position:17}
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:C,position:17}
+| | | | {type:float,lexeme:float,position:17}
+| | | | ARRAYSIZE
+| | {type:public,lexeme:public,position:18}
+| | MEMBERFUNCDECL
+| | | {type:id,lexeme:evaluate,position:18}
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:18}
+| | | | {type:float,lexeme:float,position:18}
+| | | | ARRAYSIZE
+| | | {type:float,lexeme:float,position:18}
+| FUNCDEF
+| | {type:id,lexeme:POLYNOMIAL,position:22}
+| | FUNCARROW
+| | | {type:id,lexeme:evaluate,position:22}
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:22}
+| | | | {type:float,lexeme:float,position:22}
+| | | | ARRAYSIZE
+| | | {type:float,lexeme:float,position:22}
+| | FUNCBODY
+| | | RETURNSTAT
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {type:intnum,lexeme:0,position:24}
+| FUNCDEF
+| | {type:id,lexeme:QUADRATIC,position:27}
+| | FUNCARROW
+| | | {type:id,lexeme:evaluate,position:27}
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:27}
+| | | | {type:float,lexeme:float,position:27}
+| | | | ARRAYSIZE
+| | | {type:float,lexeme:float,position:27}
+| | FUNCBODY
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | {type:float,lexeme:float,position:29}
+| | | | {type:id,lexeme:result,position:29}
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:result,position:31}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:31}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:a,position:31}
+| | | | | | | | | | INDICELIST
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:result,position:32}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:32}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:result,position:32}
+| | | | | | | | | | INDICELIST
+| | | | | | | {type:mult,lexeme:*,position:32}
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:x,position:32}
+| | | | | | | | | | INDICELIST
+| | | | | | {type:plus,lexeme:+,position:32}
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:b,position:32}
+| | | | | | | | | | INDICELIST
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:result,position:33}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:33}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:result,position:33}
+| | | | | | | | | | INDICELIST
+| | | | | | | {type:mult,lexeme:*,position:33}
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:x,position:33}
+| | | | | | | | | | INDICELIST
+| | | | | | {type:plus,lexeme:+,position:33}
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:c,position:33}
+| | | | | | | | | | INDICELIST
+| | | RETURNSTAT
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:result,position:34}
+| | | | | | | | | | INDICELIST
+| FUNCDEF
+| | {type:id,lexeme:QUADRATIC,position:37}
+| | FUNCCONSTSTRUCT
+| | | FPARAMS
+| | | | {type:id,lexeme:A,position:37}
+| | | | {type:float,lexeme:float,position:37}
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:B,position:37}
+| | | | {type:float,lexeme:float,position:37}
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:C,position:37}
+| | | | {type:float,lexeme:float,position:37}
+| | | | ARRAYSIZE
+| | FUNCBODY
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:a,position:39}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:39}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:A,position:39}
+| | | | | | | | | | INDICELIST
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:b,position:40}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:40}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:B,position:40}
+| | | | | | | | | | INDICELIST
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:c,position:41}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:41}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:C,position:41}
+| | | | | | | | | | INDICELIST
+| FUNCDEF
+| | {type:id,lexeme:LINEAR,position:44}
+| | FUNCCONSTSTRUCT
+| | | FPARAMS
+| | | | {type:id,lexeme:A,position:44}
+| | | | {type:float,lexeme:float,position:44}
+| | | | ARRAYSIZE
+| | | | {type:id,lexeme:B,position:44}
+| | | | {type:float,lexeme:float,position:44}
+| | | | ARRAYSIZE
+| | FUNCBODY
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:a,position:46}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:46}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:A,position:46}
+| | | | | | | | | | INDICELIST
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:b,position:47}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:47}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:B,position:47}
+| | | | | | | | | | INDICELIST
+| FUNCDEF
+| | {type:id,lexeme:LINEAR,position:50}
+| | FUNCARROW
+| | | {type:id,lexeme:evaluate,position:50}
+| | | FPARAMS
+| | | | {type:id,lexeme:x,position:50}
+| | | | {type:float,lexeme:float,position:50}
+| | | | ARRAYSIZE
+| | | {type:float,lexeme:float,position:50}
+| | FUNCBODY
+| | | VARDECL
+| | | | ARRAYSIZE
+| | | | {type:float,lexeme:float,position:52}
+| | | | {type:id,lexeme:result,position:52}
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:result,position:53}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:53}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {type:floatnum,lexeme:0.0,position:53}
+| | | ASSIGNSTAT
+| | | | {type:id,lexeme:result,position:54}
+| | | | INDICELIST
+| | | | {type:assign,lexeme:=,position:54}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:a,position:54}
+| | | | | | | | | | INDICELIST
+| | | | | | | {type:mult,lexeme:*,position:54}
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:x,position:54}
+| | | | | | | | | | INDICELIST
+| | | | | | {type:plus,lexeme:+,position:54}
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:b,position:54}
+| | | | | | | | | | INDICELIST
+| | | RETURNSTAT
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:result,position:55}
+| | | | | | | | | | INDICELIST
+| FUNCDEF
+| | {type:id,lexeme:main,position:59}
+| | FUNCARROW
+| | | {type:void,lexeme:void,position:59}
+| | FUNCBODY
+| | | VARDECL
+| | | | APARAMS
+| | | | | EXPR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {type:intnum,lexeme:2,position:61}
+| | | | | EXPR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {type:floatnum,lexeme:3.5,position:61}
+| | | | {type:id,lexeme:LINEAR,position:61}
+| | | | {type:id,lexeme:f1,position:61}
+| | | VARDECL
+| | | | APARAMS
+| | | | | EXPR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | {type:minus,lexeme:-,position:62}
+| | | | | | | | FACTOR
+| | | | | | | | | FACTOR
+| | | | | | | | | | {type:floatnum,lexeme:2.0,position:62}
+| | | | | EXPR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {type:floatnum,lexeme:1.0,position:62}
+| | | | | EXPR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {type:floatnum,lexeme:0.0,position:62}
+| | | | {type:id,lexeme:QUADRATIC,position:62}
+| | | | {type:id,lexeme:f2,position:62}
+| | | WHILESTAT
+| | | | RELEXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {type:intnum,lexeme:10,position:64}
+| | | | | {type:leq,lexeme:<=,position:64}
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {type:id,lexeme:counter,position:64}
+| | | | | | | | | | INDICELIST
+| | | | STATBLOCK
+| | | | | WRITESTAT
+| | | | | | EXPR
+| | | | | | | ARITHEXPR
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | {type:id,lexeme:counter,position:66}
+| | | | | | | | | | | | INDICELIST
+| | | | | WRITESTAT
+| | | | | | EXPR
+| | | | | | | ARITHEXPR
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | {type:id,lexeme:f1,position:67}
+| | | | | | | | | | | | INDICELIST
+| | | | | | | | | | | FUNCTIONCALL
+| | | | | | | | | | | | {type:id,lexeme:evaluate,position:67}
+| | | | | | | | | | | | APARAMS
+| | | | | | | | | | | | | EXPR
+| | | | | | | | | | | | | | ARITHEXPR
+| | | | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | | | | | | | {type:id,lexeme:counter,position:67}
+| | | | | | | | | | | | | | | | | | | INDICELIST
+| | | | | WRITESTAT
+| | | | | | EXPR
+| | | | | | | ARITHEXPR
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | {type:id,lexeme:f2,position:68}
+| | | | | | | | | | | | INDICELIST
+| | | | | | | | | | | FUNCTIONCALL
+| | | | | | | | | | | | {type:id,lexeme:evaluate,position:68}
+| | | | | | | | | | | | APARAMS
+| | | | | | | | | | | | | EXPR
+| | | | | | | | | | | | | | ARITHEXPR
+| | | | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | | | | | | | {type:id,lexeme:counter,position:68}
+| | | | | | | | | | | | | | | | | | | INDICELIST
