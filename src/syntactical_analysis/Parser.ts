@@ -93,7 +93,7 @@ export default class Parser {
                 this.hasError = true;
             }
         }
-        
+
         const ast = this.semanticStack[0] ?? new TreeNode(Concept.SEMANTICEPSILON);
         ast.reverse();
         this.abstractSyntaxTree = ast;

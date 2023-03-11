@@ -308,6 +308,8 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | | | | VARIABLE
 | | | | | | | | | | | | | | | | | {type:id,lexeme:i,position:29}
 | | | | | | | | | | | | | | | | | INDICELIST
+| | | | | | | | | | | | | | | | FUNCTIONCALL
+| | | | | | | | | | | | | | | | | {type:id,lexeme:i,position:29}
 | | | FUNCTIONCALLSTAT
 | | | | {type:id,lexeme:funcCall,position:30}
 | | | | APARAMS

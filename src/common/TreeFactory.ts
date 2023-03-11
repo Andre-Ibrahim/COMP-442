@@ -53,7 +53,6 @@ export class TreeFactory {
         }
 
         if (semantic == Concept.SEMANTICEMPTYARRAYSIZE) {
-
             return this.createSubTree(Concept.SEMANTICEMPTYARRAYSIZE, []);
         }
 

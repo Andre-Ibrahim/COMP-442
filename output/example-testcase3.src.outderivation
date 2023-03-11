@@ -5047,7 +5047,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id FUNCTIONCALLORVARIABLE3 RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5061,7 +5061,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar APARAMS closepar FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5075,7 +5075,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5089,7 +5089,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar RIGHTRECTERM RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5103,7 +5103,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar RIGHTRECARITHEXPR closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5117,7 +5117,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5131,7 +5131,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5145,7 +5145,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5159,7 +5159,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar AFTERFUNCTIONCALL semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5173,7 +5173,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5187,7 +5187,49 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign intnum semi
+ id openpar id closepar  semi
+ id openpar id comma id closepar  semi
+ id openpar id comma id comma id comma id comma id comma id closepar  semi
+ id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id comma id closepar  semi
+ id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
+ id openpar id comma id openpar id comma id comma id closepar closepar  semi
+ id assign id openpar intnum closepar semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar AFTERFUNCTIONCALL semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign intnum semi
+ id openpar id closepar  semi
+ id openpar id comma id closepar  semi
+ id openpar id comma id comma id comma id comma id comma id closepar  semi
+ id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id comma id closepar  semi
+ id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
+ id openpar id comma id openpar id comma id comma id closepar closepar  semi
+ id assign id openpar intnum closepar semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign intnum semi
+ id openpar id closepar  semi
+ id openpar id comma id closepar  semi
+ id openpar id comma id comma id comma id comma id comma id closepar  semi
+ id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id comma id closepar  semi
+ id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
+ id openpar id comma id openpar id comma id comma id closepar closepar  semi
+ id assign id openpar intnum closepar semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5201,7 +5243,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -5215,7 +5257,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  FUNCTIONCALLORASIGNSTAT semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5230,7 +5272,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id ISFUNCTIONCALLORVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5245,7 +5287,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar APARAMS closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5260,7 +5302,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar EXPR REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5275,7 +5317,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar ARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5290,7 +5332,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar TERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5305,7 +5347,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5320,7 +5362,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5335,7 +5377,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5350,7 +5392,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5365,7 +5407,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5380,7 +5422,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5395,7 +5437,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5410,7 +5452,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id ADDOP TERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5425,7 +5467,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus TERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5440,7 +5482,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5455,7 +5497,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5470,7 +5512,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum RIGHTRECARITHEXPR EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5485,7 +5527,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum EXPR2 REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5500,7 +5542,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum REPTAPARAMS1 closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5515,7 +5557,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5530,7 +5572,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5545,7 +5587,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5560,7 +5602,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -5575,7 +5617,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar EXPR closepar semi
  REPTFUNCBODY1 closecubr
@@ -5591,7 +5633,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar ARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5607,7 +5649,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5623,7 +5665,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5639,7 +5681,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5655,7 +5697,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5671,7 +5713,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5687,7 +5729,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5703,7 +5745,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5719,7 +5761,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5735,7 +5777,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
@@ -5751,7 +5793,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id closepar semi
  REPTFUNCBODY1 closecubr
@@ -5767,7 +5809,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id closepar semi
  closecubr
@@ -5783,7 +5825,7 @@ START =>
  id openpar intnum comma floatnum comma id opensqbr id closesqbr comma id comma id opensqbr intnum closesqbr opensqbr id closesqbr comma id closepar  semi
  id openpar id comma id openpar id comma id comma id closepar closepar  semi
  id assign id openpar intnum closepar semi
- id openpar id plus intnum comma id opensqbr id closesqbr closepar  semi
+ id openpar id plus intnum comma id opensqbr id dot id openpar closepar closesqbr closepar  semi
  id openpar id plus intnum closepar  semi
  return openpar id closepar semi
  closecubr

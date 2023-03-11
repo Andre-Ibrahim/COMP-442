@@ -26,7 +26,7 @@ function funcCallsParameters(x: integer) => integer {
   funcCall(a, funcCall(x, y, z));
   
   i = funcCall(77);
-  funcCall(i+1, arr[i]);
+  funcCall(i+1, arr[i.i()]);
   funcCall(i+1);
   return (i);
 } 
