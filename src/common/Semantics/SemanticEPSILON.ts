@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticEPSILON extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "EPSILON";
-	}
+    toString(): string {
+        return "EPSILON";
+    }
 }

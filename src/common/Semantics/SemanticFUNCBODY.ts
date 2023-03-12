@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticFUNCBODY extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "FUNCBODY";
-	}
+    toString(): string {
+        return "FUNCBODY";
+    }
 }

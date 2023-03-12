@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticISA extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "ISA";
-	}
+    toString(): string {
+        return "ISA";
+    }
 }

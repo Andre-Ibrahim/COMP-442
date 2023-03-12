@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticFUNCCONSTSTRUCT extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "FUNCCONSTSTRUCT";
-	}
+    toString(): string {
+        return "FUNCCONSTSTRUCT";
+    }
 }

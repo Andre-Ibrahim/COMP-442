@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticEMPTYARRAYSIZE extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "EMPTYARRAYSIZE";
-	}
+    toString(): string {
+        return "EMPTYARRAYSIZE";
+    }
 }

@@ -1,4 +1,3 @@
-import { json } from "stream/consumers";
 import { Token } from "../lexical_analysis/Token";
 import { Semantic } from "./Semantics/Semantic";
 
@@ -48,7 +47,7 @@ export class TreeNode {
         let str = "\n";
 
         node.children.forEach((child) => {
-            const nodeString = (child.value as Token).type ? JSON.stringify(child.value): child.value.toString();
+            const nodeString = (child.value as Token).type ? JSON.stringify(child.value) : child.value.toString();
             str += `${"| ".repeat(spaceCount)}${nodeString}${this.getTreeString(child, spaceCount + 1)}`;
         });
 
@@ -72,11 +71,8 @@ export class TreeNode {
     }
 
     toString(): string {
-        const nodeString = (this.value as Token).type ? JSON.stringify(this.value): this.value.toString();
-        return `\n${nodeString}${this.getTreeString(
-            this,
-            1,
-        )}`;
+        const nodeString = (this.value as Token).type ? JSON.stringify(this.value) : this.value.toString();
+        return `\n${nodeString}${this.getTreeString(this, 1)}`;
     }
 }
 

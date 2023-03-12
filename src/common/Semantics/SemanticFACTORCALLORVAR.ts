@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticFACTORCALLORVAR extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "FACTORCALLORVAR";
-	}
+    toString(): string {
+        return "FACTORCALLORVAR";
+    }
 }

@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticFUNCTIONCALL extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "FUNCTIONCALL";
-	}
+    toString(): string {
+        return "FUNCTIONCALL";
+    }
 }

@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticREADSTAT extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "READSTAT";
-	}
+    toString(): string {
+        return "READSTAT";
+    }
 }

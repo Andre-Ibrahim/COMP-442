@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticINDICELIST extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "INDICELIST";
-	}
+    toString(): string {
+        return "INDICELIST";
+    }
 }

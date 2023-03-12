@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticRELEXPR extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "RELEXPR";
-	}
+    toString(): string {
+        return "RELEXPR";
+    }
 }

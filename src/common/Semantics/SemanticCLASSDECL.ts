@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticCLASSDECL extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "CLASSDECL";
-	}
+    toString(): string {
+        return "CLASSDECL";
+    }
 }

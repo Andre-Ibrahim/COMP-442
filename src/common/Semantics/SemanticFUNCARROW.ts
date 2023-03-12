@@ -1,10 +1,10 @@
 import { Semantic } from "./Semantic";
 export class SemanticFUNCARROW extends Semantic {
-	constructor(){
+    constructor() {
         super();
-        }
+    }
 
-	toString(): string {
-		return "FUNCARROW";
-	}
+    toString(): string {
+        return "FUNCARROW";
+    }
 }
