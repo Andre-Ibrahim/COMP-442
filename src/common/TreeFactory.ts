@@ -1,4 +1,36 @@
 import { Token } from "../lexical_analysis/Token";
+import { Semantic } from "./Semantics/Semantic";
+import { SemanticAPARAMS } from "./Semantics/SemanticAPARAMS";
+import { SemanticARITHEXPR } from "./Semantics/SemanticARITHEXPR";
+import { SemanticARRAYSIZE } from "./Semantics/SemanticARRAYSIZE";
+import { SemanticASSIGNSTAT } from "./Semantics/SemanticASSIGNSTAT";
+import { SemanticCLASSDECL } from "./Semantics/SemanticCLASSDECL";
+import { SemanticCLASSDECLORFUNCDEF } from "./Semantics/SemanticCLASSDECLORFUNCDEF";
+import { SemanticEMPTYARRAYSIZE } from "./Semantics/SemanticEMPTYARRAYSIZE";
+import { SemanticEXPR } from "./Semantics/SemanticEXPR";
+import { SemanticFACTOR } from "./Semantics/SemanticFACTOR";
+import { SemanticFACTORCALLORVAR } from "./Semantics/SemanticFACTORCALLORVAR";
+import { SemanticFPARAMS } from "./Semantics/SemanticFPARAMS";
+import { SemanticFUNCARROW } from "./Semantics/SemanticFUNCARROW";
+import { SemanticFUNCBODY } from "./Semantics/SemanticFUNCBODY";
+import { SemanticFUNCCONSTSTRUCT } from "./Semantics/SemanticFUNCCONSTSTRUCT";
+import { SemanticFUNCDEF } from "./Semantics/SemanticFUNCDEF";
+import { SemanticFUNCTIONCALL } from "./Semantics/SemanticFUNCTIONCALL";
+import { SemanticFUNCTIONCALLSTAT } from "./Semantics/SemanticFUNCTIONCALLSTAT";
+import { SemanticIFSTAT } from "./Semantics/SemanticIFSTAT";
+import { SemanticINDICELIST } from "./Semantics/SemanticINDICELIST";
+import { SemanticISA } from "./Semantics/SemanticISA";
+import { SemanticMEMBERFUNCDECL } from "./Semantics/SemanticMEMBERFUNCDECL";
+import { SemanticMEMBERVARDECL } from "./Semantics/SemanticMEMBERVARDECL";
+import { SemanticREADSTAT } from "./Semantics/SemanticREADSTAT";
+import { SemanticRELEXPR } from "./Semantics/SemanticRELEXPR";
+import { SemanticRETURNSTAT } from "./Semantics/SemanticRETURNSTAT";
+import { SemanticSTATBLOCK } from "./Semantics/SemanticSTATBLOCK";
+import { SemanticTERM } from "./Semantics/SemanticTERM";
+import { SemanticVARDECL } from "./Semantics/SemanticVARDECL";
+import { SemanticVARIABLE } from "./Semantics/SemanticVARIABLE";
+import { SemanticWHILESTAT } from "./Semantics/SemanticWHILESTAT";
+import { SemanticWRITESTAT } from "./Semantics/SemanticWRITESTAT";
 import { Concept, TreeNode } from "./Tree";
 
 export class TreeFactory {
@@ -31,7 +63,7 @@ export class TreeFactory {
 
             semanticStack.pop();
 
-            return this.createSubTree(Concept.SEMANTICARRAYSIZE, [...children].reverse());
+            return this.createSubTree(new SemanticARRAYSIZE(), [...children].reverse());
         }
 
         if (semantic == Concept.SEMANTICVARDECL) {
@@ -41,7 +73,7 @@ export class TreeFactory {
             const node3 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1, node2, node3].reverse());
 
-            return this.createSubTree(Concept.SEMANTICVARDECL, children);
+            return this.createSubTree(new SemanticVARDECL(), children);
         }
 
         if (semantic == Concept.SEMANTICRETURNSTAT) {
@@ -49,11 +81,11 @@ export class TreeFactory {
             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1].reverse());
 
-            return this.createSubTree(Concept.SEMANTICRETURNSTAT, children);
+            return this.createSubTree(new SemanticRETURNSTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICEMPTYARRAYSIZE) {
-            return this.createSubTree(Concept.SEMANTICEMPTYARRAYSIZE, []);
+            return this.createSubTree(new SemanticEMPTYARRAYSIZE(), []);
         }
 
         if (semantic == Concept.SEMANTICEXPR) {
@@ -61,7 +93,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICEXPR, children);
+            return this.createSubTree(new SemanticEXPR(), children);
         }
 
         if (semantic == Concept.SEMANTICARITHEXPR) {
@@ -74,7 +106,7 @@ export class TreeFactory {
                 children.push(...[node1].reverse());
             }
 
-            return this.createSubTree(Concept.SEMANTICARITHEXPR, children);
+            return this.createSubTree(new SemanticARITHEXPR(), children);
         }
 
         if (semantic == Concept.SEMANTICTERM) {
@@ -83,7 +115,7 @@ export class TreeFactory {
             // for factors
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICTERM, children);
+            return this.createSubTree(new SemanticTERM(), children);
         }
 
         if (semantic == Concept.SEMANTICFACTOR) {
@@ -91,7 +123,7 @@ export class TreeFactory {
             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1].reverse());
 
-            return this.createSubTree(Concept.SEMANTICFACTOR, children);
+            return this.createSubTree(new SemanticFACTOR(), children);
         }
 
         if (semantic == Concept.SEMANTICVARIABLE) {
@@ -106,7 +138,7 @@ export class TreeFactory {
                 children.push(...[node1].reverse());
             }
 
-            return this.createSubTree(Concept.SEMANTICVARIABLE, children);
+            return this.createSubTree(new SemanticVARIABLE(), children);
         }
 
         if (semantic == Concept.SEMANTICFUNCTIONCALL) {
@@ -120,7 +152,7 @@ export class TreeFactory {
                 children.push(...[node1].reverse());
             }
 
-            return this.createSubTree(Concept.SEMANTICFUNCTIONCALL, children);
+            return this.createSubTree(new SemanticFUNCTIONCALL(), children);
         }
 
         if (semantic == Concept.SEMANTICFACTORCALLORVAR) {
@@ -128,7 +160,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFACTORCALLORVAR, children);
+            return this.createSubTree(new SemanticFACTORCALLORVAR(), children);
         }
 
         if (semantic == Concept.SEMANTICAPARAMS) {
@@ -138,7 +170,7 @@ export class TreeFactory {
             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1].reverse());
 
-            return this.createSubTree(Concept.SEMANTICAPARAMS, children);
+            return this.createSubTree(new SemanticAPARAMS(), children);
         }
 
         if (semantic == Concept.SEMANTICWRITESTAT) {
@@ -147,7 +179,7 @@ export class TreeFactory {
             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1].reverse());
 
-            return this.createSubTree(Concept.SEMANTICWRITESTAT, children);
+            return this.createSubTree(new SemanticWRITESTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICREADSTAT) {
@@ -156,7 +188,7 @@ export class TreeFactory {
             const node1 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1].reverse());
 
-            return this.createSubTree(Concept.SEMANTICREADSTAT, children);
+            return this.createSubTree(new SemanticREADSTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICSTATBLOCK) {
@@ -164,7 +196,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICSTATBLOCK, children);
+            return this.createSubTree(new SemanticSTATBLOCK(), children);
         }
 
         if (semantic == Concept.SEMANTICFUNCBODY) {
@@ -172,7 +204,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFUNCBODY, children);
+            return this.createSubTree(new SemanticFUNCBODY(), children);
         }
 
         if (semantic == Concept.SEMANTICINDICELIST) {
@@ -180,7 +212,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICINDICELIST, children);
+            return this.createSubTree(new SemanticINDICELIST(), children);
         }
 
         if (semantic == Concept.SEMANTICASSIGNSTAT) {
@@ -188,7 +220,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICASSIGNSTAT, children);
+            return this.createSubTree(new SemanticASSIGNSTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICFUNCTIONCALLSTAT) {
@@ -196,7 +228,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFUNCTIONCALLSTAT, children);
+            return this.createSubTree(new SemanticFUNCTIONCALLSTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICRELEXPR) {
@@ -206,7 +238,7 @@ export class TreeFactory {
             const node3 = semanticStack.pop() ?? new TreeNode(Concept.SEMANTICEPSILON);
             children.push(...[node1, node2, node3].reverse());
 
-            return this.createSubTree(Concept.SEMANTICRELEXPR, children);
+            return this.createSubTree(new SemanticRELEXPR(), children);
         }
 
         if (semantic == Concept.SEMANTICIFSTAT) {
@@ -214,7 +246,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICIFSTAT, children);
+            return this.createSubTree(new SemanticIFSTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICWHILESTAT) {
@@ -222,7 +254,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICWHILESTAT, children);
+            return this.createSubTree(new SemanticWHILESTAT(), children);
         }
 
         if (semantic == Concept.SEMANTICAPARAMS) {
@@ -230,7 +262,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICAPARAMS, children);
+            return this.createSubTree(new SemanticAPARAMS(), children);
         }
 
         if (semantic == Concept.SEMANTICFUNCDEF) {
@@ -238,7 +270,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFUNCDEF, children);
+            return this.createSubTree(new SemanticFUNCDEF(), children);
         }
 
         if (semantic == Concept.SEMANTICFUNCARROW) {
@@ -246,7 +278,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFUNCARROW, children);
+            return this.createSubTree(new SemanticFUNCARROW(), children);
         }
 
         if (semantic == Concept.SEMANTICFUNCCONSTSTRUCT) {
@@ -254,7 +286,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFUNCCONSTSTRUCT, children);
+            return this.createSubTree(new SemanticFUNCCONSTSTRUCT(), children);
         }
 
         if (semantic == Concept.SEMANTICFPARAMS) {
@@ -262,7 +294,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICFPARAMS, children);
+            return this.createSubTree(new SemanticFPARAMS(), children);
         }
 
         if (semantic == Concept.SEMANTICCLASSDECL) {
@@ -270,7 +302,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICCLASSDECL, children);
+            return this.createSubTree(new SemanticCLASSDECL(), children);
         }
 
         if (semantic == Concept.SEMANTICMEMBERFUNCDECL) {
@@ -278,7 +310,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICMEMBERFUNCDECL, children);
+            return this.createSubTree(new SemanticMEMBERFUNCDECL(), children);
         }
 
         if (semantic == Concept.SEMANTICMEMBERVARDECL) {
@@ -286,7 +318,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICMEMBERVARDECL, children);
+            return this.createSubTree(new SemanticMEMBERVARDECL(), children);
         }
 
         if (semantic == Concept.SEMANTICISA) {
@@ -294,7 +326,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICISA, children);
+            return this.createSubTree(new SemanticISA(), children);
         }
 
         if (semantic == Concept.SEMANTICCLASSDECLORFUNCDEF) {
@@ -302,7 +334,7 @@ export class TreeFactory {
 
             popUntilEpsilon(children);
 
-            return this.createSubTree(Concept.SEMANTICCLASSDECLORFUNCDEF, children);
+            return this.createSubTree(new SemanticCLASSDECLORFUNCDEF(), children);
         }
 
         // default return should never run
@@ -334,7 +366,7 @@ export class TreeFactory {
         return new TreeNode(token);
     }
 
-    private createSubTree(concept: Concept, nodes: TreeNode[]): TreeNode {
+    private createSubTree(concept: Semantic, nodes: TreeNode[]): TreeNode {
         const root = new TreeNode(concept);
 
         nodes.forEach((node) => {

@@ -1,42 +1,42 @@
 
 CLASSDECLORFUNCDEF
 | FUNCDEF
-| | {type:id,lexeme:VOIDReturnType,position:29}
+| | {"type":"id","lexeme":"VOIDReturnType","position":29}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:arr,position:29}
-| | | | {type:integer,lexeme:integer,position:29}
+| | | | {"type":"id","lexeme":"arr","position":29}
+| | | | {"type":"integer","lexeme":"integer","position":29}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | {type:id,lexeme:size,position:29}
-| | | | {type:integer,lexeme:integer,position:29}
+| | | | {"type":"id","lexeme":"size","position":29}
+| | | | {"type":"integer","lexeme":"integer","position":29}
 | | | | ARRAYSIZE
-| | | {type:void,lexeme:void,position:29}
+| | | {"type":"void","lexeme":"void","position":29}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:31}
-| | | | {type:id,lexeme:n,position:31}
+| | | | {"type":"integer","lexeme":"integer","position":31}
+| | | | {"type":"id","lexeme":"n","position":31}
 | FUNCDEF
-| | {type:id,lexeme:FLOATReturnType,position:34}
+| | {"type":"id","lexeme":"FLOATReturnType","position":34}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:arr,position:34}
-| | | | {type:integer,lexeme:integer,position:34}
+| | | | {"type":"id","lexeme":"arr","position":34}
+| | | | {"type":"integer","lexeme":"integer","position":34}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | {type:id,lexeme:size,position:34}
-| | | | {type:integer,lexeme:integer,position:34}
+| | | | {"type":"id","lexeme":"size","position":34}
+| | | | {"type":"integer","lexeme":"integer","position":34}
 | | | | ARRAYSIZE
-| | | {type:float,lexeme:float,position:34}
+| | | {"type":"float","lexeme":"float","position":34}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:36}
-| | | | {type:id,lexeme:n,position:36}
+| | | | {"type":"integer","lexeme":"integer","position":36}
+| | | | {"type":"id","lexeme":"n","position":36}
 | | | READSTAT
 | | | | VARIABLE
-| | | | | {type:id,lexeme:n,position:37}
+| | | | | {"type":"id","lexeme":"n","position":37}
 | | | WRITESTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -44,7 +44,7 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:n,position:38}
+| | | | | | | | | | {"type":"id","lexeme":"n","position":38}
 | | | | | | | | | | INDICELIST
 | | | RETURNSTAT
 | | | | EXPR
@@ -53,88 +53,88 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:n,position:40}
+| | | | | | | | | | {"type":"id","lexeme":"n","position":40}
 | | | | | | | | | | INDICELIST
-| | | | | | {type:plus,lexeme:+,position:40}
+| | | | | | {"type":"plus","lexeme":"+","position":40}
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:floatnum,lexeme:1.111,position:40}
+| | | | | | | | {"type":"floatnum","lexeme":"1.111","position":40}
 | FUNCDEF
-| | {type:id,lexeme:VOIDReturnType,position:43}
+| | {"type":"id","lexeme":"VOIDReturnType","position":43}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:arr,position:43}
-| | | | {type:integer,lexeme:integer,position:43}
+| | | | {"type":"id","lexeme":"arr","position":43}
+| | | | {"type":"integer","lexeme":"integer","position":43}
 | | | | ARRAYSIZE
-| | | | | {type:intnum,lexeme:1,position:43}
-| | | | {type:id,lexeme:size,position:43}
-| | | | {type:integer,lexeme:integer,position:43}
+| | | | | {"type":"intnum","lexeme":"1","position":43}
+| | | | {"type":"id","lexeme":"size","position":43}
+| | | | {"type":"integer","lexeme":"integer","position":43}
 | | | | ARRAYSIZE
-| | | {type:void,lexeme:void,position:43}
+| | | {"type":"void","lexeme":"void","position":43}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:45}
-| | | | {type:id,lexeme:n,position:45}
+| | | | {"type":"integer","lexeme":"integer","position":45}
+| | | | {"type":"id","lexeme":"n","position":45}
 | FUNCDEF
-| | {type:id,lexeme:VOIDReturnType,position:48}
+| | {"type":"id","lexeme":"VOIDReturnType","position":48}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:arr,position:48}
-| | | | {type:integer,lexeme:integer,position:48}
+| | | | {"type":"id","lexeme":"arr","position":48}
+| | | | {"type":"integer","lexeme":"integer","position":48}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | {type:id,lexeme:size,position:48}
-| | | | {type:float,lexeme:float,position:48}
+| | | | {"type":"id","lexeme":"size","position":48}
+| | | | {"type":"float","lexeme":"float","position":48}
 | | | | ARRAYSIZE
-| | | {type:void,lexeme:void,position:48}
+| | | {"type":"void","lexeme":"void","position":48}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:50}
-| | | | {type:id,lexeme:n,position:50}
+| | | | {"type":"integer","lexeme":"integer","position":50}
+| | | | {"type":"id","lexeme":"n","position":50}
 | FUNCDEF
-| | {type:id,lexeme:functionParams,position:53}
+| | {"type":"id","lexeme":"functionParams","position":53}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:53}
-| | | | {type:integer,lexeme:integer,position:53}
+| | | | {"type":"id","lexeme":"x","position":53}
+| | | | {"type":"integer","lexeme":"integer","position":53}
 | | | | ARRAYSIZE
-| | | | {type:id,lexeme:y,position:53}
-| | | | {type:float,lexeme:float,position:53}
+| | | | {"type":"id","lexeme":"y","position":53}
+| | | | {"type":"float","lexeme":"float","position":53}
 | | | | ARRAYSIZE
-| | | | {type:id,lexeme:z,position:53}
-| | | | {type:id,lexeme:id,position:53}
+| | | | {"type":"id","lexeme":"z","position":53}
+| | | | {"type":"id","lexeme":"id","position":53}
 | | | | ARRAYSIZE
-| | | | {type:id,lexeme:a,position:53}
-| | | | {type:integer,lexeme:integer,position:53}
+| | | | {"type":"id","lexeme":"a","position":53}
+| | | | {"type":"integer","lexeme":"integer","position":53}
 | | | | ARRAYSIZE
-| | | | | {type:intnum,lexeme:10,position:53}
-| | | {type:void,lexeme:void,position:53}
+| | | | | {"type":"intnum","lexeme":"10","position":53}
+| | | {"type":"void","lexeme":"void","position":53}
 | | FUNCBODY
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:55}
+| | {"type":"id","lexeme":"printArray","position":55}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:55}
-| | | | {type:float,lexeme:float,position:55}
+| | | | {"type":"id","lexeme":"x","position":55}
+| | | | {"type":"float","lexeme":"float","position":55}
 | | | | ARRAYSIZE
-| | | {type:integer,lexeme:integer,position:55}
+| | | {"type":"integer","lexeme":"integer","position":55}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:56}
-| | | | {type:id,lexeme:i,position:56}
+| | | | {"type":"integer","lexeme":"integer","position":56}
+| | | | {"type":"id","lexeme":"i","position":56}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:57}
+| | | | {"type":"id","lexeme":"i","position":57}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:57}
+| | | | {"type":"assign","lexeme":"=","position":57}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:57}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":57}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -142,30 +142,30 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:58}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":58}
 | | | | | | | | | | INDICELIST
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:61}
+| | {"type":"id","lexeme":"printArray","position":61}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:61}
-| | | | {type:id,lexeme:id,position:61}
+| | | | {"type":"id","lexeme":"x","position":61}
+| | | | {"type":"id","lexeme":"id","position":61}
 | | | | ARRAYSIZE
-| | | {type:integer,lexeme:integer,position:61}
+| | | {"type":"integer","lexeme":"integer","position":61}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:62}
-| | | | {type:id,lexeme:i,position:62}
+| | | | {"type":"integer","lexeme":"integer","position":62}
+| | | | {"type":"id","lexeme":"i","position":62}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:63}
+| | | | {"type":"id","lexeme":"i","position":63}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:63}
+| | | | {"type":"assign","lexeme":"=","position":63}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:63}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":63}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -173,30 +173,30 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:64}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":64}
 | | | | | | | | | | INDICELIST
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:67}
+| | {"type":"id","lexeme":"printArray","position":67}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:67}
-| | | | {type:id,lexeme:id,position:67}
+| | | | {"type":"id","lexeme":"x","position":67}
+| | | | {"type":"id","lexeme":"id","position":67}
 | | | | ARRAYSIZE
-| | | {type:id,lexeme:id,position:67}
+| | | {"type":"id","lexeme":"id","position":67}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:68}
-| | | | {type:id,lexeme:i,position:68}
+| | | | {"type":"integer","lexeme":"integer","position":68}
+| | | | {"type":"id","lexeme":"i","position":68}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:69}
+| | | | {"type":"id","lexeme":"i","position":69}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:69}
+| | | | {"type":"assign","lexeme":"=","position":69}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:69}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":69}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -204,31 +204,31 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:70}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":70}
 | | | | | | | | | | INDICELIST
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:73}
+| | {"type":"id","lexeme":"printArray","position":73}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:73}
-| | | | {type:float,lexeme:float,position:73}
+| | | | {"type":"id","lexeme":"x","position":73}
+| | | | {"type":"float","lexeme":"float","position":73}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | {type:integer,lexeme:integer,position:73}
+| | | {"type":"integer","lexeme":"integer","position":73}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:74}
-| | | | {type:id,lexeme:i,position:74}
+| | | | {"type":"integer","lexeme":"integer","position":74}
+| | | | {"type":"id","lexeme":"i","position":74}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:75}
+| | | | {"type":"id","lexeme":"i","position":75}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:75}
+| | | | {"type":"assign","lexeme":"=","position":75}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:75}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":75}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -236,31 +236,31 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:76}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":76}
 | | | | | | | | | | INDICELIST
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:79}
+| | {"type":"id","lexeme":"printArray","position":79}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:79}
-| | | | {type:float,lexeme:float,position:79}
+| | | | {"type":"id","lexeme":"x","position":79}
+| | | | {"type":"float","lexeme":"float","position":79}
 | | | | ARRAYSIZE
-| | | | | {type:intnum,lexeme:5,position:79}
-| | | {type:float,lexeme:float,position:79}
+| | | | | {"type":"intnum","lexeme":"5","position":79}
+| | | {"type":"float","lexeme":"float","position":79}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:80}
-| | | | {type:id,lexeme:i,position:80}
+| | | | {"type":"integer","lexeme":"integer","position":80}
+| | | | {"type":"id","lexeme":"i","position":80}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:81}
+| | | | {"type":"id","lexeme":"i","position":81}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:81}
+| | | | {"type":"assign","lexeme":"=","position":81}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:81}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":81}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -268,32 +268,32 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:82}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":82}
 | | | | | | | | | | INDICELIST
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:85}
+| | {"type":"id","lexeme":"printArray","position":85}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:85}
-| | | | {type:float,lexeme:float,position:85}
+| | | | {"type":"id","lexeme":"x","position":85}
+| | | | {"type":"float","lexeme":"float","position":85}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | {type:float,lexeme:float,position:85}
+| | | {"type":"float","lexeme":"float","position":85}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:86}
-| | | | {type:id,lexeme:i,position:86}
+| | | | {"type":"integer","lexeme":"integer","position":86}
+| | | | {"type":"id","lexeme":"i","position":86}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:87}
+| | | | {"type":"id","lexeme":"i","position":87}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:87}
+| | | | {"type":"assign","lexeme":"=","position":87}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:87}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":87}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -301,32 +301,32 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:88}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":88}
 | | | | | | | | | | INDICELIST
 | FUNCDEF
-| | {type:id,lexeme:printArray,position:91}
+| | {"type":"id","lexeme":"printArray","position":91}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {type:id,lexeme:x,position:91}
-| | | | {type:float,lexeme:float,position:91}
+| | | | {"type":"id","lexeme":"x","position":91}
+| | | | {"type":"float","lexeme":"float","position":91}
 | | | | ARRAYSIZE
-| | | | | {type:intnum,lexeme:111,position:91}
-| | | | | {type:intnum,lexeme:10,position:91}
-| | | {type:float,lexeme:float,position:91}
+| | | | | {"type":"intnum","lexeme":"111","position":91}
+| | | | | {"type":"intnum","lexeme":"10","position":91}
+| | | {"type":"float","lexeme":"float","position":91}
 | | FUNCBODY
 | | | VARDECL
 | | | | ARRAYSIZE
-| | | | {type:integer,lexeme:integer,position:92}
-| | | | {type:id,lexeme:i,position:92}
+| | | | {"type":"integer","lexeme":"integer","position":92}
+| | | | {"type":"id","lexeme":"i","position":92}
 | | | ASSIGNSTAT
-| | | | {type:id,lexeme:i,position:93}
+| | | | {"type":"id","lexeme":"i","position":93}
 | | | | INDICELIST
-| | | | {type:assign,lexeme:=,position:93}
+| | | | {"type":"assign","lexeme":"=","position":93}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {type:intnum,lexeme:0,position:93}
+| | | | | | | | {"type":"intnum","lexeme":"0","position":93}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -334,5 +334,5 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {type:id,lexeme:i,position:94}
+| | | | | | | | | | {"type":"id","lexeme":"i","position":94}
 | | | | | | | | | | INDICELIST

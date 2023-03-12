@@ -1,4 +1,6 @@
+import { json } from "stream/consumers";
 import { Token } from "../lexical_analysis/Token";
+import { Semantic } from "./Semantics/Semantic";
 
 const uniqueId = (() => {
     function* uniqueIdGenerator() {
@@ -15,12 +17,12 @@ const uniqueId = (() => {
 })();
 
 export class TreeNode {
-    value: Token | Concept;
+    value: Token | Semantic;
     children = new Map<number | void, TreeNode>();
     parentNode: TreeNode | null = null;
     id = uniqueId();
 
-    constructor(value: Token | Concept) {
+    constructor(value: Token | Semantic) {
         this.value = value;
     }
 
@@ -28,7 +30,7 @@ export class TreeNode {
         this.parentNode;
     }
 
-    createChildNode(token: Token | Concept) {
+    createChildNode(token: Token | Semantic) {
         const newNode = new TreeNode(token);
         this.children.set(newNode.id, newNode);
         newNode.parentNode = this;
@@ -46,9 +48,8 @@ export class TreeNode {
         let str = "\n";
 
         node.children.forEach((child) => {
-            str += `${"| ".repeat(spaceCount)}${JSON.stringify(child.value)
-                .replace("SEMANTIC", "")
-                .replace(/\"/g, "")}${this.getTreeString(child, spaceCount + 1)}`;
+            const nodeString = (child.value as Token).type ? JSON.stringify(child.value): child.value.toString();
+            str += `${"| ".repeat(spaceCount)}${nodeString}${this.getTreeString(child, spaceCount + 1)}`;
         });
 
         return str;
@@ -71,7 +72,8 @@ export class TreeNode {
     }
 
     toString(): string {
-        return `\n${JSON.stringify(this.value).replace("SEMANTIC", "").replace(/\"/g, "")}${this.getTreeString(
+        const nodeString = (this.value as Token).type ? JSON.stringify(this.value): this.value.toString();
+        return `\n${nodeString}${this.getTreeString(
             this,
             1,
         )}`;

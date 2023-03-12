@@ -1,9 +1,10 @@
-class SemanticWRITESTAT extends Semantic {
-    constructor() {
+import { Semantic } from "./Semantic";
+export class SemanticWRITESTAT extends Semantic {
+	constructor(){
         super();
-    }
+        }
 
-    toString(): string {
-        return "WRITESTAT";
-    }
+	toString(): string {
+		return "WRITESTAT";
+	}
 }

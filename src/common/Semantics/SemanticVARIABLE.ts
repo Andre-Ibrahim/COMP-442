@@ -1,9 +1,10 @@
-class SemanticVARIABLE extends Semantic {
-    constructor() {
+import { Semantic } from "./Semantic";
+export class SemanticVARIABLE extends Semantic {
+	constructor(){
         super();
-    }
+        }
 
-    toString(): string {
-        return "VARIABLE";
-    }
+	toString(): string {
+		return "VARIABLE";
+	}
 }

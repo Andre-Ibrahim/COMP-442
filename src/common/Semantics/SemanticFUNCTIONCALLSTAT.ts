@@ -1,9 +1,10 @@
-class SemanticFUNCTIONCALLSTAT extends Semantic {
-    constructor() {
+import { Semantic } from "./Semantic";
+export class SemanticFUNCTIONCALLSTAT extends Semantic {
+	constructor(){
         super();
-    }
+        }
 
-    toString(): string {
-        return "FUNCTIONCALLSTAT";
-    }
+	toString(): string {
+		return "FUNCTIONCALLSTAT";
+	}
 }

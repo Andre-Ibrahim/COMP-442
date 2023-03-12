@@ -1,3 +1,3 @@
-abstract class Semantic {
+export abstract class Semantic {
     abstract toString(): string;
 }

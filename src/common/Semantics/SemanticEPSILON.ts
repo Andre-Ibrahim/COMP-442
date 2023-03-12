@@ -1,9 +1,10 @@
-class SemanticEPSILON extends Semantic {
-    constructor() {
+import { Semantic } from "./Semantic";
+export class SemanticEPSILON extends Semantic {
+	constructor(){
         super();
-    }
+        }
 
-    toString(): string {
-        return "EPSILON";
-    }
+	toString(): string {
+		return "EPSILON";
+	}
 }

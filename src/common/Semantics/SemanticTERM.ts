@@ -1,9 +1,10 @@
-class SemanticTERM extends Semantic {
-    constructor() {
+import { Semantic } from "./Semantic";
+export class SemanticTERM extends Semantic {
+	constructor(){
         super();
-    }
+        }
 
-    toString(): string {
-        return "TERM";
-    }
+	toString(): string {
+		return "TERM";
+	}
 }

@@ -1,9 +1,10 @@
-class SemanticMEMBERVARDECL extends Semantic {
-    constructor() {
+import { Semantic } from "./Semantic";
+export class SemanticMEMBERVARDECL extends Semantic {
+	constructor(){
         super();
-    }
+        }
 
-    toString(): string {
-        return "MEMBERVARDECL";
-    }
+	toString(): string {
+		return "MEMBERVARDECL";
+	}
 }
