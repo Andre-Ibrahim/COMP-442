@@ -1,25 +1,10 @@
 import { Token } from "../lexical_analysis/Token";
 import { Semantic } from "./Semantics/Semantic";
 
-const uniqueId = (() => {
-    function* uniqueIdGenerator() {
-        let id = Date.now();
-
-        while (true) {
-            yield id++;
-        }
-    }
-
-    const gen = uniqueIdGenerator();
-
-    return () => gen.next().value;
-})();
-
 export class TreeNode {
     value: Token | Semantic;
-    children = new Map<number | void, TreeNode>();
+    children: TreeNode[] = [];
     parentNode: TreeNode | null = null;
-    id = uniqueId();
 
     constructor(value: Token | Semantic) {
         this.value = value;
@@ -31,14 +16,14 @@ export class TreeNode {
 
     createChildNode(token: Token | Semantic) {
         const newNode = new TreeNode(token);
-        this.children.set(newNode.id, newNode);
+        this.children.push(newNode);
         newNode.parentNode = this;
 
         return newNode;
     }
 
     createChildNodeFromNode(node: TreeNode) {
-        this.children.set(node.id, node);
+        this.children.push(node);
         node.parentNode = this;
         return node;
     }
@@ -55,7 +40,7 @@ export class TreeNode {
     };
 
     reverseTree = (node: TreeNode) => {
-        node.children = new Map(Array.from(node.children, (a) => a).reverse());
+        node.children = node.children.reverse();
 
         node.children.forEach((child) => {
             this.reverseTree(child);
