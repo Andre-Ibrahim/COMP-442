@@ -23,9 +23,11 @@ text = "";
 concepts.forEach((x) => {
 
     text += 
-    `import { Node${x.replace("SEMANTIC", "")} } from "./AST/${x.replace("SEMANTIC", "Node")}";\n`
+    `import { Node${x.replace("SEMANTIC", "")} } from "../AST/${x.replace("SEMANTIC", "Node")}";\n`
 
 })
+
+console.log(text);
 
 text = "";
 
@@ -42,10 +44,17 @@ concepts.forEach((x) => {
     }
     `
 
-    writeFileSync(`./src/common/AST/${x.replace("SEMANTIC", "Node")}.ts`, text);
+    //writeFileSync(`./src/common/AST/${x.replace("SEMANTIC", "Node")}.ts`, text);
 
 })
 
+text = "";
 
+concepts.forEach((x) => {
+
+    text += 
+    `\tabstract visit(node: ${x.replace("SEMANTIC", "Node")}): void;\n`
+
+})
 
 console.log(text);

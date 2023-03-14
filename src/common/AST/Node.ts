@@ -1,5 +1,6 @@
 import { Token } from "../../lexical_analysis/Token";
 import { Semantic } from "../Semantics/Semantic";
+import { Visitor } from "../Visitors/Visitor";
 
 export class Node {
     value: Token | null = null;
@@ -69,13 +70,16 @@ export class Node {
         return "DEFAULT";
     }
 
+    accept(visitor: Visitor){
+        visitor.visit(this);
+    }
+
     private getNodeString(node: Node){
         if(node.value){
            return (node.value as Token).type ? JSON.stringify(node.value) : node.toString();
         }
 
         return node.toString();
-
     }
 }
 
