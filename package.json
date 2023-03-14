@@ -19,6 +19,7 @@
   "private": true,
   "scripts": {
     "start": "npx ts-node ./src/ASTdriver.ts",
+    "script": "npx ts-node ./src/scripts/conceptgenerator.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint:check": "eslint '*/**/*.{js,jsx,ts,tsx,json}' --max-warnings=0",

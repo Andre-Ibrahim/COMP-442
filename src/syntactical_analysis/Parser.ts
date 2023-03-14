@@ -1,4 +1,5 @@
-import { Concept, TreeNode } from "../common/Tree";
+import { Node } from "../common/AST/Node";
+import { Concept } from "../common/AST/Concept";
 import { TreeFactory } from "../common/TreeFactory";
 import { terminals } from "../common/stringHelpers";
 import Lexer from "../lexical_analysis/Lexer";
@@ -6,17 +7,18 @@ import { Token } from "../lexical_analysis/Token";
 import TokenType from "../lexical_analysis/TokenType";
 import ParsingTable from "./parsingTable";
 import parsingTable from "./parsingTable";
+import { NodeEPSILON } from "../common/AST/NodeEPSILON";
 
 export default class Parser {
     lexer: Lexer;
     stack: string[] = [];
-    semanticStack: TreeNode[] = [];
+    semanticStack: Node[] = [];
     paringTable: parsingTable;
     hasError = false;
     derivations = "";
     currentDerivation = "";
     errors = "";
-    abstractSyntaxTree: TreeNode = new TreeNode(Concept.SEMANTICEPSILON);
+    abstractSyntaxTree: Node = new NodeEPSILON();
 
     constructor(file: string) {
         this.lexer = new Lexer(file);
@@ -94,7 +96,7 @@ export default class Parser {
             }
         }
 
-        const ast = this.semanticStack[0] ?? new TreeNode(Concept.SEMANTICEPSILON);
+        const ast = this.semanticStack[0] ?? new NodeEPSILON();
         ast.reverse();
         this.abstractSyntaxTree = ast;
 
