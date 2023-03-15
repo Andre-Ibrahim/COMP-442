@@ -44,225 +44,63 @@ START =>
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- STATEMENT REPTFUNCBODY1 closecubr
+ LOCALVARDECL REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar RELEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ localvar id colon integer REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar ARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer ARRAYSIZE REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar TERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer opensqbr ARRAYSIZE2 REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer opensqbr intnum closesqbr REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer opensqbr intnum closesqbr ARRAYSIZE REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer opensqbr intnum closesqbr opensqbr ARRAYSIZE2 REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer opensqbr intnum closesqbr opensqbr closesqbr REPTFPARAMS3 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ localvar id colon integer opensqbr intnum closesqbr opensqbr closesqbr semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt TERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then STATBLOCK else STATBLOCK semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else STATBLOCK semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- STATEMENT REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- FUNCTIONCALLORASIGNSTAT semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id ISFUNCTIONCALLORVARIABLE semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id INDICELOOP AFTERVARIABLE semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id AFTERVARIABLE semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id ENDASSIGN semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id ASSIGNOP EXPR semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign EXPR semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign ARITHEXPR EXPR2 semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign TERM RIGHTRECARITHEXPR EXPR2 semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum RIGHTRECARITHEXPR EXPR2 semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum EXPR2 semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum semi
- REPTSTATBLOCK1 closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum semi
- closecubr
- semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum semi
- closecubr
- semi
+ localvar id colon integer opensqbr intnum closesqbr opensqbr closesqbr semi
  closecubr
  REPTSTART0
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- if openpar intnum gt intnum closepar then else opencubr
- id assign intnum semi
- closecubr
- semi
+ localvar id colon integer opensqbr intnum closesqbr opensqbr closesqbr semi
  closecubr
  

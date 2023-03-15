@@ -6,13 +6,13 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":20}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":22}
 | | | | {"type":"id","lexeme":"n","position":22}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":22}
 | | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":23}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":23}
+| | | | {"type":"integer","lexeme":"integer","position":23}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"x","position":25}
 | | | | INDICELIST

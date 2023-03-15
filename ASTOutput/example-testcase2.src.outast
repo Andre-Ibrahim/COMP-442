@@ -14,9 +14,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":29}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":31}
 | | | | {"type":"id","lexeme":"n","position":31}
+| | | | {"type":"integer","lexeme":"integer","position":31}
+| | | | ARRAYSIZE
 | FUNCDEF
 | | {"type":"id","lexeme":"FLOATReturnType","position":34}
 | | FUNCARROW
@@ -31,9 +31,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"float","lexeme":"float","position":34}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":36}
 | | | | {"type":"id","lexeme":"n","position":36}
+| | | | {"type":"integer","lexeme":"integer","position":36}
+| | | | ARRAYSIZE
 | | | READSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"n","position":37}
@@ -73,9 +73,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":43}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":45}
 | | | | {"type":"id","lexeme":"n","position":45}
+| | | | {"type":"integer","lexeme":"integer","position":45}
+| | | | ARRAYSIZE
 | FUNCDEF
 | | {"type":"id","lexeme":"VOIDReturnType","position":48}
 | | FUNCARROW
@@ -91,9 +91,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":48}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":50}
 | | | | {"type":"id","lexeme":"n","position":50}
+| | | | {"type":"integer","lexeme":"integer","position":50}
+| | | | ARRAYSIZE
 | FUNCDEF
 | | {"type":"id","lexeme":"functionParams","position":53}
 | | FUNCARROW
@@ -123,9 +123,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"integer","lexeme":"integer","position":55}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":56}
 | | | | {"type":"id","lexeme":"i","position":56}
+| | | | {"type":"integer","lexeme":"integer","position":56}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":57}
 | | | | INDICELIST
@@ -154,9 +154,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"integer","lexeme":"integer","position":61}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":62}
 | | | | {"type":"id","lexeme":"i","position":62}
+| | | | {"type":"integer","lexeme":"integer","position":62}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":63}
 | | | | INDICELIST
@@ -185,9 +185,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"id","lexeme":"id","position":67}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":68}
 | | | | {"type":"id","lexeme":"i","position":68}
+| | | | {"type":"integer","lexeme":"integer","position":68}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":69}
 | | | | INDICELIST
@@ -217,9 +217,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"integer","lexeme":"integer","position":73}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":74}
 | | | | {"type":"id","lexeme":"i","position":74}
+| | | | {"type":"integer","lexeme":"integer","position":74}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":75}
 | | | | INDICELIST
@@ -249,9 +249,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"float","lexeme":"float","position":79}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":80}
 | | | | {"type":"id","lexeme":"i","position":80}
+| | | | {"type":"integer","lexeme":"integer","position":80}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":81}
 | | | | INDICELIST
@@ -282,9 +282,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"float","lexeme":"float","position":85}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":86}
 | | | | {"type":"id","lexeme":"i","position":86}
+| | | | {"type":"integer","lexeme":"integer","position":86}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":87}
 | | | | INDICELIST
@@ -310,14 +310,14 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"x","position":91}
 | | | | {"type":"float","lexeme":"float","position":91}
 | | | | ARRAYSIZE
-| | | | | {"type":"intnum","lexeme":"111","position":91}
 | | | | | {"type":"intnum","lexeme":"10","position":91}
+| | | | | {"type":"intnum","lexeme":"111","position":91}
 | | | {"type":"float","lexeme":"float","position":91}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":92}
 | | | | {"type":"id","lexeme":"i","position":92}
+| | | | {"type":"integer","lexeme":"integer","position":92}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":93}
 | | | | INDICELIST

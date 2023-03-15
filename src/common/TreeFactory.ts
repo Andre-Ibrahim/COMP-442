@@ -34,7 +34,7 @@ export class TreeFactory {
 
             semanticStack.pop();
 
-            return this.createSubTree(Concept.SEMANTICARRAYSIZE, [...children].reverse());
+            return this.createSubTree(Concept.SEMANTICARRAYSIZE, [...children]);
         }
 
         if (semantic == Concept.SEMANTICVARDECL) {
@@ -42,7 +42,7 @@ export class TreeFactory {
             const node1 = semanticStack.pop() ?? new NodeEPSILON();
             const node2 = semanticStack.pop() ?? new NodeEPSILON();
             const node3 = semanticStack.pop() ?? new NodeEPSILON();
-            children.push(...[node1, node2, node3].reverse());
+            children.push(...[node1, node2, node3]);
 
             return this.createSubTree(Concept.SEMANTICVARDECL, children);
         }

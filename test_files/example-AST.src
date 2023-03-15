@@ -1,6 +1,5 @@
 function variableIdNest(arr: integer[], size: integer) => void 
 {
-  if(1 > 2) then else{
-    x = 3;
-  };
-} 
+  localvar arr: integer[7][]; 
+}
+

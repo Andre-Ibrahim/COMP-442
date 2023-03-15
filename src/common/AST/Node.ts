@@ -1,5 +1,6 @@
 import { Token } from "../../lexical_analysis/Token";
 import { Semantic } from "../Semantics/Semantic";
+import { SymbolTable } from "../SymbTab/SymbolTable";
 import { Visitor } from "../Visitors/Visitor";
 
 export class Node {
@@ -7,11 +8,17 @@ export class Node {
     children: Node[] = [];
     parentNode: Node | null = null;
 
+    symbolTable: SymbolTable | null = null;
+
     constructor() {
     }
 
     setValue(value: Token){
         this.value = value;
+    }
+
+    setSymbolTable(symbolTable : SymbolTable | null){
+        this.symbolTable = symbolTable;
     }
 
     getParentNode() {

@@ -14,9 +14,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":26}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":28}
 | | | | {"type":"id","lexeme":"n","position":28}
+| | | | {"type":"integer","lexeme":"integer","position":28}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"n","position":29}
 | | | | INDICELIST
@@ -30,9 +30,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"size","position":29}
 | | | | | | | | | | INDICELIST
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":30}
 | | | | {"type":"id","lexeme":"i","position":30}
+| | | | {"type":"integer","lexeme":"integer","position":30}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"i","position":31}
 | | | | INDICELIST

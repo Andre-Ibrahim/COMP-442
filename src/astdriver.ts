@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
+import { SymbTabVisitor } from "./common/Visitors/symbTabVisitor";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -20,6 +21,13 @@ testCases.forEach((testCase) => {
         console.log("Semantic stack size: ", parser.semanticStack.length);
         console.log(`The file ./test_files/${testCase} was parsed succefully`);
     }
+
+
+    parser.abstractSyntaxTree.accept(new SymbTabVisitor());
+
+    console.log(parser.abstractSyntaxTree.symbolTable?.toString());
+
+
 
     writeFileSync(
         `./output/${testCase}.outderivation`,

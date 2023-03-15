@@ -107,9 +107,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"float","lexeme":"float","position":27}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"float","lexeme":"float","position":29}
 | | | | {"type":"id","lexeme":"result","position":29}
+| | | | {"type":"float","lexeme":"float","position":29}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"result","position":31}
 | | | | INDICELIST
@@ -277,9 +277,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"float","lexeme":"float","position":50}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"float","lexeme":"float","position":52}
 | | | | {"type":"id","lexeme":"result","position":52}
+| | | | {"type":"float","lexeme":"float","position":52}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"result","position":53}
 | | | | INDICELIST
@@ -329,6 +329,8 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":59}
 | | FUNCBODY
 | | | VARDECL
+| | | | {"type":"id","lexeme":"f1","position":61}
+| | | | {"type":"id","lexeme":"LINEAR","position":61}
 | | | | APARAMS
 | | | | | EXPR
 | | | | | | ARITHEXPR
@@ -340,9 +342,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | TERM
 | | | | | | | | FACTOR
 | | | | | | | | | {"type":"floatnum","lexeme":"3.5","position":61}
-| | | | {"type":"id","lexeme":"LINEAR","position":61}
-| | | | {"type":"id","lexeme":"f1","position":61}
 | | | VARDECL
+| | | | {"type":"id","lexeme":"f2","position":62}
+| | | | {"type":"id","lexeme":"QUADRATIC","position":62}
 | | | | APARAMS
 | | | | | EXPR
 | | | | | | ARITHEXPR
@@ -361,8 +363,6 @@ CLASSDECLORFUNCDEF
 | | | | | | | TERM
 | | | | | | | | FACTOR
 | | | | | | | | | {"type":"floatnum","lexeme":"0.0","position":62}
-| | | | {"type":"id","lexeme":"QUADRATIC","position":62}
-| | | | {"type":"id","lexeme":"f2","position":62}
 | | | WHILESTAT
 | | | | RELEXPR
 | | | | | ARITHEXPR

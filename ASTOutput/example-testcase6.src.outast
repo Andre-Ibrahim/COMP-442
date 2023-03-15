@@ -14,9 +14,9 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":19}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":21}
 | | | | {"type":"id","lexeme":"x","position":21}
+| | | | {"type":"integer","lexeme":"integer","position":21}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"x","position":22}
 | | | | INDICELIST

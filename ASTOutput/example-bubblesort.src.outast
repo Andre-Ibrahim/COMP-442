@@ -14,21 +14,21 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":2}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":4}
 | | | | {"type":"id","lexeme":"n","position":4}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":4}
 | | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":5}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":5}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":5}
 | | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":6}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"j","position":6}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":6}
 | | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":7}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"temp","position":7}
+| | | | {"type":"integer","lexeme":"integer","position":7}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"n","position":8}
 | | | | INDICELIST
@@ -273,13 +273,13 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":28}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":30}
 | | | | {"type":"id","lexeme":"n","position":30}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":30}
 | | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":31}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":31}
+| | | | {"type":"integer","lexeme":"integer","position":31}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"n","position":32}
 | | | | INDICELIST
@@ -357,10 +357,10 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":41}
 | | FUNCBODY
 | | | VARDECL
+| | | | {"type":"id","lexeme":"arr","position":43}
+| | | | {"type":"integer","lexeme":"integer","position":43}
 | | | | ARRAYSIZE
 | | | | | {"type":"intnum","lexeme":"7","position":43}
-| | | | {"type":"integer","lexeme":"integer","position":43}
-| | | | {"type":"id","lexeme":"arr","position":43}
 | | | ASSIGNSTAT
 | | | | {"type":"id","lexeme":"arr","position":44}
 | | | | INDICELIST

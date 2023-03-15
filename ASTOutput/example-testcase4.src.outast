@@ -10,58 +10,58 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":13}
 | | FUNCBODY
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":14}
 | | | | {"type":"id","lexeme":"i","position":14}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":14}
 | | | | ARRAYSIZE
-| | | | {"type":"float","lexeme":"float","position":15}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":15}
-| | | VARDECL
+| | | | {"type":"float","lexeme":"float","position":15}
 | | | | ARRAYSIZE
-| | | | {"type":"id","lexeme":"id","position":16}
-| | | | {"type":"id","lexeme":"i","position":16}
 | | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":16}
+| | | | {"type":"id","lexeme":"id","position":16}
+| | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":17}
+| | | | {"type":"integer","lexeme":"integer","position":17}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":17}
-| | | | {"type":"id","lexeme":"i","position":17}
 | | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":18}
+| | | | {"type":"integer","lexeme":"integer","position":18}
 | | | | ARRAYSIZE
 | | | | | {"type":"intnum","lexeme":"10","position":18}
-| | | | {"type":"integer","lexeme":"integer","position":18}
-| | | | {"type":"id","lexeme":"i","position":18}
 | | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":19}
+| | | | {"type":"float","lexeme":"float","position":19}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | {"type":"float","lexeme":"float","position":19}
-| | | | {"type":"id","lexeme":"i","position":19}
 | | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":20}
+| | | | {"type":"float","lexeme":"float","position":20}
 | | | | ARRAYSIZE
 | | | | | {"type":"intnum","lexeme":"10","position":20}
-| | | | {"type":"float","lexeme":"float","position":20}
-| | | | {"type":"id","lexeme":"i","position":20}
 | | | VARDECL
-| | | | ARRAYSIZE
-| | | | | EMPTYARRAYSIZE
-| | | | | EMPTYARRAYSIZE
-| | | | {"type":"integer","lexeme":"integer","position":21}
 | | | | {"type":"id","lexeme":"i","position":21}
-| | | VARDECL
+| | | | {"type":"integer","lexeme":"integer","position":21}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | {"type":"float","lexeme":"float","position":22}
+| | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":22}
-| | | VARDECL
+| | | | {"type":"float","lexeme":"float","position":22}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | | | {"type":"intnum","lexeme":"2","position":23}
-| | | | {"type":"float","lexeme":"float","position":23}
-| | | | {"type":"id","lexeme":"i","position":23}
+| | | | | EMPTYARRAYSIZE
 | | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":23}
+| | | | {"type":"float","lexeme":"float","position":23}
 | | | | ARRAYSIZE
-| | | | | {"type":"intnum","lexeme":"3","position":24}
-| | | | | {"type":"intnum","lexeme":"9","position":24}
-| | | | {"type":"integer","lexeme":"integer","position":24}
+| | | | | {"type":"intnum","lexeme":"2","position":23}
+| | | | | EMPTYARRAYSIZE
+| | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":24}
+| | | | {"type":"integer","lexeme":"integer","position":24}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"9","position":24}
+| | | | | {"type":"intnum","lexeme":"3","position":24}
