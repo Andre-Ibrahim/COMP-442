@@ -1,5 +1,5 @@
-function variableIdNest(arr: integer[], size: integer) => void 
-{
-  localvar arr: integer[7][]; 
-}
+class POLYNOMIAL isa LINEAR {
+  public function evaluate: (x: float) => float;
+};
+
 

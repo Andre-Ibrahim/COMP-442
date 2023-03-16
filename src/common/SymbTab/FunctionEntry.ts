@@ -1,14 +1,15 @@
+import { Token } from "../../lexical_analysis/Token";
 import { Entry } from "./Entry";
 import { SymbolTable } from "./SymbolTable";
 
 export class FunctionEntry extends Entry {
-    id: string;
+    id: Token;
     aParams: AParam[];
     returnType: string;
     funcScope: SymbolTable | null = null;
 
-    constructor(name: string, id: string, aParams: AParam[], returnType: string){
-        super(name);
+    constructor(id: Token, aParams: AParam[], returnType: string){
+        super();
         this.id = id;
         this.aParams = aParams;
         this.returnType = returnType;
@@ -19,7 +20,7 @@ export class FunctionEntry extends Entry {
     }
 
     toString(){
-        let text = `function | ${this.id} | aparams: `
+        let text = `function | ${this.id.lexeme} | aparams: `
 
         this.aParams.forEach((param) => {
             text += ` ${param.id}:${param.type}${"[]".repeat(param.dim)} `;
@@ -35,7 +36,7 @@ export class FunctionEntry extends Entry {
 
 }
 
-type AParam  = {
+export type AParam  = {
     id: string;
     type: string;
     dim: number;

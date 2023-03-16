@@ -21,7 +21,11 @@ export class SymbolTable {
 
     toString(){
         let prefix = "\t".repeat(this.level);
-        let text = `${prefix}${this.name} \n`;
+        let namePrefix = "";
+        if(this.level > 0){
+            namePrefix = "\t";
+        }
+        let text = `${namePrefix}${this.name} \n`;
 
         this.entries?.forEach((entry) => {
             text += `${prefix}${entry.toString()}\n`

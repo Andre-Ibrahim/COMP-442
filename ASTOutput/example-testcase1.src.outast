@@ -2,35 +2,35 @@
 CLASSDECLORFUNCDEF
 | CLASSDECL
 | | {"type":"id","lexeme":"CLASS1","position":22}
-| | {"type":"private","lexeme":"private","position":23}
 | | MEMBERVARDECL
+| | | {"type":"private","lexeme":"private","position":23}
 | | | {"type":"id","lexeme":"a","position":23}
 | | | {"type":"float","lexeme":"float","position":23}
 | | | ARRAYSIZE
 | CLASSDECL
 | | {"type":"id","lexeme":"CLASS2","position":26}
-| | {"type":"public","lexeme":"public","position":27}
 | | MEMBERVARDECL
+| | | {"type":"public","lexeme":"public","position":27}
 | | | {"type":"id","lexeme":"a","position":27}
 | | | {"type":"float","lexeme":"float","position":27}
 | | | ARRAYSIZE
-| | {"type":"public","lexeme":"public","position":28}
 | | MEMBERVARDECL
+| | | {"type":"public","lexeme":"public","position":28}
 | | | {"type":"id","lexeme":"a","position":28}
 | | | {"type":"float","lexeme":"float","position":28}
 | | | ARRAYSIZE
 | CLASSDECL
 | | {"type":"id","lexeme":"CLASS3","position":31}
-| | {"type":"public","lexeme":"public","position":32}
 | | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":32}
 | | | {"type":"id","lexeme":"evaluate","position":32}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":32}
 | | | | {"type":"float","lexeme":"float","position":32}
 | | | | ARRAYSIZE
 | | | {"type":"float","lexeme":"float","position":32}
-| | {"type":"public","lexeme":"public","position":33}
 | | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":33}
 | | | {"type":"id","lexeme":"evaluate","position":33}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":33}
@@ -42,8 +42,8 @@ CLASSDECLORFUNCDEF
 | | ISA
 | | | {"type":"id","lexeme":"CLASS2","position":36}
 | | | {"type":"id","lexeme":"CLASS3","position":36}
-| | {"type":"private","lexeme":"private","position":37}
 | | MEMBERFUNCDECL
+| | | {"type":"private","lexeme":"private","position":37}
 | | | {"type":"id","lexeme":"evaluate","position":37}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":37}
@@ -54,8 +54,8 @@ CLASSDECLORFUNCDEF
 | | {"type":"id","lexeme":"EMPTYCLASS","position":40}
 | CLASSDECL
 | | {"type":"id","lexeme":"POLYNOMIAL","position":42}
-| | {"type":"public","lexeme":"public","position":43}
 | | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":43}
 | | | {"type":"id","lexeme":"evaluate","position":43}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":43}
@@ -66,18 +66,18 @@ CLASSDECLORFUNCDEF
 | | {"type":"id","lexeme":"LINEAR","position":46}
 | | ISA
 | | | {"type":"id","lexeme":"POLYNOMIAL","position":46}
-| | {"type":"private","lexeme":"private","position":47}
 | | MEMBERVARDECL
+| | | {"type":"private","lexeme":"private","position":47}
 | | | {"type":"id","lexeme":"a","position":47}
 | | | {"type":"float","lexeme":"float","position":47}
 | | | ARRAYSIZE
-| | {"type":"private","lexeme":"private","position":48}
 | | MEMBERVARDECL
+| | | {"type":"private","lexeme":"private","position":48}
 | | | {"type":"id","lexeme":"b","position":48}
 | | | {"type":"float","lexeme":"float","position":48}
 | | | ARRAYSIZE
-| | {"type":"public","lexeme":"public","position":49}
 | | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":49}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"A","position":49}
 | | | | {"type":"float","lexeme":"float","position":49}
@@ -85,8 +85,8 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"B","position":49}
 | | | | {"type":"float","lexeme":"float","position":49}
 | | | | ARRAYSIZE
-| | {"type":"public","lexeme":"public","position":50}
 | | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":50}
 | | | {"type":"id","lexeme":"evaluate","position":50}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":50}
@@ -97,23 +97,23 @@ CLASSDECLORFUNCDEF
 | | {"type":"id","lexeme":"QUADRATIC","position":53}
 | | ISA
 | | | {"type":"id","lexeme":"POLYNOMIAL","position":53}
-| | {"type":"private","lexeme":"private","position":54}
 | | MEMBERVARDECL
+| | | {"type":"private","lexeme":"private","position":54}
 | | | {"type":"id","lexeme":"a","position":54}
 | | | {"type":"float","lexeme":"float","position":54}
 | | | ARRAYSIZE
-| | {"type":"private","lexeme":"private","position":55}
 | | MEMBERVARDECL
+| | | {"type":"private","lexeme":"private","position":55}
 | | | {"type":"id","lexeme":"b","position":55}
 | | | {"type":"float","lexeme":"float","position":55}
 | | | ARRAYSIZE
-| | {"type":"private","lexeme":"private","position":56}
 | | MEMBERVARDECL
+| | | {"type":"private","lexeme":"private","position":56}
 | | | {"type":"id","lexeme":"c","position":56}
 | | | {"type":"float","lexeme":"float","position":56}
 | | | ARRAYSIZE
-| | {"type":"public","lexeme":"public","position":57}
 | | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":57}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"A","position":57}
 | | | | {"type":"float","lexeme":"float","position":57}
@@ -124,8 +124,8 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"C","position":57}
 | | | | {"type":"float","lexeme":"float","position":57}
 | | | | ARRAYSIZE
-| | {"type":"private","lexeme":"private","position":58}
 | | MEMBERFUNCDECL
+| | | {"type":"private","lexeme":"private","position":58}
 | | | {"type":"id","lexeme":"evaluate","position":58}
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":58}

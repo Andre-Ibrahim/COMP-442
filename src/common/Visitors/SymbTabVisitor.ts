@@ -1,3 +1,5 @@
+import TokenType from "../../lexical_analysis/TokenType";
+import { Node } from "../AST/Node";
 import { NodeAPARAMS } from "../AST/NodeAPARAMS";
 import { NodeARITHEXPR } from "../AST/NodeARITHEXPR";
 import { NodeARRAYSIZE } from "../AST/NodeARRAYSIZE";
@@ -30,9 +32,12 @@ import { NodeVARDECL } from "../AST/NodeVARDECL";
 import { NodeVARIABLE } from "../AST/NodeVARIABLE";
 import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
 import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
+import { ClassEntry } from "../SymbTab/ClassEntry";
 import { Entry } from "../SymbTab/Entry";
 import { FunctionEntry } from "../SymbTab/FunctionEntry";
+import { InheritEntry } from "../SymbTab/InheritEntry";
 import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
+import { MemberFuncEntry } from "../SymbTab/MemberFunEntry";
 import { ParameterEntry } from "../SymbTab/ParameterEntry";
 import { SymbolTable } from "../SymbTab/SymbolTable";
 import { Visitor } from "./Visitor";
@@ -71,6 +76,7 @@ export class SymbTabVisitor extends Visitor {
     visit(node: NodeCLASSDECLORFUNCDEF): void;
     visit(node: NodeEMPTYARRAYSIZE): void;
     visit(node: unknown): void {
+        const defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
         if(node instanceof NodeCLASSDECLORFUNCDEF){
         
         node.setSymbolTable(new SymbolTable(0,"global"));
@@ -83,22 +89,57 @@ export class SymbTabVisitor extends Visitor {
 
         }
 
+        if(node instanceof NodeCLASSDECL){
+            const id =  node.children[0]?.value ?? defaultToken;
+
+            const classEntry = new ClassEntry(id);
+            node.symbolTable?.addEntry(classEntry);
+
+            const localTable = this.makeTable(node, `class:${id.lexeme}`);
+            node.symbolTable?.addEntry(localTable);
+
+            this.traverseTree(node, localTable);
+
+
+        }
+
+        if(node instanceof NodeISA){
+            node.children.forEach((child) => {
+                node.symbolTable?.addEntry(new InheritEntry(child.value ?? defaultToken));
+            })
+        }
+
+        if(node instanceof NodeMEMBERFUNCDECL){
+
+            const visibility = node.children[0].value ?? defaultToken;
+            const id = node.children[1].value ?? defaultToken;
+            const returnT = node.children[node.children.length - 1].value?.lexeme ?? "void";
+
+            const memberFuncEntry = new MemberFuncEntry(id, [], returnT, visibility.lexeme);
+            node.symbolTable?.addEntry(memberFuncEntry);
+
+            const localTable = this.makeTable(node, `function:${id.lexeme}`);
+            node.symbolTable?.addEntry(localTable);
+
+            this.traverseTree(node, localTable);
+
+        }
+
+
+
         if(node instanceof NodeFUNCDEF){
 
-            const id = node.children[0].value?.lexeme ?? "";
+            const id = node.children[0].value ?? defaultToken;
             const funcArrow = node.children[1];
             const returnT = funcArrow.children[funcArrow.children.length - 1].value?.lexeme;
 
-            const functionEntry = new FunctionEntry(id, id, [], returnT ?? "");
+            const functionEntry = new FunctionEntry(id, [], returnT ?? "");
             node.symbolTable?.addEntry(functionEntry);
 
-            const localTable = new SymbolTable((node.symbolTable?.level ?? -1) + 1, "function");
+            const localTable = this.makeTable(node, `function:${id.lexeme}`);
             node.symbolTable?.addEntry(localTable);
 
-            node.children?.forEach((child) => {
-                child.setSymbolTable(localTable);
-                child.accept(this);
-            })
+            this.traverseTree(node, localTable);
 
         }
 
@@ -116,12 +157,12 @@ export class SymbTabVisitor extends Visitor {
             const entries: Entry[] =[];
             while(i < node.children.length){
 
-                const id =  node.children[i]?.value?.lexeme ?? "id";
+                const id =  node.children[i]?.value ?? defaultToken;
                 const type = node.children[i + 1]?.value?.lexeme ?? "type";
                 const dim = node.children[i + 2]?.children?.length ?? 0;
                 
                 //entries.push(new ParameterEntry(id, id, type, dim));
-                node.symbolTable?.addEntry(new ParameterEntry(id, id, type, dim));
+                node.symbolTable?.addEntry(new ParameterEntry(id, type, dim));
                 i += 3;
             }
 
@@ -141,7 +182,7 @@ export class SymbTabVisitor extends Visitor {
 
         if(node instanceof NodeVARDECL){
 
-            const id = node.children[0].value?.lexeme ?? "id";
+            const id = node.children[0].value ?? defaultToken;
             const type = node.children[1]?.value?.lexeme ?? "type";
             const dim = node.children[2].children.map((child) => {
                 if(child.value?.lexeme){
@@ -150,7 +191,7 @@ export class SymbTabVisitor extends Visitor {
 
                 return -1;
             });
-            node.symbolTable?.addEntry(new LocalVarEntry(id, id, type, dim))
+            node.symbolTable?.addEntry(new LocalVarEntry(id, type, dim))
             node.children?.forEach((child) => {
                 child.setSymbolTable(node.symbolTable);
                 child.accept(this);
@@ -158,4 +199,15 @@ export class SymbTabVisitor extends Visitor {
         }
     }
     
+
+    private traverseTree(node: Node, localTable: SymbolTable | null) {
+        node.children?.forEach((child) => {
+            child.setSymbolTable(localTable);
+            child.accept(this);
+        });
+    }
+
+    private makeTable(node: Node, name: string) {
+        return new SymbolTable((node.symbolTable?.level ?? -1) + 1, name);
+    }
 }

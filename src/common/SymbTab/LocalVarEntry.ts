@@ -1,12 +1,13 @@
+import { Token } from "../../lexical_analysis/Token";
 import { Entry } from "./Entry";
 
 export class LocalVarEntry extends Entry {
-    id: string;
+    id: Token;
     type: string;
     dim: number[];
 
-    constructor(name: string, id: string ,type: string, dim: number[]){
-        super(name);
+    constructor(id: Token ,type: string, dim: number[]){
+        super();
         this.type = type;
         this.dim = dim;
         this.id = id;
@@ -20,7 +21,7 @@ export class LocalVarEntry extends Entry {
 
             return `[${n}]`;
         }).join("");
-        return `localvar | id: ${this.id} | type:${this.type}${dim}`;
+        return `localvar | id: ${this.id.lexeme} | type:${this.type}${dim}`;
     }
 
 }

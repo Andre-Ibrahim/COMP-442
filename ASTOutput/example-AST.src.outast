@@ -1,21 +1,14 @@
 
 CLASSDECLORFUNCDEF
-| FUNCDEF
-| | {"type":"id","lexeme":"variableIdNest","position":1}
-| | FUNCARROW
+| CLASSDECL
+| | {"type":"id","lexeme":"POLYNOMIAL","position":1}
+| | ISA
+| | | {"type":"id","lexeme":"LINEAR","position":1}
+| | MEMBERFUNCDECL
+| | | {"type":"public","lexeme":"public","position":2}
+| | | {"type":"id","lexeme":"evaluate","position":2}
 | | | FPARAMS
-| | | | {"type":"id","lexeme":"arr","position":1}
-| | | | {"type":"integer","lexeme":"integer","position":1}
+| | | | {"type":"id","lexeme":"x","position":2}
+| | | | {"type":"float","lexeme":"float","position":2}
 | | | | ARRAYSIZE
-| | | | | EMPTYARRAYSIZE
-| | | | {"type":"id","lexeme":"size","position":1}
-| | | | {"type":"integer","lexeme":"integer","position":1}
-| | | | ARRAYSIZE
-| | | {"type":"void","lexeme":"void","position":1}
-| | FUNCBODY
-| | | VARDECL
-| | | | {"type":"id","lexeme":"arr","position":3}
-| | | | {"type":"integer","lexeme":"integer","position":3}
-| | | | ARRAYSIZE
-| | | | | {"type":"intnum","lexeme":"7","position":3}
-| | | | | EMPTYARRAYSIZE
+| | | {"type":"float","lexeme":"float","position":2}
