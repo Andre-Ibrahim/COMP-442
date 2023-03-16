@@ -1,10 +1,10 @@
 import { Node } from "./Node";
-export class NodeFUNCTIONCALL extends Node {
+export class NodeMEMBERFUNCARROW extends Node {
     constructor() {
         super();
     }
 
     toString(): string {
-        return "FUNCTIONCALL";
+        return "MEMBERFUNCARROW";
     }
 }

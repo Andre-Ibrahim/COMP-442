@@ -64,5 +64,4 @@ export abstract class Visitor {
     abstract visit(node: NodeISA): void;
     abstract visit(node: NodeCLASSDECLORFUNCDEF): void;
     abstract visit(node: NodeEMPTYARRAYSIZE): void;
-
 }

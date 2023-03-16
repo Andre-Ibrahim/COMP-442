@@ -1,5 +1,4 @@
 import { Token } from "../../lexical_analysis/Token";
-import { Semantic } from "../Semantics/Semantic";
 import { SymbolTable } from "../SymbTab/SymbolTable";
 import { Visitor } from "../Visitors/Visitor";
 
@@ -10,14 +9,13 @@ export class Node {
 
     symbolTable: SymbolTable | null = null;
 
-    constructor() {
-    }
+    constructor() {}
 
-    setValue(value: Token){
+    setValue(value: Token) {
         this.value = value;
     }
 
-    setSymbolTable(symbolTable : SymbolTable | null){
+    setSymbolTable(symbolTable: SymbolTable | null) {
         this.symbolTable = symbolTable;
     }
 
@@ -73,21 +71,19 @@ export class Node {
         return `\n${nodeString}${this.getTreeString(this, 1)}`;
     }
 
-    toString(): string{
+    toString(): string {
         return "DEFAULT";
     }
 
-    accept(visitor: Visitor){
+    accept(visitor: Visitor) {
         visitor.visit(this);
     }
 
-    private getNodeString(node: Node){
-        if(node.value){
-           return (node.value as Token).type ? JSON.stringify(node.value) : node.toString();
+    private getNodeString(node: Node) {
+        if (node.value) {
+            return (node.value as Token).type ? JSON.stringify(node.value) : node.toString();
         }
 
         return node.toString();
     }
 }
-
-

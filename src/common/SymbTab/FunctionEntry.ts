@@ -6,38 +6,41 @@ export class FunctionEntry extends Entry {
     id: Token;
     aParams: AParam[];
     returnType: string;
-    funcScope: SymbolTable | null = null;
+    symbolTable: SymbolTable;
 
-    constructor(id: Token, aParams: AParam[], returnType: string){
+    constructor(id: Token, aParams: AParam[], returnType: string, symbolTable: SymbolTable) {
         super();
         this.id = id;
         this.aParams = aParams;
         this.returnType = returnType;
+        this.symbolTable = symbolTable;
     }
 
-    setFuncScope(funcScope: SymbolTable){
-        this.funcScope = funcScope; 
-    }
+    toString() {
+        let text = `function | ${this.id.lexeme} | aparams: `;
 
-    toString(){
-        let text = `function | ${this.id.lexeme} | aparams: `
+        text += "(";
 
-        this.aParams.forEach((param) => {
-            text += ` ${param.id}:${param.type}${"[]".repeat(param.dim)} `;
+        this.aParams.forEach((param, i) => {
+            if(i !== 0){
+                text += " ";
+            }
+
+            text += `${param.id}:${param.type}${"[]".repeat(param.dim)}`;
         });
 
-        text += `| type: ${this.returnType}`;
+        text += ")";
 
-        text += this.funcScope?.toString() ?? "";
+        text += `| type: ${this.returnType}\n`;
 
+        text += this.symbolTable?.toString() ?? "";
 
         return text;
     }
-
 }
 
-export type AParam  = {
+export type AParam = {
     id: string;
     type: string;
     dim: number;
-}
+};

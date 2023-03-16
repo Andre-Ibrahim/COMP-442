@@ -1,5 +1,8 @@
-class POLYNOMIAL isa LINEAR {
-  public function evaluate: (x: float) => float;
-};
+
+function POLYNOMIAL(x: LINEAR[]) => float
+{
+  localvar x    : LINEAR[2];
+  return (0);
+}
 
 

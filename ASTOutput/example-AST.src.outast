@@ -1,14 +1,23 @@
 
 CLASSDECLORFUNCDEF
-| CLASSDECL
-| | {"type":"id","lexeme":"POLYNOMIAL","position":1}
-| | ISA
-| | | {"type":"id","lexeme":"LINEAR","position":1}
-| | MEMBERFUNCDECL
-| | | {"type":"public","lexeme":"public","position":2}
-| | | {"type":"id","lexeme":"evaluate","position":2}
+| FUNCDEF
+| | {"type":"id","lexeme":"POLYNOMIAL","position":2}
+| | FUNCARROW
 | | | FPARAMS
 | | | | {"type":"id","lexeme":"x","position":2}
-| | | | {"type":"float","lexeme":"float","position":2}
+| | | | {"type":"id","lexeme":"LINEAR","position":2}
 | | | | ARRAYSIZE
+| | | | | EMPTYARRAYSIZE
 | | | {"type":"float","lexeme":"float","position":2}
+| | FUNCBODY
+| | | VARDECL
+| | | | {"type":"id","lexeme":"x","position":4}
+| | | | {"type":"id","lexeme":"LINEAR","position":4}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"2","position":4}
+| | | RETURNSTAT
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {"type":"intnum","lexeme":"0","position":5}

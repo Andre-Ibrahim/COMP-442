@@ -3,88 +3,143 @@ START =>
 START =>
  CLASSDECLORFUNCDEF REPTSTART0
 START =>
- CLASSDECL REPTSTART0
+ FUNCDEF REPTSTART0
 START =>
- class id OPTCLASSDECL2 opencubr
- REPTCLASSDECL4 closecubr
- semi
+ FUNCHEAD FUNCBODY REPTSTART0
+START =>
+ function id FUNCHEAD3 FUNCBODY REPTSTART0
+START =>
+ function id openpar FPARAMS closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id ARRAYSIZE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr ARRAYSIZE2 REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype TYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float FUNCBODY REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id REPTOPTCLASSDECL22 opencubr
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ LOCALVARDECL REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- VISIBILITY MEMBERDECL REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public MEMBERDECL REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id LOCALVARDECL2 REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public MEMBERFUNCDECL REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id REPTFPARAMS3 semi
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar FPARAMS closepar returntype RETURNTYPE semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id ARRAYSIZE REPTFPARAMS3 semi
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr ARRAYSIZE2 REPTFPARAMS3 semi
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr REPTFPARAMS3 semi
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float REPTFPARAMS4 closepar returntype RETURNTYPE semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float closepar returntype RETURNTYPE semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float closepar returntype TYPE semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float closepar returntype float semi
- REPTCLASSDECL4 closecubr
- semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar EXPR closepar semi
+ REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float closepar returntype float semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar ARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar intnum RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar intnum EXPR2 closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar intnum closepar semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar intnum closepar semi
  closecubr
- semi
  REPTSTART0
 START =>
- class id isa id opencubr
- public function id colon openpar id colon float closepar returntype float semi
+ function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ localvar id colon id opensqbr intnum closesqbr semi
+ return openpar intnum closepar semi
  closecubr
- semi
  

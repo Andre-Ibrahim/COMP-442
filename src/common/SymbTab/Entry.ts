@@ -1,3 +1,1 @@
-export abstract class Entry {
-    
-}
+export abstract class Entry {}

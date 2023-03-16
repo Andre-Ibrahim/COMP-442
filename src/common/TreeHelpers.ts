@@ -31,167 +31,140 @@ import { NodeMEMBERVARDECL } from "./AST/NodeMEMBERVARDECL";
 import { NodeISA } from "./AST/NodeISA";
 import { NodeCLASSDECLORFUNCDEF } from "./AST/NodeCLASSDECLORFUNCDEF";
 import { NodeEMPTYARRAYSIZE } from "./AST/NodeEMPTYARRAYSIZE";
+import { NodeMEMBERFUNCARROW } from "./AST/NodeMEMBERFUNCARROW";
 
-export function getNodeByConcept(concept: Concept){
-    if(concept === Concept.SEMANTICVARDECL){
+export function getNodeByConcept(concept: Concept) {
+    if (concept === Concept.SEMANTICVARDECL) {
         return new NodeVARDECL();
     }
 
-    
-    if(concept === Concept.SEMANTICARRAYSIZE){
+    if (concept === Concept.SEMANTICARRAYSIZE) {
         return new NodeARRAYSIZE();
     }
 
-    
-    if(concept === Concept.SEMANTICEPSILON){
+    if (concept === Concept.SEMANTICEPSILON) {
         return new NodeEPSILON();
     }
 
-    
-    if(concept === Concept.SEMANTICRETURNSTAT){
+    if (concept === Concept.SEMANTICRETURNSTAT) {
         return new NodeRETURNSTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICEXPR){
+    if (concept === Concept.SEMANTICEXPR) {
         return new NodeEXPR();
     }
 
-    
-    if(concept === Concept.SEMANTICARITHEXPR){
+    if (concept === Concept.SEMANTICARITHEXPR) {
         return new NodeARITHEXPR();
     }
 
-    
-    if(concept === Concept.SEMANTICTERM){
+    if (concept === Concept.SEMANTICTERM) {
         return new NodeTERM();
     }
 
-    
-    if(concept === Concept.SEMANTICFACTOR){
+    if (concept === Concept.SEMANTICFACTOR) {
         return new NodeFACTOR();
     }
 
-    
-    if(concept === Concept.SEMANTICVARIABLE){
+    if (concept === Concept.SEMANTICVARIABLE) {
         return new NodeVARIABLE();
     }
 
-    
-    if(concept === Concept.SEMANTICFACTORCALLORVAR){
+    if (concept === Concept.SEMANTICFACTORCALLORVAR) {
         return new NodeFACTORCALLORVAR();
     }
 
-    
-    if(concept === Concept.SEMANTICFUNCTIONCALL){
+    if (concept === Concept.SEMANTICFUNCTIONCALL) {
         return new NodeFUNCTIONCALL();
     }
 
-    
-    if(concept === Concept.SEMANTICAPARAMS){
+    if (concept === Concept.SEMANTICAPARAMS) {
         return new NodeAPARAMS();
     }
 
-    
-    if(concept === Concept.SEMANTICWRITESTAT){
+    if (concept === Concept.SEMANTICWRITESTAT) {
         return new NodeWRITESTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICREADSTAT){
+    if (concept === Concept.SEMANTICREADSTAT) {
         return new NodeREADSTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICSTATBLOCK){
+    if (concept === Concept.SEMANTICSTATBLOCK) {
         return new NodeSTATBLOCK();
     }
 
-    
-    if(concept === Concept.SEMANTICFUNCBODY){
+    if (concept === Concept.SEMANTICFUNCBODY) {
         return new NodeFUNCBODY();
     }
 
-    
-    if(concept === Concept.SEMANTICINDICELIST){
+    if (concept === Concept.SEMANTICINDICELIST) {
         return new NodeINDICELIST();
     }
 
-    
-    if(concept === Concept.SEMANTICASSIGNSTAT){
+    if (concept === Concept.SEMANTICASSIGNSTAT) {
         return new NodeASSIGNSTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICFUNCTIONCALLSTAT){
+    if (concept === Concept.SEMANTICFUNCTIONCALLSTAT) {
         return new NodeFUNCTIONCALLSTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICRELEXPR){
+    if (concept === Concept.SEMANTICRELEXPR) {
         return new NodeRELEXPR();
     }
 
-    
-    if(concept === Concept.SEMANTICIFSTAT){
+    if (concept === Concept.SEMANTICIFSTAT) {
         return new NodeIFSTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICWHILESTAT){
+    if (concept === Concept.SEMANTICWHILESTAT) {
         return new NodeWHILESTAT();
     }
 
-    
-    if(concept === Concept.SEMANTICFUNCDEF){
+    if (concept === Concept.SEMANTICFUNCDEF) {
         return new NodeFUNCDEF();
     }
 
-    
-    if(concept === Concept.SEMANTICFUNCARROW){
+    if (concept === Concept.SEMANTICFUNCARROW) {
         return new NodeFUNCARROW();
     }
 
-    
-    if(concept === Concept.SEMANTICFUNCCONSTSTRUCT){
+    if (concept === Concept.SEMANTICFUNCCONSTSTRUCT) {
         return new NodeFUNCCONSTSTRUCT();
     }
 
-    
-    if(concept === Concept.SEMANTICFPARAMS){
+    if (concept === Concept.SEMANTICFPARAMS) {
         return new NodeFPARAMS();
     }
 
-    
-    if(concept === Concept.SEMANTICCLASSDECL){
+    if (concept === Concept.SEMANTICCLASSDECL) {
         return new NodeCLASSDECL();
     }
 
-    
-    if(concept === Concept.SEMANTICMEMBERFUNCDECL){
+    if (concept === Concept.SEMANTICMEMBERFUNCDECL) {
         return new NodeMEMBERFUNCDECL();
     }
 
-    
-    if(concept === Concept.SEMANTICMEMBERVARDECL){
+    if (concept === Concept.SEMANTICMEMBERVARDECL) {
         return new NodeMEMBERVARDECL();
     }
 
-    
-    if(concept === Concept.SEMANTICISA){
+    if (concept === Concept.SEMANTICISA) {
         return new NodeISA();
     }
 
-    
-    if(concept === Concept.SEMANTICCLASSDECLORFUNCDEF){
+    if (concept === Concept.SEMANTICCLASSDECLORFUNCDEF) {
         return new NodeCLASSDECLORFUNCDEF();
     }
 
-    
-    if(concept === Concept.SEMANTICEMPTYARRAYSIZE){
+    if (concept === Concept.SEMANTICEMPTYARRAYSIZE) {
         return new NodeEMPTYARRAYSIZE();
     }
 
-    return new NodeEPSILON();
+    if (concept === Concept.SEMANTICMEMBERFUNCARROW) {
+        return new NodeMEMBERFUNCARROW();
+    }
 
+    return new NodeEPSILON();
 }

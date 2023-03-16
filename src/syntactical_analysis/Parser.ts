@@ -1,5 +1,4 @@
 import { Node } from "../common/AST/Node";
-import { Concept } from "../common/AST/Concept";
 import { TreeFactory } from "../common/TreeFactory";
 import { terminals } from "../common/stringHelpers";
 import Lexer from "../lexical_analysis/Lexer";

@@ -252,6 +252,14 @@ export class TreeFactory {
             return this.createSubTree(Concept.SEMANTICFUNCARROW, children);
         }
 
+        if (semantic == Concept.SEMANTICMEMBERFUNCARROW) {
+            const children: Node[] = [];
+
+            popUntilEpsilon(children);
+
+            return this.createSubTree(Concept.SEMANTICMEMBERFUNCARROW, children);
+        }
+
         if (semantic == Concept.SEMANTICFUNCCONSTSTRUCT) {
             const children: Node[] = [];
 
@@ -342,7 +350,6 @@ export class TreeFactory {
 
     private createSubTree(concept: Concept, nodes: Node[]): Node {
         const root = getNodeByConcept(concept);
-
 
         nodes.forEach((node) => {
             root.createChildNodeFromNode(node);

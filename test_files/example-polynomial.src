@@ -18,6 +18,10 @@ class QUADRATIC isa POLYNOMIAL {
   public  function evaluate: (x: float) => float;
 };
 
+function QUADRATIC::constructor(A: float, B: float, C: float){
+  localvar x: float;
+}
+
 // ====== member function implementations ====== //  
 function POLYNOMIAL::evaluate(x: float) => float
 {
@@ -34,14 +38,7 @@ function QUADRATIC::evaluate(x: float) => float
   return (result);
 }
 
-function QUADRATIC::constructor(A: float, B: float, C: float)
-{
-  a = A;
-  b = B;
-  c = C;
-}
-
-function LINEAR::constructor(A: float, B: float) 
+function QUADRATIC::constructor(A: float, B: float) 
 {
   a = A;
   b = B;

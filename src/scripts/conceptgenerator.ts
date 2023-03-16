@@ -1,31 +1,24 @@
-import { writeFileSync } from "fs";
 import { Concept } from "../common/AST/Concept";
 
 const concepts = Object.keys(Concept);
 
 console.log(concepts);
 
-var text = "";
+let text = "";
 
 concepts.forEach((x) => {
-
-    text += 
-    `
+    text += `
     if(concept === Concept.${x}){
         return new ${x.replace("SEMANTIC", "Node")}();
     }\n
-    `
-
-})
+    `;
+});
 
 text = "";
 
 concepts.forEach((x) => {
-
-    text += 
-    `import { Node${x.replace("SEMANTIC", "")} } from "../AST/${x.replace("SEMANTIC", "Node")}";\n`
-
-})
+    text += `import { Node${x.replace("SEMANTIC", "")} } from "../AST/${x.replace("SEMANTIC", "Node")}";\n`;
+});
 
 console.log(text);
 
@@ -42,19 +35,15 @@ concepts.forEach((x) => {
             return "${x.replace("SEMANTIC", "")}";
         }
     }
-    `
+    `;
 
     //writeFileSync(`./src/common/AST/${x.replace("SEMANTIC", "Node")}.ts`, text);
-
-})
+});
 
 text = "";
 
 concepts.forEach((x) => {
-
-    text += 
-    `\tabstract visit(node: ${x.replace("SEMANTIC", "Node")}): void;\n`
-
-})
+    text += `\tabstract visit(node: ${x.replace("SEMANTIC", "Node")}): void;\n`;
+});
 
 console.log(text);
