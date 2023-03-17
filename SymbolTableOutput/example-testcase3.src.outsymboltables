@@ -1,0 +1,6 @@
+global 
+function | funcCallsParameters | aparams: (x:integer)| type: integer
+	function:funcCallsParameters 
+	parameter | id: x | type: integer
+	localvar | id: i | type: integer
+

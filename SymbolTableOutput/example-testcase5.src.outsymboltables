@@ -1,0 +1,8 @@
+global 
+function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void
+	function:functionBlocks 
+	parameter | id: arr | type: integer[]
+	parameter | id: size | type: integer
+	localvar | id: n | type: integer
+	localvar | id: i | type: integer
+

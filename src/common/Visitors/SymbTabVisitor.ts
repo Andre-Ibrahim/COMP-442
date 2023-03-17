@@ -34,6 +34,7 @@ import { NodeVARIABLE } from "../AST/NodeVARIABLE";
 import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
 import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
 import { ClassEntry } from "../SymbTab/ClassEntry";
+import { DataMemberEntry } from "../SymbTab/DataMemberEntry";
 import { Entry } from "../SymbTab/Entry";
 import { AParam, FunctionEntry } from "../SymbTab/FunctionEntry";
 import { InheritEntry } from "../SymbTab/InheritEntry";
@@ -46,6 +47,7 @@ import { Visitor } from "./Visitor";
 export class SymbTabVisitor extends Visitor {
     globalTable: SymbolTable = new SymbolTable(0, "global");
     errors: string[] = [];
+    warrnings: string[] = [];
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -252,6 +254,25 @@ export class SymbTabVisitor extends Visitor {
                 child.accept(this);
             });
         }
+
+        if (node instanceof NodeMEMBERVARDECL) {
+            
+            const visibility = node.children[0].value ?? defaultToken;
+            const id  = node.children[1].value ?? defaultToken;
+            const type = node.children[2].value ?? defaultToken;
+
+            
+
+            const dim: number[] = node.children[3].children.map(child => {
+                if(child instanceof NodeEMPTYARRAYSIZE){
+                    return -1;
+                }else {
+                    return Number(child.value?.lexeme);
+                }
+            });
+
+            node.symbolTable?.addEntry(new DataMemberEntry(id, type.lexeme, visibility.lexeme, dim))
+        }
     }
 
     private createParams(node: NodeMEMBERFUNCDECL, defaultToken: { lexeme: string; position: number; type: TokenType; }) {
@@ -279,8 +300,6 @@ export class SymbTabVisitor extends Visitor {
         }
         let areEqual = true;
         x.forEach((param, i) => {
-            console.log(param);
-            console.log(y[i]);
             if(param.type !== y[i].type){
                 areEqual = false;
             }

@@ -1,0 +1,48 @@
+global 
+class | id: POLYNOMIAL | 
+	class:POLYNOMIAL 
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
+
+
+class | id: LINEAR | 
+	class:LINEAR 
+	inherit | POLYNOMIAL
+	data | id: a | type: float | visibility: private
+	data | id: b | type: float | visibility: private
+	function |  | aparams: (A:float B:float)| type: void| visiblity: public
+	function: 
+		parameter | id: A | type: float
+		parameter | id: B | type: float
+
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
+		localvar | id: result | type: float
+
+
+class | id: QUADRATIC | 
+	class:QUADRATIC 
+	inherit | POLYNOMIAL
+	data | id: a | type: float | visibility: private
+	data | id: b | type: float | visibility: private
+	data | id: c | type: float | visibility: private
+	function |  | aparams: (A:float B:float C:float)| type: void| visiblity: public
+	function: 
+		parameter | id: A | type: float
+		parameter | id: B | type: float
+		parameter | id: C | type: float
+		localvar | id: x | type: float
+
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
+		localvar | id: result | type: float
+
+
+function | main | aparams: ()| type: void
+	function:main 
+	localvar | id: f1 | type: LINEAR[][]
+	localvar | id: f2 | type: QUADRATIC[][][]
+

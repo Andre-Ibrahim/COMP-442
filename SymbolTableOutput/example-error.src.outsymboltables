@@ -1,0 +1,11 @@
+global 
+class | id: POLYNOMIAL | 
+	class:POLYNOMIAL 
+	inherit | LINEAR
+	data | id: self | type: float[1] | visibility: private
+	data | id: z | type: float[1][] | visibility: private
+	function | evaluate | aparams: ()| type: float| visiblity: public
+	function:evaluate 
+		localvar | id: x | type: POLYNOMIAL
+
+

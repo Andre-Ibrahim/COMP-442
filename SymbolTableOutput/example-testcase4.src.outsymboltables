@@ -1,0 +1,16 @@
+global 
+function | variableDeclarations | aparams: (x:integer)| type: void
+	function:variableDeclarations 
+	parameter | id: x | type: integer
+	localvar | id: i | type: integer
+	localvar | id: i | type: float
+	localvar | id: i | type: id
+	localvar | id: i | type: integer[]
+	localvar | id: i | type: integer[10]
+	localvar | id: i | type: float[]
+	localvar | id: i | type: float[10]
+	localvar | id: i | type: integer[][]
+	localvar | id: i | type: float[][]
+	localvar | id: i | type: float[2][]
+	localvar | id: i | type: integer[9][3]
+

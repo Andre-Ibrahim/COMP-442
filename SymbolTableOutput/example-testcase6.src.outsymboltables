@@ -1,0 +1,7 @@
+global 
+function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void
+	function:variableIdNest 
+	parameter | id: arr | type: integer[]
+	parameter | id: size | type: integer
+	localvar | id: x | type: integer
+

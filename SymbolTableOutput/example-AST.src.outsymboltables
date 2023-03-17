@@ -1,0 +1,6 @@
+global 
+function | POLYNOMIAL | aparams: (x:LINEAR[])| type: float
+	function:POLYNOMIAL 
+	parameter | id: x | type: LINEAR[]
+	localvar | id: x | type: LINEAR[2]
+

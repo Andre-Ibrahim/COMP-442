@@ -1,0 +1,67 @@
+global 
+function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void
+	function:VOIDReturnType 
+	parameter | id: arr | type: integer[]
+	parameter | id: size | type: integer
+	localvar | id: n | type: integer
+
+function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float
+	function:FLOATReturnType 
+	parameter | id: arr | type: integer[]
+	parameter | id: size | type: integer
+	localvar | id: n | type: integer
+
+function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void
+	function:VOIDReturnType 
+	parameter | id: arr | type: integer[]
+	parameter | id: size | type: integer
+	localvar | id: n | type: integer
+
+function | VOIDReturnType | aparams: (arr:integer[][] size:float)| type: void
+	function:VOIDReturnType 
+	parameter | id: arr | type: integer[][]
+	parameter | id: size | type: float
+	localvar | id: n | type: integer
+
+function | functionParams | aparams: (x:integer y:float z:id a:integer[])| type: void
+	function:functionParams 
+	parameter | id: x | type: integer
+	parameter | id: y | type: float
+	parameter | id: z | type: id
+	parameter | id: a | type: integer[]
+
+function | printArray | aparams: (x:float)| type: integer
+	function:printArray 
+	parameter | id: x | type: float
+	localvar | id: i | type: integer
+
+function | printArray | aparams: (x:id)| type: integer
+	function:printArray 
+	parameter | id: x | type: id
+	localvar | id: i | type: integer
+
+function | printArray | aparams: (x:id)| type: id
+	function:printArray 
+	parameter | id: x | type: id
+	localvar | id: i | type: integer
+
+function | printArray | aparams: (x:float[])| type: integer
+	function:printArray 
+	parameter | id: x | type: float[]
+	localvar | id: i | type: integer
+
+function | printArray | aparams: (x:float[])| type: float
+	function:printArray 
+	parameter | id: x | type: float[]
+	localvar | id: i | type: integer
+
+function | printArray | aparams: (x:float[][])| type: float
+	function:printArray 
+	parameter | id: x | type: float[][]
+	localvar | id: i | type: integer
+
+function | printArray | aparams: (x:float[][])| type: float
+	function:printArray 
+	parameter | id: x | type: float[][]
+	localvar | id: i | type: integer
+

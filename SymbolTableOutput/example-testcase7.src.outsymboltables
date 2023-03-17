@@ -1,0 +1,6 @@
+global 
+function | expressionsTest | aparams: ()| type: void
+	function:expressionsTest 
+	localvar | id: n | type: integer
+	localvar | id: i | type: integer
+

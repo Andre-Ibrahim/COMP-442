@@ -1,12 +1,13 @@
 class POLYNOMIAL isa LINEAR {
-  public function evaluate: (x: float[]) => float;
-  public function evaluate: (x: float[]) => float;
-  public constructor: (x: float[], y: LINEAR[]);
+  private attribute self: float[1];
+  private attribute z: float[1][];
+  public function evaluate: () => float;
 };
 
-function POLYNOMIAL::evaluate(x: float[]) => float
+
+function POLYNOMIAL::evaluate() => float
 {
-  localvar x: float;
+  localvar x: POLYNOMIAL;
 }
 
 

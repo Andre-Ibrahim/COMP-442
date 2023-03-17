@@ -90,7 +90,7 @@ export default class Lexer extends AbstractLexer {
         }
 
         const reservedKeyword = stringToKeywordTokenType.get(this.lexeme);
-        if (reservedKeyword) {
+        if (reservedKeyword && this.lexeme !== "self") {
             this.tokenType = reservedKeyword;
         }
 

@@ -18,7 +18,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "npx ts-node ./src/ASTdriver.ts",
+    "start": "npx ts-node ./src/semanticanalyzerdriver.ts",
     "script": "npx ts-node ./src/scripts/conceptgenerator.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
