@@ -1,11 +1,103 @@
 global 
 class | id: POLYNOMIAL | 
 	class:POLYNOMIAL 
-	inherit | LINEAR
-	data | id: self | type: float[1] | visibility: private
-	data | id: z | type: float[1][] | visibility: private
-	function | evaluate | aparams: ()| type: float| visiblity: public
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
 	function:evaluate 
-		localvar | id: x | type: POLYNOMIAL
+		parameter | id: x | type: float
 
+	function | evaluate2 | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate2 
+		parameter | id: x | type: float
+
+
+class | id: POLYNOMIAL | 
+	class:POLYNOMIAL 
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
+
+	function | evaluate | aparams: (x:integer)| type: integer| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: integer
+
+
+class | id: LINEAR | 
+	class:LINEAR 
+	inherit | POLYNOMIAL
+	data | id: a | type: float | visibility: private
+	data | id: b | type: float | visibility: private
+	data | id: b | type: integer | visibility: private
+	function |  | aparams: (A:float B:float)| type: void| visiblity: public
+	function: 
+		parameter | id: A | type: float
+		parameter | id: B | type: float
+		localvar | id: new_function | type: LINEAR
+
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
+		localvar | id: result | type: float
+
+
+class | id: QUADRATIC | 
+	class:QUADRATIC 
+	inherit | POLYNOMIAL
+	data | id: a | type: float | visibility: private
+	data | id: b | type: float | visibility: private
+	data | id: c | type: float | visibility: private
+	function |  | aparams: (A:float B:float C:float)| type: void| visiblity: public
+	function: 
+		parameter | id: A | type: float
+		parameter | id: B | type: float
+		parameter | id: C | type: float
+		localvar | id: new_function | type: QUADRATIC
+
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
+		localvar | id: result | type: float
+
+
+class | id: C | 
+	class:C 
+	inherit | E
+	data | id: a | type: integer | visibility: private
+
+class | id: D | 
+	class:D 
+	inherit | C
+	data | id: b | type: integer | visibility: private
+
+class | id: E | 
+	class:E 
+	inherit | D
+	data | id: c | type: integer | visibility: private
+
+function | f | aparams: (i:integer)| type: void
+	function:f 
+	parameter | id: i | type: integer
+
+function | f | aparams: (i:integer)| type: void
+	function:f 
+	parameter | id: i | type: integer
+
+function | f | aparams: (i:integer j:integer)| type: integer
+	function:f 
+	parameter | id: i | type: integer
+	parameter | id: j | type: integer
+
+function | f3 | aparams: (p1:integer[][])| type: integer
+	function:f3 
+	parameter | id: p1 | type: integer[][]
+
+function | main | aparams: ()| type: void
+	function:main 
+	localvar | id: a | type: a
+	localvar | id: c | type: C
+	localvar | id: f1 | type: LINEAR
+	localvar | id: f2 | type: QUADRATIC
+	localvar | id: counter | type: integer
+	localvar | id: counter | type: float
+	localvar | id: i | type: integer[2][3]
+	localvar | id: j | type: integer[1][2][3]
 

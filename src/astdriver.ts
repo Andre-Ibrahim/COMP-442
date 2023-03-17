@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
-import { SymbTabVisitor } from "./common/Visitors/symbTabVisitor";
+import { SymbTabVisitor } from "./common/Visitors/SymbTabVisitor";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -30,15 +30,7 @@ testCases.forEach((testCase) => {
     console.log(parser.abstractSyntaxTree.symbolTable?.toString());
 
     console.log(symTabVisitor.errors);
-
-    writeFileSync(
-        `./output/${testCase}.outderivation`,
-        parser.derivations
-            .replace(/=>/g, "=>\n")
-            .replace(/opencubr/g, "opencubr\n")
-            .replace(/semi/g, "semi\n")
-            .replace(/closecubr/g, "closecubr\n"),
-    );
+    
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
 
     writeFileSync(`./ASTOutput/${testCase}.outast`, parser.abstractSyntaxTree.printTree());

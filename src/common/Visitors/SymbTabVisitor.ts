@@ -33,6 +33,7 @@ import { NodeVARDECL } from "../AST/NodeVARDECL";
 import { NodeVARIABLE } from "../AST/NodeVARIABLE";
 import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
 import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
+import { CompilerError } from "../Errors/Error";
 import { ClassEntry } from "../SymbTab/ClassEntry";
 import { DataMemberEntry } from "../SymbTab/DataMemberEntry";
 import { Entry } from "../SymbTab/Entry";
@@ -46,7 +47,7 @@ import { Visitor } from "./Visitor";
 
 export class SymbTabVisitor extends Visitor {
     globalTable: SymbolTable = new SymbolTable(0, "global");
-    errors: string[] = [];
+    errors: CompilerError[] = [];
     warrnings: string[] = [];
 
     visit(node: NodeVARDECL): void;
@@ -99,7 +100,16 @@ export class SymbTabVisitor extends Visitor {
             const localTable = this.makeTable(node, `class:${id.lexeme}`);
 
             const classEntry = new ClassEntry(id, localTable);
+
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof ClassEntry && entry.id.lexeme === id.lexeme){
+                    this.errors.push(new CompilerError("8.1", id, "Multipy declared classes"));
+                }
+            });
+
             node.symbolTable?.addEntry(classEntry);
+
+            let multipleDefinedClass = false;
 
             //node.symbolTable?.addEntry(localTable);
 
@@ -139,6 +149,26 @@ export class SymbTabVisitor extends Visitor {
 
                 const aparams: AParam[] = this.createParams(funcHead, defaultToken);
 
+                let error = false;
+
+                node.symbolTable?.entries.forEach((entry) => {
+                    if(entry instanceof FunctionEntry && entry.id.lexeme === id.lexeme && this.ParamsEqual(entry.aParams, aparams) && entry.returnType === returnT){
+                        if(!error){
+                            this.errors.push(new CompilerError("8.2", id, "Multipy declared functions"));
+                        }
+                        
+                        error = true;
+
+                    }else if(entry instanceof FunctionEntry && entry.id.lexeme === id.lexeme){
+                        if(!error){
+                            this.errors.push(new CompilerError("9.1", id, "overloaded free function"));
+                        }
+
+                        error = true;
+                    }
+
+                });
+
                 const functionEntry = new FunctionEntry(id, aparams, returnT ?? "", localTable);
                 node.symbolTable?.addEntry(functionEntry);
 
@@ -156,7 +186,7 @@ export class SymbTabVisitor extends Visitor {
                 );
 
                 if (classes.length === 0) {
-                    this.errors.push(`class ${className.lexeme} not declared: ${className.position}`);
+                    this.errors.push(new CompilerError("6.1", className, "undeclared class and member function definition"));
                 } else {
 
                     // checks if there is a function decleration that coresponds to the header
@@ -169,7 +199,7 @@ export class SymbTabVisitor extends Visitor {
 
                         // ToDo: check inherit classes
                         this.errors.push(
-                            `function ${funcName.lexeme} not declared in parent class ${className.lexeme}: ${funcName.position}`,
+                            new CompilerError("6.1", funcName, "undeclared member function definition"),
                         );
                     }else {
         
@@ -178,7 +208,7 @@ export class SymbTabVisitor extends Visitor {
                             func.defined = true;
                             this.traverseTree(node, func.symbolTable);
                         }else {
-                            this.errors.push(`function ${func.id.lexeme} already defined: ${funcName.position}`)
+                            this.errors.push(new CompilerError("x.x", className, "mutiply definied member function definition"))
                         }
                         
                         
@@ -248,6 +278,11 @@ export class SymbTabVisitor extends Visitor {
 
                 return -1;
             });
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof LocalVarEntry && entry.id.lexeme === id.lexeme){
+                    this.errors.push(new CompilerError("8.4", id, "Multipy declared identifier in function"));
+                }
+            });
             node.symbolTable?.addEntry(new LocalVarEntry(id, type, dim));
             node.children?.forEach((child) => {
                 child.setSymbolTable(node.symbolTable);
@@ -268,6 +303,12 @@ export class SymbTabVisitor extends Visitor {
                     return -1;
                 }else {
                     return Number(child.value?.lexeme);
+                }
+            });
+
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme){
+                    this.errors.push(new CompilerError("8.3", id, "Multipy declared data member in class"));
                 }
             });
 
