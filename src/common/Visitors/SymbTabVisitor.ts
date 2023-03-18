@@ -125,8 +125,9 @@ export class SymbTabVisitor extends Visitor {
 
         if (node instanceof NodeMEMBERFUNCDECL) {
             const visibility = node.children[0]?.value ?? defaultToken;
-            const id = node.children[1]?.value ?? defaultToken;
-            const returnT = node.children[node.children.length - 1].value?.lexeme ?? "void";
+            const id = node.children[1]?.value ?? { lexeme: "build", position: 0, type: TokenType.EOF };
+            const className = node.symbolTable?.name.split(":")[1] ?? "";
+            const returnT = node.children[node.children.length - 1].value?.lexeme ?? className;
 
             const localTable = this.makeTable(node, `function:${id.lexeme}`);
 
@@ -218,8 +219,8 @@ export class SymbTabVisitor extends Visitor {
                 this.traverseTree(node, localTable);
             } else if (funcHead instanceof NodeMEMBERFUNCARROW || funcHead instanceof NodeFUNCCONSTSTRUCT) {
                 const className = node.children[0].value ?? defaultToken;
-                const funcName = funcHead.children[0].value ?? defaultToken;
-                const returnT = funcHead.children[funcHead.children.length - 1].value?.lexeme ?? "void";
+                const returnT = funcHead.children[funcHead.children.length - 1].value?.lexeme ?? className.lexeme;
+                const funcName = funcHead.children[0].value ?? { lexeme: "build", position: className.position, type: TokenType.EOF };
                 const aparams: AParam[] = this.createParams(funcHead, defaultToken);
 
                 const classes = this.globalTable.entries.filter(

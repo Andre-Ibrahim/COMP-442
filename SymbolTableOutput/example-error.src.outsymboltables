@@ -27,8 +27,8 @@ class | id: LINEAR |
 	data | id: a | type: float | visibility: private
 	data | id: b | type: float | visibility: private
 	data | id: b | type: integer | visibility: private
-	function |  | aparams: (A:float B:float)| type: void| visiblity: public
-	function: 
+	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public
+	function:build 
 		parameter | id: A | type: float
 		parameter | id: B | type: float
 		localvar | id: new_function | type: LINEAR
@@ -45,8 +45,8 @@ class | id: QUADRATIC |
 	data | id: a | type: float | visibility: private
 	data | id: b | type: float | visibility: private
 	data | id: c | type: float | visibility: private
-	function |  | aparams: (A:float B:float C:float)| type: void| visiblity: public
-	function: 
+	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public
+	function:build 
 		parameter | id: A | type: float
 		parameter | id: B | type: float
 		parameter | id: C | type: float
