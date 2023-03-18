@@ -5,6 +5,7 @@ import { SymbolTable } from "./SymbolTable";
 export class MemberFuncEntry extends FunctionEntry {
     visibility: string;
     defined: boolean = false;
+    inherited: boolean = false;
 
     constructor(id: Token, aParams: AParam[], returnType: string, visibility: string, symbolTable: SymbolTable) {
         super(id, aParams, returnType, symbolTable);

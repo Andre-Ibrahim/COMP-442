@@ -34,6 +34,7 @@ import { NodeVARIABLE } from "../AST/NodeVARIABLE";
 import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
 import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
 import { CompilerError } from "../Errors/Error";
+import { CompilerWarning } from "../Errors/Warning";
 import { ClassEntry } from "../SymbTab/ClassEntry";
 import { DataMemberEntry } from "../SymbTab/DataMemberEntry";
 import { Entry } from "../SymbTab/Entry";
@@ -48,7 +49,7 @@ import { Visitor } from "./Visitor";
 export class SymbTabVisitor extends Visitor {
     globalTable: SymbolTable = new SymbolTable(0, "global");
     errors: CompilerError[] = [];
-    warrnings: string[] = [];
+    warrnings: CompilerWarning[] = [];
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -131,6 +132,46 @@ export class SymbTabVisitor extends Visitor {
 
             const aparams: AParam[] = this.createParams(node, defaultToken);
 
+            let error = false;
+
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof MemberFuncEntry && entry.id.lexeme === id.lexeme && this.ParamsEqual(entry.aParams, aparams) && entry.returnType === returnT){
+                    if(!error){
+                        this.errors.push(new CompilerError("8.2", id, "Multipy declared member function functions"));
+                    }
+                    
+                    error = true;
+
+                }else if(entry instanceof MemberFuncEntry && entry.id.lexeme === id.lexeme){
+                    if(!error){
+                        this.warrnings.push(new CompilerWarning("9.2", id, "overloaded member function free function"));
+                    }
+
+                    error = true;
+                }
+
+            });
+
+            error = false;
+
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof InheritEntry){
+                    this.globalTable.entries.forEach((e) =>{
+                        if(e instanceof ClassEntry && e.id.lexeme === entry.id.lexeme){
+                            e.symbolTable.entries.forEach((func) => {
+                                if(func instanceof MemberFuncEntry && func.id.lexeme === id.lexeme && this.ParamsEqual(func.aParams, aparams) && func.returnType === returnT){
+                                    if(!error){
+                                        this.warrnings.push(new CompilerWarning("9.3", id, "Overridden inherited member function"));
+                                    }
+
+                                    error = true;
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+
             const memberFuncEntry = new MemberFuncEntry(id, aparams, returnT, visibility.lexeme, localTable);
             node.symbolTable?.addEntry(memberFuncEntry);
 
@@ -161,7 +202,7 @@ export class SymbTabVisitor extends Visitor {
 
                     }else if(entry instanceof FunctionEntry && entry.id.lexeme === id.lexeme){
                         if(!error){
-                            this.errors.push(new CompilerError("9.1", id, "overloaded free function"));
+                            this.warrnings.push(new CompilerWarning("9.1", id, "overloaded free function"));
                         }
 
                         error = true;

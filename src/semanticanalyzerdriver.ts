@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
 import { SymbTabVisitor } from "./common/Visitors/SymbTabVisitor";
+import { getUndefinedMemberFunction } from "./common/Errors/undefinedMemberFunction";
+import { CompilerError } from "./common/Errors/Error";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -28,7 +30,12 @@ testCases.forEach((testCase) => {
     parser.abstractSyntaxTree.accept(symTabVisitor);
     writeFileSync(`./SymbolTableOutput/${testCase}.outsymboltables`, parser.abstractSyntaxTree.symbolTable?.toString() ?? "")
 
-    console.log(symTabVisitor.errors);
+    const errors: CompilerError[] = []
+
+    errors.push(...symTabVisitor.errors);
+    errors.push(...getUndefinedMemberFunction(parser.abstractSyntaxTree.symbolTable));
+    console.log(errors);
+    console.log(symTabVisitor.warrnings);
 
     writeFileSync(
         `./output/${testCase}.outderivation`,

@@ -1,6 +1,6 @@
 import { Token } from "../../lexical_analysis/Token";
 
-export class CompilerError {
+export class CompilerWarning {
     id: string;
     token: Token;
     message: string;
@@ -12,6 +12,6 @@ export class CompilerError {
     }
 
     toString(){
-        return `error: ${this.id} :${this.token.lexeme}: ${this.message} :${this.token.position}`;
+        return `warning: ${this.id} :${this.token.lexeme}: ${this.message} :${this.token.position}`;
     }
 }
