@@ -8,6 +8,7 @@ class POLYNOMIAL {                                                      // 8.1
 	      public function evaluate: (x: float) => float;                        
         public function evaluate: (x: integer) => integer;                // 9.2
 };
+
 class LINEAR isa POLYNOMIAL {
 	private attribute a: float;
 	private attribute b: float;
@@ -18,12 +19,17 @@ class LINEAR isa POLYNOMIAL {
 };
 
 class QUADRATIC isa POLYNOMIAL {
-	private attribute a: float;                                         // 8.5
-	private attribute b: float;                                         // 8.5
+	private attribute a: float;                                        
+	private attribute b: float;                                         
 	private attribute c: float;
 	
 	public constructor: (A: float, B: float, C: float);
 	public function evaluate: (x: float) => float;                      // 9.3
+};
+
+class F isa QUADRATIC {
+  private attribute a: float;                                         // 8.5
+	private attribute b: float;   
 };
 
 class C isa E {

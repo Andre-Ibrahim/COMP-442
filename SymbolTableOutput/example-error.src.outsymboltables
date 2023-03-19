@@ -58,6 +58,12 @@ class | id: QUADRATIC |
 		localvar | id: result | type: float
 
 
+class | id: F | 
+	class:F 
+	inherit | QUADRATIC
+	data | id: a | type: float | visibility: private
+	data | id: b | type: float | visibility: private
+
 class | id: C | 
 	class:C 
 	inherit | E

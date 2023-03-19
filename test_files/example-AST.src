@@ -1,17 +1,14 @@
-class QUADRATIC {
-	private attribute a: float;                                         // 8.5
-	private attribute b: float;                                         // 8.5
-	private attribute c: float;
+class POLYNOMIAL {                                                      // 8.1
+  private attribute b: float;
+  private attribute c: float;
+};
+class LINEAR isa POLYNOMIAL {
+	private attribute b: float;                                     // 8.3
 	
-	public constructor: (A: float, B: float, C: float);
+	public constructor: (A: float, B: float);
 	public function evaluate: (x: float) => float;                      // 9.3
 };
 
-function QUADRATIC::constructor(A: float, B: float, C: float)
-  {
-    localvar new_function: QUADRATIC ;
-    new_function.a = A + B * 3;                                            // 10.1
-    new_function.b = B;
-    new_function.c = 1;                                                    // 10.2 
-    return (1);                                                            // 10.3
-  }
+class D isa LINEAR {
+  private attribute c: float;
+};

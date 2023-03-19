@@ -1,2 +1,2 @@
-error: 6.2 :evaluate: undefined member function decleration :7
-error: 10.1 :3: "." type error in expression :13
+error: 6.2 :build: undefined member function decleration :0
+error: 6.2 :evaluate: undefined member function decleration :9

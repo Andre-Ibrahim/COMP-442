@@ -286,7 +286,7 @@ export class SymbTabVisitor extends Visitor {
                 const dim = node.children[i + 2]?.children?.length ?? 0;
 
                 //entries.push(new ParameterEntry(id, id, type, dim));
-                node.symbolTable?.addEntry(new ParameterEntry(id, type, dim));
+                node.symbolTable?.addEntry(new ParameterEntry(id, type, new Array<number>(dim)));
                 i += 3;
             }
 
@@ -354,6 +354,14 @@ export class SymbTabVisitor extends Visitor {
                 }
             });
 
+            const inherited = this.getInhertiedMembers(node);
+
+            inherited.forEach((entry) => {
+                if(entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme){
+                    this.warrnings.push(new CompilerWarning("8.5", id, "Shadowed inherited data member"));
+                }
+            });
+
             node.symbolTable?.addEntry(new DataMemberEntry(id, type.lexeme, visibility.lexeme, dim))
         }
 
@@ -388,6 +396,29 @@ export class SymbTabVisitor extends Visitor {
         if(node instanceof NodeFACTORCALLORVAR){
             this.traverseTree(node, node.symbolTable);
         }
+
+    }
+
+    private getInhertiedMembers(node: Node): Entry[] {
+        const dataMembers: Entry[] = [];
+
+
+        node.symbolTable?.entries.forEach((entry) => {
+            if(entry instanceof InheritEntry){
+                this.globalTable.entries.forEach((e) => {
+                    if(e instanceof ClassEntry && e.id.lexeme === entry.id.lexeme){
+                        
+                        e.symbolTable.entries.forEach((l) =>{
+                            if(l instanceof DataMemberEntry){
+                                dataMembers.push(l);
+                            }
+                        })
+                    }
+                })
+            }
+        })
+
+        return dataMembers;
 
     }
 

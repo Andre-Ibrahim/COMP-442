@@ -103,6 +103,13 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
+        if(node instanceof NodeRETURNSTAT){
+            
+            // just a number
+            // idnest
+
+        }
+
         if(node instanceof NodeASSIGNSTAT){
             // logic for error
             const idnest = [...node.children];
@@ -112,7 +119,20 @@ export class TypeCheckVisitor extends Visitor {
                 if(this.AssignStatisFunction(node, 0)){
                     firstReturnType = this.handleFunctionCall(idnest[0], this.globalSymbolTable);
                 }else if(this.AssignStatisVariable(node, 0) ) {
-                    firstReturnType = this.getVariableType(idnest[0], null);
+                    
+                    let counter = 0;
+
+                    if (idnest[1] instanceof NodeINDICELIST){
+                        counter = idnest[1].children.length;
+                    }
+                    
+                    firstReturnType = this.getVariableType(idnest[0], null, counter);
+
+                    const id = idnest[0].value ?? this.defaultToken;
+                    if (firstReturnType === "void" && id.lexeme !== "self") {
+                        
+                        this.errors.push(new CompilerError("11.1", id, "\".\" undelclared localvar"));
+                    }
                 }
             }
 
@@ -238,113 +258,117 @@ export class TypeCheckVisitor extends Visitor {
 
         if(node instanceof NodeFACTORCALLORVAR){
 
-            const variableOrFuncCall = [...node.children];
-            let firstReturnType = "void";
-            let isError = false;
-
-            if(variableOrFuncCall.length > 0){
-                if(variableOrFuncCall[0] instanceof NodeFUNCTIONCALL){
-                    firstReturnType = this.handleFunctionCall(variableOrFuncCall[0], this.globalSymbolTable);
-                }else if(variableOrFuncCall[0] instanceof NodeVARIABLE){
-                    firstReturnType = this.getVariableType(variableOrFuncCall[0], variableOrFuncCall[0].symbolTable?.parentTable ?? null);
-                    const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
-                    if(firstReturnType === "void" && id.lexeme !== "self"){
-                        this.errors.push(new CompilerError("11.1", id, "\".\" undelclared localvar"));
-                        isError = true;
-                    }   
-                }
-            }
-
-            if(this.isPrimitive(firstReturnType) && variableOrFuncCall.length > 1){
-                const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
-                this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
-                isError = true;
-                
-            }
-            
-            let previousReturnType = firstReturnType;
-            let previousId = variableOrFuncCall[0]?.children[0]?.value ?? this.defaultToken;
-            if(!this.isPrimitive(firstReturnType)) {
-
-                    variableOrFuncCall.shift();
-                    
-                    variableOrFuncCall.forEach((e) => {
-
-                        const classMembers: Entry[] = [];
-
-                        if(e instanceof NodeVARIABLE){
-                            const variableName = this.getVariableName(e);
-
-        
-                            this.getClassDataMembers(previousReturnType).forEach((entry) => {
-                                if(entry instanceof DataMemberEntry && entry.id.lexeme === variableName){
-                                    classMembers.push(entry);
-                                }
-
-                            })
-                        }
-
-                        if(e instanceof NodeFUNCTIONCALL){
-                            
-                            this.getClassMemberFunction(previousReturnType).forEach((entry) => {
-                                const functionName = this.getVariableName(e);
-                                if(entry instanceof MemberFuncEntry && entry.id.lexeme === functionName){
-                                    classMembers.push(entry);
-                                }
-
-                            })
-                        }
-                        
-                        if(classMembers.length === 0){
-                            const id = e.children[0].value ?? this.defaultToken;
-                            if(this.isPrimitive(previousReturnType)){
-                                this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
-                                isError = true;
-                            }else {
-                                if(previousId.lexeme === "self"){
-                                    this.errors.push(new CompilerError("15.2", id, "\".\" incorrect use of self"));
-                                    isError = true;
-                                }else if (e instanceof NodeVARIABLE){
-                                    this.errors.push(new CompilerError("11.2", id, "\".\" undeclared data member"));
-                                    isError = true;
-                                }else if(e instanceof NodeFUNCTIONCALL){
-                                    this.errors.push(new CompilerError("11.3", id, "\".\" undeclared member function"));
-                                    isError = true;
-                                }
-                            }
-                            
-                        }else {
-                            const classEntry = this.getClassEntryByName(previousReturnType);
-
-                            if(e instanceof NodeFUNCTIONCALL){
-                                if(classEntry instanceof ClassEntry){
-                                    previousReturnType = this.handleFunctionCall(e, classEntry.symbolTable);
-                                }
-                            }else if(e instanceof NodeVARIABLE){
-                                if(classEntry instanceof ClassEntry){
-                                    previousReturnType = this.getVariableFromClassType(e, classEntry.symbolTable);
-                                }
-                            }
-                        }
-                        previousId = e.children[0].value ?? this.defaultToken;
-                    })
-            }
-
-            if(!isError){
-                if(node.parentNode && node.parentNode.parentNode && node.parentNode.parentNode.parentNode){
-                    // setting the type of the term
-                    if(node.parentNode.parentNode.parentNode.type === ""){
-                        node.parentNode.parentNode.parentNode.type = previousReturnType;
-                    }else if(node.parentNode.parentNode.parentNode.type !== previousReturnType){
-                        this.errors.push(new CompilerError("10.1", previousId, "\".\" type error in expression"));
-                    }
-                    
-                }
-            }
-
-
-            this.traverseTree(node);
+            this.handleFactorCallOrVar(node);
         }
+    }
+
+    private handleFactorCallOrVar(node: NodeFACTORCALLORVAR) {
+        const variableOrFuncCall = [...node.children];
+        let firstReturnType = "void";
+        let isError = false;
+
+        if (variableOrFuncCall.length > 0) {
+            if (variableOrFuncCall[0] instanceof NodeFUNCTIONCALL) {
+                firstReturnType = this.handleFunctionCall(variableOrFuncCall[0], this.globalSymbolTable);
+            } else if (variableOrFuncCall[0] instanceof NodeVARIABLE) {
+                firstReturnType = this.getVariableType(variableOrFuncCall[0], variableOrFuncCall[0].symbolTable?.parentTable ?? null);
+                const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
+                if (firstReturnType === "void" && id.lexeme !== "self") {
+                    this.errors.push(new CompilerError("11.1", id, "\".\" undelclared localvar"));
+                    isError = true;
+                }
+            }
+        }
+
+        if (this.isPrimitive(firstReturnType) && variableOrFuncCall.length > 1) {
+            const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
+            this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
+            isError = true;
+
+        }
+
+        let previousReturnType = firstReturnType;
+        let previousId = variableOrFuncCall[0]?.children[0]?.value ?? this.defaultToken;
+        if (!this.isPrimitive(firstReturnType)) {
+
+            variableOrFuncCall.shift();
+
+            variableOrFuncCall.forEach((e) => {
+
+                const classMembers: Entry[] = [];
+
+                if (e instanceof NodeVARIABLE) {
+                    const variableName = this.getVariableName(e);
+
+
+                    this.getClassDataMembers(previousReturnType).forEach((entry) => {
+                        if (entry instanceof DataMemberEntry && entry.id.lexeme === variableName) {
+                            classMembers.push(entry);
+                        }
+
+                    });
+                }
+
+                if (e instanceof NodeFUNCTIONCALL) {
+
+                    this.getClassMemberFunction(previousReturnType).forEach((entry) => {
+                        const functionName = this.getVariableName(e);
+                        if (entry instanceof MemberFuncEntry && entry.id.lexeme === functionName) {
+                            classMembers.push(entry);
+                        }
+
+                    });
+                }
+
+                if (classMembers.length === 0) {
+                    const id = e.children[0].value ?? this.defaultToken;
+                    if (this.isPrimitive(previousReturnType)) {
+                        this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
+                        isError = true;
+                    } else {
+                        if (previousId.lexeme === "self") {
+                            this.errors.push(new CompilerError("15.2", id, "\".\" incorrect use of self"));
+                            isError = true;
+                        } else if (e instanceof NodeVARIABLE) {
+                            this.errors.push(new CompilerError("11.2", id, "\".\" undeclared data member"));
+                            isError = true;
+                        } else if (e instanceof NodeFUNCTIONCALL) {
+                            this.errors.push(new CompilerError("11.3", id, "\".\" undeclared member function"));
+                            isError = true;
+                        }
+                    }
+
+                } else {
+                    const classEntry = this.getClassEntryByName(previousReturnType);
+
+                    if (e instanceof NodeFUNCTIONCALL) {
+                        if (classEntry instanceof ClassEntry) {
+                            previousReturnType = this.handleFunctionCall(e, classEntry.symbolTable);
+                        }
+                    } else if (e instanceof NodeVARIABLE) {
+                        if (classEntry instanceof ClassEntry) {
+                            previousReturnType = this.getVariableFromClassType(e, classEntry.symbolTable);
+                        }
+                    }
+                }
+                previousId = e.children[0].value ?? this.defaultToken;
+            });
+        }
+
+        if (!isError) {
+            if (node.parentNode && node.parentNode.parentNode && node.parentNode.parentNode.parentNode) {
+                // setting the type of the term
+                if (node.parentNode.parentNode.parentNode.type === "") {
+                    node.parentNode.parentNode.parentNode.type = previousReturnType;
+                } else if (node.parentNode.parentNode.parentNode.type !== previousReturnType) {
+                    this.errors.push(new CompilerError("10.1", previousId, "\".\" type error in expression"));
+                }
+
+            }
+        }
+        this.traverseTree(node);
+
+        return previousReturnType;
     }
 
     private AssignStatisVariable(node: Node, index: number): boolean {
@@ -412,8 +436,9 @@ export class TypeCheckVisitor extends Visitor {
     }
 
     // ToDo if we pass indice we can check if array is used properly
-    private getVariableType(variable: Node, classTable: SymbolTable | null): string {
+    private getVariableType(variable: Node, classTable: SymbolTable | null, indice?: number): string {
         let variableName = variable.children[0]?.value?.lexeme ?? "";
+        //console.log(variableName);
 
         variableName = variableName === "" ? variable?.value?.lexeme ?? "" : variableName;
         const entries: Entry[] = [];
@@ -442,6 +467,13 @@ export class TypeCheckVisitor extends Visitor {
         if(entries && entries.length > 0){
             const entry = entries[0];
             if(entry instanceof ParameterEntry || entry instanceof LocalVarEntry || entry instanceof DataMemberEntry){
+
+                if(indice){
+                    if((entry.dim.length !== indice)){
+                        this.errors.push(new CompilerError("13.2", entry.id, "Array parameters using wrong number of dimentions"));
+                    }
+                }
+
                 return entry.type;
             }
         }
