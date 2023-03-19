@@ -12,11 +12,7 @@ class A {
 
 function test(size: integer) => integer
 {
-  localvar n    : integer;
-  localvar i    : integer;
-  localvar j    : integer;
-  localvar temp : integer; 
-  n = 2;
+  x = i.f().i;
 }
 
 

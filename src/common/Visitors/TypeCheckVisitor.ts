@@ -111,7 +111,7 @@ export class TypeCheckVisitor extends Visitor {
                 if(this.AssignStatisFunction(node, 0)){
                     firstReturnType = this.handleFunctionCall(idnest[0], this.globalSymbolTable);
                 }else if(this.AssignStatisVariable(node, 0) ) {
-                    firstReturnType = this.getVariableType(idnest[0]);
+                    firstReturnType = this.getVariableType(idnest[0], null);
                 }
             }
 
@@ -206,31 +206,6 @@ export class TypeCheckVisitor extends Visitor {
         }
 
         if(node instanceof NodeEXPR){
-            const leafs: Node[] = [];
-            getNodeList(node, leafs);
-            
-            let variables: Token[] = [];
-            leafs.forEach((leaf) => {
-                if(leaf.value?.type === TokenType.ID){
-                    variables.push(leaf.value);
-                }
-            });
-            
-            variables.forEach((variable) => {
-                let undeclared = true;
-
-                node.symbolTable?.entries.forEach((entry) => {
-                    
-                    if(entry instanceof LocalVarEntry || entry instanceof ParameterEntry && entry.id.lexeme === variable.lexeme){
-                        undeclared = false;
-                    }
-                    
-                })
-
-                if(undeclared){
-                    this.errors.push(new CompilerError("11.1", variable, "Undeclared local variable"));
-                }
-            })
 
             this.traverseTree(node);
         }
@@ -257,7 +232,11 @@ export class TypeCheckVisitor extends Visitor {
                 if(variableOrFuncCall[0] instanceof NodeFUNCTIONCALL){
                     firstReturnType = this.handleFunctionCall(variableOrFuncCall[0], this.globalSymbolTable);
                 }else if(variableOrFuncCall[0] instanceof NodeVARIABLE){
-                    firstReturnType = this.getVariableType(variableOrFuncCall[0]);
+                    firstReturnType = this.getVariableType(variableOrFuncCall[0], variableOrFuncCall[0].symbolTable?.parentTable ?? null);
+                    const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
+                    if(firstReturnType === "void" && id.lexeme !== "self"){
+                        this.errors.push(new CompilerError("11.1", id, "\".\" undelclared localvar"));
+                    }   
                 }
             }
 
@@ -270,10 +249,11 @@ export class TypeCheckVisitor extends Visitor {
             
             if(!this.isPrimitive(firstReturnType)) {
 
+                    let previousId = variableOrFuncCall[0]?.children[0]?.value ?? this.defaultToken;
                     variableOrFuncCall.shift();
                     let previousReturnType = firstReturnType;
+                    
                     variableOrFuncCall.forEach((e) => {
-
 
                         const classMembers: Entry[] = [];
 
@@ -304,7 +284,13 @@ export class TypeCheckVisitor extends Visitor {
                             if(this.isPrimitive(previousReturnType)){
                                 this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
                             }else {
-                                this.errors.push(new CompilerError("11.2", id, "\".\" undeclared data member"));
+                                console.log(previousId);
+                                if(previousId.lexeme === "self"){
+                                    this.errors.push(new CompilerError("15.2", id, "\".\" incorrect use of self"));
+
+                                }else {
+                                    this.errors.push(new CompilerError("11.2", id, "\".\" undeclared data member"));
+                                }
                             }
                             
                         }else {
@@ -320,7 +306,7 @@ export class TypeCheckVisitor extends Visitor {
                                 }
                             }
                         }
-    
+                        previousId = e.children[0].value ?? this.defaultToken;
                     })
             }
 
@@ -394,7 +380,7 @@ export class TypeCheckVisitor extends Visitor {
     }
 
     // ToDo if we pass indice we can check if array is used properly
-    private getVariableType(variable: Node, classTable?: SymbolTable): string {
+    private getVariableType(variable: Node, classTable: SymbolTable | null): string {
         let variableName = variable.children[0]?.value?.lexeme ?? "";
 
         variableName = variableName === "" ? variable?.value?.lexeme ?? "" : variableName;

@@ -115,7 +115,7 @@ function main() => void
   c.b = 1;                                                                 // 11.2
   counter = c.f();                                                         // 11.3
   undefined();                                                             // 11.4
-  counter = a;                                                             // 11.1
+  counter = e;                                                             // 11.1
   f(1,1,1);                                                                // 12.1
   f(1.2,1);                                                                // 12.2	
   i[2] = 1;                                                                // 13.1

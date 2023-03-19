@@ -372,370 +372,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- LOCALVARDECL REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- LOCALVARDECL REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- LOCALVARDECL REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- LOCALVARDECL REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- class id opencubr
- private attribute id colon float semi
- closecubr
- semi
- class id opencubr
- private attribute id colon id semi
- private attribute id colon float semi
- closecubr
- semi
- function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -749,10 +385,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  FUNCTIONCALLORASIGNSTAT semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -767,10 +399,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id ISFUNCTIONCALLORVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -785,10 +413,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id INDICELOOP AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -803,10 +427,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -821,10 +441,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id ENDASSIGN semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -839,10 +455,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id ASSIGNOP EXPR semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -857,10 +469,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id assign EXPR semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -875,10 +483,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id assign ARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -893,10 +497,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id assign TERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -911,10 +511,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -929,11 +525,7 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ id assign FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -947,11 +539,7 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum RIGHTRECARITHEXPR EXPR2 semi
+ id assign id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -965,11 +553,7 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum EXPR2 semi
+ id assign id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -983,11 +567,7 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
+ id assign id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -1001,11 +581,147 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
+ id assign id dot id FUNCTIONCALLORVARIABLE3 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar APARAMS closepar FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id FUNCTIONCALLORVARIABLE3 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ class id opencubr
+ private attribute id colon float semi
+ closecubr
+ semi
+ class id opencubr
+ private attribute id colon id semi
+ private attribute id colon float semi
+ closecubr
+ semi
+ function id openpar id colon integer closepar returntype integer opencubr
+ id assign id dot id openpar closepar dot id semi
  closecubr
  REPTSTART0
 START =>
@@ -1019,10 +735,6 @@ START =>
  closecubr
  semi
  function id openpar id colon integer closepar returntype integer opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
+ id assign id dot id openpar closepar dot id semi
  closecubr
  

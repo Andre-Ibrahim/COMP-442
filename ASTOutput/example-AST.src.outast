@@ -28,28 +28,20 @@ CLASSDECLORFUNCDEF
 | | | | ARRAYSIZE
 | | | {"type":"integer","lexeme":"integer","position":13}
 | | FUNCBODY
-| | | VARDECL
-| | | | {"type":"id","lexeme":"n","position":15}
-| | | | {"type":"integer","lexeme":"integer","position":15}
-| | | | ARRAYSIZE
-| | | VARDECL
-| | | | {"type":"id","lexeme":"i","position":16}
-| | | | {"type":"integer","lexeme":"integer","position":16}
-| | | | ARRAYSIZE
-| | | VARDECL
-| | | | {"type":"id","lexeme":"j","position":17}
-| | | | {"type":"integer","lexeme":"integer","position":17}
-| | | | ARRAYSIZE
-| | | VARDECL
-| | | | {"type":"id","lexeme":"temp","position":18}
-| | | | {"type":"integer","lexeme":"integer","position":18}
-| | | | ARRAYSIZE
 | | | ASSIGNSTAT
-| | | | {"type":"id","lexeme":"n","position":19}
+| | | | {"type":"id","lexeme":"x","position":15}
 | | | | INDICELIST
-| | | | {"type":"assign","lexeme":"=","position":19}
+| | | | {"type":"assign","lexeme":"=","position":15}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"2","position":19}
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {"type":"id","lexeme":"i","position":15}
+| | | | | | | | | | INDICELIST
+| | | | | | | | | FUNCTIONCALL
+| | | | | | | | | | {"type":"id","lexeme":"f","position":15}
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {"type":"id","lexeme":"i","position":15}
+| | | | | | | | | | INDICELIST

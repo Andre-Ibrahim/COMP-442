@@ -11,8 +11,4 @@ class | id: A |
 function | test | aparams: (size:integer)| type: integer
 	function:test 
 	parameter | id: size | type: integer
-	localvar | id: n | type: integer
-	localvar | id: i | type: integer
-	localvar | id: j | type: integer
-	localvar | id: temp | type: integer
 
