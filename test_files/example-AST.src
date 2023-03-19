@@ -1,18 +1,17 @@
-
-class B {
-  private attribute b: float;
+class QUADRATIC {
+	private attribute a: float;                                         // 8.5
+	private attribute b: float;                                         // 8.5
+	private attribute c: float;
+	
+	public constructor: (A: float, B: float, C: float);
+	public function evaluate: (x: float) => float;                      // 9.3
 };
 
-class A {
-  private attribute a: B;
-  private attribute b: float;
-};
-
-
-
-function test(size: integer) => integer
-{
-  x = i.f().i;
-}
-
-
+function QUADRATIC::constructor(A: float, B: float, C: float)
+  {
+    localvar new_function: QUADRATIC ;
+    new_function.a = A + B * 3;                                            // 10.1
+    new_function.b = B;
+    new_function.c = 1;                                                    // 10.2 
+    return (1);                                                            // 10.3
+  }

@@ -53,6 +53,7 @@ export class TypeCheckVisitor extends Visitor {
     errors: CompilerError[] = [];
     warrnings: CompilerWarning[] = [];
     defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
+    expressionTypes: string[]= [];
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -152,7 +153,7 @@ export class TypeCheckVisitor extends Visitor {
                         if(this.isPrimitive(previousReturnType)){
                             this.errors.push(new CompilerError("15.1", e.value ?? this.defaultToken, "\".\" operator used on non-class type"));
                         }else {
-                            console.log(previousReturnType);
+                            //console.log(previousReturnType);
                             this.errors.push(new CompilerError("11.2", e.value ?? this.defaultToken, "\".\" undeclared data member"));
                         }
                         
@@ -220,6 +221,18 @@ export class TypeCheckVisitor extends Visitor {
         }
 
         if(node instanceof NodeFACTOR){
+            if(node?.children[0]?.value){
+                if(node.parentNode && node.parentNode.parentNode) {
+                    if(node.parentNode.parentNode.type === ""){
+                        node.parentNode.parentNode.type = this.literalToType(node.children[0].value.type);
+                    }else if(node.parentNode.parentNode.type !== this.literalToType(node.children[0].value.type)){
+                        this.errors.push(new CompilerError("10.1", node?.children[0]?.value, "\".\" type error in expression"));
+                    }
+                    
+                }
+            }
+
+
             this.traverseTree(node);
         }
 
@@ -227,6 +240,7 @@ export class TypeCheckVisitor extends Visitor {
 
             const variableOrFuncCall = [...node.children];
             let firstReturnType = "void";
+            let isError = false;
 
             if(variableOrFuncCall.length > 0){
                 if(variableOrFuncCall[0] instanceof NodeFUNCTIONCALL){
@@ -236,6 +250,7 @@ export class TypeCheckVisitor extends Visitor {
                     const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
                     if(firstReturnType === "void" && id.lexeme !== "self"){
                         this.errors.push(new CompilerError("11.1", id, "\".\" undelclared localvar"));
+                        isError = true;
                     }   
                 }
             }
@@ -243,15 +258,15 @@ export class TypeCheckVisitor extends Visitor {
             if(this.isPrimitive(firstReturnType) && variableOrFuncCall.length > 1){
                 const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
                 this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
+                isError = true;
                 
             }
             
-            
+            let previousReturnType = firstReturnType;
+            let previousId = variableOrFuncCall[0]?.children[0]?.value ?? this.defaultToken;
             if(!this.isPrimitive(firstReturnType)) {
 
-                    let previousId = variableOrFuncCall[0]?.children[0]?.value ?? this.defaultToken;
                     variableOrFuncCall.shift();
-                    let previousReturnType = firstReturnType;
                     
                     variableOrFuncCall.forEach((e) => {
 
@@ -270,9 +285,10 @@ export class TypeCheckVisitor extends Visitor {
                         }
 
                         if(e instanceof NodeFUNCTIONCALL){
+                            
                             this.getClassMemberFunction(previousReturnType).forEach((entry) => {
                                 const functionName = this.getVariableName(e);
-                                if(entry instanceof DataMemberEntry && entry.id.lexeme === functionName){
+                                if(entry instanceof MemberFuncEntry && entry.id.lexeme === functionName){
                                     classMembers.push(entry);
                                 }
 
@@ -283,13 +299,17 @@ export class TypeCheckVisitor extends Visitor {
                             const id = e.children[0].value ?? this.defaultToken;
                             if(this.isPrimitive(previousReturnType)){
                                 this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
+                                isError = true;
                             }else {
-                                console.log(previousId);
                                 if(previousId.lexeme === "self"){
                                     this.errors.push(new CompilerError("15.2", id, "\".\" incorrect use of self"));
-
-                                }else {
+                                    isError = true;
+                                }else if (e instanceof NodeVARIABLE){
                                     this.errors.push(new CompilerError("11.2", id, "\".\" undeclared data member"));
+                                    isError = true;
+                                }else if(e instanceof NodeFUNCTIONCALL){
+                                    this.errors.push(new CompilerError("11.3", id, "\".\" undeclared member function"));
+                                    isError = true;
                                 }
                             }
                             
@@ -308,6 +328,18 @@ export class TypeCheckVisitor extends Visitor {
                         }
                         previousId = e.children[0].value ?? this.defaultToken;
                     })
+            }
+
+            if(!isError){
+                if(node.parentNode && node.parentNode.parentNode && node.parentNode.parentNode.parentNode){
+                    // setting the type of the term
+                    if(node.parentNode.parentNode.parentNode.type === ""){
+                        node.parentNode.parentNode.parentNode.type = previousReturnType;
+                    }else if(node.parentNode.parentNode.parentNode.type !== previousReturnType){
+                        this.errors.push(new CompilerError("10.1", previousId, "\".\" type error in expression"));
+                    }
+                    
+                }
             }
 
 
@@ -503,5 +535,13 @@ export class TypeCheckVisitor extends Visitor {
 
     private isPrimitive(type: string){
         return type === "integer" || type === "float";
+    }
+
+    private literalToType(literal: string){
+        if(literal === "intnum"){
+            return "integer";
+        }
+
+        return "float";
     }
 }

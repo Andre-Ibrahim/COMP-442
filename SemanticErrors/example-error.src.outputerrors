@@ -8,6 +8,7 @@ error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9
 error: 15.2 :a: "." incorrect use of self :72
 error: 15.1 :a: "." operator used on non-class type :73
+error: 10.1 :3: "." type error in expression :80
 error: 11.2 :a: "." undeclared data member :89
 error: 11.1 :A: "." undelclared localvar :89
 error: 11.2 :b: "." undeclared data member :90
@@ -15,10 +16,8 @@ error: 11.1 :B: "." undelclared localvar :90
 error: 11.2 :c: "." undeclared data member :91
 error: 11.1 :C: "." undelclared localvar :91
 error: 11.5 :a: undeclared class :105
-error: 11.2 :build: "." undeclared data member :113
-error: 11.2 :build: "." undeclared data member :114
 error: 11.2 :b: "." undeclared data member :115
-error: 11.2 :f: "." undeclared data member :116
+error: 11.3 :f: "." undeclared member function :116
 error: 11.4 :undefined: Undeclared free function :117
 error: 11.1 :e: "." undelclared localvar :118
 error: 12.1 :f: function call with wrong number of parameters :119

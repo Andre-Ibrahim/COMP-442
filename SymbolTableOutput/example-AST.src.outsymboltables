@@ -1,14 +1,18 @@
 global 
-class | id: B | 
-	class:B 
+class | id: QUADRATIC | 
+	class:QUADRATIC 
+	data | id: a | type: float | visibility: private
 	data | id: b | type: float | visibility: private
+	data | id: c | type: float | visibility: private
+	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public
+	function:build 
+		parameter | id: A | type: float
+		parameter | id: B | type: float
+		parameter | id: C | type: float
+		localvar | id: new_function | type: QUADRATIC
 
-class | id: A | 
-	class:A 
-	data | id: a | type: B | visibility: private
-	data | id: b | type: float | visibility: private
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function:evaluate 
+		parameter | id: x | type: float
 
-function | test | aparams: (size:integer)| type: integer
-	function:test 
-	parameter | id: size | type: integer
 

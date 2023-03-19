@@ -19,5 +19,6 @@ error: 11.1 :x: "." undelclared localvar :43
 error: 11.1 :x: "." undelclared localvar :44
 error: 11.1 :x: "." undelclared localvar :45
 error: 11.1 :x: "." undelclared localvar :46
+error: 10.1 :i: "." type error in expression :47
 error: 11.1 :x: "." undelclared localvar :51
 error: 11.1 :x: "." undelclared localvar :51

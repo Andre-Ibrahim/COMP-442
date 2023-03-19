@@ -6,6 +6,7 @@ export class Node {
     value: Token | null = null;
     children: Node[] = [];
     parentNode: Node | null = null;
+    type: string = "";
 
     symbolTable: SymbolTable | null = null;
 
