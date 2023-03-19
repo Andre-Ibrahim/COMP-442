@@ -6,9 +6,18 @@ error: 8.4 :counter: Multipy declared identifier in function :110
 error: 6.2 :evaluate2: undefined member function decleration :4
 error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9
+error: 11.2 :a: "." undeclared data member :72
+error: 11.2 :self: "." undeclared data member :73
+error: 11.2 :a: "." undeclared data member :89
 error: 11.1 :A: Undeclared local variable :89
+error: 11.2 :b: "." undeclared data member :90
 error: 11.1 :B: Undeclared local variable :90
+error: 11.2 :c: "." undeclared data member :91
 error: 11.1 :C: Undeclared local variable :91
 error: 11.5 :a: undeclared class :105
+error: 11.2 :build: "." undeclared data member :113
+error: 11.2 :build: "." undeclared data member :114
+error: 11.2 :b: "." undeclared data member :115
+error: 11.2 :f: "." undeclared data member :116
 error: 11.4 :undefined: Undeclared free function :117
 error: 12.1 :f: function call with wrong number of parameters :119

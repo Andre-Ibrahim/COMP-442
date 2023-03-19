@@ -1,9 +1,18 @@
 global 
-function | f | aparams: ()| type: integer
-	function:f 
+class | id: B | 
+	class:B 
+	data | id: b | type: float | visibility: private
 
-function | test | aparams: (x:integer[])| type: integer
+class | id: A | 
+	class:A 
+	data | id: a | type: B | visibility: private
+	data | id: b | type: float | visibility: private
+
+function | test | aparams: (size:integer)| type: integer
 	function:test 
-	parameter | id: x | type: integer[]
-	localvar | id: y | type: integer
+	parameter | id: size | type: integer
+	localvar | id: n | type: integer
+	localvar | id: i | type: integer
+	localvar | id: j | type: integer
+	localvar | id: temp | type: integer
 

@@ -4,10 +4,12 @@ export class SymbolTable {
     name: string;
     level: number;
     entries: Entry[] = [];
+    parentTable: SymbolTable | null;
 
-    constructor(level: number, name: string) {
+    constructor(level: number, name: string, symbolTable: SymbolTable | null) {
         this.name = name;
         this.level = level;
+        this.parentTable = symbolTable;
     }
 
     setEntries(entries: Entry[]) {

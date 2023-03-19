@@ -47,7 +47,7 @@ import { SymbolTable } from "../SymbTab/SymbolTable";
 import { Visitor } from "./Visitor";
 
 export class SymbTabVisitor extends Visitor {
-    globalTable: SymbolTable = new SymbolTable(0, "global");
+    globalTable: SymbolTable = new SymbolTable(0, "global", null);
     errors: CompilerError[] = [];
     warrnings: CompilerWarning[] = [];
 
@@ -385,6 +385,10 @@ export class SymbTabVisitor extends Visitor {
             this.traverseTree(node, node.symbolTable);
         }
 
+        if(node instanceof NodeFACTORCALLORVAR){
+            this.traverseTree(node, node.symbolTable);
+        }
+
     }
 
     private createParams(node: NodeMEMBERFUNCDECL, defaultToken: { lexeme: string; position: number; type: TokenType; }) {
@@ -431,6 +435,6 @@ export class SymbTabVisitor extends Visitor {
     }
 
     private makeTable(node: Node, name: string) {
-        return new SymbolTable((node.symbolTable?.level ?? -1) + 1, name);
+        return new SymbolTable((node.symbolTable?.level ?? -1) + 1, name, node.symbolTable);
     }
 }

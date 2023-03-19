@@ -1,13 +1,22 @@
 
-function f() => integer {
+class B {
+  private attribute b: float;
+};
 
-}
+class A {
+  private attribute a: B;
+  private attribute b: float;
+};
 
-function test(x: integer[]) => integer
+
+
+function test(size: integer) => integer
 {
-  localvar y: integer;
-
-  y = x;
+  localvar n    : integer;
+  localvar i    : integer;
+  localvar j    : integer;
+  localvar temp : integer; 
+  n = 2;
 }
 
 
