@@ -1,23 +1,33 @@
 
 CLASSDECLORFUNCDEF
 | FUNCDEF
-| | {"type":"id","lexeme":"POLYNOMIAL","position":2}
+| | {"type":"id","lexeme":"f","position":2}
+| | FUNCARROW
+| | | {"type":"integer","lexeme":"integer","position":2}
+| | FUNCBODY
+| FUNCDEF
+| | {"type":"id","lexeme":"test","position":6}
 | | FUNCARROW
 | | | FPARAMS
-| | | | {"type":"id","lexeme":"x","position":2}
-| | | | {"type":"id","lexeme":"LINEAR","position":2}
+| | | | {"type":"id","lexeme":"x","position":6}
+| | | | {"type":"integer","lexeme":"integer","position":6}
 | | | | ARRAYSIZE
 | | | | | EMPTYARRAYSIZE
-| | | {"type":"float","lexeme":"float","position":2}
+| | | {"type":"integer","lexeme":"integer","position":6}
 | | FUNCBODY
 | | | VARDECL
-| | | | {"type":"id","lexeme":"x","position":4}
-| | | | {"type":"id","lexeme":"LINEAR","position":4}
+| | | | {"type":"id","lexeme":"y","position":8}
+| | | | {"type":"integer","lexeme":"integer","position":8}
 | | | | ARRAYSIZE
-| | | | | {"type":"intnum","lexeme":"2","position":4}
-| | | RETURNSTAT
+| | | ASSIGNSTAT
+| | | | {"type":"id","lexeme":"y","position":10}
+| | | | INDICELIST
+| | | | {"type":"assign","lexeme":"=","position":10}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"0","position":5}
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | VARIABLE
+| | | | | | | | | | {"type":"id","lexeme":"x","position":10}
+| | | | | | | | | | INDICELIST

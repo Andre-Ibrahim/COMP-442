@@ -1,8 +1,13 @@
 
-function POLYNOMIAL(x: LINEAR[]) => float
+function f() => integer {
+
+}
+
+function test(x: integer[]) => integer
 {
-  localvar x    : LINEAR[2];
-  return (0);
+  localvar y: integer;
+
+  y = x;
 }
 
 

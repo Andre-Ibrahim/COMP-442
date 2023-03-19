@@ -32,6 +32,7 @@ import { NodeISA } from "./AST/NodeISA";
 import { NodeCLASSDECLORFUNCDEF } from "./AST/NodeCLASSDECLORFUNCDEF";
 import { NodeEMPTYARRAYSIZE } from "./AST/NodeEMPTYARRAYSIZE";
 import { NodeMEMBERFUNCARROW } from "./AST/NodeMEMBERFUNCARROW";
+import { Node } from "./AST/Node";
 
 export function getNodeByConcept(concept: Concept) {
     if (concept === Concept.SEMANTICVARDECL) {
@@ -167,4 +168,15 @@ export function getNodeByConcept(concept: Concept) {
     }
 
     return new NodeEPSILON();
+}
+
+export function getNodeList(object: Node, list: Node[]) {
+    if (object.children.length > 0) {
+        for (var i = 0; i < object.children.length; i++) {
+            getNodeList(object.children[i], list);
+        }
+    }
+    else {
+        list.push(object);
+    }
 }

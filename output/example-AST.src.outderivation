@@ -11,135 +11,290 @@ START =>
 START =>
  function id openpar FPARAMS closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon id REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar closepar returntype TYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon id ARRAYSIZE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar closepar returntype integer FUNCBODY REPTSTART0
 START =>
- function id openpar id colon id opensqbr ARRAYSIZE2 REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype RETURNTYPE FUNCBODY REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype TYPE FUNCBODY REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float FUNCBODY REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
+ function id openpar closepar returntype integer opencubr
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- LOCALVARDECL REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id LOCALVARDECL2 REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id ARRAYSIZE REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr ARRAYSIZE2 REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr REPTFPARAMS3 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- STATEMENT REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar EXPR closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar ARITHEXPR EXPR2 closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar intnum RIGHTRECARITHEXPR EXPR2 closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar intnum EXPR2 closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar intnum closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar intnum closepar semi
+ function id openpar closepar returntype integer opencubr
  closecubr
  REPTSTART0
 START =>
- function id openpar id colon id opensqbr closesqbr closepar returntype float opencubr
- localvar id colon id opensqbr intnum closesqbr semi
- return openpar intnum closepar semi
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ CLASSDECLORFUNCDEF REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ FUNCDEF REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ FUNCHEAD FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id FUNCHEAD3 FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar FPARAMS closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer ARRAYSIZE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr ARRAYSIZE2 REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype TYPE FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer FUNCBODY REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ LOCALVARDECL REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer REPTFPARAMS3 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ STATEMENT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ FUNCTIONCALLORASIGNSTAT semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id ISFUNCTIONCALLORVARIABLE semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id INDICELOOP AFTERVARIABLE semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id AFTERVARIABLE semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id ENDASSIGN semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id ASSIGNOP EXPR semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign EXPR semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign ARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign TERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id semi
+ closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype integer opencubr
+ closecubr
+ function id openpar id colon integer opensqbr closesqbr closepar returntype integer opencubr
+ localvar id colon integer semi
+ id assign id semi
  closecubr
  

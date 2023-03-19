@@ -1,7 +1,7 @@
 // ====== Class declarations ====== //
 class POLYNOMIAL {
 	public function evaluate: (x: float) => float;
-	public function evaluate2: (x: float) => float;
+	public function evaluate2: (x: float) => float;                       // 6.2
 };
 
 class POLYNOMIAL {                                                      // 8.1

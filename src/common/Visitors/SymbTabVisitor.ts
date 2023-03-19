@@ -356,6 +356,35 @@ export class SymbTabVisitor extends Visitor {
 
             node.symbolTable?.addEntry(new DataMemberEntry(id, type.lexeme, visibility.lexeme, dim))
         }
+
+        if(node instanceof NodeASSIGNSTAT){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+        if(node instanceof NodeFUNCTIONCALLSTAT){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+        if(node instanceof NodeAPARAMS){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+        if(node instanceof NodeEXPR){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+        if(node instanceof NodeARITHEXPR){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+        if(node instanceof NodeTERM){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+        if(node instanceof NodeFACTOR){
+            this.traverseTree(node, node.symbolTable);
+        }
+
     }
 
     private createParams(node: NodeMEMBERFUNCDECL, defaultToken: { lexeme: string; position: number; type: TokenType; }) {

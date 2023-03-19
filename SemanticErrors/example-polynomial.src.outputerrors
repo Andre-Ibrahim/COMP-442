@@ -1,0 +1,4 @@
+error: 6.1 :build: undeclared member function definition :41
+error: 6.2 :build: undefined member function decleration :0
+error: 11.1 :A: Undeclared local variable :43
+error: 11.1 :B: Undeclared local variable :44

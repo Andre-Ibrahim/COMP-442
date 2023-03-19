@@ -3,6 +3,7 @@ import Parser from "./syntactical_analysis/Parser";
 import { SymbTabVisitor } from "./common/Visitors/SymbTabVisitor";
 import { getUndefinedMemberFunction } from "./common/Errors/undefinedMemberFunction";
 import { CompilerError } from "./common/Errors/Error";
+import { TypeCheckVisitor } from "./common/Visitors/TypeCheckVisitor";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -26,16 +27,33 @@ testCases.forEach((testCase) => {
     }
 
     const symTabVisitor = new SymbTabVisitor();
-
+    const typeCheckVisitor = new TypeCheckVisitor();
     parser.abstractSyntaxTree.accept(symTabVisitor);
+    parser.abstractSyntaxTree.accept(typeCheckVisitor);
+
+
+
     writeFileSync(`./SymbolTableOutput/${testCase}.outsymboltables`, parser.abstractSyntaxTree.symbolTable?.toString() ?? "")
 
     const errors: CompilerError[] = []
 
     errors.push(...symTabVisitor.errors);
     errors.push(...getUndefinedMemberFunction(parser.abstractSyntaxTree.symbolTable));
-    console.log(errors);
-    console.log(symTabVisitor.warrnings);
+    errors.push(...typeCheckVisitor.errors);
+
+
+    let errorsString = "";
+    errors.forEach((error) => {
+        errorsString += error.toString() + "\n";
+    })
+
+    let warningsString = "";
+    symTabVisitor.warrnings.forEach((warning) => {
+        warningsString += warning.toString() + "\n";
+    })
+
+    writeFileSync(`./SemanticErrors/${testCase}.outputerrors`, errorsString);
+    writeFileSync(`./SemanticWarnings/${testCase}.outputwarnings`, warningsString);
 
     writeFileSync(
         `./output/${testCase}.outderivation`,

@@ -1,6 +1,9 @@
 global 
-function | POLYNOMIAL | aparams: (x:LINEAR[])| type: float
-	function:POLYNOMIAL 
-	parameter | id: x | type: LINEAR[]
-	localvar | id: x | type: LINEAR[2]
+function | f | aparams: ()| type: integer
+	function:f 
+
+function | test | aparams: (x:integer[])| type: integer
+	function:test 
+	parameter | id: x | type: integer[]
+	localvar | id: y | type: integer
 
