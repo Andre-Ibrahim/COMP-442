@@ -1,14 +1,4 @@
-class POLYNOMIAL {                                                      // 8.1
-  private attribute b: float;
-  private attribute c: float;
-};
-class LINEAR isa POLYNOMIAL {
-	private attribute b: float;                                     // 8.3
-	
-	public constructor: (A: float, B: float);
-	public function evaluate: (x: float) => float;                      // 9.3
-};
-
-class D isa LINEAR {
-  private attribute c: float;
-};
+function bubbleSort(arr: integer[], size: integer) => void 
+{
+  x.y().x = x + 1 * 2 > x + 2;
+}

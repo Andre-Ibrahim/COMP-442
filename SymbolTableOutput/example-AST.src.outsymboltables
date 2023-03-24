@@ -1,25 +1,6 @@
 global 
-class | id: POLYNOMIAL | 
-	class:POLYNOMIAL 
-	data | id: b | type: float | visibility: private
-	data | id: c | type: float | visibility: private
-
-class | id: LINEAR | 
-	class:LINEAR 
-	inherit | POLYNOMIAL
-	data | id: b | type: float | visibility: private
-	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public
-	function:build 
-		parameter | id: A | type: float
-		parameter | id: B | type: float
-
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
-	function:evaluate 
-		parameter | id: x | type: float
-
-
-class | id: D | 
-	class:D 
-	inherit | LINEAR
-	data | id: c | type: float | visibility: private
+function | bubbleSort | aparams: (arr:integer[] size:integer)| type: void
+	function:bubbleSort 
+	parameter | id: arr | type: integer[]
+	parameter | id: size | type: integer
 

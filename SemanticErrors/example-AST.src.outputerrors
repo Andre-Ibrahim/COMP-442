@@ -1,2 +1,7 @@
-error: 6.2 :build: undefined member function decleration :0
-error: 6.2 :evaluate: undefined member function decleration :9
+error: 11.1 :x: "." undelclared localvar :3
+error: 11.3 :y: "." undeclared member function :3
+error: 11.2 :x: "." undeclared data member :3
+error: 11.1 :x: "." undelclared localvar :3
+error: 11.1 :x: "." undelclared localvar :3
+error: 11.1 :x: "." undelclared localvar :3
+error: 11.1 :x: "." undelclared localvar :3
