@@ -382,7 +382,7 @@ export class TypeCheckVisitor extends Visitor {
     }
 
     private handleFunctionCall(node: Node, symbolTable: SymbolTable | null): string {
-        const functionId = node.children[0].value;
+        const functionId = node.children[0]?.value;
         const numAPARAMS = node?.children[1]?.children?.length ?? 0;
         let idNotFound = true;
         let numParamError = true;

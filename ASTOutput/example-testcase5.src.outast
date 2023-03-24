@@ -18,8 +18,9 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"integer","lexeme":"integer","position":28}
 | | | | ARRAYSIZE
 | | | ASSIGNSTAT
-| | | | {"type":"id","lexeme":"n","position":29}
-| | | | INDICELIST
+| | | | VARIABLE
+| | | | | {"type":"id","lexeme":"n","position":29}
+| | | | | INDICELIST
 | | | | {"type":"assign","lexeme":"=","position":29}
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -34,8 +35,9 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"integer","lexeme":"integer","position":30}
 | | | | ARRAYSIZE
 | | | ASSIGNSTAT
-| | | | {"type":"id","lexeme":"i","position":31}
-| | | | INDICELIST
+| | | | VARIABLE
+| | | | | {"type":"id","lexeme":"i","position":31}
+| | | | | INDICELIST
 | | | | {"type":"assign","lexeme":"=","position":31}
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -77,8 +79,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":33}
 | | | | | | | | | | | | | | | | | | INDICELIST
 | | | | | ASSIGNSTAT
-| | | | | | {"type":"id","lexeme":"i","position":34}
-| | | | | | INDICELIST
+| | | | | | VARIABLE
+| | | | | | | {"type":"id","lexeme":"i","position":34}
+| | | | | | | INDICELIST
 | | | | | | {"type":"assign","lexeme":"=","position":34}
 | | | | | | EXPR
 | | | | | | | ARITHEXPR
@@ -184,8 +187,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | | | | INDICELIST
 | | | | STATBLOCK
 | | | | | ASSIGNSTAT
-| | | | | | {"type":"id","lexeme":"temp","position":47}
-| | | | | | INDICELIST
+| | | | | | VARIABLE
+| | | | | | | {"type":"id","lexeme":"temp","position":47}
+| | | | | | | INDICELIST
 | | | | | | {"type":"assign","lexeme":"=","position":47}
 | | | | | | EXPR
 | | | | | | | ARITHEXPR
@@ -240,8 +244,9 @@ CLASSDECLORFUNCDEF
 | | | | STATBLOCK
 | | | | STATBLOCK
 | | | | | ASSIGNSTAT
-| | | | | | {"type":"id","lexeme":"temp","position":53}
-| | | | | | INDICELIST
+| | | | | | VARIABLE
+| | | | | | | {"type":"id","lexeme":"temp","position":53}
+| | | | | | | INDICELIST
 | | | | | | {"type":"assign","lexeme":"=","position":53}
 | | | | | | EXPR
 | | | | | | | ARITHEXPR

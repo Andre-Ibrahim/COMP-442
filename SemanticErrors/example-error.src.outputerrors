@@ -1,27 +1,20 @@
 error: 8.1 :POLYNOMIAL: Multipy declared classes :7
 error: 8.3 :b: Multipy declared data member in class :15
-error: 6.1 :build2: undeclared member function definition :92
-error: 8.2 :f: Multipy declared functions :102
-error: 8.4 :counter: Multipy declared identifier in function :116
+error: 6.1 :build2: undeclared member function definition :93
+error: 8.2 :f: Multipy declared functions :103
+error: 8.4 :counter: Multipy declared identifier in function :117
 error: 6.2 :evaluate2: undefined member function decleration :4
 error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9
-error: 15.2 :a: "." incorrect use of self :78
-error: 15.1 :a: "." operator used on non-class type :79
-error: 10.1 :3: "." type error in expression :86
-error: 11.1 :new_function: "." undelclared localvar :95
-error: 11.2 :a: "." undeclared data member :95
-error: 11.1 :A: "." undelclared localvar :95
-error: 11.1 :new_function: "." undelclared localvar :96
-error: 11.2 :b: "." undeclared data member :96
-error: 11.1 :B: "." undelclared localvar :96
-error: 11.1 :new_function: "." undelclared localvar :97
-error: 11.2 :c: "." undeclared data member :97
-error: 11.1 :C: "." undelclared localvar :97
-error: 11.5 :a: undeclared class :111
-error: 11.2 :b: "." undeclared data member :121
-error: 11.3 :f: "." undeclared member function :122
-error: 11.4 :undefined: Undeclared free function :123
-error: 11.1 :e: "." undelclared localvar :124
-error: 12.1 :f: function call with wrong number of parameters :125
-error: 13.2 :i: Array parameters using wrong number of dimentions :117
+error: 15.2 :a: "." incorrect use of self :79
+error: 15.1 :a: "." operator used on non-class type :80
+error: 11.1 :A: "." undelclared localvar :96
+error: 11.1 :B: "." undelclared localvar :97
+error: 11.1 :C: "." undelclared localvar :98
+error: 11.5 :a: undeclared class :112
+error: 11.3 :f: "." undeclared member function :123
+error: 11.4 :: Undeclared free function :0
+error: 11.1 :e: "." undelclared localvar :125
+error: 11.4 :: Undeclared free function :0
+error: 11.4 :: Undeclared free function :0
+error: 11.4 :: Undeclared free function :0

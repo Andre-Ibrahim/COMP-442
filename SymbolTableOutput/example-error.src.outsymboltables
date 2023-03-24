@@ -45,6 +45,7 @@ class | id: QUADRATIC |
 	data | id: a | type: float | visibility: private
 	data | id: b | type: float | visibility: private
 	data | id: c | type: float | visibility: private
+	data | id: d | type: float | visibility: private
 	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public
 	function:build 
 		parameter | id: A | type: float
