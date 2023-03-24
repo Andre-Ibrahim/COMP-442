@@ -10,6 +10,8 @@ error: 15.2 :a: "." incorrect use of self :79
 error: 15.2 :a: "." incorrect use of self :79
 error: 15.1 :a: "." operator used on non-class type :80
 error: 15.1 :a: "." operator used on non-class type :80
+error: 10.1 :3: "." type error in expression :87
+error: 10.1 :3: "." type error in expression :87
 error: 11.1 :new_function: "." undelclared localvar :96
 error: 11.2 :a: "." undeclared data member :96
 error: 11.1 :A: "." undelclared localvar :96

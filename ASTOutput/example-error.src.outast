@@ -451,7 +451,7 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | INDICELIST
 | | | | | | | {"type":"mult","lexeme":"*","position":87}
 | | | | | | | FACTOR
-| | | | | | | | {"type":"floatnum","lexeme":"3.1","position":87}
+| | | | | | | | {"type":"intnum","lexeme":"3","position":87}
 | | | | | | {"type":"plus","lexeme":"+","position":87}
 | | | | | | TERM
 | | | | | | | FACTOR
