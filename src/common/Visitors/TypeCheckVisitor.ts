@@ -115,7 +115,7 @@ export class TypeCheckVisitor extends Visitor {
             const idnest: Node[] = [];
             let firstReturnType = "void";
 
-            this.handleCallOrVar(node)
+            this.handleCallOrVar(node);
         
 
             this.traverseTree(node);
@@ -293,10 +293,11 @@ export class TypeCheckVisitor extends Visitor {
 
         if (!isError) {
             if (node.parentNode && node.parentNode.parentNode && node.parentNode.parentNode.parentNode) {
+                node.parentNode.type = previousReturnType;
                 // setting the type of the term
                 if (node.parentNode.parentNode.parentNode.type === "") {
                     node.parentNode.parentNode.parentNode.type = previousReturnType;
-                } else if (node.parentNode.parentNode.parentNode.type !== previousReturnType) {
+                } else if (node.parentNode.parentNode.parentNode.type !== previousReturnType && node.parentNode.type !== previousReturnType) {
                     this.errors.push(new CompilerError("10.1", previousId, "\".\" type error in expression"));
                 }
 

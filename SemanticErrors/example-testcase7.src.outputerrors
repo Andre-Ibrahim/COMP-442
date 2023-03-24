@@ -63,8 +63,6 @@ error: 11.1 :x: "." undelclared localvar :46
 error: 11.1 :x: "." undelclared localvar :46
 error: 11.1 :x: "." undelclared localvar :46
 error: 11.1 :x: "." undelclared localvar :47
-error: 10.1 :i: "." type error in expression :47
-error: 10.1 :i: "." type error in expression :47
 error: 11.1 :x: "." undelclared localvar :48
 error: 11.1 :x: "." undelclared localvar :49
 error: 11.1 :x: "." undelclared localvar :50

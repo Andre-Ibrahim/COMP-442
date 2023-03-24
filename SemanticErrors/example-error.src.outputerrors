@@ -23,22 +23,15 @@ error: 11.2 :c: "." undeclared data member :98
 error: 11.1 :C: "." undelclared localvar :98
 error: 11.1 :C: "." undelclared localvar :98
 error: 11.5 :a: undeclared class :112
-error: 10.1 :f1: "." type error in expression :120
 error: 11.4 :: Undeclared free function :0
 error: 11.4 :: Undeclared free function :0
-error: 10.1 :f2: "." type error in expression :121
 error: 11.4 :: Undeclared free function :0
 error: 11.4 :: Undeclared free function :0
 error: 11.2 :b: "." undeclared data member :122
-error: 10.1 :counter: "." type error in expression :123
 error: 11.3 :f: "." undeclared member function :123
 error: 11.3 :f: "." undeclared member function :123
 error: 11.4 :undefined: Undeclared free function :124
-error: 10.1 :counter: "." type error in expression :125
 error: 11.1 :e: "." undelclared localvar :125
 error: 11.1 :e: "." undelclared localvar :125
 error: 12.1 :f: function call with wrong number of parameters :126
-error: 10.1 :i: "." type error in expression :128
-error: 10.1 :i: "." type error in expression :129
 error: 15.1 :counter: "." operator used on non-class type :131
-error: 10.1 :counter: "." type error in expression :132
