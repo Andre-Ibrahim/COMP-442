@@ -187,6 +187,8 @@ export class TypeCheckVisitor extends Visitor {
         if(node instanceof NodeFACTORCALLORVAR){
 
             this.handleCallOrVar(node);
+
+            this.traverseTree(node);
         }
     }
 
@@ -303,7 +305,6 @@ export class TypeCheckVisitor extends Visitor {
 
             }
         }
-        this.traverseTree(node);
 
         return previousReturnType;
     }
