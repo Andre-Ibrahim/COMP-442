@@ -31,6 +31,9 @@ testCases.forEach((testCase) => {
     parser.abstractSyntaxTree.accept(symTabVisitor);
     parser.abstractSyntaxTree.accept(typeCheckVisitor);
 
+    console.log(symTabVisitor.expressionCount);
+    console.log(typeCheckVisitor.expressionCount);
+
 
 
     writeFileSync(`./SymbolTableOutput/${testCase}.outsymboltables`, parser.abstractSyntaxTree.symbolTable?.toString() ?? "")

@@ -45,6 +45,7 @@ import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
 import { MemberFuncEntry } from "../SymbTab/MemberFunEntry";
 import { ParameterEntry } from "../SymbTab/ParameterEntry";
 import { SymbolTable } from "../SymbTab/SymbolTable";
+import { TempVarEntry } from "../SymbTab/TempVarEntry";
 import { getNodeList } from "../TreeHelpers";
 import { Visitor } from "./Visitor";
 
@@ -54,6 +55,8 @@ export class TypeCheckVisitor extends Visitor {
     warrnings: CompilerWarning[] = [];
     defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
     expressionTypes: string[]= [];
+    expressionCount: number = 0;
+    traversed: number = 0;
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -90,26 +93,59 @@ export class TypeCheckVisitor extends Visitor {
     visit(node: NodeEMPTYARRAYSIZE): void;
     visit(node: unknown): void {
 
+        // visitor for NodeCLASSDECLORFUNCDEF
         if(node instanceof NodeCLASSDECLORFUNCDEF) {
+            this.traversed++;
             this.globalSymbolTable = node.symbolTable;
             this.traverseTree(node);
         }
 
+        if(node instanceof NodeCLASSDECL){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeISA){
+            //this.traverseTree(node);
+        }
+
+        if(node instanceof NodeMEMBERFUNCDECL){
+            this.traverseTree(node);
+        }
+
+        // visitor for node func def
         if(node instanceof NodeFUNCDEF){
             this.traverseTree(node);
         }
 
+        // vistor for func body
         if(node instanceof NodeFUNCBODY){
             this.traverseTree(node);
         }
 
+        if(node instanceof NodeFUNCARROW){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeMEMBERFUNCARROW){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeFPARAMS){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeFUNCCONSTSTRUCT){
+            this.traverseTree(node);
+        }
+
         if(node instanceof NodeRETURNSTAT){
-            
+            this.traverseTree(node);
             // just a number
             // idnest
 
         }
 
+        // visitor for assign stat
         if(node instanceof NodeASSIGNSTAT){
             // logic for error
             const idnest: Node[] = [];
@@ -121,6 +157,7 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
+        // visitor for var decl
         if(node instanceof NodeVARDECL){
             // logic for error
             const type = node.children[1].value;
@@ -152,15 +189,19 @@ export class TypeCheckVisitor extends Visitor {
                 // ToDo
             }
 
+            this.traverseTree(node);
+
         }
 
+        // doubled
         if(node instanceof NodeEXPR){
-
+            //console.log("test");
+            this.expressionCount++;
             this.traverseTree(node);
         }
 
+        //doubled
         if(node instanceof NodeARITHEXPR){
-
             this.traverseTree(node);
         }
 
@@ -169,6 +210,7 @@ export class TypeCheckVisitor extends Visitor {
         }
 
         if(node instanceof NodeFACTOR){
+            
             if(node?.children[0]?.value){
                 if(node.parentNode && node.parentNode.parentNode) {
                     if(node.parentNode.parentNode.type === ""){
@@ -178,6 +220,20 @@ export class TypeCheckVisitor extends Visitor {
                     }
                     
                 }
+
+                //console.log(node.symbolTable?.entries);
+
+                node.symbolTable?.entries.forEach((entry) => {
+                    //console.log(this.expressionCount);
+                    if(entry instanceof TempVarEntry){
+                       // console.log("id", entry.expressionId);
+                    }
+                    if(entry instanceof TempVarEntry && entry.expressionId === this.expressionCount){
+                        const type = node?.children[0]?.value?.type;
+                        //console.log(this.literalToType(type));
+                        entry.type = this.literalToType(type);
+                    }
+                })
             }
 
 
@@ -186,11 +242,13 @@ export class TypeCheckVisitor extends Visitor {
 
         if(node instanceof NodeFACTORCALLORVAR){
 
-            this.handleCallOrVar(node);
+            this.handleCallOrVar(node, true);
+
+            this.traverseTree(node);
         }
     }
 
-    private handleCallOrVar(node: Node) {
+    private handleCallOrVar(node: Node, isExpr?: boolean) {
 
 
         const variableOrFuncCall: Node []= [];
@@ -302,8 +360,26 @@ export class TypeCheckVisitor extends Visitor {
                 }
 
             }
+
+            //console.log("expression count", this.expressionCount);
+            //console.log(node.symbolTable?.name);
+            if(isExpr){
+
+                            // setting types for localvariables
+            node.symbolTable?.entries.forEach((entry) => {
+
+                if(entry instanceof TempVarEntry && entry.expressionId === this.expressionCount){
+
+                    //console.log(node.symbolTable?.entries);
+                    //console.log(entry.id.lexeme, previousReturnType);
+                    //console.log();
+                    
+                    entry.type = previousReturnType;
+                }
+            })
+
+            }
         }
-        this.traverseTree(node);
 
         return previousReturnType;
     }
@@ -507,7 +583,7 @@ export class TypeCheckVisitor extends Visitor {
         return type === "integer" || type === "float";
     }
 
-    private literalToType(literal: string){
+    private literalToType(literal: string | undefined){
         if(literal === "intnum"){
             return "integer";
         }

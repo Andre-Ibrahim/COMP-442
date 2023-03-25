@@ -1,4 +1,27 @@
 function bubbleSort(arr: integer[], size: integer) => void 
 {
-  x.y().x = x + 1 * 2 > x + 2;
+  z = 2;
+  x.y().x = size - 2 + 3;
+
+}
+
+class A {
+  public  function evaluate: (x: float) => float;
+};
+
+
+function A::evaluate(x: float) => float 
+{
+  localvar z: float;
+
+  z =  x + 1;
+}
+
+
+function bubbleSort(arr: integer[], size: float) => void 
+{
+  z = 2;  
+  x.y().x = size - 2.2 + 3.2;
+  return(1);
+
 }

@@ -13,9 +13,9 @@ class LINEAR isa POLYNOMIAL {
 class QUADRATIC isa POLYNOMIAL {
   private attribute a: float;
   private attribute b: float;
-  private attribute c: float;
+  private attribute c: integer;
   public  constructor: (A: float, B: float, C: float);
-  public  function evaluate: (x: float) => float;
+  public  function evaluate: (x: integer) => float;
 };
 
 function QUADRATIC::constructor(A: float, B: float, C: float){
@@ -27,36 +27,21 @@ function POLYNOMIAL::evaluate(x: float) => float
 {
   return (0);
 }
-
-function QUADRATIC::evaluate(x: float) => float
+function QUADRATIC::constructor(A: float, B: float, C: float) 
 {
-  localvar result: float;
-  //Using Horner's method
-  result = a;
-  result = result * x + b;
-  result = result * x + c;
-  return (result);
+  x = A + 1;
+  y = B + 2;
 }
 
-function QUADRATIC::constructor(A: float, B: float) 
+function QUADRATIC::evaluate(x: integer) => float
 {
-  a = A;
-  b = B;
+  localvar result: integer;
 }
 
-function LINEAR::evaluate(x: float) => float 
-{
-  localvar result: float;
-  result = 0.0;
-  result = a * x + b;
-  return (result);
-}
  
 // ====== main ====== //
 function main() => void
 {
-  localvar f1: LINEAR(2, 3.5);
-  localvar f2: QUADRATIC(-2.0, 1.0, 0.0);
 
   while(counter <= 10)
   {

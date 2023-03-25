@@ -10,6 +10,7 @@ function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float
 	parameter | id: arr | type: integer[]
 	parameter | id: size | type: integer
 	localvar | id: n | type: integer
+	tempvar | id: temp1 | type: float | expressionId: 1
 
 function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void
 	function:VOIDReturnType 

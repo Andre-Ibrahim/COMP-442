@@ -5,17 +5,6 @@ class | id: POLYNOMIAL |
 	function:evaluate 
 		parameter | id: x | type: float
 
-	function | evaluate2 | aparams: (x:float)| type: float| visiblity: public
-	function:evaluate2 
-		parameter | id: x | type: float
-
-
-class | id: POLYNOMIAL | 
-	class:POLYNOMIAL 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
-	function:evaluate 
-		parameter | id: x | type: float
-
 	function | evaluate | aparams: (x:integer)| type: integer| visiblity: public
 	function:evaluate 
 		parameter | id: x | type: integer
@@ -37,6 +26,8 @@ class | id: LINEAR |
 	function:evaluate 
 		parameter | id: x | type: float
 		localvar | id: result | type: float
+		tempvar | id: temp1 | type: float | expressionId: 6
+		tempvar | id: temp2 | type: float | expressionId: 6
 
 
 class | id: QUADRATIC | 
@@ -52,11 +43,18 @@ class | id: QUADRATIC |
 		parameter | id: B | type: float
 		parameter | id: C | type: float
 		localvar | id: new_function | type: QUADRATIC
+		tempvar | id: temp1 | type: float | expressionId: 13
+		tempvar | id: temp2 | type: float | expressionId: 13
+		tempvar | id: temp3 | type: float | expressionId: 13
 
 	function | evaluate | aparams: (x:float)| type: float| visiblity: public
 	function:evaluate 
 		parameter | id: x | type: float
 		localvar | id: result | type: float
+		tempvar | id: temp1 | type: float | expressionId: 9
+		tempvar | id: temp2 | type: float | expressionId: 9
+		tempvar | id: temp3 | type: float | expressionId: 10
+		tempvar | id: temp4 | type: float | expressionId: 10
 
 
 class | id: F | 
@@ -84,18 +82,10 @@ function | f | aparams: (i:integer)| type: void
 	function:f 
 	parameter | id: i | type: integer
 
-function | f | aparams: (i:integer)| type: void
-	function:f 
-	parameter | id: i | type: integer
-
 function | f | aparams: (i:integer j:integer)| type: integer
 	function:f 
 	parameter | id: i | type: integer
 	parameter | id: j | type: integer
-
-function | f3 | aparams: (p1:integer[][])| type: integer
-	function:f3 
-	parameter | id: p1 | type: integer[][]
 
 function | main | aparams: ()| type: void
 	function:main 

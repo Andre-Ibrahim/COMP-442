@@ -1,6 +1,6 @@
-warning: 9.2 :evaluate: overloaded member function free function :9
-warning: 9.3 :evaluate: Overridden inherited member function :18
-warning: 9.3 :evaluate: Overridden inherited member function :28
-warning: 8.5 :a: Shadowed inherited data member :32
-warning: 8.5 :b: Shadowed inherited data member :33
-warning: 9.1 :f: overloaded free function :104
+warning: 9.2 :evaluate: overloaded member function free function :5
+warning: 9.3 :evaluate: Overridden inherited member function :14
+warning: 9.3 :evaluate: Overridden inherited member function :24
+warning: 8.5 :a: Shadowed inherited data member :28
+warning: 8.5 :b: Shadowed inherited data member :29
+warning: 9.1 :f: overloaded free function :87

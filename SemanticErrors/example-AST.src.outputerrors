@@ -1,7 +1,9 @@
-error: 11.1 :x: "." undelclared localvar :3
-error: 11.3 :y: "." undeclared member function :3
-error: 11.2 :x: "." undeclared data member :3
-error: 11.1 :x: "." undelclared localvar :3
-error: 11.1 :x: "." undelclared localvar :3
-error: 11.1 :x: "." undelclared localvar :3
-error: 11.1 :x: "." undelclared localvar :3
+error: 11.1 :z: "." undelclared localvar :3
+error: 11.1 :x: "." undelclared localvar :4
+error: 11.3 :y: "." undeclared member function :4
+error: 11.2 :x: "." undeclared data member :4
+error: 10.1 :1: "." type error in expression :17
+error: 11.1 :z: "." undelclared localvar :23
+error: 11.1 :x: "." undelclared localvar :24
+error: 11.3 :y: "." undeclared member function :24
+error: 11.2 :x: "." undeclared data member :24

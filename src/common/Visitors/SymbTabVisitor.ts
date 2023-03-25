@@ -44,12 +44,16 @@ import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
 import { MemberFuncEntry } from "../SymbTab/MemberFunEntry";
 import { ParameterEntry } from "../SymbTab/ParameterEntry";
 import { SymbolTable } from "../SymbTab/SymbolTable";
+import { TempVarEntry } from "../SymbTab/TempVarEntry";
 import { Visitor } from "./Visitor";
 
 export class SymbTabVisitor extends Visitor {
     globalTable: SymbolTable = new SymbolTable(0, "global", null);
     errors: CompilerError[] = [];
     warrnings: CompilerWarning[] = [];
+    tempvars: LocalVarEntry[] = [];
+    tempvarCount: number = 1;
+    expressionCount: number = 0;
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -174,6 +178,8 @@ export class SymbTabVisitor extends Visitor {
             })
 
             const memberFuncEntry = new MemberFuncEntry(id, aparams, returnT, visibility.lexeme, localTable);
+            this.tempvars = [];
+            this.tempvarCount = 0;
             node.symbolTable?.addEntry(memberFuncEntry);
 
             //node.symbolTable?.addEntry(localTable);
@@ -212,6 +218,8 @@ export class SymbTabVisitor extends Visitor {
                 });
 
                 const functionEntry = new FunctionEntry(id, aparams, returnT ?? "", localTable);
+                this.tempvars = [];
+                this.tempvarCount = 0;
                 node.symbolTable?.addEntry(functionEntry);
 
                 //node.symbolTable?.addEntry(localTable);
@@ -248,6 +256,7 @@ export class SymbTabVisitor extends Visitor {
                         const func = (functions[0] as MemberFuncEntry);
                         if(!func.defined){
                             func.defined = true;
+                            this.tempvarCount = 0;
                             this.traverseTree(node, func.symbolTable);
                         }else {
                             this.errors.push(new CompilerError("x.x", className, "mutiply definied member function definition"))
@@ -378,14 +387,26 @@ export class SymbTabVisitor extends Visitor {
         }
 
         if(node instanceof NodeEXPR){
+            //console.log("test");
+            this.expressionCount++;
+            this.tempvars = [];
             this.traverseTree(node, node.symbolTable);
         }
 
+        // ToDo: create temp variable here
         if(node instanceof NodeARITHEXPR){
+            const count = this.arthExprCountAddOpp(node);
+            this.createTempVars(count, node);
             this.traverseTree(node, node.symbolTable);
         }
 
+        // toDo: create temp varaiable here
         if(node instanceof NodeTERM){
+
+            const count = this.TermCountMultOpp(node);
+
+            this.createTempVars(count, node);
+
             this.traverseTree(node, node.symbolTable);
         }
 
@@ -397,6 +418,19 @@ export class SymbTabVisitor extends Visitor {
             this.traverseTree(node, node.symbolTable);
         }
 
+        if(node instanceof NodeRETURNSTAT){
+            this.traverseTree(node, node.symbolTable);
+        }
+
+    }
+
+    private createTempVars(count: number, node: Node) {
+        [...Array(count)].map(() => {
+            const tempvar = new TempVarEntry(this.createTempVarToken(), "type", this.expressionCount );
+            this.tempvars.push(tempvar);
+            this.tempvarCount++;
+            node.symbolTable?.addEntry(tempvar);
+        });
     }
 
     private getInhertiedMembers(node: Node): Entry[] {
@@ -467,5 +501,42 @@ export class SymbTabVisitor extends Visitor {
 
     private makeTable(node: Node, name: string) {
         return new SymbolTable((node.symbolTable?.level ?? -1) + 1, name, node.symbolTable);
+    }
+
+    private createTempVarToken(){
+        return { lexeme: "temp" + (this.tempvarCount + 1), position: 0, type: TokenType.ID };
+    }
+
+    private arthExprCountAddOpp(node: NodeARITHEXPR): number {
+        let count = 0;
+        node.children.forEach((child) => {
+            if(child.value?.type === TokenType.PLUS || child.value?.type === TokenType.MINUS){
+                count++;
+            }
+        })
+
+        return count;
+    }
+
+    private TermCountMultOpp(node: NodeTERM): number {
+        let count = 0;
+        node.children.forEach((child) => {
+            if(child.value?.type === TokenType.MULT || child.value?.type === TokenType.DIV){
+                count++;
+            }
+        })
+
+        return count;
+    }
+
+    private termIsOp(node: NodeTERM): boolean {
+        let isOp = false;
+        node.children.forEach(child => {
+            if(child.value?.type === TokenType.MULT || child.value?.type === TokenType.DIV ){
+                isOp = true;
+            }
+        })
+
+        return isOp;
     }
 }

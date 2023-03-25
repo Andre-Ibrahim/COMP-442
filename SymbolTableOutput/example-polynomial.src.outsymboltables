@@ -19,7 +19,6 @@ class | id: LINEAR |
 	function | evaluate | aparams: (x:float)| type: float| visiblity: public
 	function:evaluate 
 		parameter | id: x | type: float
-		localvar | id: result | type: float
 
 
 class | id: QUADRATIC | 
@@ -27,7 +26,7 @@ class | id: QUADRATIC |
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private
 	data | id: b | type: float | visibility: private
-	data | id: c | type: float | visibility: private
+	data | id: c | type: integer | visibility: private
 	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public
 	function:build 
 		parameter | id: A | type: float
@@ -35,14 +34,12 @@ class | id: QUADRATIC |
 		parameter | id: C | type: float
 		localvar | id: x | type: float
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function | evaluate | aparams: (x:integer)| type: float| visiblity: public
 	function:evaluate 
-		parameter | id: x | type: float
-		localvar | id: result | type: float
+		parameter | id: x | type: integer
+		localvar | id: result | type: integer
 
 
 function | main | aparams: ()| type: void
 	function:main 
-	localvar | id: f1 | type: LINEAR[][]
-	localvar | id: f2 | type: QUADRATIC[][][]
 
