@@ -4,8 +4,8 @@ import { SymbolTable } from "./SymbolTable";
 
 export class MemberFuncEntry extends FunctionEntry {
     visibility: string;
-    defined: boolean = false;
-    inherited: boolean = false;
+    defined = false;
+    inherited = false;
 
     constructor(id: Token, aParams: AParam[], returnType: string, visibility: string, symbolTable: SymbolTable) {
         super(id, aParams, returnType, symbolTable);
@@ -19,7 +19,7 @@ export class MemberFuncEntry extends FunctionEntry {
         text += "(";
 
         this.aParams.forEach((param, i) => {
-            if(i !== 0){
+            if (i !== 0) {
                 text += " ";
             }
 

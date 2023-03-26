@@ -30,7 +30,7 @@ testCases.forEach((testCase) => {
     console.log(parser.abstractSyntaxTree.symbolTable?.toString());
 
     console.log(symTabVisitor.errors);
-    
+
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
 
     writeFileSync(`./ASTOutput/${testCase}.outast`, parser.abstractSyntaxTree.printTree());

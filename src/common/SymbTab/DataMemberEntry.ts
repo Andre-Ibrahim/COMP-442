@@ -16,17 +16,16 @@ export class DataMemberEntry extends Entry {
         this.dim = dim;
     }
 
-    toString(): string{
-
+    toString(): string {
         let text = `data | id: ${this.id.lexeme} | type: ${this.type}`;
 
         this.dim.forEach((d) => {
-            if(d === -1){
-                text+= "[]";
-            }else{
-                text+= `[${d}]`;
+            if (d === -1) {
+                text += "[]";
+            } else {
+                text += `[${d}]`;
             }
-        })
+        });
 
         text += ` | visibility: ${this.visibility}`;
 

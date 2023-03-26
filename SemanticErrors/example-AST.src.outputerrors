@@ -1,5 +1,3 @@
 error: 11.1 :x: "." undelclared localvar :3
 error: 11.3 :y: "." undeclared member function :3
 error: 11.2 :x: "." undeclared data member :3
-error: 11.1 :x: "." undelclared localvar :3
-error: 11.1 :x: "." undelclared localvar :3

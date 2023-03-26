@@ -33,7 +33,7 @@ error: 11.1 :x: "." undelclared localvar :41
 error: 11.1 :x: "." undelclared localvar :41
 error: 11.1 :x: "." undelclared localvar :42
 error: 11.1 :x: "." undelclared localvar :42
-error: 11.1 :x: "." undelclared localvar :43
+error: 11.1 :z: "." undelclared localvar :43
 error: 11.1 :x: "." undelclared localvar :43
 error: 11.1 :x: "." undelclared localvar :44
 error: 11.1 :x: "." undelclared localvar :44

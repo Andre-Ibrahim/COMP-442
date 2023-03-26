@@ -22,7 +22,7 @@ export class FunctionEntry extends Entry {
         text += "(";
 
         this.aParams.forEach((param, i) => {
-            if(i !== 0){
+            if (i !== 0) {
                 text += " ";
             }
 

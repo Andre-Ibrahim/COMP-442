@@ -46,4 +46,10 @@ concepts.forEach((x) => {
     text += `\tabstract visit(node: ${x.replace("SEMANTIC", "Node")}): void;\n`;
 });
 
+concepts.forEach((x) => {
+    text += `\t\tif(node instanceof ${x.replace("SEMANTIC", "Node")}){
+        \t\t\tthis.traverseTree(node);
+    }\n`;
+});
+
 console.log(text);

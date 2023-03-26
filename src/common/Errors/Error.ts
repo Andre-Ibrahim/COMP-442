@@ -5,13 +5,13 @@ export class CompilerError {
     token: Token;
     message: string;
 
-    constructor(id:string, token: Token, message: string){
+    constructor(id: string, token: Token, message: string) {
         this.id = id;
         this.token = token;
         this.message = message;
     }
 
-    toString(){
+    toString() {
         return `error: ${this.id} :${this.token.lexeme}: ${this.message} :${this.token.position}`;
     }
 }

@@ -364,7 +364,7 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
-| | | | | {"type":"id","lexeme":"x","position":43}
+| | | | | {"type":"id","lexeme":"z","position":43}
 | | | | | INDICELIST
 | | | | {"type":"assign","lexeme":"=","position":43}
 | | | | EXPR

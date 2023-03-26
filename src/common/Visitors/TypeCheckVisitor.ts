@@ -1,4 +1,3 @@
-import { Token } from "../../lexical_analysis/Token";
 import TokenType from "../../lexical_analysis/TokenType";
 import { Node } from "../AST/Node";
 import { NodeAPARAMS } from "../AST/NodeAPARAMS";
@@ -39,13 +38,11 @@ import { CompilerWarning } from "../Errors/Warning";
 import { ClassEntry } from "../SymbTab/ClassEntry";
 import { DataMemberEntry } from "../SymbTab/DataMemberEntry";
 import { Entry } from "../SymbTab/Entry";
-import { AParam, FunctionEntry } from "../SymbTab/FunctionEntry";
-import { InheritEntry } from "../SymbTab/InheritEntry";
+import { FunctionEntry } from "../SymbTab/FunctionEntry";
 import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
 import { MemberFuncEntry } from "../SymbTab/MemberFunEntry";
 import { ParameterEntry } from "../SymbTab/ParameterEntry";
 import { SymbolTable } from "../SymbTab/SymbolTable";
-import { getNodeList } from "../TreeHelpers";
 import { Visitor } from "./Visitor";
 
 export class TypeCheckVisitor extends Visitor {
@@ -53,7 +50,7 @@ export class TypeCheckVisitor extends Visitor {
     errors: CompilerError[] = [];
     warrnings: CompilerWarning[] = [];
     defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
-    expressionTypes: string[]= [];
+    expressionTypes: string[] = [];
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -89,103 +86,97 @@ export class TypeCheckVisitor extends Visitor {
     visit(node: NodeCLASSDECLORFUNCDEF): void;
     visit(node: NodeEMPTYARRAYSIZE): void;
     visit(node: unknown): void {
-
-        if(node instanceof NodeCLASSDECLORFUNCDEF) {
+        if (node instanceof NodeCLASSDECLORFUNCDEF) {
             this.globalSymbolTable = node.symbolTable;
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeFUNCDEF){
+        if (node instanceof NodeFUNCDEF) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeFUNCBODY){
+        if (node instanceof NodeFUNCBODY) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeRETURNSTAT){
-            
+        if (node instanceof NodeRETURNSTAT) {
             // just a number
             // idnest
-
         }
 
-        if(node instanceof NodeASSIGNSTAT){
+        if (node instanceof NodeASSIGNSTAT) {
             // logic for error
             const idnest: Node[] = [];
-            let firstReturnType = "void";
+            const firstReturnType = "void";
 
             this.handleCallOrVar(node);
-        
 
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeVARDECL){
+        if (node instanceof NodeVARDECL) {
             // logic for error
             const type = node.children[1].value;
             let declared = false;
 
-            if(type?.lexeme !== TokenType.INTEGER && type?.lexeme !== TokenType.FLOAT){
+            if (type?.lexeme !== TokenType.INTEGER && type?.lexeme !== TokenType.FLOAT) {
                 this.globalSymbolTable?.entries.forEach((entry) => {
-                    if(entry instanceof ClassEntry && entry.id.lexeme === type?.lexeme){
+                    if (entry instanceof ClassEntry && entry.id.lexeme === type?.lexeme) {
                         declared = true;
                     }
-                })
-            } else{
+                });
+            } else {
                 declared = true;
             }
 
-            if(!declared){
-                this.errors.push(new CompilerError("11.5", type ?? this.defaultToken, "undeclared class"))
+            if (!declared) {
+                this.errors.push(new CompilerError("11.5", type ?? this.defaultToken, "undeclared class"));
             }
 
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeFUNCTIONCALLSTAT){
-            if(node.children[0] instanceof NodeFUNCTIONCALL){
+        if (node instanceof NodeFUNCTIONCALLSTAT) {
+            if (node.children[0] instanceof NodeFUNCTIONCALL) {
                 // handles free function call
                 this.handleFunctionCall(node, this.globalSymbolTable);
-            }else{
+            } else {
                 // handles id nest call
                 // ToDo
             }
-
         }
 
-        if(node instanceof NodeEXPR){
-
+        if (node instanceof NodeEXPR) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeARITHEXPR){
-
+        if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeTERM){
+        if (node instanceof NodeTERM) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeFACTOR){
-            if(node?.children[0]?.value){
-                if(node.parentNode && node.parentNode.parentNode) {
-                    if(node.parentNode.parentNode.type === ""){
+        if (node instanceof NodeFACTOR) {
+            if (node?.children[0]?.value) {
+                if (node.parentNode && node.parentNode.parentNode && node.parentNode.parentNode.parentNode) {
+                    node.parentNode.type = this.literalToType(node.children[0].value.type);
+                    node.parentNode.parentNode.parentNode.type = this.literalToType(node.children[0].value.type);
+                    if (node.parentNode.parentNode.type === "") {
                         node.parentNode.parentNode.type = this.literalToType(node.children[0].value.type);
-                    }else if(node.parentNode.parentNode.type !== this.literalToType(node.children[0].value.type)){
-                        this.errors.push(new CompilerError("10.1", node?.children[0]?.value, "\".\" type error in expression"));
+                    } else if (node.parentNode.parentNode.type !== this.literalToType(node.children[0].value.type)) {
+                        this.errors.push(
+                            new CompilerError("10.1", node?.children[0]?.value, '"." type error in expression'),
+                        );
                     }
-                    
                 }
             }
 
-
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeFACTORCALLORVAR){
-
+        if (node instanceof NodeFACTORCALLORVAR) {
             this.handleCallOrVar(node);
 
             this.traverseTree(node);
@@ -193,14 +184,12 @@ export class TypeCheckVisitor extends Visitor {
     }
 
     private handleCallOrVar(node: Node) {
-
-
-        const variableOrFuncCall: Node []= [];
+        const variableOrFuncCall: Node[] = [];
         node.children.forEach((child) => {
-            if(child instanceof NodeVARIABLE || child instanceof NodeFUNCTIONCALL){
+            if (child instanceof NodeVARIABLE || child instanceof NodeFUNCTIONCALL) {
                 variableOrFuncCall.push(child);
             }
-        })
+        });
 
         let firstReturnType = "void";
         let isError = false;
@@ -209,10 +198,13 @@ export class TypeCheckVisitor extends Visitor {
             if (variableOrFuncCall[0] instanceof NodeFUNCTIONCALL) {
                 firstReturnType = this.handleFunctionCall(variableOrFuncCall[0], this.globalSymbolTable);
             } else if (variableOrFuncCall[0] instanceof NodeVARIABLE) {
-                firstReturnType = this.getVariableType(variableOrFuncCall[0], variableOrFuncCall[0].symbolTable?.parentTable ?? null);
+                firstReturnType = this.getVariableType(
+                    variableOrFuncCall[0],
+                    variableOrFuncCall[0].symbolTable?.parentTable ?? null,
+                );
                 const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
                 if (firstReturnType === "void" && id.lexeme !== "self") {
-                    this.errors.push(new CompilerError("11.1", id, "\".\" undelclared localvar"));
+                    this.errors.push(new CompilerError("11.1", id, '"." undelclared localvar'));
                     isError = true;
                 }
             }
@@ -220,62 +212,54 @@ export class TypeCheckVisitor extends Visitor {
 
         if (this.isPrimitive(firstReturnType) && variableOrFuncCall.length > 1) {
             const id = variableOrFuncCall[0].children[0].value ?? this.defaultToken;
-            this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
+            this.errors.push(new CompilerError("15.1", id, '"." operator used on non-class type'));
             isError = true;
-
         }
 
         let previousReturnType = firstReturnType;
         let previousId = variableOrFuncCall[0]?.children[0]?.value ?? this.defaultToken;
         if (!this.isPrimitive(firstReturnType)) {
-
             variableOrFuncCall.shift();
 
             variableOrFuncCall.forEach((e) => {
-
                 const classMembers: Entry[] = [];
 
                 if (e instanceof NodeVARIABLE) {
                     const variableName = this.getVariableName(e);
 
-
                     this.getClassDataMembers(previousReturnType).forEach((entry) => {
                         if (entry instanceof DataMemberEntry && entry.id.lexeme === variableName) {
                             classMembers.push(entry);
                         }
-
                     });
                 }
 
                 if (e instanceof NodeFUNCTIONCALL) {
-
                     this.getClassMemberFunction(previousReturnType).forEach((entry) => {
                         const functionName = this.getVariableName(e);
                         if (entry instanceof MemberFuncEntry && entry.id.lexeme === functionName) {
                             classMembers.push(entry);
                         }
-
                     });
                 }
 
                 if (classMembers.length === 0) {
                     const id = e.children[0].value ?? this.defaultToken;
                     if (this.isPrimitive(previousReturnType)) {
-                        this.errors.push(new CompilerError("15.1", id, "\".\" operator used on non-class type"));
+                        this.errors.push(new CompilerError("15.1", id, '"." operator used on non-class type'));
                         isError = true;
                     } else {
                         if (previousId.lexeme === "self") {
-                            this.errors.push(new CompilerError("15.2", id, "\".\" incorrect use of self"));
+                            this.errors.push(new CompilerError("15.2", id, '"." incorrect use of self'));
                             isError = true;
                         } else if (e instanceof NodeVARIABLE) {
-                            this.errors.push(new CompilerError("11.2", id, "\".\" undeclared data member"));
+                            this.errors.push(new CompilerError("11.2", id, '"." undeclared data member'));
                             isError = true;
                         } else if (e instanceof NodeFUNCTIONCALL) {
-                            this.errors.push(new CompilerError("11.3", id, "\".\" undeclared member function"));
+                            this.errors.push(new CompilerError("11.3", id, '"." undeclared member function'));
                             isError = true;
                         }
                     }
-
                 } else {
                     const classEntry = this.getClassEntryByName(previousReturnType);
 
@@ -298,11 +282,14 @@ export class TypeCheckVisitor extends Visitor {
                 node.parentNode.type = previousReturnType;
                 // setting the type of the term
                 if (node.parentNode.parentNode.parentNode.type === "") {
+                    node.parentNode.parentNode.type = previousReturnType;
                     node.parentNode.parentNode.parentNode.type = previousReturnType;
-                } else if (node.parentNode.parentNode.parentNode.type !== previousReturnType && node.parentNode.type !== previousReturnType) {
-                    this.errors.push(new CompilerError("10.1", previousId, "\".\" type error in expression"));
+                } else if (
+                    node.parentNode.parentNode.parentNode.type !== previousReturnType &&
+                    node.parentNode.type !== previousReturnType
+                ) {
+                    this.errors.push(new CompilerError("10.1", previousId, '"." type error in expression'));
                 }
-
             }
         }
 
@@ -310,12 +297,10 @@ export class TypeCheckVisitor extends Visitor {
     }
 
     private AssignStatisVariable(node: Node, index: number): boolean {
-
         return node.children[index + 1] instanceof NodeINDICELIST;
     }
 
     private AssignStatisFunction(node: Node, index: number): boolean {
-
         return !(node.children[index + 1] instanceof NodeINDICELIST) && node?.children[index]?.value !== null;
     }
 
@@ -342,7 +327,13 @@ export class TypeCheckVisitor extends Visitor {
         }
 
         if (numParamError && !idNotFound) {
-            this.errors.push(new CompilerError("12.1", functionId ?? this.defaultToken, "function call with wrong number of parameters"));
+            this.errors.push(
+                new CompilerError(
+                    "12.1",
+                    functionId ?? this.defaultToken,
+                    "function call with wrong number of parameters",
+                ),
+            );
         }
 
         return returnType;
@@ -355,15 +346,14 @@ export class TypeCheckVisitor extends Visitor {
     }
 
     private getClassEntryByName(className: string): Entry {
-
-        let classEntry: Entry[] = [];
+        const classEntry: Entry[] = [];
         this.globalSymbolTable?.entries.forEach((entry) => {
-            if(entry instanceof ClassEntry && className === entry.id.lexeme){
+            if (entry instanceof ClassEntry && className === entry.id.lexeme) {
                 classEntry.push(entry);
             }
-        })
+        });
 
-        if(classEntry.length){
+        if (classEntry.length) {
             return classEntry[0];
         }
 
@@ -383,33 +373,31 @@ export class TypeCheckVisitor extends Visitor {
         const entries: Entry[] = [];
 
         variable.symbolTable?.entries.forEach((entry) => {
-            if((entry instanceof ParameterEntry || entry instanceof LocalVarEntry)){
-
-                if(entry.id.lexeme ===  variableName){
+            if (entry instanceof ParameterEntry || entry instanceof LocalVarEntry) {
+                if (entry.id.lexeme === variableName) {
                     entries.push(entry);
                 }
             }
-
         }) ?? [];
 
         // get enherited variables
         classTable?.entries.forEach((entry) => {
             //console.log("classtable", entry)
-            if((entry instanceof DataMemberEntry)){
-                if(entry.id.lexeme ===  variableName){
+            if (entry instanceof DataMemberEntry) {
+                if (entry.id.lexeme === variableName) {
                     entries.push(entry);
                 }
             }
-
         }) ?? [];
 
-        if(entries && entries.length > 0){
+        if (entries && entries.length > 0) {
             const entry = entries[0];
-            if(entry instanceof ParameterEntry || entry instanceof LocalVarEntry || entry instanceof DataMemberEntry){
-
-                if(indice){
-                    if((entry.dim.length !== indice)){
-                        this.errors.push(new CompilerError("13.2", entry.id, "Array parameters using wrong number of dimentions"));
+            if (entry instanceof ParameterEntry || entry instanceof LocalVarEntry || entry instanceof DataMemberEntry) {
+                if (indice) {
+                    if (entry.dim.length !== indice) {
+                        this.errors.push(
+                            new CompilerError("13.2", entry.id, "Array parameters using wrong number of dimentions"),
+                        );
                     }
                 }
 
@@ -427,17 +415,16 @@ export class TypeCheckVisitor extends Visitor {
         // get enherited variables
         classTable?.entries.forEach((entry) => {
             //console.log("classtable", entry)
-            if((entry instanceof DataMemberEntry)){
-                if(entry.id.lexeme ===  variableName){
+            if (entry instanceof DataMemberEntry) {
+                if (entry.id.lexeme === variableName) {
                     entries.push(entry);
                 }
             }
-
         }) ?? [];
 
-        if(entries && entries.length > 0){
+        if (entries && entries.length > 0) {
             const entry = entries[0];
-            if(entry instanceof ParameterEntry || entry instanceof LocalVarEntry || entry instanceof DataMemberEntry){
+            if (entry instanceof ParameterEntry || entry instanceof LocalVarEntry || entry instanceof DataMemberEntry) {
                 return entry.type;
             }
         }
@@ -445,24 +432,23 @@ export class TypeCheckVisitor extends Visitor {
         return "void";
     }
 
-    private getClassDataMembers(className: string): Entry[]{
+    private getClassDataMembers(className: string): Entry[] {
         const classesFound: Entry[] = [];
-        
+
         this.globalSymbolTable?.entries.forEach((entry) => {
-            if(entry instanceof ClassEntry && entry.id.lexeme === className){
+            if (entry instanceof ClassEntry && entry.id.lexeme === className) {
                 classesFound.push(entry);
             }
         }) ?? [];
 
-
         // toDo implement inheritance
-        if((classesFound?.length ?? 0 > 0)){
+        if (classesFound?.length ?? 0 > 0) {
             const classFound = classesFound[0];
-            if(classFound instanceof ClassEntry){
+            if (classFound instanceof ClassEntry) {
                 const f: Entry[] = [];
 
                 classFound.symbolTable.entries.forEach((entry) => {
-                    if(entry instanceof DataMemberEntry){
+                    if (entry instanceof DataMemberEntry) {
                         f.push(entry);
                     }
                 });
@@ -474,24 +460,23 @@ export class TypeCheckVisitor extends Visitor {
         return [];
     }
 
-    private getClassMemberFunction(className: string): Entry[]{
+    private getClassMemberFunction(className: string): Entry[] {
         const classesFound: Entry[] = [];
-        
+
         this.globalSymbolTable?.entries.forEach((entry) => {
-            if(entry instanceof ClassEntry && entry.id.lexeme === className){
+            if (entry instanceof ClassEntry && entry.id.lexeme === className) {
                 classesFound.push(entry);
             }
         }) ?? [];
 
-
         // toDo implement inheritance
-        if((classesFound?.length ?? 0 > 0)){
+        if (classesFound?.length ?? 0 > 0) {
             const classFound = classesFound[0];
-            if(classFound instanceof ClassEntry){
+            if (classFound instanceof ClassEntry) {
                 const f: Entry[] = [];
 
                 classFound.symbolTable.entries.forEach((entry) => {
-                    if(entry instanceof MemberFuncEntry){
+                    if (entry instanceof MemberFuncEntry) {
                         f.push(entry);
                     }
                 });
@@ -503,13 +488,12 @@ export class TypeCheckVisitor extends Visitor {
         return [];
     }
 
-
-    private isPrimitive(type: string){
+    private isPrimitive(type: string) {
         return type === "integer" || type === "float";
     }
 
-    private literalToType(literal: string){
-        if(literal === "intnum"){
+    private literalToType(literal: string) {
+        if (literal === "intnum") {
             return "integer";
         }
 

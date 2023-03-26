@@ -172,11 +172,10 @@ export function getNodeByConcept(concept: Concept) {
 
 export function getNodeList(object: Node, list: Node[]) {
     if (object.children.length > 0) {
-        for (var i = 0; i < object.children.length; i++) {
+        for (let i = 0; i < object.children.length; i++) {
             getNodeList(object.children[i], list);
         }
-    }
-    else {
+    } else {
         list.push(object);
     }
 }

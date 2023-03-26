@@ -103,14 +103,14 @@ export class SymbTabVisitor extends Visitor {
             const classEntry = new ClassEntry(id, localTable);
 
             node.symbolTable?.entries.forEach((entry) => {
-                if(entry instanceof ClassEntry && entry.id.lexeme === id.lexeme){
+                if (entry instanceof ClassEntry && entry.id.lexeme === id.lexeme) {
                     this.errors.push(new CompilerError("8.1", id, "Multipy declared classes"));
                 }
             });
 
             node.symbolTable?.addEntry(classEntry);
 
-            let multipleDefinedClass = false;
+            const multipleDefinedClass = false;
 
             //node.symbolTable?.addEntry(localTable);
 
@@ -136,42 +136,52 @@ export class SymbTabVisitor extends Visitor {
             let error = false;
 
             node.symbolTable?.entries.forEach((entry) => {
-                if(entry instanceof MemberFuncEntry && entry.id.lexeme === id.lexeme && this.ParamsEqual(entry.aParams, aparams) && entry.returnType === returnT){
-                    if(!error){
+                if (
+                    entry instanceof MemberFuncEntry &&
+                    entry.id.lexeme === id.lexeme &&
+                    this.ParamsEqual(entry.aParams, aparams) &&
+                    entry.returnType === returnT
+                ) {
+                    if (!error) {
                         this.errors.push(new CompilerError("8.2", id, "Multipy declared member function functions"));
                     }
-                    
-                    error = true;
 
-                }else if(entry instanceof MemberFuncEntry && entry.id.lexeme === id.lexeme){
-                    if(!error){
+                    error = true;
+                } else if (entry instanceof MemberFuncEntry && entry.id.lexeme === id.lexeme) {
+                    if (!error) {
                         this.warrnings.push(new CompilerWarning("9.2", id, "overloaded member function free function"));
                     }
 
                     error = true;
                 }
-
             });
 
             error = false;
 
             node.symbolTable?.entries.forEach((entry) => {
-                if(entry instanceof InheritEntry){
-                    this.globalTable.entries.forEach((e) =>{
-                        if(e instanceof ClassEntry && e.id.lexeme === entry.id.lexeme){
+                if (entry instanceof InheritEntry) {
+                    this.globalTable.entries.forEach((e) => {
+                        if (e instanceof ClassEntry && e.id.lexeme === entry.id.lexeme) {
                             e.symbolTable.entries.forEach((func) => {
-                                if(func instanceof MemberFuncEntry && func.id.lexeme === id.lexeme && this.ParamsEqual(func.aParams, aparams) && func.returnType === returnT){
-                                    if(!error){
-                                        this.warrnings.push(new CompilerWarning("9.3", id, "Overridden inherited member function"));
+                                if (
+                                    func instanceof MemberFuncEntry &&
+                                    func.id.lexeme === id.lexeme &&
+                                    this.ParamsEqual(func.aParams, aparams) &&
+                                    func.returnType === returnT
+                                ) {
+                                    if (!error) {
+                                        this.warrnings.push(
+                                            new CompilerWarning("9.3", id, "Overridden inherited member function"),
+                                        );
                                     }
 
                                     error = true;
                                 }
-                            })
+                            });
                         }
-                    })
+                    });
                 }
-            })
+            });
 
             const memberFuncEntry = new MemberFuncEntry(id, aparams, returnT, visibility.lexeme, localTable);
             node.symbolTable?.addEntry(memberFuncEntry);
@@ -194,21 +204,24 @@ export class SymbTabVisitor extends Visitor {
                 let error = false;
 
                 node.symbolTable?.entries.forEach((entry) => {
-                    if(entry instanceof FunctionEntry && entry.id.lexeme === id.lexeme && this.ParamsEqual(entry.aParams, aparams) && entry.returnType === returnT){
-                        if(!error){
+                    if (
+                        entry instanceof FunctionEntry &&
+                        entry.id.lexeme === id.lexeme &&
+                        this.ParamsEqual(entry.aParams, aparams) &&
+                        entry.returnType === returnT
+                    ) {
+                        if (!error) {
                             this.errors.push(new CompilerError("8.2", id, "Multipy declared functions"));
                         }
-                        
-                        error = true;
 
-                    }else if(entry instanceof FunctionEntry && entry.id.lexeme === id.lexeme){
-                        if(!error){
+                        error = true;
+                    } else if (entry instanceof FunctionEntry && entry.id.lexeme === id.lexeme) {
+                        if (!error) {
                             this.warrnings.push(new CompilerWarning("9.1", id, "overloaded free function"));
                         }
 
                         error = true;
                     }
-
                 });
 
                 const functionEntry = new FunctionEntry(id, aparams, returnT ?? "", localTable);
@@ -220,7 +233,11 @@ export class SymbTabVisitor extends Visitor {
             } else if (funcHead instanceof NodeMEMBERFUNCARROW || funcHead instanceof NodeFUNCCONSTSTRUCT) {
                 const className = node.children[0].value ?? defaultToken;
                 const returnT = funcHead.children[funcHead.children.length - 1].value?.lexeme ?? className.lexeme;
-                const funcName = funcHead.children[0].value ?? { lexeme: "build", position: className.position, type: TokenType.EOF };
+                const funcName = funcHead.children[0].value ?? {
+                    lexeme: "build",
+                    position: className.position,
+                    type: TokenType.EOF,
+                };
                 const aparams: AParam[] = this.createParams(funcHead, defaultToken);
 
                 const classes = this.globalTable.entries.filter(
@@ -228,32 +245,31 @@ export class SymbTabVisitor extends Visitor {
                 );
 
                 if (classes.length === 0) {
-                    this.errors.push(new CompilerError("6.1", className, "undeclared class and member function definition"));
+                    this.errors.push(
+                        new CompilerError("6.1", className, "undeclared class and member function definition"),
+                    );
                 } else {
-
                     // checks if there is a function decleration that coresponds to the header
                     const functions = (classes[0] as ClassEntry).symbolTable.entries.filter(
-                        (entry) => entry instanceof MemberFuncEntry && entry.id.lexeme === funcName.lexeme 
-                        && entry.returnType === returnT
-                        && this.ParamsEqual(entry.aParams, aparams)
+                        (entry) =>
+                            entry instanceof MemberFuncEntry &&
+                            entry.id.lexeme === funcName.lexeme &&
+                            entry.returnType === returnT &&
+                            this.ParamsEqual(entry.aParams, aparams),
                     );
                     if (functions.length === 0) {
-
                         // ToDo: check inherit classes
-                        this.errors.push(
-                            new CompilerError("6.1", funcName, "undeclared member function definition"),
-                        );
-                    }else {
-        
-                        const func = (functions[0] as MemberFuncEntry);
-                        if(!func.defined){
+                        this.errors.push(new CompilerError("6.1", funcName, "undeclared member function definition"));
+                    } else {
+                        const func = functions[0] as MemberFuncEntry;
+                        if (!func.defined) {
                             func.defined = true;
                             this.traverseTree(node, func.symbolTable);
-                        }else {
-                            this.errors.push(new CompilerError("x.x", className, "mutiply definied member function definition"))
+                        } else {
+                            this.errors.push(
+                                new CompilerError("x.x", className, "mutiply definied member function definition"),
+                            );
                         }
-                        
-                        
                     }
                 }
             }
@@ -274,11 +290,11 @@ export class SymbTabVisitor extends Visitor {
         }
 
         if (node instanceof NodeFPARAMS) {
-
             let i = 0;
-            const currentParameters = node.symbolTable?.entries.filter((entry) => entry instanceof ParameterEntry) ?? [];
-            if(currentParameters?.length > 0){
-                return
+            const currentParameters =
+                node.symbolTable?.entries.filter((entry) => entry instanceof ParameterEntry) ?? [];
+            if (currentParameters?.length > 0) {
+                return;
             }
             while (i < node.children.length) {
                 const id = node.children[i]?.value ?? defaultToken;
@@ -321,7 +337,7 @@ export class SymbTabVisitor extends Visitor {
                 return -1;
             });
             node.symbolTable?.entries.forEach((entry) => {
-                if(entry instanceof LocalVarEntry && entry.id.lexeme === id.lexeme){
+                if (entry instanceof LocalVarEntry && entry.id.lexeme === id.lexeme) {
                     this.errors.push(new CompilerError("8.4", id, "Multipy declared identifier in function"));
                 }
             });
@@ -333,23 +349,20 @@ export class SymbTabVisitor extends Visitor {
         }
 
         if (node instanceof NodeMEMBERVARDECL) {
-            
             const visibility = node.children[0].value ?? defaultToken;
-            const id  = node.children[1].value ?? defaultToken;
+            const id = node.children[1].value ?? defaultToken;
             const type = node.children[2].value ?? defaultToken;
 
-            
-
-            const dim: number[] = node.children[3].children.map(child => {
-                if(child instanceof NodeEMPTYARRAYSIZE){
+            const dim: number[] = node.children[3].children.map((child) => {
+                if (child instanceof NodeEMPTYARRAYSIZE) {
                     return -1;
-                }else {
+                } else {
                     return Number(child.value?.lexeme);
                 }
             });
 
             node.symbolTable?.entries.forEach((entry) => {
-                if(entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme){
+                if (entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme) {
                     this.errors.push(new CompilerError("8.3", id, "Multipy declared data member in class"));
                 }
             });
@@ -357,72 +370,71 @@ export class SymbTabVisitor extends Visitor {
             const inherited = this.getInhertiedMembers(node);
 
             inherited.forEach((entry) => {
-                if(entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme){
+                if (entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme) {
                     this.warrnings.push(new CompilerWarning("8.5", id, "Shadowed inherited data member"));
                 }
             });
 
-            node.symbolTable?.addEntry(new DataMemberEntry(id, type.lexeme, visibility.lexeme, dim))
+            node.symbolTable?.addEntry(new DataMemberEntry(id, type.lexeme, visibility.lexeme, dim));
         }
 
-        if(node instanceof NodeASSIGNSTAT){
+        if (node instanceof NodeASSIGNSTAT) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeFUNCTIONCALLSTAT){
+        if (node instanceof NodeFUNCTIONCALLSTAT) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeAPARAMS){
+        if (node instanceof NodeAPARAMS) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeEXPR){
+        if (node instanceof NodeEXPR) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeARITHEXPR){
+        if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeTERM){
+        if (node instanceof NodeTERM) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeFACTOR){
+        if (node instanceof NodeFACTOR) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeFACTORCALLORVAR){
+        if (node instanceof NodeFACTORCALLORVAR) {
             this.traverseTree(node, node.symbolTable);
         }
-
     }
 
     private getInhertiedMembers(node: Node): Entry[] {
         const dataMembers: Entry[] = [];
 
-
         node.symbolTable?.entries.forEach((entry) => {
-            if(entry instanceof InheritEntry){
+            if (entry instanceof InheritEntry) {
                 this.globalTable.entries.forEach((e) => {
-                    if(e instanceof ClassEntry && e.id.lexeme === entry.id.lexeme){
-                        
-                        e.symbolTable.entries.forEach((l) =>{
-                            if(l instanceof DataMemberEntry){
+                    if (e instanceof ClassEntry && e.id.lexeme === entry.id.lexeme) {
+                        e.symbolTable.entries.forEach((l) => {
+                            if (l instanceof DataMemberEntry) {
                                 dataMembers.push(l);
                             }
-                        })
+                        });
                     }
-                })
+                });
             }
-        })
+        });
 
         return dataMembers;
-
     }
 
-    private createParams(node: NodeMEMBERFUNCDECL, defaultToken: { lexeme: string; position: number; type: TokenType; }) {
+    private createParams(
+        node: NodeMEMBERFUNCDECL,
+        defaultToken: { lexeme: string; position: number; type: TokenType },
+    ) {
         const params = node.children.filter((child) => child instanceof NodeFPARAMS);
         const aparams: AParam[] = [];
         if (params.length > 0) {
@@ -441,20 +453,20 @@ export class SymbTabVisitor extends Visitor {
         return aparams;
     }
 
-    private ParamsEqual(x: AParam[], y: AParam[]){
-        if(x.length !== y.length){
+    private ParamsEqual(x: AParam[], y: AParam[]) {
+        if (x.length !== y.length) {
             return false;
         }
         let areEqual = true;
         x.forEach((param, i) => {
-            if(param.type !== y[i].type){
+            if (param.type !== y[i].type) {
                 areEqual = false;
             }
 
-            if(param.dim !== y[i].dim){
+            if (param.dim !== y[i].dim) {
                 areEqual = false;
             }
-        })
+        });
         return areEqual;
     }
 

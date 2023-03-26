@@ -37,6 +37,8 @@ class | id: LINEAR |
 	function:evaluate 
 		parameter | id: x | type: float
 		localvar | id: result | type: float
+		tempvar | id: temp1 | type: float | expressionId: 6
+		tempvar | id: temp2 | type: float | expressionId: 6
 
 
 class | id: QUADRATIC | 
@@ -52,11 +54,18 @@ class | id: QUADRATIC |
 		parameter | id: B | type: float
 		parameter | id: C | type: float
 		localvar | id: new_function | type: QUADRATIC
+		tempvar | id: temp7 | type: float | expressionId: 14
+		tempvar | id: temp8 | type: float | expressionId: 14
+		tempvar | id: temp9 | type: integer | expressionId: 14
 
 	function | evaluate | aparams: (x:float)| type: float| visiblity: public
 	function:evaluate 
 		parameter | id: x | type: float
 		localvar | id: result | type: float
+		tempvar | id: temp3 | type: float | expressionId: 9
+		tempvar | id: temp4 | type: float | expressionId: 9
+		tempvar | id: temp5 | type: float | expressionId: 10
+		tempvar | id: temp6 | type: float | expressionId: 10
 
 
 class | id: F | 

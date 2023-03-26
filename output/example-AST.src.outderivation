@@ -27,267 +27,192 @@ START =>
 START =>
  function id openpar id colon integer opensqbr closesqbr comma id colon TYPE REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar id colon integer opensqbr closesqbr comma id colon float REPTFPARAMS3 REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar id colon integer opensqbr closesqbr comma id colon float REPTFPARAMS4 closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype RETURNTYPE FUNCBODY REPTSTART0
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype RETURNTYPE FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void FUNCBODY REPTSTART0
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void FUNCBODY REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  FUNCTIONCALLORASIGNSTAT semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id ISFUNCTIONCALLORVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id INDICELOOP AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id MIDDLESTATE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar APARAMS closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar AFTERFUNCTIONCALL semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id MIDDLESTATE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id INDICELOOP AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id ENDASSIGN semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id ASSIGNOP EXPR semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id assign EXPR semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id assign ARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id assign TERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
  id dot id openpar closepar dot id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum ADDOP TERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus TERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id ADDOP TERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum MULTOP FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus TERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum MULTOP FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum RIGHTRECARITHEXPR EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum EXPR2 semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum RELOP ARITHEXPR semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt ARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt TERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt FACTOR RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id ADDOP TERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus TERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus intnum RIGHTRECTERM RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus intnum RIGHTRECARITHEXPR semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus intnum semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus intnum semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id semi
  closecubr
  REPTSTART0
 START =>
- function id openpar id colon integer opensqbr closesqbr comma id colon integer closepar returntype void opencubr
- id dot id openpar closepar dot id assign id plus intnum mult intnum gt id plus intnum semi
+ function id openpar id colon integer opensqbr closesqbr comma id colon float closepar returntype void opencubr
+ id dot id openpar closepar dot id assign floatnum plus floatnum mult id semi
  closecubr
  

@@ -1,6 +1,8 @@
 global 
-function | bubbleSort | aparams: (arr:integer[] size:integer)| type: void
+function | bubbleSort | aparams: (arr:integer[] size:float)| type: void
 	function:bubbleSort 
 	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
+	parameter | id: size | type: float
+	tempvar | id: temp1 | type: float | expressionId: 1
+	tempvar | id: temp2 | type: float | expressionId: 1
 
