@@ -1,9 +1,9 @@
 global 
-function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void
+function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void| memsize: 20
 	function:variableIdNest 
-	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
-	localvar | id: x | type: integer
-	tempvar | id: temp1 | type: integer | expressionId: 16
-	tempvar | id: temp2 | type: integer | expressionId: 26
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: x | type: integer | memsize: 4
+	tempvar | id: temp1 | type: integer | expressionId: 16| memsize: 4
+	tempvar | id: temp2 | type: integer | expressionId: 26| memsize: 4
 

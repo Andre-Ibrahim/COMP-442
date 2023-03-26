@@ -31,7 +31,8 @@ export class FunctionEntry extends Entry {
 
         text += ")";
 
-        text += `| type: ${this.returnType}\n`;
+        text += `| type: ${this.returnType}`;
+        text += `| memsize: ${this.memSize}\n`;
 
         text += this.symbolTable?.toString() ?? "";
 

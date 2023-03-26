@@ -29,7 +29,8 @@ export class MemberFuncEntry extends FunctionEntry {
         text += ")";
 
         text += `| type: ${this.returnType}`;
-        text += `| visiblity: ${this.visibility}\n`;
+        text += `| visiblity: ${this.visibility}`;
+        text += `| memsize: ${this.memSize}\n`;
 
         text += this.symbolTable?.toString() ?? "";
 

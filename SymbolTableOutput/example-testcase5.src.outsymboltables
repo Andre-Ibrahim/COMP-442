@@ -1,11 +1,11 @@
 global 
-function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void
+function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void| memsize: 28
 	function:functionBlocks 
-	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
-	localvar | id: n | type: integer
-	localvar | id: i | type: integer
-	tempvar | id: temp1 | type: integer | expressionId: 5
-	tempvar | id: temp2 | type: integer | expressionId: 9
-	tempvar | id: temp3 | type: integer | expressionId: 11
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
+	localvar | id: i | type: integer | memsize: 4
+	tempvar | id: temp1 | type: integer | expressionId: 5| memsize: 4
+	tempvar | id: temp2 | type: integer | expressionId: 9| memsize: 4
+	tempvar | id: temp3 | type: integer | expressionId: 11| memsize: 4
 

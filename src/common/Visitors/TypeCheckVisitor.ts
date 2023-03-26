@@ -375,7 +375,7 @@ export class TypeCheckVisitor extends Visitor {
         });
     }
 
-    private getClassEntryByName(className: string): Entry {
+    private getClassEntryByName(className: string): Entry | null{
         const classEntry: Entry[] = [];
         this.globalSymbolTable?.entries.forEach((entry) => {
             if (entry instanceof ClassEntry && className === entry.id.lexeme) {
@@ -387,7 +387,7 @@ export class TypeCheckVisitor extends Visitor {
             return classEntry[0];
         }
 
-        return [];
+        return null;
     }
 
     private getVariableName(variable: Node): string {

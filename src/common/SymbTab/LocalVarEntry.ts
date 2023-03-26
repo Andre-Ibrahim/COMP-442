@@ -23,6 +23,8 @@ export class LocalVarEntry extends Entry {
                 return `[${n}]`;
             })
             .join("");
-        return `localvar | id: ${this.id.lexeme} | type: ${this.type}${dim}`;
+        return `localvar | id: ${this.id.lexeme} | type: ${this.type}${dim} | memsize: ${this.memSize}`;
     }
+
+
 }

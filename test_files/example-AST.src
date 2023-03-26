@@ -1,15 +1,9 @@
-function bubbleSort(arr: integer[], size: integer) => void 
+function main() => void 
 {
-  localvar n    : integer;
-  localvar i    : integer;
-  localvar j    : integer;
-  localvar temp : integer; 
-    while (i < n-1) {
-    while (j < n-i-1) {
-      if (arr[j] > arr[j+1]) 
-        then {
-          n = 1 + 2;
-        } else ;
-      };
-  };
+  localvar z: integer;
+  localvar y: float[2][2];
+
+  z = 3;
+
+  write(z);
 }

@@ -1,67 +1,67 @@
 global 
-function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void
+function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void| memsize: 12
 	function:VOIDReturnType 
-	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
-	localvar | id: n | type: integer
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
 
-function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float
+function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float| memsize: 12
 	function:FLOATReturnType 
-	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
-	localvar | id: n | type: integer
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
 
-function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void
+function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void| memsize: 12
 	function:VOIDReturnType 
-	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
-	localvar | id: n | type: integer
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
 
-function | VOIDReturnType | aparams: (arr:integer[][] size:float)| type: void
+function | VOIDReturnType | aparams: (arr:integer[][] size:float)| type: void| memsize: 16
 	function:VOIDReturnType 
-	parameter | id: arr | type: integer[][]
-	parameter | id: size | type: float
-	localvar | id: n | type: integer
+	parameter | id: arr | type: integer[][]| memsize: 4
+	parameter | id: size | type: float| memsize: 8
+	localvar | id: n | type: integer | memsize: 4
 
-function | functionParams | aparams: (x:integer y:float z:id a:integer[])| type: void
+function | functionParams | aparams: (x:integer y:float z:id a:integer[])| type: void| memsize: 16
 	function:functionParams 
-	parameter | id: x | type: integer
-	parameter | id: y | type: float
-	parameter | id: z | type: id
-	parameter | id: a | type: integer[]
+	parameter | id: x | type: integer| memsize: 4
+	parameter | id: y | type: float| memsize: 8
+	parameter | id: z | type: id| memsize: 0
+	parameter | id: a | type: integer[]| memsize: 4
 
-function | printArray | aparams: (x:float)| type: integer
+function | printArray | aparams: (x:float)| type: integer| memsize: 12
 	function:printArray 
-	parameter | id: x | type: float
-	localvar | id: i | type: integer
+	parameter | id: x | type: float| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
 
-function | printArray | aparams: (x:id)| type: integer
+function | printArray | aparams: (x:id)| type: integer| memsize: 4
 	function:printArray 
-	parameter | id: x | type: id
-	localvar | id: i | type: integer
+	parameter | id: x | type: id| memsize: 0
+	localvar | id: i | type: integer | memsize: 4
 
-function | printArray | aparams: (x:id)| type: id
+function | printArray | aparams: (x:id)| type: id| memsize: 4
 	function:printArray 
-	parameter | id: x | type: id
-	localvar | id: i | type: integer
+	parameter | id: x | type: id| memsize: 0
+	localvar | id: i | type: integer | memsize: 4
 
-function | printArray | aparams: (x:float[])| type: integer
+function | printArray | aparams: (x:float[])| type: integer| memsize: 12
 	function:printArray 
-	parameter | id: x | type: float[]
-	localvar | id: i | type: integer
+	parameter | id: x | type: float[]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
 
-function | printArray | aparams: (x:float[])| type: float
+function | printArray | aparams: (x:float[])| type: float| memsize: 12
 	function:printArray 
-	parameter | id: x | type: float[]
-	localvar | id: i | type: integer
+	parameter | id: x | type: float[]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
 
-function | printArray | aparams: (x:float[][])| type: float
+function | printArray | aparams: (x:float[][])| type: float| memsize: 12
 	function:printArray 
-	parameter | id: x | type: float[][]
-	localvar | id: i | type: integer
+	parameter | id: x | type: float[][]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
 
-function | printArray | aparams: (x:float[][])| type: float
+function | printArray | aparams: (x:float[][])| type: float| memsize: 12
 	function:printArray 
-	parameter | id: x | type: float[][]
-	localvar | id: i | type: integer
+	parameter | id: x | type: float[][]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
 

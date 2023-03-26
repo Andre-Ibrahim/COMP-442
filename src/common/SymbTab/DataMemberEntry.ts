@@ -27,7 +27,7 @@ export class DataMemberEntry extends Entry {
             }
         });
 
-        text += ` | visibility: ${this.visibility}`;
+        text += ` | visibility: ${this.visibility} | MemSize: ${this.memSize}`;
 
         return text;
     }

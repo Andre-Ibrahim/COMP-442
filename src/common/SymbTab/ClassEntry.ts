@@ -13,7 +13,7 @@ export class ClassEntry extends Entry {
     }
 
     toString() {
-        let text = `class | id: ${this.id.lexeme} | `;
+        let text = `class | id: ${this.id.lexeme} | MemSize: ${this.memSize}`;
         text += "\n" + this.symbolTable?.toString() ?? "";
         return text;
     }

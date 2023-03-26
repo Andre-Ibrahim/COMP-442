@@ -19,6 +19,6 @@ export class TempVarEntry extends LocalVarEntry {
                 return `[${n}]`;
             })
             .join("");
-        return `tempvar | id: ${this.id.lexeme} | type: ${this.type}${dim} | expressionId: ${this.expressionId}`;
+        return `tempvar | id: ${this.id.lexeme} | type: ${this.type}${dim} | expressionId: ${this.expressionId}| memsize: ${this.memSize}`;
     }
 }

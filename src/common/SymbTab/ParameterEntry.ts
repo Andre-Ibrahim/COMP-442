@@ -14,6 +14,6 @@ export class ParameterEntry extends Entry {
     }
 
     toString() {
-        return `parameter | id: ${this.id.lexeme} | type: ${this.type}${"[]".repeat(this.dim.length)}`;
+        return `parameter | id: ${this.id.lexeme} | type: ${this.type}${"[]".repeat(this.dim.length)}| memsize: ${this.memSize}`;
     }
 }

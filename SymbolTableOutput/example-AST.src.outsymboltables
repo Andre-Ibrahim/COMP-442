@@ -1,15 +1,6 @@
 global 
-function | bubbleSort | aparams: (arr:integer[] size:integer)| type: void
-	function:bubbleSort 
-	parameter | id: arr | type: integer[]
-	parameter | id: size | type: integer
-	localvar | id: n | type: integer
-	localvar | id: i | type: integer
-	localvar | id: j | type: integer
-	localvar | id: temp | type: integer
-	tempvar | id: temp1 | type: integer | expressionId: 1
-	tempvar | id: temp2 | type: integer | expressionId: 2
-	tempvar | id: temp3 | type: integer | expressionId: 2
-	tempvar | id: temp4 | type: integer | expressionId: 3
-	tempvar | id: temp5 | type: integer | expressionId: 4
+function | main | aparams: ()| type: void| memsize: 36
+	function:main 
+	localvar | id: z | type: integer | memsize: 4
+	localvar | id: y | type: float[2][2] | memsize: 32
 

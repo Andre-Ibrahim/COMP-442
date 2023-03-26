@@ -1,72 +1,72 @@
 global 
-class | id: CLASS1 | 
+class | id: CLASS1 | MemSize: 8
 	class:CLASS1 
-	data | id: a | type: float | visibility: private
+	data | id: a | type: float | visibility: private | MemSize: 8
 
-class | id: CLASS2 | 
+class | id: CLASS2 | MemSize: 16
 	class:CLASS2 
-	data | id: a | type: float | visibility: public
-	data | id: a | type: float | visibility: public
+	data | id: a | type: float | visibility: public | MemSize: 8
+	data | id: a | type: float | visibility: public | MemSize: 8
 
-class | id: CLASS3 | 
+class | id: CLASS3 | MemSize: 16
 	class:CLASS3 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
 	function:evaluate 
-		parameter | id: x | type: float
+		parameter | id: x | type: float| memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
 	function:evaluate 
-		parameter | id: x | type: float
+		parameter | id: x | type: float| memsize: 8
 
 
-class | id: CLASS4 | 
+class | id: CLASS4 | MemSize: 8
 	class:CLASS4 
 	inherit | CLASS2
 	inherit | CLASS3
-	function | evaluate | aparams: (x:float)| type: float| visiblity: private
+	function | evaluate | aparams: (x:float)| type: float| visiblity: private| memsize: 8
 	function:evaluate 
-		parameter | id: x | type: float
+		parameter | id: x | type: float| memsize: 8
 
 
-class | id: EMPTYCLASS | 
+class | id: EMPTYCLASS | MemSize: 0
 	class:EMPTYCLASS 
 
-class | id: POLYNOMIAL | 
+class | id: POLYNOMIAL | MemSize: 8
 	class:POLYNOMIAL 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
 	function:evaluate 
-		parameter | id: x | type: float
+		parameter | id: x | type: float| memsize: 8
 
 
-class | id: LINEAR | 
+class | id: LINEAR | MemSize: 40
 	class:LINEAR 
 	inherit | POLYNOMIAL
-	data | id: a | type: float | visibility: private
-	data | id: b | type: float | visibility: private
-	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public
+	data | id: a | type: float | visibility: private | MemSize: 8
+	data | id: b | type: float | visibility: private | MemSize: 8
+	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 16
 	function:build 
-		parameter | id: A | type: float
-		parameter | id: B | type: float
+		parameter | id: A | type: float| memsize: 8
+		parameter | id: B | type: float| memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
 	function:evaluate 
-		parameter | id: x | type: float
+		parameter | id: x | type: float| memsize: 8
 
 
-class | id: QUADRATIC | 
+class | id: QUADRATIC | MemSize: 56
 	class:QUADRATIC 
 	inherit | POLYNOMIAL
-	data | id: a | type: float | visibility: private
-	data | id: b | type: float | visibility: private
-	data | id: c | type: float | visibility: private
-	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public
+	data | id: a | type: float | visibility: private | MemSize: 8
+	data | id: b | type: float | visibility: private | MemSize: 8
+	data | id: c | type: float | visibility: private | MemSize: 8
+	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 24
 	function:build 
-		parameter | id: A | type: float
-		parameter | id: B | type: float
-		parameter | id: C | type: float
+		parameter | id: A | type: float| memsize: 8
+		parameter | id: B | type: float| memsize: 8
+		parameter | id: C | type: float| memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: private
+	function | evaluate | aparams: (x:float)| type: float| visiblity: private| memsize: 8
 	function:evaluate 
-		parameter | id: x | type: float
+		parameter | id: x | type: float| memsize: 8
 
 
