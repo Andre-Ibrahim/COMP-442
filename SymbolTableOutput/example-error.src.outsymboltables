@@ -1,59 +1,59 @@
 global 
-class | id: POLYNOMIAL | MemSize: 16
+class | id: POLYNOMIAL | MemSize: 0
 	class:POLYNOMIAL 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 0
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 
-	function | evaluate2 | aparams: (x:float)| type: float| visiblity: public| memsize: 8
+	function | evaluate2 | aparams: (x:float)| type: float| visiblity: public| memsize: 0
 	function:evaluate2 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 
 
-class | id: POLYNOMIAL | MemSize: 12
+class | id: POLYNOMIAL | MemSize: 0
 	class:POLYNOMIAL 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 0
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 
-	function | evaluate | aparams: (x:integer)| type: integer| visiblity: public| memsize: 4
+	function | evaluate | aparams: (x:integer)| type: integer| visiblity: public| memsize: 0
 	function:evaluate 
-		parameter | id: x | type: integer| memsize: 4
+		parameter | id: x | type: integer| memsize: 0
 
 
-class | id: LINEAR | MemSize: 76
+class | id: LINEAR | MemSize: 52
 	class:LINEAR 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
 	data | id: b | type: integer | visibility: private | MemSize: 4
-	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 16
+	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 0
 	function:build 
-		parameter | id: A | type: float| memsize: 8
-		parameter | id: B | type: float| memsize: 8
+		parameter | id: A | type: float| memsize: 0
+		parameter | id: B | type: float| memsize: 0
 		localvar | id: new_function | type: LINEAR | memsize: 0
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 40
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 32
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 		localvar | id: result | type: float | memsize: 8
 		litvar | id: 0.0 | type: float | expressionId: 5| memsize: 8
 		tempvar | id: temp3 | type: float | expressionId: 6| memsize: 8
 		tempvar | id: temp4 | type: float | expressionId: 6| memsize: 8
 
 
-class | id: QUADRATIC | MemSize: 132
+class | id: QUADRATIC | MemSize: 100
 	class:QUADRATIC 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
 	data | id: c | type: float | visibility: private | MemSize: 8
 	data | id: d | type: float | visibility: private | MemSize: 8
-	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 52
+	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 28
 	function:build 
-		parameter | id: A | type: float| memsize: 8
-		parameter | id: B | type: float| memsize: 8
-		parameter | id: C | type: float| memsize: 8
+		parameter | id: A | type: float| memsize: 0
+		parameter | id: B | type: float| memsize: 0
+		parameter | id: C | type: float| memsize: 0
 		localvar | id: new_function | type: QUADRATIC | memsize: 0
 		litvar | id: 3 | type: integer | expressionId: 14| memsize: 4
 		tempvar | id: temp10 | type: integer | expressionId: 14| memsize: 4
@@ -61,9 +61,9 @@ class | id: QUADRATIC | MemSize: 132
 		tempvar | id: temp12 | type: float | expressionId: 14| memsize: 8
 		litvar | id: 1 | type: integer | expressionId: 16| memsize: 4
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 48
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 40
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 		localvar | id: result | type: float | memsize: 8
 		tempvar | id: temp5 | type: float | expressionId: 9| memsize: 8
 		tempvar | id: temp6 | type: float | expressionId: 9| memsize: 8
@@ -92,29 +92,29 @@ class | id: E | MemSize: 4
 	inherit | D
 	data | id: c | type: integer | visibility: private | MemSize: 4
 
-function | f | aparams: (i:integer)| type: void| memsize: 4
+function | f | aparams: (i:integer)| type: void| memsize: 0
 	function:f 
-	parameter | id: i | type: integer| memsize: 4
+	parameter | id: i | type: integer| memsize: 0
 
-function | f | aparams: (i:integer)| type: void| memsize: 4
+function | f | aparams: (i:integer)| type: void| memsize: 0
 	function:f 
-	parameter | id: i | type: integer| memsize: 4
+	parameter | id: i | type: integer| memsize: 0
 
-function | f | aparams: (i:integer j:integer)| type: integer| memsize: 8
+function | f | aparams: (i:integer j:integer)| type: integer| memsize: 0
 	function:f 
-	parameter | id: i | type: integer| memsize: 4
-	parameter | id: j | type: integer| memsize: 4
+	parameter | id: i | type: integer| memsize: 0
+	parameter | id: j | type: integer| memsize: 0
 
-function | f3 | aparams: (p1:integer[][])| type: integer| memsize: 4
+function | f3 | aparams: (p1:integer[][])| type: integer| memsize: 0
 	function:f3 
-	parameter | id: p1 | type: integer[][]| memsize: 4
+	parameter | id: p1 | type: integer[][]| memsize: 0
 
-function | main | aparams: ()| type: void| memsize: 368
+function | main | aparams: ()| type: void| memsize: 312
 	function:main 
 	localvar | id: a | type: a | memsize: 0
 	localvar | id: c | type: C | memsize: 4
-	localvar | id: f1 | type: LINEAR | memsize: 76
-	localvar | id: f2 | type: QUADRATIC | memsize: 132
+	localvar | id: f1 | type: LINEAR | memsize: 52
+	localvar | id: f2 | type: QUADRATIC | memsize: 100
 	localvar | id: counter | type: integer | memsize: 4
 	localvar | id: counter | type: float | memsize: 8
 	localvar | id: i | type: integer[2][3] | memsize: 24

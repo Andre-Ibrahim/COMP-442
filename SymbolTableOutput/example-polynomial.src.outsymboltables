@@ -1,46 +1,46 @@
 global 
-class | id: POLYNOMIAL | MemSize: 8
+class | id: POLYNOMIAL | MemSize: 0
 	class:POLYNOMIAL 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 8
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 0
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 
 
-class | id: LINEAR | MemSize: 72
+class | id: LINEAR | MemSize: 48
 	class:LINEAR 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
-	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 16
+	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 0
 	function:build 
-		parameter | id: A | type: float| memsize: 8
-		parameter | id: B | type: float| memsize: 8
+		parameter | id: A | type: float| memsize: 0
+		parameter | id: B | type: float| memsize: 0
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 40
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 32
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 		localvar | id: result | type: float | memsize: 8
 		litvar | id: 0.0 | type: float | expressionId: 8| memsize: 8
 		tempvar | id: temp7 | type: float | expressionId: 9| memsize: 8
 		tempvar | id: temp8 | type: float | expressionId: 9| memsize: 8
 
 
-class | id: QUADRATIC | MemSize: 104
+class | id: QUADRATIC | MemSize: 72
 	class:QUADRATIC 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
 	data | id: c | type: float | visibility: private | MemSize: 8
-	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 32
+	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 8
 	function:build 
-		parameter | id: A | type: float| memsize: 8
-		parameter | id: B | type: float| memsize: 8
-		parameter | id: C | type: float| memsize: 8
+		parameter | id: A | type: float| memsize: 0
+		parameter | id: B | type: float| memsize: 0
+		parameter | id: C | type: float| memsize: 0
 		localvar | id: x | type: float | memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 48
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 40
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 8
+		parameter | id: x | type: float| memsize: 0
 		localvar | id: result | type: float | memsize: 8
 		tempvar | id: temp2 | type: float | expressionId: 3| memsize: 8
 		tempvar | id: temp3 | type: float | expressionId: 3| memsize: 8
@@ -48,10 +48,10 @@ class | id: QUADRATIC | MemSize: 104
 		tempvar | id: temp5 | type: float | expressionId: 4| memsize: 8
 
 
-function | main | aparams: ()| type: void| memsize: 276
+function | main | aparams: ()| type: void| memsize: 196
 	function:main 
-	localvar | id: f1 | type: LINEAR[2] | memsize: 144
-	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 104
+	localvar | id: f1 | type: LINEAR[2] | memsize: 96
+	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 72
 	litvar | id: 2.0 | type: float | expressionId: 11| memsize: 8
 	litvar | id: 1.0 | type: float | expressionId: 12| memsize: 8
 	litvar | id: 0.0 | type: float | expressionId: 13| memsize: 8

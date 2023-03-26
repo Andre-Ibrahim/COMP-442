@@ -1,8 +1,8 @@
 global 
-function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void| memsize: 44
+function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void| memsize: 36
 	function:functionBlocks 
-	parameter | id: arr | type: integer[]| memsize: 4
-	parameter | id: size | type: integer| memsize: 4
+	parameter | id: arr | type: integer[]| memsize: 0
+	parameter | id: size | type: integer| memsize: 0
 	localvar | id: n | type: integer | memsize: 4
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 2| memsize: 4
