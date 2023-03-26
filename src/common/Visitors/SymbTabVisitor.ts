@@ -96,34 +96,33 @@ export class SymbTabVisitor extends Visitor {
             });
         }
 
-        if(node instanceof NodeWHILESTAT){
+        if (node instanceof NodeWHILESTAT) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeRELEXPR){
+        if (node instanceof NodeRELEXPR) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeVARIABLE){
+        if (node instanceof NodeVARIABLE) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeINDICELIST){
+        if (node instanceof NodeINDICELIST) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeSTATBLOCK){
+        if (node instanceof NodeSTATBLOCK) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeIFSTAT){
+        if (node instanceof NodeIFSTAT) {
             this.traverseTree(node, node.symbolTable);
         }
 
-        if(node instanceof NodeFUNCTIONCALL){
+        if (node instanceof NodeFUNCTIONCALL) {
             this.traverseTree(node, node.symbolTable);
         }
-
 
         if (node instanceof NodeCLASSDECL) {
             const id = node.children[0]?.value ?? defaultToken;

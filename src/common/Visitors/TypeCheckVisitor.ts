@@ -114,7 +114,7 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeWHILESTAT) {
+        if (node instanceof NodeWHILESTAT) {
             this.traverseTree(node);
         }
 
@@ -150,23 +150,23 @@ export class TypeCheckVisitor extends Visitor {
             }
         }
 
-        if(node instanceof NodeVARIABLE){
+        if (node instanceof NodeVARIABLE) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeINDICELIST){
+        if (node instanceof NodeINDICELIST) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeIFSTAT){
+        if (node instanceof NodeIFSTAT) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeSTATBLOCK){
+        if (node instanceof NodeSTATBLOCK) {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeRELEXPR) {
+        if (node instanceof NodeRELEXPR) {
             this.traverseTree(node);
         }
 
@@ -182,11 +182,9 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
-        if(node instanceof NodeAPARAMS) {
+        if (node instanceof NodeAPARAMS) {
             this.traverseTree(node);
         }
-
-
 
         if (node instanceof NodeFACTOR) {
             if (node?.children[0]?.value) {
@@ -375,7 +373,7 @@ export class TypeCheckVisitor extends Visitor {
         });
     }
 
-    private getClassEntryByName(className: string): Entry | null{
+    private getClassEntryByName(className: string): Entry | null {
         const classEntry: Entry[] = [];
         this.globalSymbolTable?.entries.forEach((entry) => {
             if (entry instanceof ClassEntry && className === entry.id.lexeme) {

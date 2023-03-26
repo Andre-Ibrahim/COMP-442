@@ -1,3 +1,3 @@
 export abstract class Entry {
-    memSize: number = 0;
+    memSize = 0;
 }

@@ -1,48 +1,41 @@
-import { Token } from "../../lexical_analysis/Token";
-import TokenType from "../../lexical_analysis/TokenType";
-import { Node } from "../AST/Node";
-import { NodeAPARAMS } from "../AST/NodeAPARAMS";
-import { NodeARITHEXPR } from "../AST/NodeARITHEXPR";
-import { NodeARRAYSIZE } from "../AST/NodeARRAYSIZE";
-import { NodeASSIGNSTAT } from "../AST/NodeASSIGNSTAT";
-import { NodeCLASSDECL } from "../AST/NodeCLASSDECL";
-import { NodeCLASSDECLORFUNCDEF } from "../AST/NodeCLASSDECLORFUNCDEF";
-import { NodeEMPTYARRAYSIZE } from "../AST/NodeEMPTYARRAYSIZE";
-import { NodeEPSILON } from "../AST/NodeEPSILON";
-import { NodeEXPR } from "../AST/NodeEXPR";
-import { NodeFACTOR } from "../AST/NodeFACTOR";
-import { NodeFACTORCALLORVAR } from "../AST/NodeFACTORCALLORVAR";
-import { NodeFPARAMS } from "../AST/NodeFPARAMS";
-import { NodeFUNCARROW } from "../AST/NodeFUNCARROW";
-import { NodeFUNCBODY } from "../AST/NodeFUNCBODY";
-import { NodeFUNCCONSTSTRUCT } from "../AST/NodeFUNCCONSTSTRUCT";
-import { NodeFUNCDEF } from "../AST/NodeFUNCDEF";
-import { NodeFUNCTIONCALL } from "../AST/NodeFUNCTIONCALL";
-import { NodeFUNCTIONCALLSTAT } from "../AST/NodeFUNCTIONCALLSTAT";
-import { NodeIFSTAT } from "../AST/NodeIFSTAT";
-import { NodeINDICELIST } from "../AST/NodeINDICELIST";
-import { NodeISA } from "../AST/NodeISA";
-import { NodeMEMBERFUNCARROW } from "../AST/NodeMEMBERFUNCARROW";
-import { NodeMEMBERFUNCDECL } from "../AST/NodeMEMBERFUNCDECL";
-import { NodeMEMBERVARDECL } from "../AST/NodeMEMBERVARDECL";
-import { NodeREADSTAT } from "../AST/NodeREADSTAT";
-import { NodeRELEXPR } from "../AST/NodeRELEXPR";
-import { NodeRETURNSTAT } from "../AST/NodeRETURNSTAT";
-import { NodeSTATBLOCK } from "../AST/NodeSTATBLOCK";
-import { NodeTERM } from "../AST/NodeTERM";
-import { NodeVARDECL } from "../AST/NodeVARDECL";
-import { NodeVARIABLE } from "../AST/NodeVARIABLE";
-import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
-import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
-import { LitVarEntry } from "../SymbTab/LitVarEntry";
-import { TempVarEntry } from "../SymbTab/TempVarEntry";
 import { Visitor } from "./Visitor";
 
-export class IntermediateVarVisitor extends Visitor {
-    tempvarCount = 0;
-    expressionCount = 0;
-    defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
+import { NodeVARDECL } from "../AST/NodeVARDECL";
+import { NodeARRAYSIZE } from "../AST/NodeARRAYSIZE";
+import { NodeEPSILON } from "../AST/NodeEPSILON";
+import { NodeRETURNSTAT } from "../AST/NodeRETURNSTAT";
+import { NodeEXPR } from "../AST/NodeEXPR";
+import { NodeARITHEXPR } from "../AST/NodeARITHEXPR";
+import { NodeTERM } from "../AST/NodeTERM";
+import { NodeFACTOR } from "../AST/NodeFACTOR";
+import { NodeVARIABLE } from "../AST/NodeVARIABLE";
+import { NodeFACTORCALLORVAR } from "../AST/NodeFACTORCALLORVAR";
+import { NodeFUNCTIONCALL } from "../AST/NodeFUNCTIONCALL";
+import { NodeAPARAMS } from "../AST/NodeAPARAMS";
+import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
+import { NodeREADSTAT } from "../AST/NodeREADSTAT";
+import { NodeSTATBLOCK } from "../AST/NodeSTATBLOCK";
+import { NodeFUNCBODY } from "../AST/NodeFUNCBODY";
+import { NodeINDICELIST } from "../AST/NodeINDICELIST";
+import { NodeASSIGNSTAT } from "../AST/NodeASSIGNSTAT";
+import { NodeFUNCTIONCALLSTAT } from "../AST/NodeFUNCTIONCALLSTAT";
+import { NodeRELEXPR } from "../AST/NodeRELEXPR";
+import { NodeIFSTAT } from "../AST/NodeIFSTAT";
+import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
+import { NodeFUNCDEF } from "../AST/NodeFUNCDEF";
+import { NodeFUNCARROW } from "../AST/NodeFUNCARROW";
+import { NodeFUNCCONSTSTRUCT } from "../AST/NodeFUNCCONSTSTRUCT";
+import { NodeFPARAMS } from "../AST/NodeFPARAMS";
+import { NodeCLASSDECL } from "../AST/NodeCLASSDECL";
+import { NodeMEMBERFUNCDECL } from "../AST/NodeMEMBERFUNCDECL";
+import { NodeMEMBERVARDECL } from "../AST/NodeMEMBERVARDECL";
+import { NodeISA } from "../AST/NodeISA";
+import { NodeCLASSDECLORFUNCDEF } from "../AST/NodeCLASSDECLORFUNCDEF";
+import { NodeEMPTYARRAYSIZE } from "../AST/NodeEMPTYARRAYSIZE";
+import { NodeMEMBERFUNCARROW } from "../AST/NodeMEMBERFUNCARROW";
+import { Node } from "../AST/Node";
 
+class CodeGenVisitor extends Visitor {
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
     visit(node: NodeEPSILON): void;
@@ -58,7 +51,6 @@ export class IntermediateVarVisitor extends Visitor {
     visit(node: NodeWRITESTAT): void;
     visit(node: NodeREADSTAT): void;
     visit(node: NodeSTATBLOCK): void;
-    visit(node: NodeMEMBERFUNCARROW): void;
     visit(node: NodeFUNCBODY): void;
     visit(node: NodeINDICELIST): void;
     visit(node: NodeASSIGNSTAT): void;
@@ -90,30 +82,16 @@ export class IntermediateVarVisitor extends Visitor {
             this.traverseTree(node);
         }
         if (node instanceof NodeEXPR) {
-            this.expressionCount++;
             this.traverseTree(node);
-
-            const literals = this.getLiterals(node);
-            this.createLitVars(literals, node);
         }
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
-            const count = this.arthExprCountAddOpp(node);
-            this.createTempVars(count, node);
         }
         if (node instanceof NodeTERM) {
             this.traverseTree(node);
-
-            const count = this.TermCountMultOpp(node);
-            this.createTempVars(count, node);
-            const literals = this.getLiterals(node);
-            this.createLitVars(literals, node);
         }
         if (node instanceof NodeFACTOR) {
             this.traverseTree(node);
-
-            const literals = this.getLiterals(node);
-            this.createLitVars(literals, node);
         }
         if (node instanceof NodeVARIABLE) {
             this.traverseTree(node);
@@ -149,11 +127,7 @@ export class IntermediateVarVisitor extends Visitor {
             this.traverseTree(node);
         }
         if (node instanceof NodeRELEXPR) {
-            this.expressionCount++;
             this.traverseTree(node);
-
-            const literals = this.getLiterals(node);
-            this.createLitVars(literals, node);
         }
         if (node instanceof NodeIFSTAT) {
             this.traverseTree(node);
@@ -196,81 +170,5 @@ export class IntermediateVarVisitor extends Visitor {
         }
     }
 
-    private traverseTree(node: Node) {
-        node.children?.forEach((child) => {
-            child.accept(this);
-        });
-    }
-
-    private TermCountMultOpp(node: NodeTERM): number {
-        let count = 0;
-        node.children.forEach((child) => {
-            if (child.value?.type === TokenType.MULT || child.value?.type === TokenType.DIV) {
-                count++;
-            }
-        });
-
-        return count;
-    }
-
-    private arthExprCountAddOpp(node: NodeARITHEXPR): number {
-        let count = 0;
-        node.children.forEach((child) => {
-            if (child.value?.type === TokenType.PLUS || child.value?.type === TokenType.MINUS) {
-                count++;
-            }
-        });
-
-        return count;
-    }
-
-    private createTempVars(count: number, node: Node) {
-        [...Array(count)].map(() => {
-            let type = node.type;
-
-            if (type === "") {
-                type = node.parentNode?.type ?? "";
-            }
-            const tempvar = new TempVarEntry(this.createTempVarToken(), node.type, this.expressionCount);
-            this.tempvarCount++;
-            node.symbolTable?.addEntry(tempvar);
-        });
-    }
-
-    private getLiterals(node: Node): Token[] {
-        const literals: Token[] = [];
-
-        node.children.forEach((child) => {
-            if (child.value?.type === TokenType.INTNUM || child.value?.type === TokenType.FLOATNUM) {
-                literals.push(child.value);
-            }
-        });
-
-        return literals;
-    }
-
-    private createLitVars(literals: Token[], node: Node) {
-        literals.map((token) => {
-            let type = node.type;
-
-            if (type === "") {
-                type = node.parentNode?.type ?? "";
-            }
-            const litvar = new LitVarEntry(token, this.getLitVarType(token.type), this.expressionCount);
-            this.tempvarCount++;
-            node.symbolTable?.addEntry(litvar);
-        });
-    }
-
-    private getLitVarType(litType: string): string {
-        if (litType === TokenType.INTNUM) {
-            return "integer";
-        }
-
-        return "float";
-    }
-
-    private createTempVarToken() {
-        return { lexeme: "temp" + (this.tempvarCount + 1), position: 0, type: TokenType.ID };
-    }
+    private traverseTree(node: Node) {}
 }

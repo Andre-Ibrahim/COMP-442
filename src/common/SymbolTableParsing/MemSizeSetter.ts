@@ -11,108 +11,101 @@ import { TempVarEntry } from "../SymbTab/TempVarEntry";
 export class MemSizeSetter {
     globalSymbolTable: SymbolTable | null;
 
-    constructor(globalSymbolTable: SymbolTable | null){
+    constructor(globalSymbolTable: SymbolTable | null) {
         this.globalSymbolTable = globalSymbolTable;
     }
 
     setMemSize(): void {
-
         // first pass setting all primitive types
         this.globalSymbolTable?.entries.forEach((entry) => {
-    
-            if(entry instanceof FunctionEntry){
-    
+            if (entry instanceof FunctionEntry) {
                 entry.memSize = this.handleFunctionEntry(entry);
             }
-    
-            if(entry instanceof ClassEntry) {
+
+            if (entry instanceof ClassEntry) {
                 entry.memSize = this.handleClassEntry(entry);
             }
-        })
-        
+        });
     }
 
     private handleFunctionEntry(entry: FunctionEntry): number {
-
         let size = 0;
-    
+
         entry.symbolTable.entries.forEach((e) => {
-            
-            if(e instanceof ParameterEntry || e instanceof LocalVarEntry || e instanceof TempVarEntry){
+            if (e instanceof ParameterEntry || e instanceof LocalVarEntry || e instanceof TempVarEntry) {
                 const entrySize = this.getEntrySize(e);
                 e.memSize = entrySize;
                 size += entrySize;
             }
-        })
-    
+        });
+
         return size;
-    
     }
 
     private handleClassEntry(entry: ClassEntry): number {
-
         let size = 0;
-    
+
         entry.symbolTable.entries.forEach((e) => {
-            
-            if(e instanceof DataMemberEntry){
+            if (e instanceof DataMemberEntry) {
                 const entrySize = this.getEntrySize(e);
                 e.memSize = entrySize;
                 size += entrySize;
             }
-    
-            if(e instanceof MemberFuncEntry){
+
+            if (e instanceof MemberFuncEntry) {
                 const entrySize = this.handleFunctionEntry(e);
                 e.memSize = entrySize;
                 size += entrySize;
             }
-        })
-    
+        });
+
         return size;
-    
     }
 
     private getEntrySize(entry: Entry): number {
-        if(entry instanceof ParameterEntry || entry instanceof LocalVarEntry || entry instanceof TempVarEntry || entry instanceof DataMemberEntry){
-            
+        if (
+            entry instanceof ParameterEntry ||
+            entry instanceof LocalVarEntry ||
+            entry instanceof TempVarEntry ||
+            entry instanceof DataMemberEntry
+        ) {
             let size = 0;
-            if(this.isPrimitive(entry.type)){
-
+            if (this.isPrimitive(entry.type)) {
                 size = this.getPrimitiveSize(entry.type);
-    
+
                 entry.dim.forEach((d) => {
                     size = size * d;
-                })
-    
+                });
+
                 return size;
-            }else {
+            } else {
                 this.globalSymbolTable?.entries.forEach((e) => {
-                    if(e instanceof ClassEntry && e.id.lexeme === entry.type){
+                    if (e instanceof ClassEntry && e.id.lexeme === entry.type) {
                         size = e.memSize;
                     }
                 });
 
                 return size;
             }
-    
+
             // toDo add class memsize
             return 0;
         }
-    
+
         return 0;
     }
-    
+
     private isPrimitive(type: string): boolean {
         return type === "integer" || type === "float";
     }
 
     private getPrimitiveSize(type: string): number {
-        if(type === "integer"){
+        if (type === "integer") {
             return 4;
-        }else if(type === "float"){
+        } else if (type === "float") {
             return 8;
         }
-    
+
         return 0;
     }
 }
