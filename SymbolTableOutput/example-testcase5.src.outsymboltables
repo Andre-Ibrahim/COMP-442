@@ -5,4 +5,7 @@ function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void
 	parameter | id: size | type: integer
 	localvar | id: n | type: integer
 	localvar | id: i | type: integer
+	tempvar | id: temp1 | type: integer | expressionId: 5
+	tempvar | id: temp2 | type: integer | expressionId: 9
+	tempvar | id: temp3 | type: integer | expressionId: 11
 

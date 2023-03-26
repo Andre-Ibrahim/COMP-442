@@ -20,3 +20,6 @@ error: 11.4 :: Undeclared free function :0
 error: 11.2 :x: "." undeclared data member :37
 error: 11.4 :: Undeclared free function :0
 error: 11.2 :x: "." undeclared data member :38
+error: 11.1 :a: "." undelclared localvar :40
+error: 11.1 :b: "." undelclared localvar :40
+error: 11.1 :c: "." undelclared localvar :40

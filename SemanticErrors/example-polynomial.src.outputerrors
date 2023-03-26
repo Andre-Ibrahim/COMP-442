@@ -4,3 +4,4 @@ error: 11.1 :a: "." undelclared localvar :43
 error: 11.1 :A: "." undelclared localvar :43
 error: 11.1 :b: "." undelclared localvar :44
 error: 11.1 :B: "." undelclared localvar :44
+error: 11.1 :counter: "." undelclared localvar :61

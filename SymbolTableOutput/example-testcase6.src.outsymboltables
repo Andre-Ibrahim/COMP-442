@@ -4,4 +4,6 @@ function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void
 	parameter | id: arr | type: integer[]
 	parameter | id: size | type: integer
 	localvar | id: x | type: integer
+	tempvar | id: temp1 | type: integer | expressionId: 16
+	tempvar | id: temp2 | type: integer | expressionId: 26
 

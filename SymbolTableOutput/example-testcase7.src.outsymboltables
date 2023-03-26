@@ -30,4 +30,5 @@ function | expressionsTest | aparams: ()| type: void
 	tempvar | id: temp25 | type: float | expressionId: 23
 	tempvar | id: temp26 | type: integer | expressionId: 27
 	tempvar | id: temp27 | type: integer | expressionId: 27
+	tempvar | id: temp28 | type: integer | expressionId: 27
 

@@ -114,6 +114,10 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
+        if(node instanceof NodeWHILESTAT) {
+            this.traverseTree(node);
+        }
+
         if (node instanceof NodeVARDECL) {
             // logic for error
             const type = node.children[1].value;
@@ -146,6 +150,26 @@ export class TypeCheckVisitor extends Visitor {
             }
         }
 
+        if(node instanceof NodeVARIABLE){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeINDICELIST){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeIFSTAT){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeSTATBLOCK){
+            this.traverseTree(node);
+        }
+
+        if(node instanceof NodeRELEXPR) {
+            this.traverseTree(node);
+        }
+
         if (node instanceof NodeEXPR) {
             this.traverseTree(node);
         }
@@ -157,6 +181,8 @@ export class TypeCheckVisitor extends Visitor {
         if (node instanceof NodeTERM) {
             this.traverseTree(node);
         }
+
+
 
         if (node instanceof NodeFACTOR) {
             if (node?.children[0]?.value) {
