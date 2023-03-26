@@ -306,21 +306,8 @@ CLASSDECLORFUNCDEF
 | | | VARDECL
 | | | | {"type":"id","lexeme":"f1","position":58}
 | | | | {"type":"id","lexeme":"LINEAR","position":58}
-| | | | APARAMS
-| | | | | EXPR
-| | | | | | ARITHEXPR
-| | | | | | | TERM
-| | | | | | | | FACTOR
-| | | | | | | | | {"type":"intnum","lexeme":"2","position":58}
-| | | | | | | {"type":"plus","lexeme":"+","position":58}
-| | | | | | | TERM
-| | | | | | | | FACTOR
-| | | | | | | | | {"type":"intnum","lexeme":"1","position":58}
-| | | | | EXPR
-| | | | | | ARITHEXPR
-| | | | | | | TERM
-| | | | | | | | FACTOR
-| | | | | | | | | {"type":"floatnum","lexeme":"3.5","position":58}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"2","position":58}
 | | | VARDECL
 | | | | {"type":"id","lexeme":"f2","position":59}
 | | | | {"type":"id","lexeme":"QUADRATIC","position":59}

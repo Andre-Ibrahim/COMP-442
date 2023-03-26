@@ -85,6 +85,12 @@ export class MemSizeSetter {
                     }
                 });
 
+                entry.dim.forEach((d) => {
+                    if(d > 0){
+                        size = size * d;
+                    }
+                });
+
                 return size;
             }
 
