@@ -34,8 +34,12 @@ import { NodeCLASSDECLORFUNCDEF } from "../AST/NodeCLASSDECLORFUNCDEF";
 import { NodeEMPTYARRAYSIZE } from "../AST/NodeEMPTYARRAYSIZE";
 import { NodeMEMBERFUNCARROW } from "../AST/NodeMEMBERFUNCARROW";
 import { Node } from "../AST/Node";
+import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
 
-class CodeGenVisitor extends Visitor {
+export class CodeGenVisitor extends Visitor {
+
+    code: string = "";
+
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
     visit(node: NodeEPSILON): void;
@@ -71,6 +75,14 @@ class CodeGenVisitor extends Visitor {
     visit(node: unknown): void {
         if (node instanceof NodeVARDECL) {
             this.traverseTree(node);
+
+            // look up localvar declaration in table for mem size
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof LocalVarEntry && entry.id.lexeme === node?.children[0].value?.lexeme){
+                    this.code += this.reserveBytes(entry.id.lexeme, entry.memSize);
+                }
+            })
+
         }
         if (node instanceof NodeARRAYSIZE) {
             this.traverseTree(node);
@@ -170,5 +182,18 @@ class CodeGenVisitor extends Visitor {
         }
     }
 
-    private traverseTree(node: Node) {}
+    private traverseTree(node: Node) {
+        node.children?.forEach((child) => {
+            child.accept(this);
+        });
+    }
+
+    private reserveBytes(id: string, size: number){
+        const space = 15;
+
+        let text = `${"".slice(0, space).padEnd(space)}% space for variable ${id}\n`
+        text += `${id.slice(0, space).padEnd(space)}res ${size}\n`;
+
+        return text;
+    }
 }

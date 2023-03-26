@@ -25,7 +25,7 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"i","position":17}
 | | | | {"type":"integer","lexeme":"integer","position":17}
 | | | | ARRAYSIZE
-| | | | | EMPTYARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":17}
 | | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":18}
 | | | | {"type":"integer","lexeme":"integer","position":18}
@@ -35,7 +35,7 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"i","position":19}
 | | | | {"type":"float","lexeme":"float","position":19}
 | | | | ARRAYSIZE
-| | | | | EMPTYARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":19}
 | | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":20}
 | | | | {"type":"float","lexeme":"float","position":20}
@@ -45,20 +45,20 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"i","position":21}
 | | | | {"type":"integer","lexeme":"integer","position":21}
 | | | | ARRAYSIZE
-| | | | | EMPTYARRAYSIZE
-| | | | | EMPTYARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":21}
+| | | | | {"type":"intnum","lexeme":"1","position":21}
 | | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":22}
 | | | | {"type":"float","lexeme":"float","position":22}
 | | | | ARRAYSIZE
-| | | | | EMPTYARRAYSIZE
-| | | | | EMPTYARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":22}
+| | | | | {"type":"intnum","lexeme":"1","position":22}
 | | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":23}
 | | | | {"type":"float","lexeme":"float","position":23}
 | | | | ARRAYSIZE
 | | | | | {"type":"intnum","lexeme":"2","position":23}
-| | | | | EMPTYARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":23}
 | | | VARDECL
 | | | | {"type":"id","lexeme":"i","position":24}
 | | | | {"type":"integer","lexeme":"integer","position":24}

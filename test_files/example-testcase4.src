@@ -14,12 +14,12 @@ function variableDeclarations(x: integer) => void {
    localvar i: integer; 
    localvar i: float; 
    localvar i: id; 
-   localvar i: integer[]; 
+   localvar i: integer[1]; 
    localvar i: integer[10]; 
-   localvar i: float[]; 
+   localvar i: float[1]; 
    localvar i: float[10]; 
-   localvar i: integer[][]; 
-   localvar i: float[][]; 
-   localvar i: float[2][]; 
+   localvar i: integer[1][1]; 
+   localvar i: float[1][1]; 
+   localvar i: float[2][1]; 
    localvar i: integer[9][3]; 
 } 

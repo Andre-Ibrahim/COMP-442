@@ -6,13 +6,14 @@ import { CompilerError } from "./common/Errors/Error";
 import { TypeCheckVisitor } from "./common/Visitors/TypeCheckVisitor";
 import { IntermediateVarVisitor } from "./common/Visitors/IntermediateVarVisitor";
 import { MemSizeSetter } from "./common/SymbolTableParsing/MemSizeSetter";
+import { CodeGenVisitor } from "./common/Visitors/CodeGenVisitor";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
 testCases.push(`example-bubblesort.src`);
 testCases.push(`example-polynomial.src`);
 testCases.push(`example-AST.src`);
-testCases.push(`example-error.src`);
+//testCases.push(`example-error.src`);
 
 testCases.forEach((testCase) => {
     const file = readFileSync(`./test_files/${testCase}`, "utf-8");
@@ -31,17 +32,21 @@ testCases.forEach((testCase) => {
     const symTabVisitor = new SymbTabVisitor();
     const typeCheckVisitor = new TypeCheckVisitor();
     const tempVarVisitor = new IntermediateVarVisitor();
+    const codeGenVisitor = new CodeGenVisitor();
 
     parser.abstractSyntaxTree.accept(symTabVisitor);
     parser.abstractSyntaxTree.accept(typeCheckVisitor);
     parser.abstractSyntaxTree.accept(tempVarVisitor);
     const memSizeSetter = new MemSizeSetter(parser.abstractSyntaxTree.symbolTable);
     memSizeSetter.setMemSize();
+    parser.abstractSyntaxTree.accept(codeGenVisitor);
 
     writeFileSync(
         `./SymbolTableOutput/${testCase}.outsymboltables`,
         parser.abstractSyntaxTree.symbolTable?.toString() ?? "",
     );
+
+    writeFileSync(`./CodeOutput/${testCase}.m`, codeGenVisitor.code);
 
     const errors: CompilerError[] = [];
 
