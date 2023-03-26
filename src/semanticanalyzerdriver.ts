@@ -5,7 +5,7 @@ import { getUndefinedMemberFunction } from "./common/Errors/undefinedMemberFunct
 import { CompilerError } from "./common/Errors/Error";
 import { TypeCheckVisitor } from "./common/Visitors/TypeCheckVisitor";
 import { IntermediateVarVisitor } from "./common/Visitors/IntermediateVarVisitor";
-import { setMemSize } from "./common/memHelpers";
+import { MemSizeSetter } from "./common/SymbolTableParsing/MemSizeSetter";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -35,7 +35,8 @@ testCases.forEach((testCase) => {
     parser.abstractSyntaxTree.accept(symTabVisitor);
     parser.abstractSyntaxTree.accept(typeCheckVisitor);
     parser.abstractSyntaxTree.accept(tempVarVisitor);
-    setMemSize(parser.abstractSyntaxTree.symbolTable);
+    const memSizeSetter = new MemSizeSetter(parser.abstractSyntaxTree.symbolTable);
+    memSizeSetter.setMemSize();
 
     writeFileSync(
         `./SymbolTableOutput/${testCase}.outsymboltables`,

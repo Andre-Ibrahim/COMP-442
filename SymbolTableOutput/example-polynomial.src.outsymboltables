@@ -48,10 +48,10 @@ class | id: QUADRATIC | MemSize: 104
 		tempvar | id: temp5 | type: float | expressionId: 4| memsize: 8
 
 
-function | main | aparams: ()| type: void| memsize: 48
+function | main | aparams: ()| type: void| memsize: 224
 	function:main 
-	localvar | id: f1 | type: LINEAR[][] | memsize: 0
-	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 0
+	localvar | id: f1 | type: LINEAR[][] | memsize: 72
+	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 104
 	litvar | id: 2 | type: integer | expressionId: 11| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 11| memsize: 4
 	tempvar | id: temp11 | type: integer | expressionId: 11| memsize: 4
