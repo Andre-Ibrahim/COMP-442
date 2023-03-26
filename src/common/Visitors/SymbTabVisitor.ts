@@ -120,6 +120,10 @@ export class SymbTabVisitor extends Visitor {
             this.traverseTree(node, node.symbolTable);
         }
 
+        if(node instanceof NodeFUNCTIONCALL){
+            this.traverseTree(node, node.symbolTable);
+        }
+
 
         if (node instanceof NodeCLASSDECL) {
             const id = node.children[0]?.value ?? defaultToken;

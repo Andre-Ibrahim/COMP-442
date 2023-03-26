@@ -1,6 +1,11 @@
 global 
-function | main | aparams: ()| type: void| memsize: 36
+function | main | aparams: ()| type: void| memsize: 28
 	function:main 
 	localvar | id: z | type: integer | memsize: 4
-	localvar | id: y | type: float[2][2] | memsize: 32
+	localvar | id: y | type: integer | memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 1| memsize: 4
+	litvar | id: 3 | type: integer | expressionId: 2| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 2| memsize: 4
+	tempvar | id: temp4 | type: integer | expressionId: 2| memsize: 4
+	tempvar | id: temp5 | type: integer | expressionId: 2| memsize: 4
 

@@ -30,38 +30,45 @@ function | functionParams | aparams: (x:integer y:float z:id a:integer[])| type:
 	parameter | id: z | type: id| memsize: 0
 	parameter | id: a | type: integer[]| memsize: 4
 
-function | printArray | aparams: (x:float)| type: integer| memsize: 12
+function | printArray | aparams: (x:float)| type: integer| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float| memsize: 8
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 3| memsize: 4
 
-function | printArray | aparams: (x:id)| type: integer| memsize: 4
+function | printArray | aparams: (x:id)| type: integer| memsize: 8
 	function:printArray 
 	parameter | id: x | type: id| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 5| memsize: 4
 
-function | printArray | aparams: (x:id)| type: id| memsize: 4
+function | printArray | aparams: (x:id)| type: id| memsize: 8
 	function:printArray 
 	parameter | id: x | type: id| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 7| memsize: 4
 
-function | printArray | aparams: (x:float[])| type: integer| memsize: 12
+function | printArray | aparams: (x:float[])| type: integer| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[]| memsize: 8
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 9| memsize: 4
 
-function | printArray | aparams: (x:float[])| type: float| memsize: 12
+function | printArray | aparams: (x:float[])| type: float| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[]| memsize: 8
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 11| memsize: 4
 
-function | printArray | aparams: (x:float[][])| type: float| memsize: 12
+function | printArray | aparams: (x:float[][])| type: float| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[][]| memsize: 8
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 13| memsize: 4
 
-function | printArray | aparams: (x:float[][])| type: float| memsize: 12
+function | printArray | aparams: (x:float[][])| type: float| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[][]| memsize: 8
 	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 15| memsize: 4
 

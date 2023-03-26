@@ -1,9 +1,10 @@
 function main() => void 
 {
   localvar z: integer;
-  localvar y: float[2][2];
+  localvar y: integer;
 
-  z = 3;
+  y = 1;
+  z = 3 + 1 * y;
 
   write(z);
 }

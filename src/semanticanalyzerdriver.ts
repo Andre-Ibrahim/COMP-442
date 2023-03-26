@@ -4,7 +4,7 @@ import { SymbTabVisitor } from "./common/Visitors/SymbTabVisitor";
 import { getUndefinedMemberFunction } from "./common/Errors/undefinedMemberFunction";
 import { CompilerError } from "./common/Errors/Error";
 import { TypeCheckVisitor } from "./common/Visitors/TypeCheckVisitor";
-import { TempVarVisitor } from "./common/Visitors/TempVarVisitor";
+import { IntermediateVarVisitor } from "./common/Visitors/IntermediateVarVisitor";
 import { setMemSize } from "./common/memHelpers";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
@@ -30,7 +30,7 @@ testCases.forEach((testCase) => {
 
     const symTabVisitor = new SymbTabVisitor();
     const typeCheckVisitor = new TypeCheckVisitor();
-    const tempVarVisitor = new TempVarVisitor();
+    const tempVarVisitor = new IntermediateVarVisitor();
 
     parser.abstractSyntaxTree.accept(symTabVisitor);
     parser.abstractSyntaxTree.accept(typeCheckVisitor);

@@ -6,7 +6,7 @@ class | id: POLYNOMIAL | MemSize: 8
 		parameter | id: x | type: float| memsize: 8
 
 
-class | id: LINEAR | MemSize: 64
+class | id: LINEAR | MemSize: 72
 	class:LINEAR 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
@@ -16,12 +16,13 @@ class | id: LINEAR | MemSize: 64
 		parameter | id: A | type: float| memsize: 8
 		parameter | id: B | type: float| memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 32
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 40
 	function:evaluate 
 		parameter | id: x | type: float| memsize: 8
 		localvar | id: result | type: float | memsize: 8
-		tempvar | id: temp5 | type: float | expressionId: 9| memsize: 8
-		tempvar | id: temp6 | type: float | expressionId: 9| memsize: 8
+		litvar | id: 0.0 | type: float | expressionId: 8| memsize: 8
+		tempvar | id: temp7 | type: float | expressionId: 9| memsize: 8
+		tempvar | id: temp8 | type: float | expressionId: 9| memsize: 8
 
 
 class | id: QUADRATIC | MemSize: 104
@@ -41,15 +42,22 @@ class | id: QUADRATIC | MemSize: 104
 	function:evaluate 
 		parameter | id: x | type: float| memsize: 8
 		localvar | id: result | type: float | memsize: 8
-		tempvar | id: temp1 | type: float | expressionId: 3| memsize: 8
 		tempvar | id: temp2 | type: float | expressionId: 3| memsize: 8
-		tempvar | id: temp3 | type: float | expressionId: 4| memsize: 8
+		tempvar | id: temp3 | type: float | expressionId: 3| memsize: 8
 		tempvar | id: temp4 | type: float | expressionId: 4| memsize: 8
+		tempvar | id: temp5 | type: float | expressionId: 4| memsize: 8
 
 
-function | main | aparams: ()| type: void| memsize: 4
+function | main | aparams: ()| type: void| memsize: 48
 	function:main 
 	localvar | id: f1 | type: LINEAR[][] | memsize: 0
 	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 0
-	tempvar | id: temp7 | type: integer | expressionId: 11| memsize: 4
+	litvar | id: 2 | type: integer | expressionId: 11| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 11| memsize: 4
+	tempvar | id: temp11 | type: integer | expressionId: 11| memsize: 4
+	litvar | id: 3.5 | type: float | expressionId: 12| memsize: 8
+	litvar | id: 2.0 | type: float | expressionId: 13| memsize: 8
+	litvar | id: 1.0 | type: float | expressionId: 14| memsize: 8
+	litvar | id: 0.0 | type: float | expressionId: 15| memsize: 8
+	litvar | id: 10 | type: integer | expressionId: 16| memsize: 4
 

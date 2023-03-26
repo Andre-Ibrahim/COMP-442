@@ -1,3 +1,4 @@
+import { Token } from "../../lexical_analysis/Token";
 import TokenType from "../../lexical_analysis/TokenType";
 import { Node } from "../AST/Node";
 import { NodeAPARAMS } from "../AST/NodeAPARAMS";
@@ -33,12 +34,14 @@ import { NodeVARDECL } from "../AST/NodeVARDECL";
 import { NodeVARIABLE } from "../AST/NodeVARIABLE";
 import { NodeWHILESTAT } from "../AST/NodeWHILESTAT";
 import { NodeWRITESTAT } from "../AST/NodeWRITESTAT";
+import { LitVarEntry } from "../SymbTab/LitVarEntry";
 import { TempVarEntry } from "../SymbTab/TempVarEntry";
 import { Visitor } from "./Visitor";
 
-export class TempVarVisitor extends Visitor {
+export class IntermediateVarVisitor extends Visitor {
     tempvarCount = 0;
     expressionCount = 0;
+    defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -89,6 +92,10 @@ export class TempVarVisitor extends Visitor {
         if (node instanceof NodeEXPR) {
             this.expressionCount++;
             this.traverseTree(node);
+
+            
+            const literals = this.getLiterals(node);
+            this.createLitVars(literals, node);
         }
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
@@ -97,11 +104,17 @@ export class TempVarVisitor extends Visitor {
         }
         if (node instanceof NodeTERM) {
             this.traverseTree(node);
+
             const count = this.TermCountMultOpp(node);
             this.createTempVars(count, node);
+            const literals = this.getLiterals(node);
+            this.createLitVars(literals, node);
         }
         if (node instanceof NodeFACTOR) {
             this.traverseTree(node);
+
+            const literals = this.getLiterals(node);
+            this.createLitVars(literals, node);
         }
         if (node instanceof NodeVARIABLE) {
             this.traverseTree(node);
@@ -139,6 +152,9 @@ export class TempVarVisitor extends Visitor {
         if (node instanceof NodeRELEXPR) {
             this.expressionCount++;
             this.traverseTree(node);
+
+            const literals = this.getLiterals(node);
+            this.createLitVars(literals, node);
         }
         if (node instanceof NodeIFSTAT) {
             this.traverseTree(node);
@@ -220,6 +236,39 @@ export class TempVarVisitor extends Visitor {
             this.tempvarCount++;
             node.symbolTable?.addEntry(tempvar);
         });
+    }
+
+    private getLiterals(node: Node): Token[] {
+        const literals: Token[] = [];
+
+        node.children.forEach(child => {
+            if(child.value?.type === TokenType.INTNUM || child.value?.type === TokenType.FLOATNUM){
+                literals.push(child.value);
+            }
+        })
+
+        return literals;
+    }
+
+    private createLitVars(literals: Token[], node: Node) {
+        literals.map((token) => {
+            let type = node.type;
+
+            if(type === ""){
+                type = node.parentNode?.type ?? "";
+            }
+            const litvar = new LitVarEntry(token, this.getLitVarType(token.type), this.expressionCount);
+            this.tempvarCount++;
+            node.symbolTable?.addEntry(litvar);
+        });
+    }
+
+    private getLitVarType(litType: string): string {
+        if(litType === TokenType.INTNUM){
+            return "integer";
+        }
+
+        return "float";
     }
 
     private createTempVarToken() {
