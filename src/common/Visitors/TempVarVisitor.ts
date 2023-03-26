@@ -91,15 +91,14 @@ export class TempVarVisitor extends Visitor {
             this.traverseTree(node);
         }
         if (node instanceof NodeARITHEXPR) {
-            
+            this.traverseTree(node);
             const count = this.arthExprCountAddOpp(node);
             this.createTempVars(count, node);
-            this.traverseTree(node);
         }
         if (node instanceof NodeTERM) {
+            this.traverseTree(node);
             const count = this.TermCountMultOpp(node);
             this.createTempVars(count, node);
-            this.traverseTree(node);
         }
         if (node instanceof NodeFACTOR) {
             this.traverseTree(node);

@@ -54,9 +54,9 @@ class | id: QUADRATIC |
 		parameter | id: B | type: float
 		parameter | id: C | type: float
 		localvar | id: new_function | type: QUADRATIC
-		tempvar | id: temp7 | type: float | expressionId: 14
+		tempvar | id: temp7 | type: integer | expressionId: 14
 		tempvar | id: temp8 | type: float | expressionId: 14
-		tempvar | id: temp9 | type: integer | expressionId: 14
+		tempvar | id: temp9 | type: float | expressionId: 14
 
 	function | evaluate | aparams: (x:float)| type: float| visiblity: public
 	function:evaluate 
