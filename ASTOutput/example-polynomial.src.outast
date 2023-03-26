@@ -312,6 +312,10 @@ CLASSDECLORFUNCDEF
 | | | | | | | TERM
 | | | | | | | | FACTOR
 | | | | | | | | | {"type":"intnum","lexeme":"2","position":58}
+| | | | | | | {"type":"plus","lexeme":"+","position":58}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"1","position":58}
 | | | | | EXPR
 | | | | | | ARITHEXPR
 | | | | | | | TERM

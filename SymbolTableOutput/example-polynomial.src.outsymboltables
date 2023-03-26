@@ -51,4 +51,5 @@ function | main | aparams: ()| type: void
 	function:main 
 	localvar | id: f1 | type: LINEAR[][]
 	localvar | id: f2 | type: QUADRATIC[][][]
+	tempvar | id: temp7 | type: integer | expressionId: 11
 

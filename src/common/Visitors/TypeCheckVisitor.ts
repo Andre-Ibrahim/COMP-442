@@ -182,6 +182,10 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
+        if(node instanceof NodeAPARAMS) {
+            this.traverseTree(node);
+        }
+
 
 
         if (node instanceof NodeFACTOR) {
