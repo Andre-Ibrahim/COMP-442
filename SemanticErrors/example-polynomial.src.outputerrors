@@ -5,3 +5,6 @@ error: 11.1 :A: "." undelclared localvar :43
 error: 11.1 :b: "." undelclared localvar :44
 error: 11.1 :B: "." undelclared localvar :44
 error: 11.1 :counter: "." undelclared localvar :61
+error: 11.1 :counter: "." undelclared localvar :63
+error: 11.4 :: Undeclared free function :0
+error: 11.4 :: Undeclared free function :0

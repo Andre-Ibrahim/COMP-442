@@ -100,6 +100,10 @@ export class SymbTabVisitor extends Visitor {
             this.traverseTree(node, node.symbolTable);
         }
 
+        if(node instanceof NodeWRITESTAT) {
+            this.traverseTree(node, node.symbolTable);
+        }
+
         if (node instanceof NodeRELEXPR) {
             this.traverseTree(node, node.symbolTable);
         }

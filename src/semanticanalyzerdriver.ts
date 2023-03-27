@@ -46,7 +46,7 @@ testCases.forEach((testCase) => {
         parser.abstractSyntaxTree.symbolTable?.toString() ?? "",
     );
 
-    writeFileSync(`./CodeOutput/${testCase}.m`, codeGenVisitor.code);
+    writeFileSync(`./CodeOutput/${testCase}.m`, codeGenVisitor.getOutput());
 
     const errors: CompilerError[] = [];
 

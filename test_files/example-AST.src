@@ -3,8 +3,12 @@ function main() => void
   localvar z: integer;
   localvar y: integer;
 
-  y = 1;
-  z = 3 + 1 * y;
+  z = 12;
+
+  y = z;
+
+
 
   write(z);
+  write(y);
 }

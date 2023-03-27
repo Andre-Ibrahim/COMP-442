@@ -95,6 +95,10 @@ export class TypeCheckVisitor extends Visitor {
             this.traverseTree(node);
         }
 
+        if(node instanceof NodeWRITESTAT){
+            this.traverseTree(node);
+        }
+
         if (node instanceof NodeFUNCBODY) {
             this.traverseTree(node);
         }
