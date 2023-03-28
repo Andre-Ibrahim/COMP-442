@@ -1,14 +1,14 @@
 function main() => void 
 {
-  localvar z: integer;
+  localvar x: integer;
   localvar y: integer;
+  localvar z: integer;
 
-  z = 12;
+  x = 132;
 
-  y = z;
+  y = x / 12;
 
-
+  z = (1 + y) * (3 + 2);
 
   write(z);
-  write(y);
 }

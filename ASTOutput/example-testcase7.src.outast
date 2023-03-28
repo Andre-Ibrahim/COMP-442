@@ -40,9 +40,10 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":26}
 | | | | | | | | | | INDICELIST
 | | | | | | {"type":"plus","lexeme":"+","position":26}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"2","position":26}
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"2","position":26}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":27}
@@ -57,9 +58,10 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":27}
 | | | | | | | | | | INDICELIST
 | | | | | | {"type":"minus","lexeme":"-","position":27}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"2","position":27}
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"2","position":27}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":28}
@@ -74,8 +76,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":28}
 | | | | | | | | | | INDICELIST
 | | | | | | | {"type":"mult","lexeme":"*","position":28}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"10","position":28}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"10","position":28}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":29}
@@ -90,8 +93,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":29}
 | | | | | | | | | | INDICELIST
 | | | | | | | {"type":"div","lexeme":"/","position":29}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"10","position":29}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"10","position":29}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":30}
@@ -196,12 +200,14 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":35}
 | | | | | | | | | | INDICELIST
 | | | | | | {"type":"plus","lexeme":"+","position":35}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"5","position":35}
-| | | | | | | {"type":"mult","lexeme":"*","position":35}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"10","position":35}
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"5","position":35}
+| | | | | | | | {"type":"mult","lexeme":"*","position":35}
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | {"type":"intnum","lexeme":"10","position":35}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":36}
@@ -216,12 +222,14 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":36}
 | | | | | | | | | | INDICELIST
 | | | | | | {"type":"minus","lexeme":"-","position":36}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"5","position":36}
-| | | | | | | {"type":"mult","lexeme":"*","position":36}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"10","position":36}
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"5","position":36}
+| | | | | | | | {"type":"mult","lexeme":"*","position":36}
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | {"type":"intnum","lexeme":"10","position":36}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":37}
@@ -236,11 +244,13 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":37}
 | | | | | | | | | | INDICELIST
 | | | | | | | {"type":"mult","lexeme":"*","position":37}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"10","position":37}
-| | | | | | | {"type":"div","lexeme":"/","position":37}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"5","position":37}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"10","position":37}
+| | | | | | | | {"type":"div","lexeme":"/","position":37}
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | {"type":"intnum","lexeme":"5","position":37}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":38}
@@ -255,11 +265,13 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":38}
 | | | | | | | | | | INDICELIST
 | | | | | | | {"type":"mult","lexeme":"*","position":38}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"6","position":38}
-| | | | | | | {"type":"div","lexeme":"/","position":38}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"44","position":38}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"6","position":38}
+| | | | | | | | {"type":"div","lexeme":"/","position":38}
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | {"type":"intnum","lexeme":"44","position":38}
 | | | | | {"type":"gt","lexeme":">","position":38}
 | | | | | ARITHEXPR
 | | | | | | TERM
@@ -279,11 +291,13 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"x","position":39}
 | | | | | | | | | | INDICELIST
 | | | | | | | {"type":"mult","lexeme":"*","position":39}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"6","position":39}
-| | | | | | | {"type":"div","lexeme":"/","position":39}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"44","position":39}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"6","position":39}
+| | | | | | | | {"type":"div","lexeme":"/","position":39}
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | {"type":"intnum","lexeme":"44","position":39}
 | | | | | {"type":"gt","lexeme":">","position":39}
 | | | | | ARITHEXPR
 | | | | | | TERM
@@ -309,12 +323,14 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | {"type":"id","lexeme":"x","position":40}
 | | | | | | | | | | | | | INDICELIST
 | | | | | | | | | {"type":"plus","lexeme":"+","position":40}
-| | | | | | | | | TERM
-| | | | | | | | | | FACTOR
-| | | | | | | | | | | {"type":"intnum","lexeme":"10","position":40}
+| | | | | | | | | ARITHEXPR
+| | | | | | | | | | TERM
+| | | | | | | | | | | FACTOR
+| | | | | | | | | | | | {"type":"intnum","lexeme":"10","position":40}
 | | | | | | | {"type":"mult","lexeme":"*","position":40}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"8","position":40}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"8","position":40}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":41}
@@ -332,21 +348,24 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | {"type":"id","lexeme":"x","position":41}
 | | | | | | | | | | | | | INDICELIST
 | | | | | | | | | {"type":"plus","lexeme":"+","position":41}
-| | | | | | | | | TERM
-| | | | | | | | | | FACTOR
-| | | | | | | | | | | ARITHEXPR
-| | | | | | | | | | | | TERM
-| | | | | | | | | | | | | FACTOR
-| | | | | | | | | | | | | | {"type":"intnum","lexeme":"8","position":41}
-| | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":41}
-| | | | | | | | | | | | | FACTOR
-| | | | | | | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | | | | | | VARIABLE
-| | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":41}
-| | | | | | | | | | | | | | | | INDICELIST
-| | | | | | | | | | {"type":"div","lexeme":"/","position":41}
-| | | | | | | | | | FACTOR
-| | | | | | | | | | | {"type":"intnum","lexeme":"9","position":41}
+| | | | | | | | | ARITHEXPR
+| | | | | | | | | | TERM
+| | | | | | | | | | | FACTOR
+| | | | | | | | | | | | ARITHEXPR
+| | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | {"type":"intnum","lexeme":"8","position":41}
+| | | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":41}
+| | | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":41}
+| | | | | | | | | | | | | | | | | | INDICELIST
+| | | | | | | | | | | {"type":"div","lexeme":"/","position":41}
+| | | | | | | | | | | TERM
+| | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":41}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":42}
@@ -375,14 +394,15 @@ CLASSDECLORFUNCDEF
 | | | | | | | | FACTOR
 | | | | | | | | | {"type":"intnum","lexeme":"19","position":43}
 | | | | | | {"type":"plus","lexeme":"+","position":43}
-| | | | | | TERM
-| | | | | | | {"type":"minus","lexeme":"-","position":43}
-| | | | | | | FACTOR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | {"type":"minus","lexeme":"-","position":43}
 | | | | | | | | FACTOR
-| | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | VARIABLE
-| | | | | | | | | | | {"type":"id","lexeme":"x","position":43}
-| | | | | | | | | | | INDICELIST
+| | | | | | | | | FACTOR
+| | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | {"type":"id","lexeme":"x","position":43}
+| | | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":44}
@@ -394,14 +414,15 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | {"type":"intnum","lexeme":"2","position":44}
 | | | | | | {"type":"minus","lexeme":"-","position":44}
-| | | | | | TERM
-| | | | | | | {"type":"minus","lexeme":"-","position":44}
-| | | | | | | FACTOR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | {"type":"minus","lexeme":"-","position":44}
 | | | | | | | | FACTOR
-| | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | VARIABLE
-| | | | | | | | | | | {"type":"id","lexeme":"x","position":44}
-| | | | | | | | | | | INDICELIST
+| | | | | | | | | FACTOR
+| | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | {"type":"id","lexeme":"x","position":44}
+| | | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":45}
@@ -413,16 +434,17 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | {"type":"intnum","lexeme":"2","position":45}
 | | | | | | {"type":"minus","lexeme":"-","position":45}
-| | | | | | TERM
-| | | | | | | {"type":"minus","lexeme":"-","position":45}
-| | | | | | | {"type":"minus","lexeme":"-","position":45}
-| | | | | | | FACTOR
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | {"type":"minus","lexeme":"-","position":45}
+| | | | | | | | {"type":"minus","lexeme":"-","position":45}
 | | | | | | | | FACTOR
 | | | | | | | | | FACTOR
-| | | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | | VARIABLE
-| | | | | | | | | | | | {"type":"id","lexeme":"x","position":45}
-| | | | | | | | | | | | INDICELIST
+| | | | | | | | | | FACTOR
+| | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | {"type":"id","lexeme":"x","position":45}
+| | | | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":46}
@@ -434,13 +456,14 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | {"type":"intnum","lexeme":"17","position":46}
 | | | | | | | {"type":"mult","lexeme":"*","position":46}
-| | | | | | | {"type":"minus","lexeme":"-","position":46}
-| | | | | | | FACTOR
+| | | | | | | TERM
+| | | | | | | | {"type":"minus","lexeme":"-","position":46}
 | | | | | | | | FACTOR
-| | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | VARIABLE
-| | | | | | | | | | | {"type":"id","lexeme":"x","position":46}
-| | | | | | | | | | | INDICELIST
+| | | | | | | | | FACTOR
+| | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | {"type":"id","lexeme":"x","position":46}
+| | | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":47}
@@ -452,15 +475,17 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | {"type":"floatnum","lexeme":"10.99","position":47}
 | | | | | | | {"type":"mult","lexeme":"*","position":47}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"floatnum","lexeme":"0.99","position":47}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"floatnum","lexeme":"0.99","position":47}
 | | | | | | {"type":"plus","lexeme":"+","position":47}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | FACTORCALLORVAR
-| | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"i","position":47}
-| | | | | | | | | | INDICELIST
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | VARIABLE
+| | | | | | | | | | | {"type":"id","lexeme":"i","position":47}
+| | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":48}
@@ -497,11 +522,12 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | {"type":"intnum","lexeme":"0","position":49}
 | | | | | | | {"type":"and","lexeme":"and","position":49}
-| | | | | | | FACTOR
-| | | | | | | | FACTORCALLORVAR
-| | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"i","position":49}
-| | | | | | | | | | INDICELIST
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | VARIABLE
+| | | | | | | | | | | {"type":"id","lexeme":"i","position":49}
+| | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":50}
@@ -518,12 +544,13 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | {"type":"intnum","lexeme":"0","position":50}
 | | | | | | {"type":"or","lexeme":"or","position":50}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | FACTORCALLORVAR
-| | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"i","position":50}
-| | | | | | | | | | INDICELIST
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | VARIABLE
+| | | | | | | | | | | {"type":"id","lexeme":"i","position":50}
+| | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":51}
@@ -542,22 +569,25 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | FACTOR
 | | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":51}
 | | | | | | | {"type":"mult","lexeme":"*","position":51}
-| | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"9","position":51}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"9","position":51}
 | | | | | | {"type":"plus","lexeme":"+","position":51}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | FACTORCALLORVAR
-| | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"x","position":51}
-| | | | | | | | | | INDICELIST
-| | | | | | | | | | | ARITHEXPR
-| | | | | | | | | | | | TERM
-| | | | | | | | | | | | | FACTOR
-| | | | | | | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | | | | | | VARIABLE
-| | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":51}
-| | | | | | | | | | | | | | | | INDICELIST
-| | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":51}
-| | | | | | | | | | | | | FACTOR
-| | | | | | | | | | | | | | {"type":"intnum","lexeme":"2","position":51}
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | VARIABLE
+| | | | | | | | | | | {"type":"id","lexeme":"x","position":51}
+| | | | | | | | | | | INDICELIST
+| | | | | | | | | | | | ARITHEXPR
+| | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | | | | | {"type":"id","lexeme":"i","position":51}
+| | | | | | | | | | | | | | | | | INDICELIST
+| | | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":51}
+| | | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | | {"type":"intnum","lexeme":"2","position":51}

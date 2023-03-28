@@ -226,8 +226,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | FACTOR
 | | | | | | | | | | | | | | {"type":"intnum","lexeme":"1","position":31}
 | | | | | | | | | | | | | {"type":"mult","lexeme":"*","position":31}
-| | | | | | | | | | | | | FACTOR
-| | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":31}
+| | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":31}
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"x","position":32}
@@ -486,8 +487,9 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | FACTOR
 | | | | | | | | | | | | | | {"type":"intnum","lexeme":"10","position":40}
 | | | | | | | | | | | | | {"type":"div","lexeme":"/","position":40}
-| | | | | | | | | | | | | FACTOR
-| | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":40}
+| | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":40}
 | | | | | | | | | | | ARITHEXPR
 | | | | | | | | | | | | TERM
 | | | | | | | | | | | | | FACTOR

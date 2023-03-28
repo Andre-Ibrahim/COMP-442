@@ -299,9 +299,10 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | {"type":"id","lexeme":"i","position":29}
 | | | | | | | | | | | | INDICELIST
 | | | | | | | | {"type":"plus","lexeme":"+","position":29}
-| | | | | | | | TERM
-| | | | | | | | | FACTOR
-| | | | | | | | | | {"type":"intnum","lexeme":"1","position":29}
+| | | | | | | | ARITHEXPR
+| | | | | | | | | TERM
+| | | | | | | | | | FACTOR
+| | | | | | | | | | | {"type":"intnum","lexeme":"1","position":29}
 | | | | | | EXPR
 | | | | | | | ARITHEXPR
 | | | | | | | | TERM
@@ -332,9 +333,10 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | {"type":"id","lexeme":"i","position":30}
 | | | | | | | | | | | | INDICELIST
 | | | | | | | | {"type":"plus","lexeme":"+","position":30}
-| | | | | | | | TERM
-| | | | | | | | | FACTOR
-| | | | | | | | | | {"type":"intnum","lexeme":"1","position":30}
+| | | | | | | | ARITHEXPR
+| | | | | | | | | TERM
+| | | | | | | | | | FACTOR
+| | | | | | | | | | | {"type":"intnum","lexeme":"1","position":30}
 | | | RETURNSTAT
 | | | | EXPR
 | | | | | ARITHEXPR

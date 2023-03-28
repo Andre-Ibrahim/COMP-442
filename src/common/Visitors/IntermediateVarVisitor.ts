@@ -40,6 +40,7 @@ import { Visitor } from "./Visitor";
 
 export class IntermediateVarVisitor extends Visitor {
     tempvarCount = 0;
+    litvarCount = 0;
     expressionCount = 0;
     defaultToken = { lexeme: "", position: 0, type: TokenType.EOF };
 
@@ -99,15 +100,12 @@ export class IntermediateVarVisitor extends Visitor {
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
             const count = this.arthExprCountAddOpp(node);
-            this.createTempVars(count, node);
+            this.createTempVar(node);
         }
         if (node instanceof NodeTERM) {
             this.traverseTree(node);
 
-            const count = this.TermCountMultOpp(node);
-            this.createTempVars(count, node);
-            const literals = this.getLiterals(node);
-            this.createLitVars(literals, node);
+            this.createTempVar(node);
         }
         if (node instanceof NodeFACTOR) {
             this.traverseTree(node);
@@ -224,8 +222,7 @@ export class IntermediateVarVisitor extends Visitor {
         return count;
     }
 
-    private createTempVars(count: number, node: Node) {
-        [...Array(count)].map(() => {
+    private createTempVar(node: NodeARITHEXPR | NodeTERM) {
             let type = node.type;
 
             if (type === "") {
@@ -234,7 +231,7 @@ export class IntermediateVarVisitor extends Visitor {
             const tempvar = new TempVarEntry(this.createTempVarToken(), node.type, this.expressionCount);
             this.tempvarCount++;
             node.symbolTable?.addEntry(tempvar);
-        });
+            node.tempvar = tempvar.id.lexeme;
     }
 
     private getLiterals(node: Node): Token[] {
@@ -249,7 +246,7 @@ export class IntermediateVarVisitor extends Visitor {
         return literals;
     }
 
-    private createLitVars(literals: Token[], node: Node) {
+    private createLitVars(literals: Token[], node: NodeFACTOR) {
         literals.map((token) => {
             let type = node.type;
 
@@ -257,8 +254,9 @@ export class IntermediateVarVisitor extends Visitor {
                 type = node.parentNode?.type ?? "";
             }
             const litvar = new LitVarEntry(token, this.getLitVarType(token.type), this.expressionCount);
-            this.tempvarCount++;
+            this.litvarCount++;
             node.symbolTable?.addEntry(litvar);
+            node.tempvar = this.createLitVarName();
         });
     }
 
@@ -272,5 +270,9 @@ export class IntermediateVarVisitor extends Visitor {
 
     private createTempVarToken() {
         return { lexeme: "temp" + (this.tempvarCount + 1), position: 0, type: TokenType.ID };
+    }
+
+    private createLitVarName() {
+        return "litvar" + this.litvarCount;
     }
 }

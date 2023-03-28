@@ -42,7 +42,8 @@ export class CodeGenVisitor extends Visitor {
 
     code: string = "";
     data: string = "";
-    litCount: number = 0;
+    litCount: number = 1;
+    tempCount: number = 1;
     expressionVar: string = "";
     indent: string = "".slice(0, 15).padEnd(15);
     registerPool = [...Array(12).keys()].map((_, i) => `r${i+1}`).reverse();
@@ -105,26 +106,106 @@ export class CodeGenVisitor extends Visitor {
         }
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
+            node.tempvar = this.generateTempVar();
+            // handle add
+            if(node.children.length === 1){
+                // migrate tempvar to node if its only factor
+                const term = node.children[0];
+                if(term instanceof NodeTERM){
+                    node.tempvar = term.tempvar;
+                }
+             }else if(node.children.length === 3){
+                // handle add opperation
+                const term = node.children[0];
+                let termTempVar = "";
+                const innerArithExpr = node.children[2];
+                let innerArithExprTempVar = "";
 
-            //const count = this.arthExprCountAddOpp(node);
-            //this.createTempVars(count, node);
+                if(term instanceof NodeTERM){
+                    termTempVar = term.tempvar;
+                }
+
+                if(innerArithExpr instanceof NodeARITHEXPR){
+                    innerArithExprTempVar = innerArithExpr.tempvar;
+                }
+
+                const addOp = node.children[1].value;
+                const ArithExpressionTempVar = node.tempvar;
+                this.data += this.reserveBytes(ArithExpressionTempVar, this.getLitSize(node.type));
+                this.expressionVar = ArithExpressionTempVar;
+                this.code += this.addition(termTempVar, innerArithExprTempVar, ArithExpressionTempVar, addOp?.type ?? TokenType.MULT);
+            }
         }
         if (node instanceof NodeTERM) {
             this.traverseTree(node);
+
+            // handle multiplication
+            if(node.children.length === 1){
+                // migrate tempvar to node if its only factor
+                const factor = node.children[0];
+                if(factor instanceof NodeFACTOR){
+                    node.tempvar = factor.tempvar;
+                }
+            }else if(node.children.length === 3){
+
+                // setting the temp var
+                node.tempvar = this.generateTempVar();
+                // handle mult opperation
+                const factor = node.children[0];
+                let factorTempVar = "";
+                const innerTerm = node.children[2];
+                let innerTermTempVar = "";
+
+                if(factor instanceof NodeFACTOR){
+                    factorTempVar = factor.tempvar;
+                    console.log("factorTemp", factorTempVar);
+                }
+
+                if(innerTerm instanceof NodeTERM){
+                    innerTermTempVar = innerTerm.tempvar;
+
+
+                    console.log("innerTerm", innerTermTempVar);
+
+                    // to be removed
+                    if(innerTermTempVar === ""){
+                        if(innerTerm.children[0] instanceof NodeFACTOR){
+                            innerTermTempVar = innerTerm.children[0].tempvar;
+                        }
+                    }
+                }
+
+                const multOp = node.children[1].value;
+                const termTempVar = node.tempvar;
+                this.data += this.reserveBytes(termTempVar, this.getLitSize(node.type));
+                this.expressionVar = termTempVar;
+                this.code += this.multiplication(factorTempVar, innerTermTempVar, termTempVar, multOp?.type ?? TokenType.MULT);
+            }
+
         }
         if (node instanceof NodeFACTOR) {
             this.traverseTree(node);
 
             // create lit values
             if(node.children[0].value?.type === TokenType.INTNUM || node.children[0].value?.type === TokenType.FLOATNUM){
-                this.litCount++;
-                const exprVar = "litval" + this.litCount;
-                this.expressionVar = exprVar;
-                this.data += this.reserveBytes(exprVar, this.getLitSize(node.children[0].value?.type ));
+                node.tempvar = this.generateLitVar();
 
-                this.code += this.storeVar(exprVar, node.children[0].value.lexeme);
+                this.expressionVar = node.tempvar;
 
+                if(node.parentNode instanceof NodeTERM){
+                    //node.parentNode.tempvar = exprVar;
+                    node.parentNode.type = node.children[0].value?.type;
+                }
 
+                this.data += this.reserveBytes(this.expressionVar, this.getLitSize(node.children[0].value?.type ));
+
+                this.code += this.storeVar(this.expressionVar, node.children[0].value.lexeme);
+
+            }else if(node.children[0] instanceof NodeARITHEXPR || node.children[0] instanceof NodeEXPR){
+                node.tempvar = node.children[0].tempvar;
+            }else if(node.children[0] instanceof NodeFACTORCALLORVAR) {
+                const variableName = node.children[0].children[0].children[0].value?.lexeme ?? "";
+                node.tempvar = variableName;
             }
 
         }
@@ -136,6 +217,8 @@ export class CodeGenVisitor extends Visitor {
 
             if(node.children[0] instanceof NodeVARIABLE){
                 this.expressionVar = node.children[0].children[0].value?.lexeme?? "";
+
+
             }
         }
         if (node instanceof NodeFUNCTIONCALL) {
@@ -149,8 +232,7 @@ export class CodeGenVisitor extends Visitor {
             this.traverseTree(node);
 
 
-            this.code += `${this.indent}addi r14, r0, topaddr
-${this.indent}% processing: write(${this.expressionVar})
+            this.code += `${this.indent}% processing: write(${this.expressionVar})
 ${this.indent}lw r1, ${this.expressionVar}(r0)
 ${this.indent}% put value on stack
 ${this.indent}sw -8(r14), r1
@@ -185,7 +267,7 @@ ${this.indent}jl r15, putstr
             this.traverseTree(node);
 
             const variable = node.children[0].children[0];
-            if(variable.value){
+            if(variable?.value){
                 this.code += this.assignVar(variable.value.lexeme, this.expressionVar);
             }
         }
@@ -205,7 +287,8 @@ ${this.indent}jl r15, putstr
             const isMain = node.children[0].value?.lexeme === "main";
 
             if(isMain){
-                this.code += `${this.indent}entry\n`
+                this.code += `${this.indent}entry\n`;
+                this.code += `${this.indent}addi r14, r0, topaddr\n`;
             }
 
             this.traverseTree(node);
@@ -265,7 +348,8 @@ ${this.indent}jl r15, putstr
         const register = this.registerPool.pop();
 
 
-        let text = `${this.indent}addi ${register}, r0, ${value}\n`
+        let text = `%storing ${value} into ${id}
+${this.indent}addi ${register}, r0, ${value}\n`
         text += `${this.indent}sw ${id}(r0), ${register}\n`
         text += `${this.indent} addi ${register}, r0, 0\n`
 
@@ -277,7 +361,8 @@ ${this.indent}jl r15, putstr
     private assignVar(left: string, right: string) {
         const register = this.registerPool.pop();
 
-        const text = `${this.indent}lw ${register}, ${right}(r0)
+        const text = `% assigning ${right} to ${left}
+${this.indent}lw ${register}, ${right}(r0)
 ${this.indent}sw ${left}(r0), ${register}
 ${this.indent}addi ${register}, r0, 0\n`
 
@@ -286,14 +371,78 @@ ${this.indent}addi ${register}, r0, 0\n`
         return text;
     }
 
+    private multiplication(left: string, right: string, tempvar: string, operator: TokenType): string {
+        const register1 = this.registerPool.pop();
+        const register2 = this.registerPool.pop();
+        const register3 = this.registerPool.pop();
+
+        let operation = "mul";
+        if(operator === TokenType.DIV){
+            operation = "div";
+        }else {
+            operation = "mul";
+        }
+
+        let text = `%multiplying ${left} with ${right}
+${this.indent}lw ${register1}, ${left}(r0)\n`
+        text += `${this.indent}lw ${register2}, ${right}(r0)\n`
+        text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
+        text += `${this.indent}sw ${tempvar}(r0), r3\n`
+
+        this.registerPool.push(register3 ?? "");
+        this.registerPool.push(register2 ?? "");
+        this.registerPool.push(register1 ?? "");
+
+        return text;
+
+    }
+
+    private addition(left: string, right: string, tempvar: string, operator: TokenType): string {
+        const register1 = this.registerPool.pop();
+        const register2 = this.registerPool.pop();
+        const register3 = this.registerPool.pop();
+
+        let operation = "add";
+        if(operator === TokenType.MINUS){
+            operation = "sub";
+        }else {
+            operation = "add";
+        }
+
+        let text = `%adding ${left} with ${right}
+${this.indent}lw ${register1}, ${left}(r0)\n`
+        text += `${this.indent}lw ${register2}, ${right}(r0)\n`
+        text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
+        text += `${this.indent}sw ${tempvar}(r0), r3\n`
+
+        this.registerPool.push(register3 ?? "");
+        this.registerPool.push(register2 ?? "");
+        this.registerPool.push(register1 ?? "");
+
+        return text;
+
+    }
+
     private getLitSize(type: string): number {
         if (type === TokenType.INTNUM) {
             return 4;
         } else if (type === TokenType.FLOATNUM) {
             return 8;
+        }else if (type === TokenType.INTEGER){
+            return 4;
+        }else if (type === TokenType.FLOAT){
+            return 8;
         }
 
         return 0;
+    }
+
+    private generateTempVar(): string {
+        return "temp" + this.tempCount++;
+    }
+
+    private generateLitVar(): string {
+        return "lit" + this.litCount++;
     }
 
     public getOutput(): string {

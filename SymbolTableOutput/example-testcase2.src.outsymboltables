@@ -5,11 +5,13 @@ function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void| m
 	parameter | id: size | type: integer| memsize: 0
 	localvar | id: n | type: integer | memsize: 4
 
-function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float| memsize: 4
+function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float| memsize: 12
 	function:FLOATReturnType 
 	parameter | id: arr | type: integer[]| memsize: 0
 	parameter | id: size | type: integer| memsize: 0
 	localvar | id: n | type: integer | memsize: 4
+	tempvar | id: temp1 | type: integer | expressionId: 1| memsize: 4
+	tempvar | id: temp2 | type: integer | expressionId: 1| memsize: 4
 
 function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void| memsize: 4
 	function:VOIDReturnType 
@@ -30,45 +32,59 @@ function | functionParams | aparams: (x:integer y:float z:id a:integer[])| type:
 	parameter | id: z | type: id| memsize: 0
 	parameter | id: a | type: integer[]| memsize: 0
 
-function | printArray | aparams: (x:float)| type: integer| memsize: 8
+function | printArray | aparams: (x:float)| type: integer| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 3| memsize: 4
+	tempvar | id: temp7 | type: integer | expressionId: 3| memsize: 4
+	tempvar | id: temp8 | type: integer | expressionId: 3| memsize: 4
 
-function | printArray | aparams: (x:id)| type: integer| memsize: 8
+function | printArray | aparams: (x:id)| type: integer| memsize: 16
 	function:printArray 
 	parameter | id: x | type: id| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 5| memsize: 4
+	tempvar | id: temp11 | type: integer | expressionId: 5| memsize: 4
+	tempvar | id: temp12 | type: integer | expressionId: 5| memsize: 4
 
-function | printArray | aparams: (x:id)| type: id| memsize: 8
+function | printArray | aparams: (x:id)| type: id| memsize: 16
 	function:printArray 
 	parameter | id: x | type: id| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 7| memsize: 4
+	tempvar | id: temp15 | type: integer | expressionId: 7| memsize: 4
+	tempvar | id: temp16 | type: integer | expressionId: 7| memsize: 4
 
-function | printArray | aparams: (x:float[])| type: integer| memsize: 8
+function | printArray | aparams: (x:float[])| type: integer| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[]| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 9| memsize: 4
+	tempvar | id: temp19 | type: integer | expressionId: 9| memsize: 4
+	tempvar | id: temp20 | type: integer | expressionId: 9| memsize: 4
 
-function | printArray | aparams: (x:float[])| type: float| memsize: 8
+function | printArray | aparams: (x:float[])| type: float| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[]| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 11| memsize: 4
+	tempvar | id: temp23 | type: integer | expressionId: 11| memsize: 4
+	tempvar | id: temp24 | type: integer | expressionId: 11| memsize: 4
 
-function | printArray | aparams: (x:float[][])| type: float| memsize: 8
+function | printArray | aparams: (x:float[][])| type: float| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[][]| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 13| memsize: 4
+	tempvar | id: temp27 | type: integer | expressionId: 13| memsize: 4
+	tempvar | id: temp28 | type: integer | expressionId: 13| memsize: 4
 
-function | printArray | aparams: (x:float[][])| type: float| memsize: 8
+function | printArray | aparams: (x:float[][])| type: float| memsize: 16
 	function:printArray 
 	parameter | id: x | type: float[][]| memsize: 0
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 15| memsize: 4
+	tempvar | id: temp31 | type: integer | expressionId: 15| memsize: 4
+	tempvar | id: temp32 | type: integer | expressionId: 15| memsize: 4
 

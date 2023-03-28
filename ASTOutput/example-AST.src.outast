@@ -6,36 +6,77 @@ CLASSDECLORFUNCDEF
 | | | {"type":"void","lexeme":"void","position":1}
 | | FUNCBODY
 | | | VARDECL
-| | | | {"type":"id","lexeme":"z","position":3}
+| | | | {"type":"id","lexeme":"x","position":3}
 | | | | {"type":"integer","lexeme":"integer","position":3}
 | | | | ARRAYSIZE
 | | | VARDECL
 | | | | {"type":"id","lexeme":"y","position":4}
 | | | | {"type":"integer","lexeme":"integer","position":4}
 | | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"z","position":5}
+| | | | {"type":"integer","lexeme":"integer","position":5}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | VARIABLE
-| | | | | {"type":"id","lexeme":"z","position":6}
+| | | | | {"type":"id","lexeme":"x","position":7}
 | | | | | INDICELIST
-| | | | {"type":"assign","lexeme":"=","position":6}
+| | | | {"type":"assign","lexeme":"=","position":7}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"12","position":6}
+| | | | | | | | {"type":"intnum","lexeme":"132","position":7}
 | | | ASSIGNSTAT
 | | | | VARIABLE
-| | | | | {"type":"id","lexeme":"y","position":8}
+| | | | | {"type":"id","lexeme":"y","position":9}
 | | | | | INDICELIST
-| | | | {"type":"assign","lexeme":"=","position":8}
+| | | | {"type":"assign","lexeme":"=","position":9}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"z","position":8}
+| | | | | | | | | | {"type":"id","lexeme":"x","position":9}
 | | | | | | | | | | INDICELIST
+| | | | | | | {"type":"div","lexeme":"/","position":9}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"intnum","lexeme":"12","position":9}
+| | | ASSIGNSTAT
+| | | | VARIABLE
+| | | | | {"type":"id","lexeme":"z","position":11}
+| | | | | INDICELIST
+| | | | {"type":"assign","lexeme":"=","position":11}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | ARITHEXPR
+| | | | | | | | | TERM
+| | | | | | | | | | FACTOR
+| | | | | | | | | | | {"type":"intnum","lexeme":"1","position":11}
+| | | | | | | | | {"type":"plus","lexeme":"+","position":11}
+| | | | | | | | | ARITHEXPR
+| | | | | | | | | | TERM
+| | | | | | | | | | | FACTOR
+| | | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | | {"type":"id","lexeme":"y","position":11}
+| | | | | | | | | | | | | | INDICELIST
+| | | | | | | {"type":"mult","lexeme":"*","position":11}
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | ARITHEXPR
+| | | | | | | | | | TERM
+| | | | | | | | | | | FACTOR
+| | | | | | | | | | | | {"type":"intnum","lexeme":"3","position":11}
+| | | | | | | | | | {"type":"plus","lexeme":"+","position":11}
+| | | | | | | | | | ARITHEXPR
+| | | | | | | | | | | TERM
+| | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | {"type":"intnum","lexeme":"2","position":11}
 | | | WRITESTAT
 | | | | EXPR
 | | | | | ARITHEXPR
@@ -43,14 +84,5 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"z","position":12}
-| | | | | | | | | | INDICELIST
-| | | WRITESTAT
-| | | | EXPR
-| | | | | ARITHEXPR
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | FACTORCALLORVAR
-| | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"y","position":13}
+| | | | | | | | | | {"type":"id","lexeme":"z","position":13}
 | | | | | | | | | | INDICELIST

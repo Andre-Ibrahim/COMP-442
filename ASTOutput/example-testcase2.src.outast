@@ -56,9 +56,10 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"id","lexeme":"n","position":40}
 | | | | | | | | | | INDICELIST
 | | | | | | {"type":"plus","lexeme":"+","position":40}
-| | | | | | TERM
-| | | | | | | FACTOR
-| | | | | | | | {"type":"floatnum","lexeme":"1.111","position":40}
+| | | | | | ARITHEXPR
+| | | | | | | TERM
+| | | | | | | | FACTOR
+| | | | | | | | | {"type":"floatnum","lexeme":"1.111","position":40}
 | FUNCDEF
 | | {"type":"id","lexeme":"VOIDReturnType","position":43}
 | | FUNCARROW
