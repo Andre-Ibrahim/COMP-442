@@ -126,10 +126,57 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ LOCALVARDECL REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon TYPE LOCALVARDECL2 REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer LOCALVARDECL2 REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer REPTFPARAMS3 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -141,11 +188,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id ISFUNCTIONCALLORVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -157,11 +206,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -173,11 +224,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id ASSIGNOP EXPR semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -189,11 +242,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign ARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -205,11 +260,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -221,11 +278,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -237,11 +296,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -253,11 +314,13 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -270,12 +333,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id ISFUNCTIONCALLORVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -288,12 +353,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id AFTERVARIABLE semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -306,12 +373,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id ASSIGNOP EXPR semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -324,12 +393,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign ARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -342,12 +413,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -360,12 +433,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -378,12 +453,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -396,12 +473,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id MULTOP FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -414,12 +493,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -432,6 +513,7 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum EXPR2 semi
  REPTFUNCBODY1 closecubr
@@ -441,12 +523,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -459,12 +543,14 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -478,6 +564,7 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  id ISFUNCTIONCALLORVARIABLE semi
@@ -485,6 +572,7 @@ START =>
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -498,6 +586,7 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  id AFTERVARIABLE semi
@@ -505,6 +594,7 @@ START =>
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -518,6 +608,7 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  id ASSIGNOP EXPR semi
@@ -525,6 +616,7 @@ START =>
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -538,6 +630,7 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  id assign ARITHEXPR EXPR2 semi
@@ -545,6 +638,7 @@ START =>
  REPTSTART0
 START =>
  function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
@@ -558,6 +652,7 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
  id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
@@ -568,9 +663,10 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar ARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ id assign intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -578,9 +674,10 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar TERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ id assign intnum RIGHTRECARITHEXPR EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -588,9 +685,10 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ id assign intnum EXPR2 semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -598,9 +696,10 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ id assign intnum semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -608,279 +707,10 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
  localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum ADDOP TERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
  id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus TERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar MULTOP FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar ARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar TERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum ADDOP TERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus TERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum RIGHTRECTERM RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum RIGHTRECARITHEXPR closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar RIGHTRECARITHEXPR EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar EXPR2 semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
- REPTFUNCBODY1 closecubr
- REPTSTART0
-START =>
- function id openpar closepar returntype void opencubr
- localvar id colon integer semi
- localvar id colon integer semi
- localvar id colon integer semi
- id assign intnum semi
- id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
  LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -888,9 +718,10 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
  STATEMENT REPTFUNCBODY1 closecubr
  REPTSTART0
 START =>
@@ -898,9 +729,2025 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ FUNCTIONCALLORASIGNSTAT semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id ISFUNCTIONCALLORVARIABLE semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id INDICELOOP AFTERVARIABLE semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id AFTERVARIABLE semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id ENDASSIGN semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id ASSIGNOP EXPR semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign EXPR semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign ARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign TERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id RIGHTRECARITHEXPR EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id EXPR2 semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ STATEMENT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar RELEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar ARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar TERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq TERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then STATBLOCK else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ STATEMENT REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ FUNCTIONCALLORASIGNSTAT semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id ISFUNCTIONCALLORVARIABLE semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id INDICELOOP AFTERVARIABLE semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id AFTERVARIABLE semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id ENDASSIGN semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id ASSIGNOP EXPR semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign EXPR semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign ARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign TERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id RIGHTRECARITHEXPR EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id EXPR2 semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ STATEMENT REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar RELEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar ARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar TERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum RIGHTRECARITHEXPR RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum RELOP ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq ARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq TERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq FACTOR RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum RIGHTRECTERM RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum RIGHTRECARITHEXPR closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then STATBLOCK else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ STATEMENT REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar EXPR closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar ARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else STATBLOCK semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ STATEMENT REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar EXPR closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar ARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ REPTSTATBLOCK1 closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else STATBLOCK semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ STATEMENT REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar EXPR closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar ARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id RIGHTRECARITHEXPR EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id EXPR2 closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ REPTSTATBLOCK1 closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
+ REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
+ LOCALVARDECLORSTMT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
+ STATEMENT REPTFUNCBODY1 closecubr
+ REPTSTART0
+START =>
+ function id openpar closepar returntype void opencubr
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ localvar id colon integer semi
+ id assign intnum semi
+ id assign id div intnum semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar EXPR closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -909,9 +2756,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar ARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -920,9 +2783,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar TERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -931,9 +2810,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar FACTOR RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -942,9 +2837,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar FUNCTIONCALLORVARIABLE RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -953,9 +2864,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id FUNCTIONCALLORVARIABLE1 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -964,9 +2891,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id INDICELOOP FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -975,9 +2918,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id FUNCTIONCALLORVARIABLE2 RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -986,9 +2945,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id RIGHTRECTERM RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -997,9 +2972,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id RIGHTRECARITHEXPR EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -1008,9 +2999,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id EXPR2 closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -1019,9 +3026,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id closepar semi
  REPTFUNCBODY1 closecubr
  REPTSTART0
@@ -1030,9 +3053,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id closepar semi
  closecubr
  REPTSTART0
@@ -1041,9 +3080,25 @@ START =>
  localvar id colon integer semi
  localvar id colon integer semi
  localvar id colon integer semi
+ localvar id colon integer semi
  id assign intnum semi
  id assign id div intnum semi
- id assign openpar intnum plus id closepar mult openpar intnum plus intnum closepar semi
+ id assign intnum semi
+ id assign id semi
+ if openpar id eq id closepar then opencubr
+ id assign id semi
+ if openpar intnum eq intnum closepar then opencubr
+ write openpar intnum closepar semi
+ closecubr
+ else opencubr
+ write openpar intnum closepar semi
+ closecubr
+ semi
+ closecubr
+ else opencubr
+ write openpar id closepar semi
+ closecubr
+ semi
  write openpar id closepar semi
  closecubr
  

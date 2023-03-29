@@ -3,12 +3,31 @@ function main() => void
   localvar x: integer;
   localvar y: integer;
   localvar z: integer;
+  localvar q: integer;
 
   x = 132;
 
   y = x / 12;
 
-  z = (1 + y) * (3 + 2);
+  z = 9;
 
-  write(z);
+  q = z;
+
+  if (z == z) then {
+    // swap temp and arr[i]
+    x = z;
+
+    if(2 == 1) then {
+      write(10000);
+    }else {
+      write(1);
+    };
+
+
+
+  } else {
+    write(y);
+  };
+
+  write(x);
 }

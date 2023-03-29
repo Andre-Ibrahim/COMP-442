@@ -44,6 +44,7 @@ export class CodeGenVisitor extends Visitor {
     data: string = "";
     litCount: number = 1;
     tempCount: number = 1;
+    ifStatementCount: number = 1;
     indent: string = "".slice(0, 15).padEnd(15);
     registerPool = [...Array(12).keys()].map((_, i) => `r${i+1}`).reverse();
 
@@ -100,18 +101,39 @@ export class CodeGenVisitor extends Visitor {
         if (node instanceof NodeRETURNSTAT) {
             this.traverseTree(node);
         }
-        if (node instanceof NodeEXPR) {
+        if (node instanceof NodeEXPR || node instanceof NodeRELEXPR) {
             this.traverseTree(node);
 
-            if(node.children[0] instanceof NodeARITHEXPR){
+            if(node.children.length === 1 && node.children[0] instanceof NodeARITHEXPR){
                 node.tempvar = node.children[0].tempvar;
                 console.log(node.tempvar);
+            }else if(node.children.length === 3){
+
+                let leftartih = "";
+                if(node.children[0] instanceof NodeARITHEXPR){
+                    leftartih = node.children[0].tempvar;
+                }
+
+                let operator = node.children[1].value?.type ?? TokenType.EQ;
+
+
+                let rightarith = "";
+                if(node.children[2] instanceof NodeARITHEXPR){
+                    rightarith = node.children[2].tempvar;
+                }
+
+                node.tempvar = this.generateTempVar();
+
+                this.data += this.reserveBytes(node.tempvar, this.getLitSize(node.type ?? "integer"));
+
+                this.code += this.relation(leftartih, rightarith, node.tempvar, operator);
+
+
             }
         }
+
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
-
-            node.tempvar = this.generateTempVar();
             // handle add
             if(node.children.length === 1){
                 // migrate tempvar to node if its only factor
@@ -120,6 +142,7 @@ export class CodeGenVisitor extends Visitor {
                     node.tempvar = term.tempvar;
                 }
              }else if(node.children.length === 3){
+                node.tempvar = this.generateTempVar();
                 // handle add opperation
                 const term = node.children[0];
                 let termTempVar = "";
@@ -280,11 +303,42 @@ ${this.indent}jl r15, putstr
         if (node instanceof NodeFUNCTIONCALLSTAT) {
             this.traverseTree(node);
         }
-        if (node instanceof NodeRELEXPR) {
-            this.traverseTree(node);
-        }
+        //if (node instanceof NodeRELEXPR) {
+        //    this.traverseTree(node);
+        //}
         if (node instanceof NodeIFSTAT) {
-            this.traverseTree(node);
+
+            node.children[0]?.accept(this);
+
+            // relation expression
+            const relationExpr = node.children[0];
+            let expressionVar = "";
+
+            if(relationExpr instanceof NodeRELEXPR || relationExpr instanceof NodeEXPR){
+                expressionVar = relationExpr.tempvar;
+                console.log("expressionV", expressionVar);
+            }
+
+            const register = this.registerPool.pop();
+            const [elseTag, endifTag] = this.generateIfStatementlabels();
+
+
+            this.code += `% starting if statment\n`;
+            this.code += `${this.indent} lw ${register}, ${expressionVar}(r0)\n`;
+            this.code += `${this.indent} bz ${register}, ${elseTag}\n`;
+
+            // stat block 1
+            node.children[1]?.accept(this);
+
+            this.code += `${this.indent}j ${endifTag}\n`;
+            this.code += `${elseTag}`;
+
+            // statblock 2
+            node.children[2]?.accept(this);
+
+            this.code += `${endifTag}`;
+
+
         }
         if (node instanceof NodeWHILESTAT) {
             this.traverseTree(node);
@@ -352,9 +406,9 @@ ${this.indent}jl r15, putstr
 
     private storeVar(id: string, value: string) {
         const register = this.registerPool.pop();
+        let text =  this.clearRegister(register ?? "r1");
 
-
-        let text = `%storing ${value} into ${id}
+         text += `%storing ${value} into ${id}
 ${this.indent}addi ${register}, r0, ${value}\n`
         text += `${this.indent}sw ${id}(r0), ${register}\n`
         text += `${this.indent} addi ${register}, r0, 0\n`
@@ -367,7 +421,9 @@ ${this.indent}addi ${register}, r0, ${value}\n`
     private assignVar(left: string, right: string) {
         const register = this.registerPool.pop();
 
-        const text = `% assigning ${right} to ${left}
+        let text =  this.clearRegister(register ?? "r1");
+
+        text += `% assigning ${right} to ${left}
 ${this.indent}lw ${register}, ${right}(r0)
 ${this.indent}sw ${left}(r0), ${register}
 ${this.indent}addi ${register}, r0, 0\n`
@@ -377,10 +433,44 @@ ${this.indent}addi ${register}, r0, 0\n`
         return text;
     }
 
+    private relation(left: string, right: string, tempvar: string, operator: TokenType): string {
+        const register1 = this.registerPool.pop();
+        const register2 = this.registerPool.pop();
+        const register3 = this.registerPool.pop();
+
+        let text = this.clearRegister(register1 ?? "r1");
+        text += this.clearRegister(register2 ?? "r1");
+        text += this.clearRegister(register3 ?? "r1");
+
+        let operation = "ceq";
+        if(operator === TokenType.EQ){
+            operation = "ceq";
+        }else {
+            operation = "ceq";
+        }
+
+        text += `%relation ${left} ${operator} ${right}
+${this.indent}lw ${register1}, ${left}(r0)\n`
+text += `${this.indent}lw ${register2}, ${right}(r0)\n`
+text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
+text += `${this.indent}sw ${tempvar}(r0), ${register3}\n`
+        
+                this.registerPool.push(register3 ?? "");
+                this.registerPool.push(register2 ?? "");
+                this.registerPool.push(register1 ?? "");
+        
+                return text;
+
+    }
+
     private multiplication(left: string, right: string, tempvar: string, operator: TokenType): string {
         const register1 = this.registerPool.pop();
         const register2 = this.registerPool.pop();
         const register3 = this.registerPool.pop();
+
+        let text = this.clearRegister(register1 ?? "r1");
+        text += this.clearRegister(register2 ?? "r1");
+        text += this.clearRegister(register3 ?? "r1");
 
         let operation = "mul";
         if(operator === TokenType.DIV){
@@ -389,7 +479,7 @@ ${this.indent}addi ${register}, r0, 0\n`
             operation = "mul";
         }
 
-        let text = `%multiplying ${left} with ${right}
+        text += `%multiplying ${left} with ${right}
 ${this.indent}lw ${register1}, ${left}(r0)\n`
         text += `${this.indent}lw ${register2}, ${right}(r0)\n`
         text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
@@ -408,6 +498,11 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
         const register2 = this.registerPool.pop();
         const register3 = this.registerPool.pop();
 
+        let text = this.clearRegister(register1 ?? "r1");
+
+        text += this.clearRegister(register2 ?? "r1");
+        text += this.clearRegister(register3 ?? "r1");
+
         let operation = "add";
         if(operator === TokenType.MINUS){
             operation = "sub";
@@ -415,7 +510,7 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
             operation = "add";
         }
 
-        let text = `%adding ${left} with ${right}
+        text += `%adding ${left} with ${right}
 ${this.indent}lw ${register1}, ${left}(r0)\n`
         text += `${this.indent}lw ${register2}, ${right}(r0)\n`
         text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
@@ -443,12 +538,21 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
         return 4;
     }
 
+    private clearRegister(register: string): string{
+        return `${this.indent}sub ${register}, ${register}, ${register}\n`;
+    }
+
     private generateTempVar(): string {
         return "temp" + this.tempCount++;
     }
 
     private generateLitVar(): string {
         return "lit" + this.litCount++;
+    }
+
+    private generateIfStatementlabels(): string[] {
+        const count = this.ifStatementCount++;
+        return ["else" + count, "endif" + count];
     }
 
     public getOutput(): string {
