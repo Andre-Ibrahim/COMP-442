@@ -233,8 +233,8 @@
                addi r1, r0, 90
                sw lit26(r0), r1
                 addi r1, r0, 0
-% assigning lit26 to arr
-               lw r1, lit26(r0)
+% assigning temp101 to arr
+               lw r1, temp101(r0)
                sw arr(r0), r1
                addi r1, r0, 0
 %storing 7 into lit27

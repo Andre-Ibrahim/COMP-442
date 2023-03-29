@@ -34,8 +34,8 @@
                addi r1, r0, 1.0
                sw lit2(r0), r1
                 addi r1, r0, 0
-% assigning lit2 to x
-               lw r1, lit2(r0)
+% assigning x to x
+               lw r1, x(r0)
                sw x(r0), r1
                addi r1, r0, 0
 % assigning x to x

@@ -86,7 +86,7 @@ buf            res 20
                % space for variable lit1
 lit1           res 8
                % space for variable temp3
-temp3          res 0
+temp3          res 4
                % space for variable n
 n              res 4
                % space for variable n

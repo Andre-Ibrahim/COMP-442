@@ -58,40 +58,40 @@
                addi r1, r0, 5
                sw lit5(r0), r1
                 addi r1, r0, 0
-% assigning lit5 to x
-               lw r1, lit5(r0)
+% assigning x to x
+               lw r1, x(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 5 into lit6
                addi r1, r0, 5
                sw lit6(r0), r1
                 addi r1, r0, 0
-% assigning lit6 to x
-               lw r1, lit6(r0)
+% assigning x to x
+               lw r1, x(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 5 into lit7
                addi r1, r0, 5
                sw lit7(r0), r1
                 addi r1, r0, 0
-% assigning lit7 to x
-               lw r1, lit7(r0)
+% assigning x to x
+               lw r1, x(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 5 into lit8
                addi r1, r0, 5
                sw lit8(r0), r1
                 addi r1, r0, 0
-% assigning lit8 to x
-               lw r1, lit8(r0)
+% assigning x to x
+               lw r1, x(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 5 into lit9
                addi r1, r0, 5
                sw lit9(r0), r1
                 addi r1, r0, 0
-% assigning lit9 to x
-               lw r1, lit9(r0)
+% assigning x to x
+               lw r1, x(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 5 into lit10
@@ -182,8 +182,8 @@
                addi r1, r0, 9
                sw lit18(r0), r1
                 addi r1, r0, 0
-% assigning lit18 to x
-               lw r1, lit18(r0)
+% assigning temp30 to x
+               lw r1, temp30(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 6 into lit19
@@ -204,8 +204,8 @@
                lw r2, temp33(r0)
                mul r3, r1, r2
                sw temp34(r0), r3
-% assigning i to x
-               lw r1, i(r0)
+% assigning temp34 to x
+               lw r1, temp34(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 10 into lit21
@@ -257,8 +257,8 @@
                lw r1, temp45(r0)
                sw x(r0), r1
                addi r1, r0, 0
-% assigning x to x
-               lw r1, x(r0)
+% assigning temp80 to x
+               lw r1, temp80(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 19 into lit25
@@ -344,8 +344,8 @@
                addi r1, r0, 8
                sw lit31(r0), r1
                 addi r1, r0, 0
-% assigning i to x
-               lw r1, i(r0)
+% assigning temp102 to x
+               lw r1, temp102(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 7 into lit32
@@ -361,8 +361,8 @@
                lw r2, i(r0)
                mul r3, r1, r2
                sw temp63(r0), r3
-% assigning temp63 to x
-               lw r1, temp63(r0)
+% assigning lit32 to x
+               lw r1, lit32(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 7 into lit34
@@ -378,8 +378,8 @@
                lw r2, i(r0)
                add r3, r1, r2
                sw temp67(r0), r3
-% assigning temp67 to x
-               lw r1, temp67(r0)
+% assigning lit34 to x
+               lw r1, lit34(r0)
                sw x(r0), r1
                addi r1, r0, 0
 %storing 9 into lit36
@@ -503,7 +503,7 @@ lit24          res 4
                % space for variable temp43
 temp43         res 4
                % space for variable temp45
-temp45         res 0
+temp45         res 4
                % space for variable lit25
 lit25          res 4
                % space for variable temp49
@@ -515,7 +515,7 @@ temp51         res 4
                % space for variable lit27
 lit27          res 4
                % space for variable temp52
-temp52         res 0
+temp52         res 4
                % space for variable temp54
 temp54         res 4
                % space for variable lit28

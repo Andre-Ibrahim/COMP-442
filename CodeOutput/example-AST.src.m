@@ -89,7 +89,7 @@ lit5           res 4
                % space for variable temp7
 temp7          res 4
                % space for variable temp8
-temp8          res 0
+temp8          res 4
                % space for variable buf
 buf            res 20
 

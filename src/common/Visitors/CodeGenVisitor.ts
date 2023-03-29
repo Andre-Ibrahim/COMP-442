@@ -44,7 +44,6 @@ export class CodeGenVisitor extends Visitor {
     data: string = "";
     litCount: number = 1;
     tempCount: number = 1;
-    expressionVar: string = "";
     indent: string = "".slice(0, 15).padEnd(15);
     registerPool = [...Array(12).keys()].map((_, i) => `r${i+1}`).reverse();
 
@@ -103,9 +102,15 @@ export class CodeGenVisitor extends Visitor {
         }
         if (node instanceof NodeEXPR) {
             this.traverseTree(node);
+
+            if(node.children[0] instanceof NodeARITHEXPR){
+                node.tempvar = node.children[0].tempvar;
+                console.log(node.tempvar);
+            }
         }
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
+
             node.tempvar = this.generateTempVar();
             // handle add
             if(node.children.length === 1){
@@ -132,7 +137,8 @@ export class CodeGenVisitor extends Visitor {
                 const addOp = node.children[1].value;
                 const ArithExpressionTempVar = node.tempvar;
                 this.data += this.reserveBytes(ArithExpressionTempVar, this.getLitSize(node.type));
-                this.expressionVar = ArithExpressionTempVar;
+                
+
                 this.code += this.addition(termTempVar, innerArithExprTempVar, ArithExpressionTempVar, addOp?.type ?? TokenType.MULT);
             }
         }
@@ -146,6 +152,7 @@ export class CodeGenVisitor extends Visitor {
                 if(factor instanceof NodeFACTOR){
                     node.tempvar = factor.tempvar;
                 }
+
             }else if(node.children.length === 3){
 
                 // setting the temp var
@@ -158,14 +165,10 @@ export class CodeGenVisitor extends Visitor {
 
                 if(factor instanceof NodeFACTOR){
                     factorTempVar = factor.tempvar;
-                    console.log("factorTemp", factorTempVar);
                 }
 
                 if(innerTerm instanceof NodeTERM){
                     innerTermTempVar = innerTerm.tempvar;
-
-
-                    console.log("innerTerm", innerTermTempVar);
 
                     // to be removed
                     if(innerTermTempVar === ""){
@@ -178,7 +181,6 @@ export class CodeGenVisitor extends Visitor {
                 const multOp = node.children[1].value;
                 const termTempVar = node.tempvar;
                 this.data += this.reserveBytes(termTempVar, this.getLitSize(node.type));
-                this.expressionVar = termTempVar;
                 this.code += this.multiplication(factorTempVar, innerTermTempVar, termTempVar, multOp?.type ?? TokenType.MULT);
             }
 
@@ -190,16 +192,14 @@ export class CodeGenVisitor extends Visitor {
             if(node.children[0].value?.type === TokenType.INTNUM || node.children[0].value?.type === TokenType.FLOATNUM){
                 node.tempvar = this.generateLitVar();
 
-                this.expressionVar = node.tempvar;
-
                 if(node.parentNode instanceof NodeTERM){
                     //node.parentNode.tempvar = exprVar;
                     node.parentNode.type = node.children[0].value?.type;
                 }
 
-                this.data += this.reserveBytes(this.expressionVar, this.getLitSize(node.children[0].value?.type ));
+                this.data += this.reserveBytes(node.tempvar, this.getLitSize(node.children[0].value?.type ));
 
-                this.code += this.storeVar(this.expressionVar, node.children[0].value.lexeme);
+                this.code += this.storeVar(node.tempvar, node.children[0].value.lexeme);
 
             }else if(node.children[0] instanceof NodeARITHEXPR || node.children[0] instanceof NodeEXPR){
                 node.tempvar = node.children[0].tempvar;
@@ -214,12 +214,6 @@ export class CodeGenVisitor extends Visitor {
         }
         if (node instanceof NodeFACTORCALLORVAR) {
             this.traverseTree(node);
-
-            if(node.children[0] instanceof NodeVARIABLE){
-                this.expressionVar = node.children[0].children[0].value?.lexeme?? "";
-
-
-            }
         }
         if (node instanceof NodeFUNCTIONCALL) {
             this.traverseTree(node);
@@ -232,8 +226,14 @@ export class CodeGenVisitor extends Visitor {
             this.traverseTree(node);
 
 
-            this.code += `${this.indent}% processing: write(${this.expressionVar})
-${this.indent}lw r1, ${this.expressionVar}(r0)
+            let expressionVar = "error";
+
+            if(node.children[0] instanceof NodeEXPR){
+                expressionVar = node.children[0].tempvar;
+            }
+
+            this.code += `${this.indent}% processing: write(${expressionVar})
+${this.indent}lw r1, ${expressionVar}(r0)
 ${this.indent}% put value on stack
 ${this.indent}sw -8(r14), r1
 ${this.indent}% Link buffer to stack
@@ -268,7 +268,13 @@ ${this.indent}jl r15, putstr
 
             const variable = node.children[0].children[0];
             if(variable?.value){
-                this.code += this.assignVar(variable.value.lexeme, this.expressionVar);
+                let tempvar = "error";
+
+                if(node.children[2] instanceof NodeEXPR){
+                    tempvar = node.children[2].tempvar;
+                }
+
+                this.code += this.assignVar(variable.value.lexeme,tempvar);
             }
         }
         if (node instanceof NodeFUNCTIONCALLSTAT) {
@@ -434,7 +440,7 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
             return 8;
         }
 
-        return 0;
+        return 4;
     }
 
     private generateTempVar(): string {

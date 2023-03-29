@@ -30,8 +30,8 @@
                addi r1, r0, 77
                sw lit7(r0), r1
                 addi r1, r0, 0
-% assigning lit7 to i
-               lw r1, lit7(r0)
+% assigning funcCall to i
+               lw r1, funcCall(r0)
                sw i(r0), r1
                addi r1, r0, 0
 %storing 1 into lit8
@@ -72,8 +72,8 @@ lit7           res 4
                % space for variable lit8
 lit8           res 4
                % space for variable temp35
-temp35         res 0
+temp35         res 4
                % space for variable lit9
 lit9           res 4
                % space for variable temp39
-temp39         res 0
+temp39         res 4
