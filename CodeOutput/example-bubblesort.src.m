@@ -33,6 +33,8 @@
                lw r1, lit3(r0)
                sw temp(r0), r1
                addi r1, r0, 0
+%starting while loop
+gowhile1
                sub r1, r1, r1
 %storing 1 into lit4
                addi r1, r0, 1
@@ -50,10 +52,14 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation temp1 lt i
-               lw r1, temp1(r0)
-               lw r2, i(r0)
-               ceq r3, r1, r2
+               lw r1, i(r0)
+               lw r2, temp1(r0)
+               clt r3, r1, r2
                sw temp2(r0), r3
+               lw r1, temp2(r0)
+               bz r1, endwhile1
+%starting while loop
+gowhile2
                sub r1, r1, r1
 %storing 1 into lit5
                addi r1, r0, 1
@@ -79,10 +85,12 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation temp4 lt j
-               lw r1, temp4(r0)
-               lw r2, j(r0)
-               ceq r3, r1, r2
+               lw r1, j(r0)
+               lw r2, temp4(r0)
+               clt r3, r1, r2
                sw temp5(r0), r3
+               lw r1, temp5(r0)
+               bz r1, endwhile2
                sub r1, r1, r1
 %storing 1 into lit6
                addi r1, r0, 1
@@ -102,112 +110,120 @@
 %relation arr gt arr
                lw r1, arr(r0)
                lw r2, arr(r0)
-               ceq r3, r1, r2
+               cgt r3, r1, r2
                sw temp7(r0), r3
 % starting if statment
                 lw r1, temp7(r0)
                 bz r1, else1
-               sub r2, r2, r2
+               sub r1, r1, r1
 % assigning arr to temp
-               lw r2, arr(r0)
-               sw temp(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, arr(r0)
+               sw temp(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 1 into lit7
-               addi r2, r0, 1
-               sw lit7(r0), r2
-                addi r2, r0, 0
+               addi r1, r0, 1
+               sw lit7(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-               sub r4, r4, r4
 %adding j with lit7
-               lw r2, j(r0)
-               lw r3, lit7(r0)
-               add r4, r2, r3
+               lw r1, j(r0)
+               lw r2, lit7(r0)
+               add r3, r1, r2
                sw temp8(r0), r3
-               sub r2, r2, r2
+               sub r1, r1, r1
 % assigning arr to arr
-               lw r2, arr(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, arr(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 1 into lit8
-               addi r2, r0, 1
-               sw lit8(r0), r2
-                addi r2, r0, 0
+               addi r1, r0, 1
+               sw lit8(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-               sub r4, r4, r4
 %adding j with lit8
-               lw r2, j(r0)
-               lw r3, lit8(r0)
-               add r4, r2, r3
+               lw r1, j(r0)
+               lw r2, lit8(r0)
+               add r3, r1, r2
                sw temp9(r0), r3
-               sub r2, r2, r2
+               sub r1, r1, r1
 % assigning temp to arr
-               lw r2, temp(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
+               lw r1, temp(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
                j endif1
-else1endif1               sub r2, r2, r2
+else1endif1               sub r1, r1, r1
 %storing 1 into lit9
-               addi r2, r0, 1
-               sw lit9(r0), r2
-                addi r2, r0, 0
+               addi r1, r0, 1
+               sw lit9(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-               sub r4, r4, r4
 %adding j with lit9
-               lw r2, j(r0)
-               lw r3, lit9(r0)
-               add r4, r2, r3
+               lw r1, j(r0)
+               lw r2, lit9(r0)
+               add r3, r1, r2
                sw temp10(r0), r3
-               sub r2, r2, r2
+               sub r1, r1, r1
 % assigning temp10 to j
-               lw r2, temp10(r0)
-               sw j(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, temp10(r0)
+               sw j(r0), r1
+               addi r1, r0, 0
+j gowhile2
+endwhile2
+               sub r1, r1, r1
 %storing 1 into lit10
-               addi r2, r0, 1
-               sw lit10(r0), r2
-                addi r2, r0, 0
+               addi r1, r0, 1
+               sw lit10(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-               sub r4, r4, r4
 %adding i with lit10
-               lw r2, i(r0)
-               lw r3, lit10(r0)
-               add r4, r2, r3
+               lw r1, i(r0)
+               lw r2, lit10(r0)
+               add r3, r1, r2
                sw temp11(r0), r3
-               sub r2, r2, r2
+               sub r1, r1, r1
 % assigning temp11 to i
-               lw r2, temp11(r0)
-               sw i(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, temp11(r0)
+               sw i(r0), r1
+               addi r1, r0, 0
+j gowhile1
+endwhile1
+               sub r1, r1, r1
 % assigning size to n
-               lw r2, size(r0)
-               sw n(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, size(r0)
+               sw n(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 0 into lit11
-               addi r2, r0, 0
-               sw lit11(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 0
+               sw lit11(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit11 to i
-               lw r2, lit11(r0)
-               sw i(r0), r2
-               addi r2, r0, 0
+               lw r1, lit11(r0)
+               sw i(r0), r1
+               addi r1, r0, 0
+%starting while loop
+gowhile3
+               sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-               sub r4, r4, r4
 %relation n lt i
+               lw r1, i(r0)
                lw r2, n(r0)
-               lw r3, i(r0)
-               ceq r4, r2, r3
-               sw temp12(r0), r4
+               clt r3, r1, r2
+               sw temp12(r0), r3
+               lw r1, temp12(r0)
+               bz r1, endwhile3
                % processing: write(arr)
                lw r1, arr(r0)
                % put value on stack
@@ -220,146 +236,148 @@ else1endif1               sub r2, r2, r2
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
-               sub r2, r2, r2
+               sub r1, r1, r1
 %storing 1 into lit12
-               addi r2, r0, 1
-               sw lit12(r0), r2
-                addi r2, r0, 0
+               addi r1, r0, 1
+               sw lit12(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-               sub r4, r4, r4
 %adding i with lit12
-               lw r2, i(r0)
-               lw r3, lit12(r0)
-               add r4, r2, r3
+               lw r1, i(r0)
+               lw r2, lit12(r0)
+               add r3, r1, r2
                sw temp13(r0), r3
-               sub r2, r2, r2
+               sub r1, r1, r1
 % assigning temp13 to i
-               lw r2, temp13(r0)
-               sw i(r0), r2
-               addi r2, r0, 0
+               lw r1, temp13(r0)
+               sw i(r0), r1
+               addi r1, r0, 0
+j gowhile3
+endwhile3
                entry
                addi r14, r0, topaddr
-               sub r2, r2, r2
+               sub r1, r1, r1
 %storing 0 into lit13
-               addi r2, r0, 0
-               sw lit13(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 0
+               sw lit13(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 64 into lit14
-               addi r2, r0, 64
-               sw lit14(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 64
+               sw lit14(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit14 to arr
-               lw r2, lit14(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, lit14(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 1 into lit15
-               addi r2, r0, 1
-               sw lit15(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 1
+               sw lit15(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 34 into lit16
-               addi r2, r0, 34
-               sw lit16(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 34
+               sw lit16(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit16 to arr
-               lw r2, lit16(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, lit16(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 2 into lit17
-               addi r2, r0, 2
-               sw lit17(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 2
+               sw lit17(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 25 into lit18
-               addi r2, r0, 25
-               sw lit18(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 25
+               sw lit18(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit18 to arr
-               lw r2, lit18(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, lit18(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 3 into lit19
-               addi r2, r0, 3
-               sw lit19(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 3
+               sw lit19(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 12 into lit20
-               addi r2, r0, 12
-               sw lit20(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 12
+               sw lit20(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit20 to arr
-               lw r2, lit20(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, lit20(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 4 into lit21
-               addi r2, r0, 4
-               sw lit21(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 4
+               sw lit21(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 22 into lit22
-               addi r2, r0, 22
-               sw lit22(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 22
+               sw lit22(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit22 to arr
-               lw r2, lit22(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, lit22(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 5 into lit23
-               addi r2, r0, 5
-               sw lit23(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 5
+               sw lit23(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 11 into lit24
-               addi r2, r0, 11
-               sw lit24(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 11
+               sw lit24(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning lit24 to arr
-               lw r2, lit24(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, lit24(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 6 into lit25
-               addi r2, r0, 6
-               sw lit25(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 6
+               sw lit25(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 90 into lit26
-               addi r2, r0, 90
-               sw lit26(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 90
+               sw lit26(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 % assigning temp101 to arr
-               lw r2, temp101(r0)
-               sw arr(r0), r2
-               addi r2, r0, 0
-               sub r2, r2, r2
+               lw r1, temp101(r0)
+               sw arr(r0), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
 %storing 7 into lit27
-               addi r2, r0, 7
-               sw lit27(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 7
+               sw lit27(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 7 into lit28
-               addi r2, r0, 7
-               sw lit28(r0), r2
-                addi r2, r0, 0
-               sub r2, r2, r2
+               addi r1, r0, 7
+               sw lit28(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
 %storing 7 into lit29
-               addi r2, r0, 7
-               sw lit29(r0), r2
-                addi r2, r0, 0
+               addi r1, r0, 7
+               sw lit29(r0), r1
+                addi r1, r0, 0
                hlt
 
                % space for variable n

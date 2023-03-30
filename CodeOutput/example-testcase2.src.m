@@ -1,3 +1,8 @@
+               addi r1,r0,buf
+               sw -8(r14),r1
+               jl r15,getstr
+               jl r15,strint    % Convert to integer
+               sw n(r0),r13     % Store n
                % processing: write(n)
                lw r1, n(r0)
                % put value on stack

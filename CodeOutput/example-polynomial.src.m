@@ -108,6 +108,8 @@
                addi r1, r0, 0.0
                sw lit5(r0), r1
                 addi r1, r0, 0
+%starting while loop
+gowhile1
                sub r1, r1, r1
 %storing 10 into lit6
                addi r1, r0, 10
@@ -117,10 +119,12 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation lit6 leq counter
-               lw r1, lit6(r0)
-               lw r2, counter(r0)
-               ceq r3, r1, r2
+               lw r1, counter(r0)
+               lw r2, lit6(r0)
+               cle r3, r1, r2
                sw temp7(r0), r3
+               lw r1, temp7(r0)
+               bz r1, endwhile1
                % processing: write(counter)
                lw r1, counter(r0)
                % put value on stack
@@ -157,6 +161,8 @@
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+j gowhile1
+endwhile1
                hlt
 
                % space for variable x

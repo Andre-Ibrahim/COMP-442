@@ -84,9 +84,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation x gt lit5
-               lw r1, x(r0)
-               lw r2, lit5(r0)
-               ceq r3, r1, r2
+               lw r1, lit5(r0)
+               lw r2, x(r0)
+               cgt r3, r1, r2
                sw temp5(r0), r3
                sub r1, r1, r1
 % assigning temp5 to x
@@ -102,9 +102,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation x lt lit6
-               lw r1, x(r0)
-               lw r2, lit6(r0)
-               ceq r3, r1, r2
+               lw r1, lit6(r0)
+               lw r2, x(r0)
+               clt r3, r1, r2
                sw temp6(r0), r3
                sub r1, r1, r1
 % assigning temp6 to x
@@ -120,9 +120,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation x geq lit7
-               lw r1, x(r0)
-               lw r2, lit7(r0)
-               ceq r3, r1, r2
+               lw r1, lit7(r0)
+               lw r2, x(r0)
+               cge r3, r1, r2
                sw temp7(r0), r3
                sub r1, r1, r1
 % assigning temp7 to x
@@ -138,9 +138,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation x leq lit8
-               lw r1, x(r0)
-               lw r2, lit8(r0)
-               ceq r3, r1, r2
+               lw r1, lit8(r0)
+               lw r2, x(r0)
+               cle r3, r1, r2
                sw temp8(r0), r3
                sub r1, r1, r1
 % assigning temp8 to x
@@ -156,8 +156,8 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation x noteq lit9
-               lw r1, x(r0)
-               lw r2, lit9(r0)
+               lw r1, lit9(r0)
+               lw r2, x(r0)
                ceq r3, r1, r2
                sw temp9(r0), r3
                sub r1, r1, r1
@@ -293,9 +293,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation temp17 gt lit18
-               lw r1, temp17(r0)
-               lw r2, lit18(r0)
-               ceq r3, r1, r2
+               lw r1, lit18(r0)
+               lw r2, temp17(r0)
+               cgt r3, r1, r2
                sw temp18(r0), r3
                sub r1, r1, r1
 % assigning temp18 to x
@@ -332,9 +332,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation temp20 gt i
-               lw r1, temp20(r0)
-               lw r2, i(r0)
-               ceq r3, r1, r2
+               lw r1, i(r0)
+               lw r2, temp20(r0)
+               cgt r3, r1, r2
                sw temp21(r0), r3
                sub r1, r1, r1
 % assigning temp21 to x
@@ -536,9 +536,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation temp102 gt i
-               lw r1, temp102(r0)
-               lw r2, i(r0)
-               ceq r3, r1, r2
+               lw r1, i(r0)
+               lw r2, temp102(r0)
+               cgt r3, r1, r2
                sw temp34(r0), r3
                sub r1, r1, r1
 % assigning temp34 to x
@@ -567,9 +567,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation lit32 gt temp35
-               lw r1, lit32(r0)
-               lw r2, temp35(r0)
-               ceq r3, r1, r2
+               lw r1, temp35(r0)
+               lw r2, lit32(r0)
+               cgt r3, r1, r2
                sw temp36(r0), r3
                sub r1, r1, r1
 % assigning temp36 to x
@@ -598,9 +598,9 @@
                sub r2, r2, r2
                sub r3, r3, r3
 %relation lit34 gt temp37
-               lw r1, lit34(r0)
-               lw r2, temp37(r0)
-               ceq r3, r1, r2
+               lw r1, temp37(r0)
+               lw r2, lit34(r0)
+               cgt r3, r1, r2
                sw temp38(r0), r3
                sub r1, r1, r1
 % assigning temp38 to x

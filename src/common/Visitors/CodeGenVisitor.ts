@@ -37,6 +37,7 @@ import { Node } from "../AST/Node";
 import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
 import TokenType from "../../lexical_analysis/TokenType";
 import { CountQueuingStrategy } from "stream/web";
+import { tokenToString } from "../stringHelpers";
 
 export class CodeGenVisitor extends Visitor {
 
@@ -45,6 +46,7 @@ export class CodeGenVisitor extends Visitor {
     litCount: number = 1;
     tempCount: number = 1;
     ifStatementCount: number = 1;
+    whileStatementCount: number = 1;
     indent: string = "".slice(0, 15).padEnd(15);
     registerPool = [...Array(12).keys()].map((_, i) => `r${i+1}`).reverse();
 
@@ -276,6 +278,24 @@ ${this.indent}jl r15, putstr
         }
         if (node instanceof NodeREADSTAT) {
             this.traverseTree(node);
+
+            const variable = node.children[0];
+            let variableName = "";
+
+            if(variable instanceof NodeVARIABLE){
+                variableName = variable.children[0].value?.lexeme ?? "";
+            }
+
+            const register = this.registerPool.pop();
+
+            this.code += `${this.indent}addi ${register},r0,buf
+${this.indent}sw -8(r14),${register}
+${this.indent}jl r15,getstr
+${this.indent}jl r15,strint    % Convert to integer
+${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
+
+
+            this.registerPool.push(register ?? "r1");
         }
         if (node instanceof NodeSTATBLOCK) {
             this.traverseTree(node);
@@ -316,7 +336,6 @@ ${this.indent}jl r15, putstr
 
             if(relationExpr instanceof NodeRELEXPR || relationExpr instanceof NodeEXPR){
                 expressionVar = relationExpr.tempvar;
-                console.log("expressionV", expressionVar);
             }
 
             const register = this.registerPool.pop();
@@ -326,6 +345,8 @@ ${this.indent}jl r15, putstr
             this.code += `% starting if statment\n`;
             this.code += `${this.indent} lw ${register}, ${expressionVar}(r0)\n`;
             this.code += `${this.indent} bz ${register}, ${elseTag}\n`;
+
+            this.registerPool.push(register ?? "r1");
 
             // stat block 1
             node.children[1]?.accept(this);
@@ -341,7 +362,40 @@ ${this.indent}jl r15, putstr
 
         }
         if (node instanceof NodeWHILESTAT) {
-            this.traverseTree(node);
+
+            const [goWhileTag, endWhileTag] = this.generateWhileStatementLabels();
+
+            this.code += `%starting while loop\n`
+
+            this.code += `${goWhileTag}\n`;
+
+            // visit expression node first to get value
+            node.children[0]?.accept(this);
+
+            // relation expression
+            const relationExpr = node.children[0];
+            let expressionVar = "";
+            
+            if(relationExpr instanceof NodeRELEXPR || relationExpr instanceof NodeEXPR){
+                expressionVar = relationExpr.tempvar;
+            }
+            
+            const register = this.registerPool.pop();
+
+            this.code += `${this.indent}lw ${register}, ${expressionVar}(r0)\n`;
+            this.code += `${this.indent}bz ${register}, ${endWhileTag}\n`;
+
+            this.registerPool.push(register ?? "r1");
+
+            // visit stateblock
+            node.children[1]?.accept(this);
+
+            this.code += `j ${goWhileTag}\n`;
+
+            this.code += `${endWhileTag}\n`;
+
+
+
         }
         if (node instanceof NodeFUNCDEF) {
             const isMain = node.children[0].value?.lexeme === "main";
@@ -445,13 +499,22 @@ ${this.indent}addi ${register}, r0, 0\n`
         let operation = "ceq";
         if(operator === TokenType.EQ){
             operation = "ceq";
-        }else {
+        }else if(operator === TokenType.LEQ){
+            operation = "cle";
+        }else if(operator === TokenType.GT){
+            operation = "cgt";
+        }else if(operator === TokenType.LT){
+            operation = "clt";
+        }else if(operator === TokenType.GEQ){
+            operation = "cge";
+        }
+        else {
             operation = "ceq";
         }
 
         text += `%relation ${left} ${operator} ${right}
-${this.indent}lw ${register1}, ${left}(r0)\n`
-text += `${this.indent}lw ${register2}, ${right}(r0)\n`
+${this.indent}lw ${register1}, ${right}(r0)\n`
+text += `${this.indent}lw ${register2}, ${left}(r0)\n`
 text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
 text += `${this.indent}sw ${tempvar}(r0), ${register3}\n`
         
@@ -555,7 +618,14 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
         return ["else" + count, "endif" + count];
     }
 
+    private generateWhileStatementLabels(): string[] {
+        const count = this.whileStatementCount++;
+
+        return ["gowhile" + count, "endwhile" + count];
+    }
+
     public getOutput(): string {
         return this.code + "\n" + this.data;
     }
+
 }
