@@ -15,6 +15,9 @@
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
                sub r1, r1, r1
 %storing 1.111 into lit1
                addi r1, r0, 1.111

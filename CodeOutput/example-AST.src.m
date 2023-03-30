@@ -90,6 +90,9 @@
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
                j endif1
 else1               sub r1, r1, r1
 %storing 1 into lit6
@@ -116,6 +119,9 @@ else1               sub r1, r1, r1
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
 endif1               sub r1, r1, r1
 %storing 0 into lit7
                addi r1, r0, 0
@@ -155,6 +161,9 @@ gowhile1
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
                sub r1, r1, r1
 %storing 1 into lit9
                addi r1, r0, 1

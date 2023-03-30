@@ -137,6 +137,9 @@ gowhile1
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
                % processing: write(f1)
                lw r1, f1(r0)
                % put value on stack
@@ -149,6 +152,9 @@ gowhile1
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
                % processing: write(f2)
                lw r1, f2(r0)
                % put value on stack
@@ -161,6 +167,9 @@ gowhile1
                sw -8 (r14), r13
                % output to console
                jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
 j gowhile1
 endwhile1
                hlt

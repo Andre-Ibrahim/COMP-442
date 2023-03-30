@@ -269,6 +269,9 @@ ${this.indent}jl r15, intstr
 ${this.indent}sw -8 (r14), r13
 ${this.indent}% output to console
 ${this.indent}jl r15, putstr
+${this.indent}sub r6, r6, r6
+${this.indent}addi r6, r6, 10
+${this.indent}putc r6
 `;
 
             const writeBufferSpace = this.reserveBytes("buf", 20);
