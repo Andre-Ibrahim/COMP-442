@@ -33,16 +33,20 @@ variableIdNest2
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                jl r11, x1
-               sub r1, r1, r1
-% assigning x1return to variableIdNest2x
                lw r1, x1return(r0)
+               sw temp1(r0), r1
+               sub r1, r1, r1
+% assigning temp1 to variableIdNest2x
+               lw r1, temp1(r0)
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                jl r11, x1
                jl r11, x0
-               sub r1, r1, r1
-% assigning x1return to variableIdNest2x
                lw r1, x1return(r0)
+               sw temp2(r0), r1
+               sub r1, r1, r1
+% assigning temp2 to variableIdNest2x
+               lw r1, temp2(r0)
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                jl r11, x1
@@ -52,9 +56,11 @@ variableIdNest2
                sw lit2(r0), r1
                 addi r1, r0, 0
                jl r11, x1
-               sub r1, r1, r1
-% assigning x1return to variableIdNest2x
                lw r1, x1return(r0)
+               sw temp3(r0), r1
+               sub r1, r1, r1
+% assigning temp3 to variableIdNest2x
+               lw r1, temp3(r0)
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
@@ -79,7 +85,7 @@ variableIdNest2
                lw r1, lit3(r0)
                lw r2, lit4(r0)
                mul r3, r1, r2
-               sw temp1(r0), r3
+               sw temp4(r0), r3
                sub r1, r1, r1
 % assigning variableIdNest2x to variableIdNest2x
                lw r1, variableIdNest2x(r0)
@@ -111,15 +117,19 @@ variableIdNest2
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                jl r11, x1
-               sub r1, r1, r1
-% assigning x1return to variableIdNest2x
                lw r1, x1return(r0)
+               sw temp5(r0), r1
+               sub r1, r1, r1
+% assigning temp5 to variableIdNest2x
+               lw r1, temp5(r0)
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                jl r11, x1
-               sub r1, r1, r1
-% assigning x1return to variableIdNest2x
                lw r1, x1return(r0)
+               sw temp6(r0), r1
+               sub r1, r1, r1
+% assigning temp6 to variableIdNest2x
+               lw r1, temp6(r0)
                sw variableIdNest2x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
@@ -139,7 +149,7 @@ variableIdNest2
                lw r1, lit5(r0)
                lw r2, lit6(r0)
                div r3, r1, r2
-               sw temp2(r0), r3
+               sw temp7(r0), r3
                sub r1, r1, r1
 % assigning variableIdNest2x to variableIdNest2x
                lw r1, variableIdNest2x(r0)
@@ -156,17 +166,27 @@ variableIdNest2res 4
 variableIdNest2res 4
                % space for variable lit1
 lit1           res 8
+               % space for variable temp1
+temp1          res 4
+               % space for variable temp2
+temp2          res 4
                % space for variable lit2
 lit2           res 8
+               % space for variable temp3
+temp3          res 4
                % space for variable lit3
 lit3           res 4
                % space for variable lit4
 lit4           res 4
-               % space for variable temp1
-temp1          res 4
+               % space for variable temp4
+temp4          res 4
+               % space for variable temp5
+temp5          res 4
+               % space for variable temp6
+temp6          res 4
                % space for variable lit5
 lit5           res 4
                % space for variable lit6
 lit6           res 4
-               % space for variable temp2
-temp2          res 4
+               % space for variable temp7
+temp7          res 4

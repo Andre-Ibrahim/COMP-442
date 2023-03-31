@@ -29,7 +29,7 @@ function func2(a: integer) => void
 function main() => void 
 {
   localvar x: integer;
-  x = func5(1, 9) + func(5, 12);
+  x = func(1, 9) + func(5, 12);
 
   write(x);
 

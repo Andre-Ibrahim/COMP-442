@@ -161,10 +161,12 @@ func21
                sw lit5(r0), r1
                 addi r1, r0, 0
                lw r1, lit4(r0)
-               sw func52a(r0), r1
+               sw func2a(r0), r1
                lw r1, lit5(r0)
-               sw func52b(r0), r1
-               jl r11, func52
+               sw func2b(r0), r1
+               jl r11, func2
+               lw r1, func2return(r0)
+               sw temp5(r0), r1
                sub r1, r1, r1
 %storing 5 into lit6
                addi r1, r0, 5
@@ -180,17 +182,19 @@ func21
                lw r1, lit7(r0)
                sw func2b(r0), r1
                jl r11, func2
+               lw r1, func2return(r0)
+               sw temp6(r0), r1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding func52return with func2return
-               lw r1, func52return(r0)
-               lw r2, func2return(r0)
-               add r3, r1, r2
-               sw temp5(r0), r3
-               sub r1, r1, r1
-% assigning temp5 to main0x
+%adding temp5 with temp6
                lw r1, temp5(r0)
+               lw r2, temp6(r0)
+               add r3, r1, r2
+               sw temp7(r0), r3
+               sub r1, r1, r1
+% assigning temp7 to main0x
+               lw r1, temp7(r0)
                sw main0x(r0), r1
                addi r1, r0, 0
                % processing: write(main0x)
@@ -261,11 +265,15 @@ main0x         res 4
 lit4           res 4
                % space for variable lit5
 lit5           res 4
+               % space for variable temp5
+temp5          res 4
                % space for variable lit6
 lit6           res 4
                % space for variable lit7
 lit7           res 4
-               % space for variable temp5
-temp5          res 4
+               % space for variable temp6
+temp6          res 4
+               % space for variable temp7
+temp7          res 4
                % space for variable lit8
 lit8           res 4

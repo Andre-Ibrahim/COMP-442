@@ -257,14 +257,14 @@ export class CodeGenVisitor extends Visitor {
                     let variableName = node.children[0].children[0].children[0].value?.lexeme ?? "";
                     
                     variableName = this.getVariableNameFromTable(node.symbolTable, variableName);
-
-                    if(variableName === "error0l"){
-                        console.log("st: ", node.parentNode?.parentNode?.parentNode?.parentNode);
-                    }
                     
                     node.tempvar = variableName;
                 }else if(node.children[0].children[0] instanceof NodeFUNCTIONCALL){
-                    node.tempvar = this.getFunctionCallMoonName(node.children[0].children[0]) + "return";
+                    node.tempvar = this.generateTempVar();
+                    this.data += this.reserveBytes(node.tempvar, this.getLitSize(node.type));
+                    const returnvar = this.getFunctionCallMoonName(node.children[0].children[0]) + "return";
+                    this.code += `${this.indent}lw r1, ${returnvar}(r0)\n`;
+                    this.code += `${this.indent}sw ${node.tempvar}(r0), r1\n`;
                 }
             }
 

@@ -190,7 +190,7 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | FUNCTIONCALL
-| | | | | | | | | | {"type":"id","lexeme":"func5","position":32}
+| | | | | | | | | | {"type":"id","lexeme":"func","position":32}
 | | | | | | | | | | APARAMS
 | | | | | | | | | | | EXPR
 | | | | | | | | | | | | ARITHEXPR
