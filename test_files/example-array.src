@@ -1,6 +1,7 @@
 function main() => void 
 {
   localvar x: integer[10][20];
+  localvar p: integer[2][3][3];
   localvar y: integer;
   localvar z: integer;
 
@@ -8,10 +9,15 @@ function main() => void
 
   x[5][3] = 7;
 
-  y = x[5][3];
+  p[1][1][1] = 2;
+  p[1][3][3] = 7;
+
+  y = x[5][3] * p[1][1][1];
 
   z = x[1][1];
 
-  write(y * z);
+  
+
+  write((y * z) / p[1][3][3]);
   
 }

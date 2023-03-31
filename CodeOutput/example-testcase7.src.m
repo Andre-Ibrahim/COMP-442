@@ -613,6 +613,18 @@ expressionsTest0
                addi r1, r0, 9
                sw lit36(r0), r1
                 addi r1, r0, 0
+% generating offset
+               sw temp39(r0), r0
+               lw r1, lit36(r0)
+               muli r2, r1, 4
+               muli r3, r2, 1
+               lw r4, temp39(r0)
+               add r1, r4, r3
+               sw temp39(r0), r1
+% getting variable at an offset
+               lw r1, temp39(r0)
+               lw r2, expressionsTest0x(r1)
+               sw temp40(r0), r2
                sub r1, r1, r1
 %storing 9 into lit37
                addi r1, r0, 9
@@ -621,11 +633,11 @@ expressionsTest0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying expressionsTest0x with lit37
-               lw r1, expressionsTest0x(r0)
+%multiplying temp40 with lit37
+               lw r1, temp40(r0)
                lw r2, lit37(r0)
                mul r3, r1, r2
-               sw temp39(r0), r3
+               sw temp41(r0), r3
                sub r1, r1, r1
 %storing 2 into lit38
                addi r1, r0, 2
@@ -638,18 +650,30 @@ expressionsTest0
                lw r1, expressionsTest0i(r0)
                lw r2, lit38(r0)
                mul r3, r1, r2
-               sw temp40(r0), r3
+               sw temp42(r0), r3
+% generating offset
+               sw temp43(r0), r0
+               lw r1, temp42(r0)
+               muli r2, r1, 4
+               muli r3, r2, 1
+               lw r4, temp43(r0)
+               add r1, r4, r3
+               sw temp43(r0), r1
+% getting variable at an offset
+               lw r1, temp43(r0)
+               lw r2, expressionsTest0x(r1)
+               sw temp44(r0), r2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding temp39 with expressionsTest0x
-               lw r1, temp39(r0)
-               lw r2, expressionsTest0x(r0)
-               add r3, r1, r2
-               sw temp41(r0), r3
-               sub r1, r1, r1
-% assigning temp41 to expressionsTest0x
+%adding temp41 with temp44
                lw r1, temp41(r0)
+               lw r2, temp44(r0)
+               add r3, r1, r2
+               sw temp45(r0), r3
+               sub r1, r1, r1
+% assigning temp45 to expressionsTest0x
+               lw r1, temp45(r0)
                sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                jr r11
@@ -807,13 +831,21 @@ temp37         res 4
 temp38         res 4
                % space for variable lit36
 lit36          res 4
-               % space for variable lit37
-lit37          res 4
                % space for variable temp39
 temp39         res 4
-               % space for variable lit38
-lit38          res 4
                % space for variable temp40
 temp40         res 4
+               % space for variable lit37
+lit37          res 4
                % space for variable temp41
 temp41         res 4
+               % space for variable lit38
+lit38          res 4
+               % space for variable temp42
+temp42         res 4
+               % space for variable temp43
+temp43         res 4
+               % space for variable temp44
+temp44         res 4
+               % space for variable temp45
+temp45         res 4

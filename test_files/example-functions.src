@@ -1,0 +1,27 @@
+function func(a: integer, b: integer) => integer
+{
+  localvar l: integer;
+
+  l = 1 + a + b;
+  write(a);
+  write(b);
+  return(l);
+}
+
+function func2(a: integer) => void
+{
+    localvar x: integer;
+    x = 99;
+
+    write(a);
+}
+
+function main() => void 
+{
+  localvar x: integer;
+  x = func(1, 9) + func(5, 12);
+
+  write(x);
+
+  func2(1000);
+}

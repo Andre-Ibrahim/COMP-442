@@ -254,11 +254,19 @@ export class CodeGenVisitor extends Visitor {
                 node.tempvar = node.children[0].tempvar;
             }else if(node.children[0] instanceof NodeFACTORCALLORVAR) {
                 if(node.children[0].children[0] instanceof NodeVARIABLE){
+
+
                     let variableName = node.children[0].children[0].children[0].value?.lexeme ?? "";
-                    
                     variableName = this.getVariableNameFromTable(node.symbolTable, variableName);
-                    
                     node.tempvar = variableName;
+
+                    if(node.children[0].children[0].children[1] instanceof NodeINDICELIST && node.children[0].children[0].children[1].children.length > 0){
+                        const variableEntry = this.getVariableEntryFromTable(node.symbolTable, node.children[0].children[0].children[0].value?.lexeme ?? "");
+                        const dim = variableEntry?.dim ?? [];
+                        node.tempvar = this.getVariableAtOffset(variableName, this.generateOffsetCode(dim , node.children[0].children[0].children[1], 4));
+                    }
+
+
                 }else if(node.children[0].children[0] instanceof NodeFUNCTIONCALL){
                     node.tempvar = this.generateTempVar();
                     this.data += this.reserveBytes(node.tempvar, this.getLitSize(node.type));
@@ -394,8 +402,18 @@ ${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
                     tempvar = node.children[2].tempvar;
                 }
 
-                const variableName = this.getVariableNameFromTable(node.symbolTable, variable.value.lexeme);
-                this.code += this.assignVar(variableName,tempvar);
+                const variableEntry = this.getVariableEntryFromTable(node.symbolTable, variable.value.lexeme);
+                const dim = variableEntry?.dim ?? [];
+
+                if(node.children[0].children[1] instanceof NodeINDICELIST && node.children[0].children[1].children?.length > 0){
+                    const tempvarOffset = this.generateOffsetCode(dim , node.children[0].children[1], 4);
+
+                    const variableName = this.getVariableNameFromTable(node.symbolTable, variable.value.lexeme);
+                    this.code += this.assignVarWithOffset(variableName, tempvar, tempvarOffset);
+                }else{
+                    const variableName = this.getVariableNameFromTable(node.symbolTable, variable.value.lexeme);
+                    this.code += this.assignVar(variableName,tempvar);
+                }
             }
         }
         if (node instanceof NodeFUNCTIONCALLSTAT) {
@@ -430,7 +448,7 @@ ${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
             node.children[1]?.accept(this);
 
             this.code += `${this.indent}j ${endifTag}\n`;
-            this.code += `${elseTag}`;
+            this.code += `${elseTag}\n`;
 
             // statblock 2
             node.children[2]?.accept(this);
@@ -618,6 +636,24 @@ ${this.indent}addi ${register}, r0, 0\n`
         return text;
     }
 
+    private assignVarWithOffset(left: string, right: string, offset: string) {
+        const register = this.registerPool.pop();
+        const register2 = this.registerPool.pop();
+
+        let text =  this.clearRegister(register ?? "r1");
+
+        text += `% assigning ${right} to ${left} with offset ${offset}
+${this.indent}lw ${register2}, ${offset}(r0)
+${this.indent}lw ${register}, ${right}(r0)
+${this.indent}sw ${left}(${register2}), ${register}
+${this.indent}addi ${register}, r0, 0\n`
+
+        this.registerPool.push(register2 ?? "r1");
+        this.registerPool.push(register ?? "r1");
+
+        return text;
+    }
+
     private relation(left: string, right: string, tempvar: string, operator: TokenType): string {
         const register1 = this.registerPool.pop();
         const register2 = this.registerPool.pop();
@@ -677,7 +713,7 @@ text += `${this.indent}sw ${tempvar}(r0), ${register3}\n`
 ${this.indent}lw ${register1}, ${left}(r0)\n`
         text += `${this.indent}lw ${register2}, ${right}(r0)\n`
         text += `${this.indent}${operation} ${register3}, ${register1}, ${register2}\n`
-        text += `${this.indent}sw ${tempvar}(r0), r3\n`
+        text += `${this.indent}sw ${tempvar}(r0), ${register3}\n`
 
         this.registerPool.push(register3 ?? "");
         this.registerPool.push(register2 ?? "");
@@ -699,6 +735,19 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
         const functionName = symbolTable?.name.split(":")[1] ?? "error";
 
         return `${functionName}${paramCounter}${variable}`;
+    }
+
+    private getVariableEntryFromTable(symbolTable: SymbolTable | null, variableName: string): LocalVarEntry | ParameterEntry | null {
+
+        let entry: LocalVarEntry | ParameterEntry | null = null;
+
+        symbolTable?.entries.forEach((e) => {
+            if((e instanceof LocalVarEntry || e instanceof ParameterEntry) && e.id.lexeme === variableName){
+                entry = e;
+            }
+        })
+
+        return entry;
     }
 
     private addition(left: string, right: string, tempvar: string, operator: TokenType): string {
@@ -744,6 +793,64 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
         }
 
         return 4;
+    }
+
+    private generateOffsetCode(dim: number[], nodeIndice: NodeINDICELIST, size: number): string {
+
+        let OffsetTempvar = this.generateTempVar();
+        this.data += this.reserveBytes(OffsetTempvar, 4);
+
+        const dimcopy = [...dim];
+        dimcopy.shift();
+
+        this.code += `% generating offset\n`
+
+        this.code += `${this.indent}sw ${OffsetTempvar}(r0), r0\n`;
+        nodeIndice.children.forEach((child, i) => {
+
+            let exprTempVar = "";
+
+            if(child instanceof NodeARITHEXPR){
+                exprTempVar = child.tempvar;
+            }
+
+            let col = dimcopy[i] ?? 1;
+            const register = this.registerPool.pop();
+            const register2 = this.registerPool.pop();
+            const register3 = this.registerPool.pop();
+            const register4 = this.registerPool.pop();
+            this.code += `${this.indent}lw ${register}, ${exprTempVar}(r0)\n`;
+            this.code += `${this.indent}muli ${register2}, ${register}, ${size}\n`;
+            this.code += `${this.indent}muli ${register3}, ${register2}, ${col}\n`;
+            this.code += `${this.indent}lw ${register4}, ${OffsetTempvar}(r0)\n`;
+            this.code += `${this.indent}add ${register}, ${register4}, ${register3}\n`;
+            this.code += `${this.indent}sw ${OffsetTempvar}(r0), ${register}\n`;
+
+            this.registerPool.push(register4 ?? "r1");
+            this.registerPool.push(register3 ?? "r1");
+            this.registerPool.push(register2 ?? "r1");
+            this.registerPool.push(register ?? "r1");
+            
+        })
+
+        return OffsetTempvar;
+    }
+
+    private getVariableAtOffset(variable: string, offset: string): string {
+        const tempvar = this.generateTempVar();
+        this.data += this.reserveBytes(tempvar, 4);
+        const register = this.registerPool.pop();
+        const register2 = this.registerPool.pop();
+
+        this.code += `% getting variable at an offset\n`;
+        this.code += `${this.indent}lw ${register}, ${offset}(r0)\n`;
+        this.code += `${this.indent}lw ${register2}, ${variable}(${register})\n`;
+        this.code += `${this.indent}sw ${tempvar}(r0), ${register2}\n`;
+
+        this.registerPool.push(register2 ?? "r1");
+        this.registerPool.push(register ?? "r1");
+
+        return tempvar;
     }
 
     private clearRegister(register: string): string{
