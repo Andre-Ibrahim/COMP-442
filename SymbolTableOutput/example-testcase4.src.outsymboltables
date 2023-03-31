@@ -1,7 +1,7 @@
 global 
-function | variableDeclarations | aparams: (x:integer)| type: void| memsize: 280
+function | variableDeclarations | aparams: (x:integer)| type: void| memsize: 284
 	function:variableDeclarations 
-	parameter | id: x | type: integer| memsize: 0
+	parameter | id: x | type: integer| memsize: 4
 	localvar | id: i | type: integer | memsize: 4
 	localvar | id: i | type: float | memsize: 8
 	localvar | id: i | type: id | memsize: 0

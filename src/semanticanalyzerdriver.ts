@@ -13,7 +13,7 @@ const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.
 testCases.push(`example-bubblesort.src`);
 testCases.push(`example-polynomial.src`);
 testCases.push(`example-AST.src`);
-//testCases.push(`example-error.src`);
+testCases.push(`example-error.src`);
 
 testCases.forEach((testCase) => {
     const file = readFileSync(`./test_files/${testCase}`, "utf-8");

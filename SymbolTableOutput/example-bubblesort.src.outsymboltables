@@ -1,8 +1,8 @@
 global 
-function | bubbleSort | aparams: (arr:integer[] size:integer)| type: void| memsize: 288
+function | bubbleSort | aparams: (arr:integer[] size:integer)| type: void| memsize: 296
 	function:bubbleSort 
-	parameter | id: arr | type: integer[]| memsize: 0
-	parameter | id: size | type: integer| memsize: 0
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
 	localvar | id: n | type: integer | memsize: 4
 	localvar | id: i | type: integer | memsize: 4
 	localvar | id: j | type: integer | memsize: 4
@@ -76,10 +76,10 @@ function | bubbleSort | aparams: (arr:integer[] size:integer)| type: void| memsi
 	tempvar | id: temp57 | type: integer | expressionId: 12| memsize: 4
 	tempvar | id: temp58 | type: integer | expressionId: 12| memsize: 4
 
-function | printArray | aparams: (arr:integer[] size:integer)| type: void| memsize: 80
+function | printArray | aparams: (arr:integer[] size:integer)| type: void| memsize: 88
 	function:printArray 
-	parameter | id: arr | type: integer[]| memsize: 0
-	parameter | id: size | type: integer| memsize: 0
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
 	localvar | id: n | type: integer | memsize: 4
 	localvar | id: i | type: integer | memsize: 4
 	tempvar | id: temp59 | type: integer | expressionId: 13| memsize: 4

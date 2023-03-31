@@ -1,7 +1,7 @@
 global 
-function | funcCallsParameters | aparams: (x:integer)| type: integer| memsize: 56
+function | funcCallsParameters | aparams: (x:integer)| type: integer| memsize: 60
 	function:funcCallsParameters 
-	parameter | id: x | type: integer| memsize: 0
+	parameter | id: x | type: integer| memsize: 4
 	localvar | id: i | type: integer | memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 1| memsize: 4
 	tempvar | id: temp1 | type: integer | expressionId: 1| memsize: 4
@@ -90,4 +90,6 @@ function | funcCallsParameters | aparams: (x:integer)| type: integer| memsize: 5
 	tempvar | id: temp76 | type:  | expressionId: 32| memsize: 0
 	tempvar | id: temp77 | type:  | expressionId: 32| memsize: 0
 	tempvar | id: temp78 | type:  | expressionId: 32| memsize: 0
+	tempvar | id: temp79 | type:  | expressionId: 33| memsize: 0
+	tempvar | id: temp80 | type:  | expressionId: 33| memsize: 0
 

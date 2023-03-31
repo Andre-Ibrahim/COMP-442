@@ -1,8 +1,8 @@
 global 
-function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void| memsize: 196
+function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void| memsize: 204
 	function:variableIdNest 
-	parameter | id: arr | type: integer[]| memsize: 0
-	parameter | id: size | type: integer| memsize: 0
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
 	localvar | id: x | type: integer | memsize: 4
 	tempvar | id: temp1 | type: integer | expressionId: 1| memsize: 4
 	tempvar | id: temp2 | type: integer | expressionId: 1| memsize: 4

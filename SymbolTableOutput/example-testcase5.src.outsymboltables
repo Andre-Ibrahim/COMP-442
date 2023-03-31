@@ -1,8 +1,8 @@
 global 
-function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void| memsize: 208
+function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void| memsize: 216
 	function:functionBlocks 
-	parameter | id: arr | type: integer[]| memsize: 0
-	parameter | id: size | type: integer| memsize: 0
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
 	localvar | id: n | type: integer | memsize: 4
 	localvar | id: i | type: integer | memsize: 4
 	tempvar | id: temp1 | type: integer | expressionId: 1| memsize: 4
@@ -65,4 +65,6 @@ function | functionBlocks | aparams: (arr:integer[] size:integer)| type: void| m
 	tempvar | id: temp54 | type:  | expressionId: 12| memsize: 0
 	tempvar | id: temp55 | type: integer | expressionId: 12| memsize: 4
 	tempvar | id: temp56 | type: integer | expressionId: 12| memsize: 4
+	tempvar | id: temp57 | type:  | expressionId: 13| memsize: 0
+	tempvar | id: temp58 | type:  | expressionId: 13| memsize: 0
 

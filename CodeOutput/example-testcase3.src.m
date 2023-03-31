@@ -1,13 +1,17 @@
+funcCallsParameters1
                sub r1, r1, r1
 %storing 0 into lit1
                addi r1, r0, 0
                sw lit1(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit1 to i
+% assigning lit1 to funcCallsParameters1i
                lw r1, lit1(r0)
-               sw i(r0), r1
+               sw funcCallsParameters1i(r0), r1
                addi r1, r0, 0
+               jl r11, funcCall1
+               jl r11, funcCall2
+               jl r11, funcCall6
                sub r1, r1, r1
 %storing 0 into lit2
                addi r1, r0, 0
@@ -18,6 +22,7 @@
                addi r1, r0, 1.0
                sw lit3(r0), r1
                 addi r1, r0, 0
+               jl r11, funcCall6
                sub r1, r1, r1
 %storing 0 into lit4
                addi r1, r0, 0
@@ -33,15 +38,19 @@
                addi r1, r0, 1
                sw lit6(r0), r1
                 addi r1, r0, 0
+               jl r11, funcCall6
+               jl r11, funcCall3
+               jl r11, funcCall2
                sub r1, r1, r1
 %storing 77 into lit7
                addi r1, r0, 77
                sw lit7(r0), r1
                 addi r1, r0, 0
+               jl r11, funcCall1
                sub r1, r1, r1
-% assigning funcCall to i
-               lw r1, funcCall(r0)
-               sw i(r0), r1
+% assigning funcCall1return to funcCallsParameters1i
+               lw r1, funcCall1return(r0)
+               sw funcCallsParameters1i(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit8
@@ -51,11 +60,13 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding i with lit8
-               lw r1, i(r0)
+%adding funcCallsParameters1i with lit8
+               lw r1, funcCallsParameters1i(r0)
                lw r2, lit8(r0)
                add r3, r1, r2
                sw temp1(r0), r3
+               jl r11, i0
+               jl r11, funcCall2
                sub r1, r1, r1
 %storing 1 into lit9
                addi r1, r0, 1
@@ -64,14 +75,23 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding i with lit9
-               lw r1, i(r0)
+%adding funcCallsParameters1i with lit9
+               lw r1, funcCallsParameters1i(r0)
                lw r2, lit9(r0)
                add r3, r1, r2
                sw temp2(r0), r3
+               jl r11, funcCall1
+               lw r1, funcCallsParameters1i(r0)
+               sw funcCallsParameters1return(r0), r1
+               jr r11
+% end of function
 
-               % space for variable i
-i              res 4
+               % space for variable funcCallsParameters1x
+funcCallsParameres 4
+               % space for variable funcCallsParameters1return
+funcCallsParameres 4
+               % space for variable funcCallsParameters1i
+funcCallsParameres 4
                % space for variable lit1
 lit1           res 4
                % space for variable lit2

@@ -32,7 +32,7 @@ export class MemSizeSetter {
         let size = 0;
 
         entry.symbolTable.entries.forEach((e) => {
-            if (e instanceof LocalVarEntry || e instanceof TempVarEntry) {
+            if (e instanceof LocalVarEntry || e instanceof TempVarEntry || e instanceof ParameterEntry) {
                 const entrySize = this.getEntrySize(e);
                 e.memSize = entrySize;
                 size += entrySize;

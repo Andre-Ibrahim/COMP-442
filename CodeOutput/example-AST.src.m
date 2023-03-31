@@ -32,15 +32,15 @@
                add r3, r1, r2
                sw temp2(r0), r3
                sub r1, r1, r1
-% assigning temp2 to y
+% assigning temp2 to main0y
                lw r1, temp2(r0)
-               sw y(r0), r1
+               sw main0y(r0), r1
                addi r1, r0, 0
                addi r1,r0,buf
                sw -8(r14),r1
                jl r15,getstr
                jl r15,strint    % Convert to integer
-               sw x(r0),r13     % Store x
+               sw main0x(r0),r13     % Store main0x
                sub r1, r1, r1
 %storing 10 into lit4
                addi r1, r0, 10
@@ -49,16 +49,16 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding y with lit4
-               lw r1, y(r0)
+%adding main0y with lit4
+               lw r1, main0y(r0)
                lw r2, lit4(r0)
                add r3, r1, r2
                sw temp3(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation temp3 gt x
-               lw r1, x(r0)
+%relation temp3 gt main0x
+               lw r1, main0x(r0)
                lw r2, temp3(r0)
                cgt r3, r1, r2
                sw temp4(r0), r3
@@ -73,8 +73,8 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with lit5
-               lw r1, x(r0)
+%adding main0x with lit5
+               lw r1, main0x(r0)
                lw r2, lit5(r0)
                add r3, r1, r2
                sw temp5(r0), r3
@@ -102,8 +102,8 @@ else1               sub r1, r1, r1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with lit6
-               lw r1, x(r0)
+%adding main0x with lit6
+               lw r1, main0x(r0)
                lw r2, lit6(r0)
                add r3, r1, r2
                sw temp6(r0), r3
@@ -128,9 +128,9 @@ endif1               sub r1, r1, r1
                sw lit7(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit7 to z
+% assigning lit7 to main0z
                lw r1, lit7(r0)
-               sw z(r0), r1
+               sw main0z(r0), r1
                addi r1, r0, 0
 %starting while loop
 gowhile1
@@ -142,15 +142,15 @@ gowhile1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation lit8 leq z
-               lw r1, z(r0)
+%relation lit8 leq main0z
+               lw r1, main0z(r0)
                lw r2, lit8(r0)
                cle r3, r1, r2
                sw temp7(r0), r3
                lw r1, temp7(r0)
                bz r1, endwhile1
-               % processing: write(z)
-               lw r1, z(r0)
+               % processing: write(main0z)
+               lw r1, main0z(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -172,26 +172,26 @@ gowhile1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding z with lit9
-               lw r1, z(r0)
+%adding main0z with lit9
+               lw r1, main0z(r0)
                lw r2, lit9(r0)
                add r3, r1, r2
                sw temp8(r0), r3
                sub r1, r1, r1
-% assigning temp8 to z
+% assigning temp8 to main0z
                lw r1, temp8(r0)
-               sw z(r0), r1
+               sw main0z(r0), r1
                addi r1, r0, 0
 j gowhile1
 endwhile1
                hlt
 
-               % space for variable x
-x              res 4
-               % space for variable y
-y              res 4
-               % space for variable z
-z              res 4
+               % space for variable main0x
+main0x         res 4
+               % space for variable main0y
+main0y         res 4
+               % space for variable main0z
+main0z         res 4
                % space for variable lit1
 lit1           res 4
                % space for variable lit2

@@ -38,6 +38,10 @@ import { LocalVarEntry } from "../SymbTab/LocalVarEntry";
 import TokenType from "../../lexical_analysis/TokenType";
 import { CountQueuingStrategy } from "stream/web";
 import { tokenToString } from "../stringHelpers";
+import { ParameterEntry } from "../SymbTab/ParameterEntry";
+import { SymbolTable } from "../SymbTab/SymbolTable";
+import { Entry } from "../SymbTab/Entry";
+import { FunctionEntry } from "../SymbTab/FunctionEntry";
 
 export class CodeGenVisitor extends Visitor {
 
@@ -49,6 +53,7 @@ export class CodeGenVisitor extends Visitor {
     whileStatementCount: number = 1;
     indent: string = "".slice(0, 15).padEnd(15);
     registerPool = [...Array(12).keys()].map((_, i) => `r${i+1}`).reverse();
+    globalSymbolTable: SymbolTable | null = null;
 
     visit(node: NodeVARDECL): void;
     visit(node: NodeARRAYSIZE): void;
@@ -89,7 +94,8 @@ export class CodeGenVisitor extends Visitor {
             // look up localvar declaration in table for mem size
             node.symbolTable?.entries.forEach((entry) => {
                 if(entry instanceof LocalVarEntry && entry.id.lexeme === node?.children[0].value?.lexeme){
-                    this.data += this.reserveBytes(entry.id.lexeme, entry.memSize);
+                    const varName = this.getVariableNameFromTable(node.symbolTable, entry.id.lexeme);
+                    this.data += this.reserveBytes(varName, entry.memSize);
                 }
             })
 
@@ -102,13 +108,31 @@ export class CodeGenVisitor extends Visitor {
         }
         if (node instanceof NodeRETURNSTAT) {
             this.traverseTree(node);
+            let paramCount = 0;
+
+            node.symbolTable?.entries.forEach((entry) => {
+                if(entry instanceof ParameterEntry){
+                    paramCount++;
+                }
+            })
+
+            const functionName = node.symbolTable?.name.split(":")[1];
+
+            const returnVariable = `${functionName}${paramCount}return`;
+            let tempvar = "error";
+
+            if(node.children[0] instanceof NodeEXPR || node.children[0] instanceof NodeRELEXPR){
+                tempvar = node.children[0].tempvar;
+            }
+
+            this.code += `${this.indent}lw r1, ${tempvar}(r0)\n`;
+            this.code += `${this.indent}sw ${returnVariable}(r0), r1\n`;
         }
         if (node instanceof NodeEXPR || node instanceof NodeRELEXPR) {
             this.traverseTree(node);
 
             if(node.children.length === 1 && node.children[0] instanceof NodeARITHEXPR){
                 node.tempvar = node.children[0].tempvar;
-                console.log(node.tempvar);
             }else if(node.children.length === 3){
 
                 let leftartih = "";
@@ -229,8 +253,19 @@ export class CodeGenVisitor extends Visitor {
             }else if(node.children[0] instanceof NodeARITHEXPR || node.children[0] instanceof NodeEXPR){
                 node.tempvar = node.children[0].tempvar;
             }else if(node.children[0] instanceof NodeFACTORCALLORVAR) {
-                const variableName = node.children[0].children[0].children[0].value?.lexeme ?? "";
-                node.tempvar = variableName;
+                if(node.children[0].children[0] instanceof NodeVARIABLE){
+                    let variableName = node.children[0].children[0].children[0].value?.lexeme ?? "";
+                    
+                    variableName = this.getVariableNameFromTable(node.symbolTable, variableName);
+
+                    if(variableName === "error0l"){
+                        console.log("st: ", node.parentNode?.parentNode?.parentNode?.parentNode);
+                    }
+                    
+                    node.tempvar = variableName;
+                }else if(node.children[0].children[0] instanceof NodeFUNCTIONCALL){
+                    node.tempvar = this.getFunctionCallMoonName(node.children[0].children[0]) + "return";
+                }
             }
 
         }
@@ -242,9 +277,48 @@ export class CodeGenVisitor extends Visitor {
         }
         if (node instanceof NodeFUNCTIONCALL) {
             this.traverseTree(node);
+            // setting params
+
+
+            // jumping to function label
+            const functionName = node.children[0].value?.lexeme ?? "funcerror";
+            let paramCount = node?.children[1]?.children.length ?? 0;
+            const params = node?.children[1]?.children ?? [];
+
+            let functionCallSymbolTable: SymbolTable = new SymbolTable(1, "", null);
+            node.symbolTable?.parentTable?.entries.forEach(entry => {
+                if(entry instanceof FunctionEntry && entry.id.lexeme === functionName){
+                    functionCallSymbolTable = entry.symbolTable;
+                }
+            });
+
+            let count = 0;
+
+            //console.log(functionCallSymbolTable);
+            
+
+            functionCallSymbolTable?.entries.forEach((entry) => {
+                if(entry instanceof ParameterEntry){
+                    const param = params[count++];
+                    if(param instanceof NodeEXPR || param instanceof NodeRELEXPR){
+                        const AparamTempVar = param.tempvar;
+                        const FparamName = this.getVariableNameFromTable(functionCallSymbolTable, entry.id.lexeme);
+                        this.code += `${this.indent}lw r1, ${AparamTempVar}(r0)\n`;
+                        this.code += `${this.indent}sw ${FparamName}(r0), r1\n`;
+                    }
+                }
+            })
+
+
+            this.code += `${this.indent}jl r11, ${functionName}${paramCount}\n`;
+
+            // fetching return value
+            // this.code += `lw r1, ${functionName}${paramCount}"return`;
+
         }
         if (node instanceof NodeAPARAMS) {
             this.traverseTree(node);
+            
         }
         if (node instanceof NodeWRITESTAT) {
 
@@ -286,7 +360,7 @@ ${this.indent}putc r6
             let variableName = "";
 
             if(variable instanceof NodeVARIABLE){
-                variableName = variable.children[0].value?.lexeme ?? "";
+                variableName = this.getVariableNameFromTable(node.symbolTable, variable.children[0].value?.lexeme ?? "");
             }
 
             const register = this.registerPool.pop();
@@ -320,7 +394,8 @@ ${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
                     tempvar = node.children[2].tempvar;
                 }
 
-                this.code += this.assignVar(variable.value.lexeme,tempvar);
+                const variableName = this.getVariableNameFromTable(node.symbolTable, variable.value.lexeme);
+                this.code += this.assignVar(variableName,tempvar);
             }
         }
         if (node instanceof NodeFUNCTIONCALLSTAT) {
@@ -406,12 +481,64 @@ ${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
             if(isMain){
                 this.code += `${this.indent}entry\n`;
                 this.code += `${this.indent}addi r14, r0, topaddr\n`;
+            }else {
+                const functionName = node.children[0].value?.lexeme ?? "error";
+                let returnType = "void";
+                let paramCounter = 0;
+
+                // no params
+                if(node.children[1].children.length === 1){
+                    returnType = node.children[1].children[0].value?.lexeme ?? "void";
+                }else{
+                    // reserving params in moon
+                    const fparamNode = node.children[1].children[0];
+
+                    type fparam = {
+                        lexeme: string,
+                        size: number,
+                    }
+                    const fparams: fparam[] = [];
+
+                    fparamNode.children.forEach((child) => {
+                        if(child?.value?.type === TokenType.ID){
+
+                            child.symbolTable?.entries.forEach((entry) => {
+                                if(entry instanceof ParameterEntry && entry.id.lexeme === child?.value?.lexeme){
+                                    paramCounter++;
+
+                                    const param = {lexeme: entry.id.lexeme, size: this.getLitSize(entry.type)};
+                                    fparams.push(param);
+                                }
+                            })
+
+                        }
+                    })
+
+                    fparams.forEach((param) => {
+                        this.data += this.reserveBytes(`${functionName}${paramCounter}${param.lexeme}`, param.size);
+                    });
+                    
+                    // return type is the last element of the list
+                    returnType = node.children[1].children[node.children[1].children.length - 1].value?.lexeme ?? "void";
+                }
+
+                this.code += `${functionName}${paramCounter}\n`;
+
+                // reserving return type
+                if(returnType !== "void"){
+                    this.data += this.reserveBytes(functionName + paramCounter + "return", this.getLitSize(returnType));
+                }
+
+                
             }
 
             this.traverseTree(node);
 
             if(isMain){
                 this.code += `${this.indent}hlt\n`;
+            }else {
+                this.code += `${this.indent}jr r11\n`;
+                this.code += `% end of function\n`
             }
         }
         if (node instanceof NodeFUNCARROW) {
@@ -437,6 +564,7 @@ ${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
         }
         if (node instanceof NodeCLASSDECLORFUNCDEF) {
             this.traverseTree(node);
+            this.globalSymbolTable = node.symbolTable;
         }
         if (node instanceof NodeEMPTYARRAYSIZE) {
             this.traverseTree(node);
@@ -559,6 +687,20 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
 
     }
 
+    private getVariableNameFromTable(symbolTable: SymbolTable | null, variable: string): string {
+        let paramCounter = 0;
+
+        symbolTable?.entries.forEach((entry) => {
+            if(entry instanceof ParameterEntry){
+                paramCounter++;
+            }
+        })
+
+        const functionName = symbolTable?.name.split(":")[1] ?? "error";
+
+        return `${functionName}${paramCounter}${variable}`;
+    }
+
     private addition(left: string, right: string, tempvar: string, operator: TokenType): string {
         const register1 = this.registerPool.pop();
         const register2 = this.registerPool.pop();
@@ -614,6 +756,14 @@ ${this.indent}lw ${register1}, ${left}(r0)\n`
 
     private generateLitVar(): string {
         return "lit" + this.litCount++;
+    }
+
+    private getFunctionCallMoonName(node: NodeFUNCTIONCALL): string {
+        // jumping to function label
+        const functionName = node.children[0].value?.lexeme ?? "funcerror";
+        let paramCount = node?.children[1]?.children?.length ?? 0;
+        //console.log(`${functionName}${paramCount}`);
+        return `${functionName}${paramCount}`;
     }
 
     private generateIfStatementlabels(): string[] {

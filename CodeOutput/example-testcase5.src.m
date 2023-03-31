@@ -1,7 +1,8 @@
+functionBlocks2
                sub r1, r1, r1
-% assigning size to n
-               lw r1, size(r0)
-               sw n(r0), r1
+% assigning functionBlocks2size to functionBlocks2n
+               lw r1, functionBlocks2size(r0)
+               sw functionBlocks2n(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 0 into lit1
@@ -9,24 +10,24 @@
                sw lit1(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit1 to i
+% assigning lit1 to functionBlocks2i
                lw r1, lit1(r0)
-               sw i(r0), r1
+               sw functionBlocks2i(r0), r1
                addi r1, r0, 0
 %starting while loop
 gowhile1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation n lt i
-               lw r1, i(r0)
-               lw r2, n(r0)
+%relation functionBlocks2n lt functionBlocks2i
+               lw r1, functionBlocks2i(r0)
+               lw r2, functionBlocks2n(r0)
                clt r3, r1, r2
                sw temp1(r0), r3
                lw r1, temp1(r0)
                bz r1, endwhile1
-               % processing: write(arr)
-               lw r1, arr(r0)
+               % processing: write(functionBlocks2arr)
+               lw r1, functionBlocks2arr(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -48,15 +49,15 @@ gowhile1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding i with lit2
-               lw r1, i(r0)
+%adding functionBlocks2i with lit2
+               lw r1, functionBlocks2i(r0)
                lw r2, lit2(r0)
                add r3, r1, r2
                sw temp2(r0), r3
                sub r1, r1, r1
-% assigning temp2 to i
+% assigning temp2 to functionBlocks2i
                lw r1, temp2(r0)
-               sw i(r0), r1
+               sw functionBlocks2i(r0), r1
                addi r1, r0, 0
 j gowhile1
 endwhile1
@@ -64,21 +65,21 @@ endwhile1
                sw -8(r14),r1
                jl r15,getstr
                jl r15,strint    % Convert to integer
-               sw n(r0),r13     % Store n
+               sw functionBlocks2n(r0),r13     % Store functionBlocks2n
 %starting while loop
 gowhile2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation n lt i
-               lw r1, i(r0)
-               lw r2, n(r0)
+%relation functionBlocks2n lt functionBlocks2i
+               lw r1, functionBlocks2i(r0)
+               lw r2, functionBlocks2n(r0)
                clt r3, r1, r2
                sw temp3(r0), r3
                lw r1, temp3(r0)
                bz r1, endwhile2
-               % processing: write(arr)
-               lw r1, arr(r0)
+               % processing: write(functionBlocks2arr)
+               lw r1, functionBlocks2arr(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -99,9 +100,9 @@ gowhile3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation n lt i
-               lw r1, i(r0)
-               lw r2, n(r0)
+%relation functionBlocks2n lt functionBlocks2i
+               lw r1, functionBlocks2i(r0)
+               lw r2, functionBlocks2n(r0)
                clt r3, r1, r2
                sw temp4(r0), r3
                lw r1, temp4(r0)
@@ -116,26 +117,26 @@ endwhile3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding j with lit3
-               lw r1, j(r0)
+%adding functionBlocks2j with lit3
+               lw r1, functionBlocks2j(r0)
                lw r2, lit3(r0)
                add r3, r1, r2
                sw temp5(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation arr gt arr
-               lw r1, arr(r0)
-               lw r2, arr(r0)
+%relation functionBlocks2arr gt functionBlocks2arr
+               lw r1, functionBlocks2arr(r0)
+               lw r2, functionBlocks2arr(r0)
                cgt r3, r1, r2
                sw temp6(r0), r3
 % starting if statment
                 lw r1, temp6(r0)
                 bz r1, else1
                sub r1, r1, r1
-% assigning arr to temp
-               lw r1, arr(r0)
-               sw temp(r0), r1
+% assigning functionBlocks2arr to functionBlocks2temp
+               lw r1, functionBlocks2arr(r0)
+               sw functionBlocks2temp(r0), r1
                addi r1, r0, 0
                j endif1
 else1endif1               sub r1, r1, r1
@@ -146,17 +147,17 @@ else1endif1               sub r1, r1, r1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding j with lit4
-               lw r1, j(r0)
+%adding functionBlocks2j with lit4
+               lw r1, functionBlocks2j(r0)
                lw r2, lit4(r0)
                add r3, r1, r2
                sw temp7(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation arr gt arr
-               lw r1, arr(r0)
-               lw r2, arr(r0)
+%relation functionBlocks2arr gt functionBlocks2arr
+               lw r1, functionBlocks2arr(r0)
+               lw r2, functionBlocks2arr(r0)
                cgt r3, r1, r2
                sw temp8(r0), r3
 % starting if statment
@@ -164,15 +165,23 @@ else1endif1               sub r1, r1, r1
                 bz r1, else2
                j endif2
 else2               sub r1, r1, r1
-% assigning arr to temp
-               lw r1, arr(r0)
-               sw temp(r0), r1
+% assigning functionBlocks2arr to functionBlocks2temp
+               lw r1, functionBlocks2arr(r0)
+               sw functionBlocks2temp(r0), r1
                addi r1, r0, 0
-endif2
-               % space for variable n
-n              res 4
-               % space for variable i
-i              res 4
+endif2               lw r1, functionBlocks2n(r0)
+               sw functionBlocks2return(r0), r1
+               jr r11
+% end of function
+
+               % space for variable functionBlocks2arr
+functionBlocks2res 4
+               % space for variable functionBlocks2size
+functionBlocks2res 4
+               % space for variable functionBlocks2n
+functionBlocks2res 4
+               % space for variable functionBlocks2i
+functionBlocks2res 4
                % space for variable lit1
 lit1           res 4
                % space for variable temp1

@@ -1,24 +1,27 @@
 global 
-class | id: POLYNOMIAL | MemSize: 0
+class | id: POLYNOMIAL | MemSize: 12
 	class:POLYNOMIAL 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 0
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 12
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 0
+		parameter | id: x | type: float| memsize: 8
+		litvar | id: 0 | type: integer | expressionId: 1| memsize: 4
+		tempvar | id: temp1 | type:  | expressionId: 1| memsize: 0
+		tempvar | id: temp2 | type:  | expressionId: 1| memsize: 0
 
 
-class | id: LINEAR | MemSize: 80
+class | id: LINEAR | MemSize: 104
 	class:LINEAR 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
-	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 0
+	function | build | aparams: (A:float B:float)| type: LINEAR| visiblity: public| memsize: 16
 	function:build 
-		parameter | id: A | type: float| memsize: 0
-		parameter | id: B | type: float| memsize: 0
+		parameter | id: A | type: float| memsize: 8
+		parameter | id: B | type: float| memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 64
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 72
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 0
+		parameter | id: x | type: float| memsize: 8
 		localvar | id: result | type: float | memsize: 8
 		litvar | id: 0.0 | type: float | expressionId: 8| memsize: 8
 		tempvar | id: temp21 | type: float | expressionId: 8| memsize: 8
@@ -28,24 +31,26 @@ class | id: LINEAR | MemSize: 80
 		tempvar | id: temp25 | type: float | expressionId: 9| memsize: 8
 		tempvar | id: temp26 | type: float | expressionId: 9| memsize: 8
 		tempvar | id: temp27 | type: float | expressionId: 9| memsize: 8
+		tempvar | id: temp28 | type:  | expressionId: 10| memsize: 0
+		tempvar | id: temp29 | type:  | expressionId: 10| memsize: 0
 
 
-class | id: QUADRATIC | MemSize: 120
+class | id: QUADRATIC | MemSize: 152
 	class:QUADRATIC 
 	inherit | POLYNOMIAL
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
 	data | id: c | type: float | visibility: private | MemSize: 8
-	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 8
+	function | build | aparams: (A:float B:float C:float)| type: QUADRATIC| visiblity: public| memsize: 32
 	function:build 
-		parameter | id: A | type: float| memsize: 0
-		parameter | id: B | type: float| memsize: 0
-		parameter | id: C | type: float| memsize: 0
+		parameter | id: A | type: float| memsize: 8
+		parameter | id: B | type: float| memsize: 8
+		parameter | id: C | type: float| memsize: 8
 		localvar | id: x | type: float | memsize: 8
 
-	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 88
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 96
 	function:evaluate 
-		parameter | id: x | type: float| memsize: 0
+		parameter | id: x | type: float| memsize: 8
 		localvar | id: result | type: float | memsize: 8
 		tempvar | id: temp3 | type: float | expressionId: 2| memsize: 8
 		tempvar | id: temp4 | type: float | expressionId: 2| memsize: 8
@@ -59,12 +64,14 @@ class | id: QUADRATIC | MemSize: 120
 		tempvar | id: temp12 | type: float | expressionId: 4| memsize: 8
 		tempvar | id: temp13 | type: float | expressionId: 4| memsize: 8
 		tempvar | id: temp14 | type: float | expressionId: 4| memsize: 8
+		tempvar | id: temp15 | type:  | expressionId: 5| memsize: 0
+		tempvar | id: temp16 | type:  | expressionId: 5| memsize: 0
 
 
-function | main | aparams: ()| type: void| memsize: 364
+function | main | aparams: ()| type: void| memsize: 444
 	function:main 
-	localvar | id: f1 | type: LINEAR[2] | memsize: 160
-	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 120
+	localvar | id: f1 | type: LINEAR[2] | memsize: 208
+	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 152
 	litvar | id: 2.0 | type: float | expressionId: 11| memsize: 8
 	tempvar | id: temp30 | type: float | expressionId: 11| memsize: 8
 	tempvar | id: temp31 | type: float | expressionId: 11| memsize: 8

@@ -1,7 +1,8 @@
+expressionsTest0
                sub r1, r1, r1
-% assigning i to x
-               lw r1, i(r0)
-               sw x(r0), r1
+% assigning expressionsTest0i to expressionsTest0x
+               lw r1, expressionsTest0i(r0)
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2 into lit1
@@ -11,15 +12,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with lit1
-               lw r1, x(r0)
+%adding expressionsTest0x with lit1
+               lw r1, expressionsTest0x(r0)
                lw r2, lit1(r0)
                add r3, r1, r2
                sw temp1(r0), r3
                sub r1, r1, r1
-% assigning temp1 to x
+% assigning temp1 to expressionsTest0x
                lw r1, temp1(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2 into lit2
@@ -29,15 +30,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with lit2
-               lw r1, x(r0)
+%adding expressionsTest0x with lit2
+               lw r1, expressionsTest0x(r0)
                lw r2, lit2(r0)
                sub r3, r1, r2
                sw temp2(r0), r3
                sub r1, r1, r1
-% assigning temp2 to x
+% assigning temp2 to expressionsTest0x
                lw r1, temp2(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 10 into lit3
@@ -47,15 +48,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying x with lit3
-               lw r1, x(r0)
+%multiplying expressionsTest0x with lit3
+               lw r1, expressionsTest0x(r0)
                lw r2, lit3(r0)
                mul r3, r1, r2
                sw temp3(r0), r3
                sub r1, r1, r1
-% assigning temp3 to x
+% assigning temp3 to expressionsTest0x
                lw r1, temp3(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 10 into lit4
@@ -65,15 +66,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying x with lit4
-               lw r1, x(r0)
+%multiplying expressionsTest0x with lit4
+               lw r1, expressionsTest0x(r0)
                lw r2, lit4(r0)
                div r3, r1, r2
                sw temp4(r0), r3
                sub r1, r1, r1
-% assigning temp4 to x
+% assigning temp4 to expressionsTest0x
                lw r1, temp4(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit5
@@ -83,15 +84,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation x gt lit5
+%relation expressionsTest0x gt lit5
                lw r1, lit5(r0)
-               lw r2, x(r0)
+               lw r2, expressionsTest0x(r0)
                cgt r3, r1, r2
                sw temp5(r0), r3
                sub r1, r1, r1
-% assigning temp5 to x
+% assigning temp5 to expressionsTest0x
                lw r1, temp5(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit6
@@ -101,15 +102,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation x lt lit6
+%relation expressionsTest0x lt lit6
                lw r1, lit6(r0)
-               lw r2, x(r0)
+               lw r2, expressionsTest0x(r0)
                clt r3, r1, r2
                sw temp6(r0), r3
                sub r1, r1, r1
-% assigning temp6 to x
+% assigning temp6 to expressionsTest0x
                lw r1, temp6(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit7
@@ -119,15 +120,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation x geq lit7
+%relation expressionsTest0x geq lit7
                lw r1, lit7(r0)
-               lw r2, x(r0)
+               lw r2, expressionsTest0x(r0)
                cge r3, r1, r2
                sw temp7(r0), r3
                sub r1, r1, r1
-% assigning temp7 to x
+% assigning temp7 to expressionsTest0x
                lw r1, temp7(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit8
@@ -137,15 +138,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation x leq lit8
+%relation expressionsTest0x leq lit8
                lw r1, lit8(r0)
-               lw r2, x(r0)
+               lw r2, expressionsTest0x(r0)
                cle r3, r1, r2
                sw temp8(r0), r3
                sub r1, r1, r1
-% assigning temp8 to x
+% assigning temp8 to expressionsTest0x
                lw r1, temp8(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit9
@@ -155,15 +156,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation x noteq lit9
+%relation expressionsTest0x noteq lit9
                lw r1, lit9(r0)
-               lw r2, x(r0)
+               lw r2, expressionsTest0x(r0)
                ceq r3, r1, r2
                sw temp9(r0), r3
                sub r1, r1, r1
-% assigning temp9 to x
+% assigning temp9 to expressionsTest0x
                lw r1, temp9(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit10
@@ -186,15 +187,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with temp10
-               lw r1, x(r0)
+%adding expressionsTest0x with temp10
+               lw r1, expressionsTest0x(r0)
                lw r2, temp10(r0)
                add r3, r1, r2
                sw temp11(r0), r3
                sub r1, r1, r1
-% assigning temp11 to x
+% assigning temp11 to expressionsTest0x
                lw r1, temp11(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit12
@@ -217,15 +218,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with temp12
-               lw r1, x(r0)
+%adding expressionsTest0x with temp12
+               lw r1, expressionsTest0x(r0)
                lw r2, temp12(r0)
                sub r3, r1, r2
                sw temp13(r0), r3
                sub r1, r1, r1
-% assigning temp13 to x
+% assigning temp13 to expressionsTest0x
                lw r1, temp13(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 10 into lit14
@@ -248,15 +249,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying x with temp14
-               lw r1, x(r0)
+%multiplying expressionsTest0x with temp14
+               lw r1, expressionsTest0x(r0)
                lw r2, temp14(r0)
                mul r3, r1, r2
                sw temp15(r0), r3
                sub r1, r1, r1
-% assigning temp15 to x
+% assigning temp15 to expressionsTest0x
                lw r1, temp15(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 6 into lit16
@@ -279,8 +280,8 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying x with temp16
-               lw r1, x(r0)
+%multiplying expressionsTest0x with temp16
+               lw r1, expressionsTest0x(r0)
                lw r2, temp16(r0)
                mul r3, r1, r2
                sw temp17(r0), r3
@@ -298,9 +299,9 @@
                cgt r3, r1, r2
                sw temp18(r0), r3
                sub r1, r1, r1
-% assigning temp18 to x
+% assigning temp18 to expressionsTest0x
                lw r1, temp18(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 6 into lit19
@@ -323,23 +324,23 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying x with temp19
-               lw r1, x(r0)
+%multiplying expressionsTest0x with temp19
+               lw r1, expressionsTest0x(r0)
                lw r2, temp19(r0)
                mul r3, r1, r2
                sw temp20(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation temp20 gt i
-               lw r1, i(r0)
+%relation temp20 gt expressionsTest0i
+               lw r1, expressionsTest0i(r0)
                lw r2, temp20(r0)
                cgt r3, r1, r2
                sw temp21(r0), r3
                sub r1, r1, r1
-% assigning temp21 to x
+% assigning temp21 to expressionsTest0x
                lw r1, temp21(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 10 into lit21
@@ -349,8 +350,8 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with lit21
-               lw r1, x(r0)
+%adding expressionsTest0x with lit21
+               lw r1, expressionsTest0x(r0)
                lw r2, lit21(r0)
                add r3, r1, r2
                sw temp22(r0), r3
@@ -368,9 +369,9 @@
                mul r3, r1, r2
                sw temp23(r0), r3
                sub r1, r1, r1
-% assigning temp23 to x
+% assigning temp23 to expressionsTest0x
                lw r1, temp23(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 8 into lit23
@@ -380,9 +381,9 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying lit23 with i
+%multiplying lit23 with expressionsTest0i
                lw r1, lit23(r0)
-               lw r2, i(r0)
+               lw r2, expressionsTest0i(r0)
                mul r3, r1, r2
                sw temp24(r0), r3
                sub r1, r1, r1
@@ -401,20 +402,20 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding x with temp25
-               lw r1, x(r0)
+%adding expressionsTest0x with temp25
+               lw r1, expressionsTest0x(r0)
                lw r2, temp25(r0)
                add r3, r1, r2
                sw temp26(r0), r3
                sub r1, r1, r1
-% assigning temp26 to x
+% assigning temp26 to expressionsTest0x
                lw r1, temp26(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
-% assigning temp80 to x
+% assigning temp80 to expressionsTest0x
                lw r1, temp80(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 19 into lit25
@@ -430,9 +431,9 @@
                add r3, r1, r2
                sw temp27(r0), r3
                sub r1, r1, r1
-% assigning temp27 to z
+% assigning temp27 to expressionsTest0z
                lw r1, temp27(r0)
-               sw z(r0), r1
+               sw expressionsTest0z(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2 into lit26
@@ -448,9 +449,9 @@
                sub r3, r1, r2
                sw temp28(r0), r3
                sub r1, r1, r1
-% assigning temp28 to x
+% assigning temp28 to expressionsTest0x
                lw r1, temp28(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2 into lit27
@@ -474,9 +475,9 @@
                sub r3, r1, r2
                sw temp30(r0), r3
                sub r1, r1, r1
-% assigning temp30 to x
+% assigning temp30 to expressionsTest0x
                lw r1, temp30(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 17 into lit28
@@ -492,9 +493,9 @@
                mul r3, r1, r2
                sw temp31(r0), r3
                sub r1, r1, r1
-% assigning temp31 to x
+% assigning temp31 to expressionsTest0x
                lw r1, temp31(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 10.99 into lit29
@@ -517,15 +518,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding temp32 with i
+%adding temp32 with expressionsTest0i
                lw r1, temp32(r0)
-               lw r2, i(r0)
+               lw r2, expressionsTest0i(r0)
                add r3, r1, r2
                sw temp33(r0), r3
                sub r1, r1, r1
-% assigning temp33 to x
+% assigning temp33 to expressionsTest0x
                lw r1, temp33(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 8 into lit31
@@ -535,15 +536,15 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation temp102 gt i
-               lw r1, i(r0)
+%relation temp102 gt expressionsTest0i
+               lw r1, expressionsTest0i(r0)
                lw r2, temp102(r0)
                cgt r3, r1, r2
                sw temp34(r0), r3
                sub r1, r1, r1
-% assigning temp34 to x
+% assigning temp34 to expressionsTest0x
                lw r1, temp34(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 7 into lit32
@@ -558,9 +559,9 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying lit33 with i
+%multiplying lit33 with expressionsTest0i
                lw r1, lit33(r0)
-               lw r2, i(r0)
+               lw r2, expressionsTest0i(r0)
                mul r3, r1, r2
                sw temp35(r0), r3
                sub r1, r1, r1
@@ -572,9 +573,9 @@
                cgt r3, r1, r2
                sw temp36(r0), r3
                sub r1, r1, r1
-% assigning temp36 to x
+% assigning temp36 to expressionsTest0x
                lw r1, temp36(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 7 into lit34
@@ -589,9 +590,9 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding lit35 with i
+%adding lit35 with expressionsTest0i
                lw r1, lit35(r0)
-               lw r2, i(r0)
+               lw r2, expressionsTest0i(r0)
                add r3, r1, r2
                sw temp37(r0), r3
                sub r1, r1, r1
@@ -603,9 +604,9 @@
                cgt r3, r1, r2
                sw temp38(r0), r3
                sub r1, r1, r1
-% assigning temp38 to x
+% assigning temp38 to expressionsTest0x
                lw r1, temp38(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 9 into lit36
@@ -620,8 +621,8 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying x with lit37
-               lw r1, x(r0)
+%multiplying expressionsTest0x with lit37
+               lw r1, expressionsTest0x(r0)
                lw r2, lit37(r0)
                mul r3, r1, r2
                sw temp39(r0), r3
@@ -633,29 +634,31 @@
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying i with lit38
-               lw r1, i(r0)
+%multiplying expressionsTest0i with lit38
+               lw r1, expressionsTest0i(r0)
                lw r2, lit38(r0)
                mul r3, r1, r2
                sw temp40(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding temp39 with x
+%adding temp39 with expressionsTest0x
                lw r1, temp39(r0)
-               lw r2, x(r0)
+               lw r2, expressionsTest0x(r0)
                add r3, r1, r2
                sw temp41(r0), r3
                sub r1, r1, r1
-% assigning temp41 to x
+% assigning temp41 to expressionsTest0x
                lw r1, temp41(r0)
-               sw x(r0), r1
+               sw expressionsTest0x(r0), r1
                addi r1, r0, 0
+               jr r11
+% end of function
 
-               % space for variable n
-n              res 4
-               % space for variable i
-i              res 4
+               % space for variable expressionsTest0n
+expressionsTestres 4
+               % space for variable expressionsTest0i
+expressionsTestres 4
                % space for variable lit1
 lit1           res 4
                % space for variable temp1

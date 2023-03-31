@@ -1,7 +1,8 @@
+bubbleSort2
                sub r1, r1, r1
-% assigning size to n
-               lw r1, size(r0)
-               sw n(r0), r1
+% assigning bubbleSort2size to bubbleSort2n
+               lw r1, bubbleSort2size(r0)
+               sw bubbleSort2n(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 0 into lit1
@@ -9,9 +10,9 @@
                sw lit1(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit1 to i
+% assigning lit1 to bubbleSort2i
                lw r1, lit1(r0)
-               sw i(r0), r1
+               sw bubbleSort2i(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 0 into lit2
@@ -19,9 +20,9 @@
                sw lit2(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit2 to j
+% assigning lit2 to bubbleSort2j
                lw r1, lit2(r0)
-               sw j(r0), r1
+               sw bubbleSort2j(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 0 into lit3
@@ -29,9 +30,9 @@
                sw lit3(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit3 to temp
+% assigning lit3 to bubbleSort2temp
                lw r1, lit3(r0)
-               sw temp(r0), r1
+               sw bubbleSort2temp(r0), r1
                addi r1, r0, 0
 %starting while loop
 gowhile1
@@ -43,16 +44,16 @@ gowhile1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding n with lit4
-               lw r1, n(r0)
+%adding bubbleSort2n with lit4
+               lw r1, bubbleSort2n(r0)
                lw r2, lit4(r0)
                sub r3, r1, r2
                sw temp1(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation temp1 lt i
-               lw r1, i(r0)
+%relation temp1 lt bubbleSort2i
+               lw r1, bubbleSort2i(r0)
                lw r2, temp1(r0)
                clt r3, r1, r2
                sw temp2(r0), r3
@@ -68,24 +69,24 @@ gowhile2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding i with lit5
-               lw r1, i(r0)
+%adding bubbleSort2i with lit5
+               lw r1, bubbleSort2i(r0)
                lw r2, lit5(r0)
                sub r3, r1, r2
                sw temp3(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding n with temp3
-               lw r1, n(r0)
+%adding bubbleSort2n with temp3
+               lw r1, bubbleSort2n(r0)
                lw r2, temp3(r0)
                sub r3, r1, r2
                sw temp4(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation temp4 lt j
-               lw r1, j(r0)
+%relation temp4 lt bubbleSort2j
+               lw r1, bubbleSort2j(r0)
                lw r2, temp4(r0)
                clt r3, r1, r2
                sw temp5(r0), r3
@@ -99,26 +100,26 @@ gowhile2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding j with lit6
-               lw r1, j(r0)
+%adding bubbleSort2j with lit6
+               lw r1, bubbleSort2j(r0)
                lw r2, lit6(r0)
                add r3, r1, r2
                sw temp6(r0), r3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation arr gt arr
-               lw r1, arr(r0)
-               lw r2, arr(r0)
+%relation bubbleSort2arr gt bubbleSort2arr
+               lw r1, bubbleSort2arr(r0)
+               lw r2, bubbleSort2arr(r0)
                cgt r3, r1, r2
                sw temp7(r0), r3
 % starting if statment
                 lw r1, temp7(r0)
                 bz r1, else1
                sub r1, r1, r1
-% assigning arr to temp
-               lw r1, arr(r0)
-               sw temp(r0), r1
+% assigning bubbleSort2arr to bubbleSort2temp
+               lw r1, bubbleSort2arr(r0)
+               sw bubbleSort2temp(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit7
@@ -128,15 +129,15 @@ gowhile2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding j with lit7
-               lw r1, j(r0)
+%adding bubbleSort2j with lit7
+               lw r1, bubbleSort2j(r0)
                lw r2, lit7(r0)
                add r3, r1, r2
                sw temp8(r0), r3
                sub r1, r1, r1
-% assigning arr to arr
-               lw r1, arr(r0)
-               sw arr(r0), r1
+% assigning bubbleSort2arr to bubbleSort2arr
+               lw r1, bubbleSort2arr(r0)
+               sw bubbleSort2arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit8
@@ -146,15 +147,15 @@ gowhile2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding j with lit8
-               lw r1, j(r0)
+%adding bubbleSort2j with lit8
+               lw r1, bubbleSort2j(r0)
                lw r2, lit8(r0)
                add r3, r1, r2
                sw temp9(r0), r3
                sub r1, r1, r1
-% assigning temp to arr
-               lw r1, temp(r0)
-               sw arr(r0), r1
+% assigning bubbleSort2temp to bubbleSort2arr
+               lw r1, bubbleSort2temp(r0)
+               sw bubbleSort2arr(r0), r1
                addi r1, r0, 0
                j endif1
 else1endif1               sub r1, r1, r1
@@ -165,15 +166,15 @@ else1endif1               sub r1, r1, r1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding j with lit9
-               lw r1, j(r0)
+%adding bubbleSort2j with lit9
+               lw r1, bubbleSort2j(r0)
                lw r2, lit9(r0)
                add r3, r1, r2
                sw temp10(r0), r3
                sub r1, r1, r1
-% assigning temp10 to j
+% assigning temp10 to bubbleSort2j
                lw r1, temp10(r0)
-               sw j(r0), r1
+               sw bubbleSort2j(r0), r1
                addi r1, r0, 0
 j gowhile2
 endwhile2
@@ -185,22 +186,25 @@ endwhile2
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding i with lit10
-               lw r1, i(r0)
+%adding bubbleSort2i with lit10
+               lw r1, bubbleSort2i(r0)
                lw r2, lit10(r0)
                add r3, r1, r2
                sw temp11(r0), r3
                sub r1, r1, r1
-% assigning temp11 to i
+% assigning temp11 to bubbleSort2i
                lw r1, temp11(r0)
-               sw i(r0), r1
+               sw bubbleSort2i(r0), r1
                addi r1, r0, 0
 j gowhile1
 endwhile1
+               jr r11
+% end of function
+printArray2
                sub r1, r1, r1
-% assigning size to n
-               lw r1, size(r0)
-               sw n(r0), r1
+% assigning printArray2size to printArray2n
+               lw r1, printArray2size(r0)
+               sw printArray2n(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 0 into lit11
@@ -208,24 +212,24 @@ endwhile1
                sw lit11(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit11 to i
+% assigning lit11 to printArray2i
                lw r1, lit11(r0)
-               sw i(r0), r1
+               sw printArray2i(r0), r1
                addi r1, r0, 0
 %starting while loop
 gowhile3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation n lt i
-               lw r1, i(r0)
-               lw r2, n(r0)
+%relation printArray2n lt printArray2i
+               lw r1, printArray2i(r0)
+               lw r2, printArray2n(r0)
                clt r3, r1, r2
                sw temp12(r0), r3
                lw r1, temp12(r0)
                bz r1, endwhile3
-               % processing: write(arr)
-               lw r1, arr(r0)
+               % processing: write(printArray2arr)
+               lw r1, printArray2arr(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -247,18 +251,20 @@ gowhile3
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding i with lit12
-               lw r1, i(r0)
+%adding printArray2i with lit12
+               lw r1, printArray2i(r0)
                lw r2, lit12(r0)
                add r3, r1, r2
                sw temp13(r0), r3
                sub r1, r1, r1
-% assigning temp13 to i
+% assigning temp13 to printArray2i
                lw r1, temp13(r0)
-               sw i(r0), r1
+               sw printArray2i(r0), r1
                addi r1, r0, 0
 j gowhile3
 endwhile3
+               jr r11
+% end of function
                entry
                addi r14, r0, topaddr
                sub r1, r1, r1
@@ -272,9 +278,9 @@ endwhile3
                sw lit14(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit14 to arr
+% assigning lit14 to main0arr
                lw r1, lit14(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit15
@@ -287,9 +293,9 @@ endwhile3
                sw lit16(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit16 to arr
+% assigning lit16 to main0arr
                lw r1, lit16(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2 into lit17
@@ -302,9 +308,9 @@ endwhile3
                sw lit18(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit18 to arr
+% assigning lit18 to main0arr
                lw r1, lit18(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 3 into lit19
@@ -317,9 +323,9 @@ endwhile3
                sw lit20(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit20 to arr
+% assigning lit20 to main0arr
                lw r1, lit20(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 4 into lit21
@@ -332,9 +338,9 @@ endwhile3
                sw lit22(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit22 to arr
+% assigning lit22 to main0arr
                lw r1, lit22(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 5 into lit23
@@ -347,9 +353,9 @@ endwhile3
                sw lit24(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit24 to arr
+% assigning lit24 to main0arr
                lw r1, lit24(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 6 into lit25
@@ -362,35 +368,46 @@ endwhile3
                sw lit26(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning temp101 to arr
+% assigning temp101 to main0arr
                lw r1, temp101(r0)
-               sw arr(r0), r1
+               sw main0arr(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 7 into lit27
                addi r1, r0, 7
                sw lit27(r0), r1
                 addi r1, r0, 0
+               jl r11, printarray2
                sub r1, r1, r1
 %storing 7 into lit28
                addi r1, r0, 7
                sw lit28(r0), r1
                 addi r1, r0, 0
+               lw r1, main0arr(r0)
+               sw bubbleSort2arr(r0), r1
+               lw r1, lit28(r0)
+               sw bubbleSort2size(r0), r1
+               jl r11, bubbleSort2
                sub r1, r1, r1
 %storing 7 into lit29
                addi r1, r0, 7
                sw lit29(r0), r1
                 addi r1, r0, 0
+               jl r11, printarray2
                hlt
 
-               % space for variable n
-n              res 4
-               % space for variable i
-i              res 4
-               % space for variable j
-j              res 4
-               % space for variable temp
-temp           res 4
+               % space for variable bubbleSort2arr
+bubbleSort2arr res 4
+               % space for variable bubbleSort2size
+bubbleSort2sizeres 4
+               % space for variable bubbleSort2n
+bubbleSort2n   res 4
+               % space for variable bubbleSort2i
+bubbleSort2i   res 4
+               % space for variable bubbleSort2j
+bubbleSort2j   res 4
+               % space for variable bubbleSort2temp
+bubbleSort2tempres 4
                % space for variable lit1
 lit1           res 4
                % space for variable lit2
@@ -433,10 +450,14 @@ temp10         res 4
 lit10          res 4
                % space for variable temp11
 temp11         res 4
-               % space for variable n
-n              res 4
-               % space for variable i
-i              res 4
+               % space for variable printArray2arr
+printArray2arr res 4
+               % space for variable printArray2size
+printArray2sizeres 4
+               % space for variable printArray2n
+printArray2n   res 4
+               % space for variable printArray2i
+printArray2i   res 4
                % space for variable lit11
 lit11          res 4
                % space for variable temp12
@@ -448,8 +469,8 @@ buf            res 20
 lit12          res 4
                % space for variable temp13
 temp13         res 4
-               % space for variable arr
-arr            res 28
+               % space for variable main0arr
+main0arr       res 28
                % space for variable lit13
 lit13          res 4
                % space for variable lit14

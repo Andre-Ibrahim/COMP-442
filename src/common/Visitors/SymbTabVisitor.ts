@@ -100,6 +100,10 @@ export class SymbTabVisitor extends Visitor {
             this.traverseTree(node, node.symbolTable);
         }
 
+        if(node instanceof NodeARRAYSIZE){
+            this.traverseTree(node, node.symbolTable);
+        }
+
         if(node instanceof NodeWRITESTAT) {
             this.traverseTree(node, node.symbolTable);
         }
@@ -352,6 +356,13 @@ export class SymbTabVisitor extends Visitor {
         }
 
         if (node instanceof NodeFUNCCONSTSTRUCT) {
+            node.children?.forEach((child) => {
+                child.setSymbolTable(node.symbolTable);
+                child.accept(this);
+            });
+        }
+
+        if (node instanceof NodeRETURNSTAT) {
             node.children?.forEach((child) => {
                 child.setSymbolTable(node.symbolTable);
                 child.accept(this);
