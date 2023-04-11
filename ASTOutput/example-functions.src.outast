@@ -133,7 +133,7 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | | | | TERM
 | | | | | | | | | | | | | | FACTOR
 | | | | | | | | | | | | | | | {"type":"intnum","lexeme":"9","position":22}
-| | | | | | {"type":"plus","lexeme":"+","position":22}
+| | | | | | {"type":"minus","lexeme":"-","position":22}
 | | | | | | ARITHEXPR
 | | | | | | | TERM
 | | | | | | | | FACTOR

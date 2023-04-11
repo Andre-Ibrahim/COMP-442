@@ -12,6 +12,7 @@ function main() => void
 
   z = x[1][1];
 
+
   write(y * z);
   
 }

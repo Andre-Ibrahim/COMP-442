@@ -129,7 +129,7 @@ func21
 %adding temp3 with temp4
                lw r1, temp3(r0)
                lw r2, temp4(r0)
-               add r3, r1, r2
+               sub r3, r1, r2
                sw temp5(r0), r3
                sub r1, r1, r1
 % assigning temp5 to main0x

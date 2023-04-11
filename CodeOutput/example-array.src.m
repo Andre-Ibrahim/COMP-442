@@ -242,6 +242,21 @@
                lw r1, temp9(r0)
                sw main0y(r0), r1
                addi r1, r0, 0
+               % processing: write(main0y)
+               lw r1, main0y(r0)
+               % put value on stack
+               sw -8(r14), r1
+               % Link buffer to stack
+               addi r1,r0, buf
+               sw -12(r14), r1
+               % convert int to string for output
+               jl r15, intstr
+               sw -8 (r14), r13
+               % output to console
+               jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
                sub r1, r1, r1
 %storing 1 into lit20
                addi r1, r0, 1
@@ -411,6 +426,9 @@ temp7          res 4
 temp8          res 4
                % space for variable temp9
 temp9          res 4
+               % space for variable buf
+buf            res 20
+
                % space for variable lit20
 lit20          res 4
                % space for variable lit21
@@ -433,6 +451,3 @@ temp13         res 4
 temp14         res 4
                % space for variable temp15
 temp15         res 4
-               % space for variable buf
-buf            res 20
-

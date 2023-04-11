@@ -104,12 +104,12 @@ CLASSDECLORFUNCDEF
 | | | | | | | FACTOR
 | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | VARIABLE
-| | | | | | | | | | {"type":"id","lexeme":"y","position":15}
+| | | | | | | | | | {"type":"id","lexeme":"y","position":16}
 | | | | | | | | | | INDICELIST
-| | | | | | | {"type":"mult","lexeme":"*","position":15}
+| | | | | | | {"type":"mult","lexeme":"*","position":16}
 | | | | | | | TERM
 | | | | | | | | FACTOR
 | | | | | | | | | FACTORCALLORVAR
 | | | | | | | | | | VARIABLE
-| | | | | | | | | | | {"type":"id","lexeme":"z","position":15}
+| | | | | | | | | | | {"type":"id","lexeme":"z","position":16}
 | | | | | | | | | | | INDICELIST
