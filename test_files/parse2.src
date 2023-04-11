@@ -26,6 +26,15 @@
 |X| type: array (without size)
 */
 
+class POLYNOMIAL {
+  public function evaluate: (x: float) => float;
+};
+
+function POLYNOMIAL::evaluate(x: float) => float
+{
+  return (0);
+}
+
 function VOIDReturnType(arr: integer[], size: integer) => void 
 {
   localvar n: integer;

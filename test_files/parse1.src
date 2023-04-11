@@ -10,10 +10,17 @@
 |X| type: array (without size) (not allowed)
 */
 
+
+class POLYNOMIAL {
+
+};
+
+
 function variableDeclarations(x: integer) => void {
    localvar i: integer; 
    localvar i: float; 
    localvar i: id; 
+   localvar i: POLYNOMIAL;
    localvar i: integer[1]; 
    localvar i: integer[10]; 
    localvar i: float[1]; 
