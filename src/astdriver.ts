@@ -9,32 +9,48 @@ testCases.push(`example-polynomial.src`);
 testCases.push(`example-AST.src`);
 testCases.push(`example-error.src`);
 
-testCases.forEach((testCase) => {
+export function astGeneration(testCase: string){
     const file = readFileSync(`./test_files/${testCase}`, "utf-8");
 
     const parser = new Parser(file);
 
-    if (!parser.parse()) {
-        console.log(
-            `The ./test_files/${testCase} contains errors see ./output/${testCase}.outsyntaxerror for more information`,
-        );
-    } else {
-        console.log("Semantic stack size: ", parser.semanticStack.length);
-        console.log(`The file ./test_files/${testCase} was parsed succefully`);
-    }
+    parser.parse();
 
     const symTabVisitor = new SymbTabVisitor();
 
     parser.abstractSyntaxTree.accept(symTabVisitor);
 
-    console.log(parser.abstractSyntaxTree.symbolTable?.toString());
-
-    console.log(symTabVisitor.errors);
-
-    writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
-
     writeFileSync(`./ASTOutput/${testCase}.outast`, parser.abstractSyntaxTree.printTree());
-});
+}
+
+// const testCase = ["parse1.src"];
+
+// testCase.forEach((testCase) => {
+//     const file = readFileSync(`./test_files/${testCase}`, "utf-8");
+
+//     const parser = new Parser(file);
+
+//     if (!parser.parse()) {
+//         console.log(
+//             `The ./test_files/${testCase} contains errors see ./output/${testCase}.outsyntaxerror for more information`,
+//         );
+//     } else {
+//         console.log("Semantic stack size: ", parser.semanticStack.length);
+//         console.log(`The file ./test_files/${testCase} was parsed succefully`);
+//     }
+
+//     const symTabVisitor = new SymbTabVisitor();
+
+//     parser.abstractSyntaxTree.accept(symTabVisitor);
+
+//     console.log(parser.abstractSyntaxTree.symbolTable?.toString());
+
+//     console.log(symTabVisitor.errors);
+
+//     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
+
+//     writeFileSync(`./ASTOutput/${testCase}.outast`, parser.abstractSyntaxTree.printTree());
+// });
 
 // const root = new TreeNode(Concept.SEMANTICARRAYSIZE);
 // const child = new TreeNode(Concept.SEMANTICVARDECL);

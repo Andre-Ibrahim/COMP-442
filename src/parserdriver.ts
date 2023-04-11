@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
+import { ErrorType } from "./common/Errors/ErrorType";
 
 const testCases = Array.from({ length: 7 }, (_, i) => `example-testcase${i + 1}.src`);
 
@@ -8,7 +9,7 @@ testCases.push(`example-polynomial.src`);
 testCases.push("example-error.src");
 
 
-export function syntacticalAnalysis(testCase: string) {
+export function syntacticalAnalysis(testCase: string): ErrorType[] {
     const file = readFileSync(`./test_files/${testCase}`, "utf-8");
     const parser = new Parser(file);
 
@@ -29,6 +30,8 @@ export function syntacticalAnalysis(testCase: string) {
             .replace(/closecubr/g, "closecubr\n"),
     );
     writeFileSync(`./output/${testCase}.outsyntaxerror`, parser.errors);
+
+    return parser.errorStack;
 
 }
 

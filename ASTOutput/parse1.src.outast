@@ -1,0 +1,73 @@
+
+CLASSDECLORFUNCDEF
+| CLASSDECL
+| | {"type":"id","lexeme":"POLYNOMIAL","position":14}
+| FUNCDEF
+| | {"type":"id","lexeme":"variableDeclarations","position":19}
+| | FUNCARROW
+| | | FPARAMS
+| | | | {"type":"id","lexeme":"x","position":19}
+| | | | {"type":"integer","lexeme":"integer","position":19}
+| | | | ARRAYSIZE
+| | | {"type":"void","lexeme":"void","position":19}
+| | FUNCBODY
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":20}
+| | | | {"type":"integer","lexeme":"integer","position":20}
+| | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":21}
+| | | | {"type":"float","lexeme":"float","position":21}
+| | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":22}
+| | | | {"type":"id","lexeme":"id","position":22}
+| | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":23}
+| | | | {"type":"id","lexeme":"POLYNOMIAL","position":23}
+| | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":24}
+| | | | {"type":"integer","lexeme":"integer","position":24}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":24}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":25}
+| | | | {"type":"integer","lexeme":"integer","position":25}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"10","position":25}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":26}
+| | | | {"type":"float","lexeme":"float","position":26}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":26}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":27}
+| | | | {"type":"float","lexeme":"float","position":27}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"10","position":27}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":28}
+| | | | {"type":"integer","lexeme":"integer","position":28}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":28}
+| | | | | {"type":"intnum","lexeme":"1","position":28}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":29}
+| | | | {"type":"float","lexeme":"float","position":29}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"1","position":29}
+| | | | | {"type":"intnum","lexeme":"1","position":29}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":30}
+| | | | {"type":"float","lexeme":"float","position":30}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"2","position":30}
+| | | | | {"type":"intnum","lexeme":"1","position":30}
+| | | VARDECL
+| | | | {"type":"id","lexeme":"i","position":31}
+| | | | {"type":"integer","lexeme":"integer","position":31}
+| | | | ARRAYSIZE
+| | | | | {"type":"intnum","lexeme":"9","position":31}
+| | | | | {"type":"intnum","lexeme":"3","position":31}

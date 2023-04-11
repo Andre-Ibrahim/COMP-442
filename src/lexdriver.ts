@@ -4,8 +4,9 @@ import { readFileSync, writeFileSync } from "fs";
 import TokenType from "./lexical_analysis/TokenType";
 import { invalidTokenToString, tokenToString } from "./common/stringHelpers";
 import { isInvalidTokenType } from "./common/tokenHelpers";
+import { ErrorType } from "./common/Errors/ErrorType";
 
-export function lexicalAnalysis(filename: string) {
+export function lexicalAnalysis(filename: string): ErrorType[] {
     const file = readFileSync(`./test_files/${filename}`, "utf-8");
     const lexer: AbstractLexer = new Lexer(file);
 
@@ -13,6 +14,7 @@ export function lexicalAnalysis(filename: string) {
     let currentLine = token.position;
     let outputFile = "";
     let errorFile = "";
+    let errorStack: ErrorType[] = [];
 
     while (true) {
         if (token.type !== TokenType.EOF) {
@@ -21,6 +23,8 @@ export function lexicalAnalysis(filename: string) {
             }
             if (isInvalidTokenType(token.type)) {
                 errorFile += invalidTokenToString(token);
+                console.log(token);
+                errorStack.push({message: invalidTokenToString(token), position: token.position});
             }
             outputFile += tokenToString(token);
             currentLine = token.position;
@@ -38,6 +42,8 @@ export function lexicalAnalysis(filename: string) {
     }
     writeFileSync(`./output/${filename}.outlexerrors`, errorFile);
     writeFileSync(`./output/${filename}.outlextokens`, outputFile);
+
+    return errorStack;
 }
 
 // const files = ["example-polynomial", "example-bubblesort", "lexnegativegrading", "lexpositivegrading"];

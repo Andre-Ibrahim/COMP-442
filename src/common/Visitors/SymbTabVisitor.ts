@@ -379,9 +379,11 @@ export class SymbTabVisitor extends Visitor {
 
                 return -1;
             });
+            let errorFound = false;
             node.symbolTable?.entries.forEach((entry) => {
-                if (entry instanceof LocalVarEntry && entry.id.lexeme === id.lexeme) {
+                if (entry instanceof LocalVarEntry && entry.id.lexeme === id.lexeme && !errorFound) {
                     this.errors.push(new CompilerError("8.4", id, "Multipy declared identifier in function"));
+                    errorFound = true;
                 }
             });
             node.symbolTable?.addEntry(new LocalVarEntry(id, type, dim));
