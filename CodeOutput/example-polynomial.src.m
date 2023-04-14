@@ -226,7 +226,7 @@ temp5          res 8
                % space for variable temp6
 temp6          res 8
                % space for variable main0f1
-main0f1        res 208
+main0f1        res 144
                % space for variable lit3
 lit3           res 8
                % space for variable lit4
@@ -234,7 +234,7 @@ lit4           res 8
                % space for variable lit5
 lit5           res 8
                % space for variable main0f2
-main0f2        res 152
+main0f2        res 104
                % space for variable lit6
 lit6           res 4
                % space for variable temp7

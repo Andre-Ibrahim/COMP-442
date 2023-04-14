@@ -354,7 +354,7 @@ export class TypeCheckVisitor extends Visitor {
             }
         });
 
-        if (idNotFound) {
+        if (idNotFound && functionId) {
             this.errors.push(new CompilerError("11.4", functionId ?? this.defaultToken, "Undeclared free function"));
         }
 

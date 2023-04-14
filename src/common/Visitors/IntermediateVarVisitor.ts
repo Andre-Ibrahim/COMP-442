@@ -96,16 +96,23 @@ export class IntermediateVarVisitor extends Visitor {
 
             const literals = this.getLiterals(node);
             this.createLitVars(literals, node);
+
+            if(node.children.length === 3){
+                this.createTempVar(node);
+            }
         }
         if (node instanceof NodeARITHEXPR) {
             this.traverseTree(node);
-            const count = this.arthExprCountAddOpp(node);
-            this.createTempVar(node);
+            if(node.children.length === 3){
+                this.createTempVar(node);
+            }
         }
         if (node instanceof NodeTERM) {
             this.traverseTree(node);
 
-            this.createTempVar(node);
+            if(node.children.length === 3){
+                this.createTempVar(node);
+            }
         }
         if (node instanceof NodeFACTOR) {
             this.traverseTree(node);
@@ -152,6 +159,10 @@ export class IntermediateVarVisitor extends Visitor {
 
             const literals = this.getLiterals(node);
             this.createLitVars(literals, node);
+
+            if(node.children.length === 3){
+                this.createTempVar(node);
+            }
         }
         if (node instanceof NodeIFSTAT) {
             this.traverseTree(node);
@@ -225,11 +236,12 @@ export class IntermediateVarVisitor extends Visitor {
     private createTempVar(node: NodeARITHEXPR | NodeTERM) {
             let type = node.type;
 
-            if (type === "") {
-                type = node.parentNode?.type ?? "";
+            if (type == "") {
+                type = node.parentNode?.type ?? "integer";
             }
-            const tempvar = new TempVarEntry(this.createTempVarToken(), node.type, this.expressionCount);
+            const tempvar = new TempVarEntry(this.createTempVarToken(), type, this.expressionCount);
             this.tempvarCount++;
+            console.log(tempvar);
             node.symbolTable?.addEntry(tempvar);
             node.tempvar = tempvar.id.lexeme;
     }

@@ -23,7 +23,6 @@ export function lexicalAnalysis(filename: string): ErrorType[] {
             }
             if (isInvalidTokenType(token.type)) {
                 errorFile += invalidTokenToString(token);
-                console.log(token);
                 errorStack.push({message: invalidTokenToString(token), position: token.position});
             }
             outputFile += tokenToString(token);

@@ -14,11 +14,11 @@ export function syntacticalAnalysis(testCase: string): ErrorType[] {
     const parser = new Parser(file);
 
     if (!parser.parse()) {
-        console.log(
-            `The ./test_files/${testCase} contains errors see ./output/${testCase}.outsyntaxerror for more information`,
-        );
+        // console.log(
+        //     `The ./test_files/${testCase} contains errors see ./output/${testCase}.outsyntaxerror for more information`,
+        // );
     } else {
-        console.log(`The file ./test_files/${testCase} was parsed succefully`);
+        // console.log(`The file ./test_files/${testCase} was parsed succefully`);
     }
 
     writeFileSync(
