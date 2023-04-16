@@ -185,7 +185,7 @@ export class SymbTabVisitor extends Visitor {
                     error = true;
                 } else if (entry instanceof MemberFuncEntry && entry.id.lexeme === id.lexeme) {
                     if (!error) {
-                        this.warrnings.push(new CompilerWarning("9.2", id, "overloaded member function free function"));
+                        this.warrnings.push(new CompilerWarning("9.2", id, "overloaded member function"));
                     }
 
                     error = true;
@@ -416,7 +416,7 @@ export class SymbTabVisitor extends Visitor {
 
             inherited.forEach((entry) => {
                 if (entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme) {
-                    this.warrnings.push(new CompilerWarning("8.5", id, "Shadowed inherited data member"));
+                    this.warrnings.push(new CompilerWarning("8.6", id, "Shadowed inherited data member"));
                 }
             });
 
