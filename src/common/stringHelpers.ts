@@ -94,7 +94,7 @@ function invalidTokenToString(token: Token): string {
     const invalidString = invalidTokenTypeToString.get(token.type);
 
     if (invalidString) {
-        return `Lexical error: ${invalidString}: "${token.lexeme}": line ${token.position}.\n`;
+        return `Lexical error: ${invalidString}: "${token.lexeme}": line ${token.position}.`;
     }
 
     return "";

@@ -817,19 +817,18 @@ CLASSDECLORFUNCDEF
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"2","position":128}
-| | | FUNCTIONCALLSTAT
-| | | | FUNCTIONCALL
-| | | | | {"type":"id","lexeme":"f3","position":129}
-| | | | | APARAMS
-| | | | | | EXPR
-| | | | | | | ARITHEXPR
-| | | | | | | | TERM
-| | | | | | | | | FACTOR
-| | | | | | | | | | FACTORCALLORVAR
-| | | | | | | | | | | VARIABLE
-| | | | | | | | | | | | {"type":"id","lexeme":"j","position":129}
-| | | | | | | | | | | | INDICELIST
+| | | | | | | | FACTORCALLORVAR
+| | | | | | | | | FUNCTIONCALL
+| | | | | | | | | | {"type":"id","lexeme":"f3","position":129}
+| | | | | | | | | | APARAMS
+| | | | | | | | | | | EXPR
+| | | | | | | | | | | | ARITHEXPR
+| | | | | | | | | | | | | TERM
+| | | | | | | | | | | | | | FACTOR
+| | | | | | | | | | | | | | | FACTORCALLORVAR
+| | | | | | | | | | | | | | | | VARIABLE
+| | | | | | | | | | | | | | | | | {"type":"id","lexeme":"j","position":129}
+| | | | | | | | | | | | | | | | | INDICELIST
 | | | ASSIGNSTAT
 | | | | VARIABLE
 | | | | | {"type":"id","lexeme":"counter","position":130}

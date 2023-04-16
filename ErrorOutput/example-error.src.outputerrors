@@ -28,6 +28,11 @@ error: 8.4 :counter: Multipy declared identifier in function :116
 error: 11.2 :b: "." undeclared data member :121
 error: 11.3 :f: "." undeclared member function :122
 error: 11.4 :undefined: Undeclared free function :123
+Lexical error: Invalid character: "@": line 124.
+syntax error for TokenType: invalidchar and lexeme: @ : 124
 error: 11.1 :e: "." undelclared localvar :124
 error: 12.1 :f: function call with wrong number of parameters :125
+Lexical error: Invalid number: "02": line 128.
+syntax error for TokenType: invalidnum and lexeme: 02 : 128
+syntax error for TokenType: semi and lexeme: ; : 128
 error: 15.1 :counter: "." operator used on non-class type :130

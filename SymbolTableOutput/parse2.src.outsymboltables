@@ -1,0 +1,84 @@
+global 
+class | id: POLYNOMIAL | MemSize: 12
+	class:POLYNOMIAL 
+	function | evaluate | aparams: (x:float)| type: float| visiblity: public| memsize: 12
+	function:evaluate 
+		parameter | id: x | type: float| memsize: 8
+		litvar | id: 0 | type: integer | expressionId: 1| memsize: 4
+
+
+function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void| memsize: 12
+	function:VOIDReturnType 
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
+
+function | FLOATReturnType | aparams: (arr:integer[] size:integer)| type: float| memsize: 24
+	function:FLOATReturnType 
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
+	litvar | id: 1.111 | type: float | expressionId: 3| memsize: 8
+	tempvar | id: temp1 | type: integer | expressionId: 3| memsize: 4
+
+function | VOIDReturnType | aparams: (arr:integer[] size:integer)| type: void| memsize: 12
+	function:VOIDReturnType 
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: n | type: integer | memsize: 4
+
+function | VOIDReturnType | aparams: (arr:integer[][] size:float)| type: void| memsize: 16
+	function:VOIDReturnType 
+	parameter | id: arr | type: integer[][]| memsize: 4
+	parameter | id: size | type: float| memsize: 8
+	localvar | id: n | type: integer | memsize: 4
+
+function | functionParams | aparams: (x:integer y:float z:id a:integer[])| type: void| memsize: 16
+	function:functionParams 
+	parameter | id: x | type: integer| memsize: 4
+	parameter | id: y | type: float| memsize: 8
+	parameter | id: z | type: id| memsize: 0
+	parameter | id: a | type: integer[]| memsize: 4
+
+function | printArray | aparams: (x:float)| type: integer| memsize: 16
+	function:printArray 
+	parameter | id: x | type: float| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 4| memsize: 4
+
+function | printArray | aparams: (x:id)| type: integer| memsize: 8
+	function:printArray 
+	parameter | id: x | type: id| memsize: 0
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 6| memsize: 4
+
+function | printArray | aparams: (x:id)| type: id| memsize: 8
+	function:printArray 
+	parameter | id: x | type: id| memsize: 0
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 8| memsize: 4
+
+function | printArray | aparams: (x:float[])| type: integer| memsize: 16
+	function:printArray 
+	parameter | id: x | type: float[]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 10| memsize: 4
+
+function | printArray | aparams: (x:float[])| type: float| memsize: 16
+	function:printArray 
+	parameter | id: x | type: float[]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 12| memsize: 4
+
+function | printArray | aparams: (x:float[][])| type: float| memsize: 16
+	function:printArray 
+	parameter | id: x | type: float[][]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 14| memsize: 4
+
+function | printArray | aparams: (x:float[][])| type: float| memsize: 16
+	function:printArray 
+	parameter | id: x | type: float[][]| memsize: 8
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 16| memsize: 4
+

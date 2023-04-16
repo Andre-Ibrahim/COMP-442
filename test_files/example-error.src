@@ -121,11 +121,11 @@ function main() => void
   c.b = 1;                                                                 // 11.2
   counter = c.f();                                                         // 11.3
   undefined();                                                             // 11.4
-  counter = e;                                                             // 11.1
+  counter = e; @                                                            // 11.1
   f(1,1,1);                                                                // 12.1
   f(1.2,1);                                                                // 12.2	
   i[2] = 1;                                                                // 13.1
-  i[2][1.3] = 2;                                                           // 13.2
+  i[2][1.3] = 02;                                                           // 13.2
   f3(j);                                                                   // 13.3
   counter.x = 1;                                                           // 15.1
   counter = self;                                                          // 15.2

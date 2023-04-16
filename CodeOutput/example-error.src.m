@@ -334,38 +334,35 @@ f31
                addi r1, r0, 1.3
                sw lit20(r0), r1
                 addi r1, r0, 0
-               sub r1, r1, r1
-%storing 2 into lit21
-               addi r1, r0, 2
-               sw lit21(r0), r1
-                addi r1, r0, 0
-% generating offset
-               sw temp10(r0), r0
-               lw r1, lit19(r0)
-               muli r2, r1, 4
-               muli r3, r2, 3
-               lw r4, temp10(r0)
-               add r1, r4, r3
-               sw temp10(r0), r1
-               lw r1, lit20(r0)
-               muli r2, r1, 4
-               muli r3, r2, 1
-               lw r4, temp10(r0)
-               add r1, r4, r3
-               sw temp10(r0), r1
-               sub r1, r1, r1
-% assigning lit21 to main0i with offset temp10
-               lw r2, temp10(r0)
-               lw r1, lit21(r0)
-               sw main0i(r2), r1
-               addi r1, r0, 0
                lw r1, main0j(r0)
                sw f31p1(r0), r1
                jl r11, f31
+               lw r1, f31return(r0)
+               sw temp10(r0), r1
+% generating offset
+               sw temp11(r0), r0
+               lw r1, lit19(r0)
+               muli r2, r1, 4
+               muli r3, r2, 3
+               lw r4, temp11(r0)
+               add r1, r4, r3
+               sw temp11(r0), r1
+               lw r1, lit20(r0)
+               muli r2, r1, 4
+               muli r3, r2, 1
+               lw r4, temp11(r0)
+               add r1, r4, r3
+               sw temp11(r0), r1
                sub r1, r1, r1
-%storing 1 into lit22
+% assigning temp10 to main0i with offset temp11
+               lw r2, temp11(r0)
+               lw r1, temp10(r0)
+               sw main0i(r2), r1
+               addi r1, r0, 0
+               sub r1, r1, r1
+%storing 1 into lit21
                addi r1, r0, 1
-               sw lit22(r0), r1
+               sw lit21(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
 % assigning error to main0counter
@@ -380,19 +377,19 @@ f31
 %starting while loop
 gowhile1
                sub r1, r1, r1
-%storing 10 into lit23
+%storing 10 into lit22
                addi r1, r0, 10
-               sw lit23(r0), r1
+               sw lit22(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation lit23 leq main0counter
+%relation lit22 leq main0counter
                lw r1, main0counter(r0)
-               lw r2, lit23(r0)
+               lw r2, lit22(r0)
                cle r3, r1, r2
-               sw temp11(r0), r3
-               lw r1, temp11(r0)
+               sw temp12(r0), r3
+               lw r1, temp12(r0)
                bz r1, endwhile1
                % processing: write(main0counter)
                lw r1, main0counter(r0)
@@ -506,9 +503,9 @@ main0a         res 0
                % space for variable main0c
 main0c         res 4
                % space for variable main0f1
-main0f1        res 148
+main0f1        res 76
                % space for variable main0f2
-main0f2        res 228
+main0f2        res 124
                % space for variable main0counter
 main0counter   res 4
                % space for variable main0counter
@@ -553,16 +550,16 @@ temp9          res 4
 lit19          res 4
                % space for variable lit20
 lit20          res 8
-               % space for variable lit21
-lit21          res 4
                % space for variable temp10
 temp10         res 4
-               % space for variable lit22
-lit22          res 4
-               % space for variable lit23
-lit23          res 4
                % space for variable temp11
 temp11         res 4
+               % space for variable lit21
+lit21          res 4
+               % space for variable lit22
+lit22          res 4
+               % space for variable temp12
+temp12         res 4
                % space for variable buf
 buf            res 20
 

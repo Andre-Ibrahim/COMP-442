@@ -239,9 +239,13 @@ export class IntermediateVarVisitor extends Visitor {
             if (type == "") {
                 type = node.parentNode?.type ?? "integer";
             }
+
+            if(type == "") {
+                type = "integer";
+            }
+
             const tempvar = new TempVarEntry(this.createTempVarToken(), type, this.expressionCount);
             this.tempvarCount++;
-            console.log(tempvar);
             node.symbolTable?.addEntry(tempvar);
             node.tempvar = tempvar.id.lexeme;
     }

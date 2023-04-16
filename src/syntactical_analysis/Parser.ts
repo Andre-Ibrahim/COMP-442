@@ -111,7 +111,7 @@ export default class Parser {
     private skipError(lookahead: Token) {
         if (lookahead.type !== TokenType.EOF) {
             this.errors += `syntax error at ${lookahead.position}: for TokenType: ${lookahead.type} and lexeme: ${lookahead.lexeme}\n`;
-            this.errorStack.push({message:`syntax error at ${lookahead.position}: for TokenType: ${lookahead.type} and lexeme: ${lookahead.lexeme}\n}`, position: lookahead.position});
+            this.errorStack.push({message:`syntax error for TokenType: ${lookahead.type} and lexeme: ${lookahead.lexeme} : ${lookahead.position}`, position: lookahead.position});
         }
         const top = this.top();
         let token = lookahead;
@@ -131,7 +131,7 @@ export default class Parser {
             ) {
                 if (!first) {
                     this.errors += `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`;
-                    this.errorStack.push({ message: `syntax error at ${token.position}: for TokenType: ${token.type} and lexeme: ${token.lexeme}\n`,position: token.position });
+                    this.errorStack.push({ message: `syntax error for TokenType: ${token.type} and lexeme: ${token.lexeme} : ${token.position}`,position: token.position });
                 }
                 first = false;
                 token = this.lexer.nextToken();
