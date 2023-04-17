@@ -39,20 +39,20 @@ CLASSDECLORFUNCDEF
 | | | | | | | | | | {"type":"intnum","lexeme":"1","position":14}
 | | | ASSIGNSTAT
 | | | | VARIABLE
-| | | | | {"type":"id","lexeme":"y","position":17}
+| | | | | {"type":"id","lexeme":"y","position":16}
 | | | | | INDICELIST
-| | | | {"type":"assign","lexeme":"=","position":17}
+| | | | {"type":"assign","lexeme":"=","position":16}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"2","position":17}
+| | | | | | | | {"type":"intnum","lexeme":"2","position":16}
 | FUNCDEF
-| | {"type":"id","lexeme":"x","position":21}
+| | {"type":"id","lexeme":"x","position":20}
 | | FUNCARROW
-| | | {"type":"integer","lexeme":"integer","position":21}
+| | | {"type":"integer","lexeme":"integer","position":20}
 | | FUNCBODY
 | | | VARDECL
-| | | | {"type":"id","lexeme":"recover","position":22}
-| | | | {"type":"integer","lexeme":"integer","position":22}
+| | | | {"type":"id","lexeme":"recover","position":21}
+| | | | {"type":"integer","lexeme":"integer","position":21}
 | | | | ARRAYSIZE
