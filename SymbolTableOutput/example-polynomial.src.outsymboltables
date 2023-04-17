@@ -31,6 +31,11 @@ class | id: OBJECT | MemSize: 16
 	data | id: a | type: float | visibility: private | MemSize: 8
 	data | id: b | type: float | visibility: private | MemSize: 8
 
+class | id: OBJECT2 | MemSize: 20
+	class:OBJECT2 
+	data | id: c | type: OBJECT | visibility: private | MemSize: 16
+	data | id: d | type: integer | visibility: private | MemSize: 4
+
 class | id: QUADRATIC | MemSize: 104
 	class:QUADRATIC 
 	inherit | POLYNOMIAL
@@ -54,10 +59,11 @@ class | id: QUADRATIC | MemSize: 104
 		tempvar | id: temp4 | type: float | expressionId: 4| memsize: 8
 
 
-function | main | aparams: ()| type: void| memsize: 444
+function | main | aparams: ()| type: void| memsize: 464
 	function:main 
 	localvar | id: f1 | type: LINEAR[2] | memsize: 144
 	localvar | id: arraysize | type: OBJECT[5][2] | memsize: 160
+	localvar | id: objectWithObject | type: OBJECT2 | memsize: 20
 	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 104
 	localvar | id: counter | type: integer | memsize: 4
 	litvar | id: 2.0 | type: float | expressionId: 9| memsize: 8

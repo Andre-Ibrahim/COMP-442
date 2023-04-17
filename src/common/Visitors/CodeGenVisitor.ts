@@ -599,7 +599,7 @@ ${this.indent}sw ${variableName}(r0),r13     % Store ${variableName}\n`
     }
 
     private reserveBytes(id: string, size: number){
-        const space = 15;
+        const space = 30;
 
         let text = `${"".slice(0, space).padEnd(space)}% space for variable ${id}\n`
         text += `${id.slice(0, space).padEnd(space)}res ${size}\n`;

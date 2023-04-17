@@ -187,46 +187,46 @@ j gowhile1
 endwhile1
                hlt
 
-               % space for variable main0x
-main0x         res 4
-               % space for variable main0y
-main0y         res 4
-               % space for variable main0z
-main0z         res 4
-               % space for variable lit1
-lit1           res 4
-               % space for variable lit2
-lit2           res 4
-               % space for variable lit3
-lit3           res 4
-               % space for variable temp1
-temp1          res 4
-               % space for variable temp2
-temp2          res 4
-               % space for variable lit4
-lit4           res 4
-               % space for variable temp3
-temp3          res 4
-               % space for variable temp4
-temp4          res 4
-               % space for variable lit5
-lit5           res 4
-               % space for variable temp5
-temp5          res 4
-               % space for variable buf
-buf            res 20
+                              % space for variable main0x
+main0x                        res 4
+                              % space for variable main0y
+main0y                        res 4
+                              % space for variable main0z
+main0z                        res 4
+                              % space for variable lit1
+lit1                          res 4
+                              % space for variable lit2
+lit2                          res 4
+                              % space for variable lit3
+lit3                          res 4
+                              % space for variable temp1
+temp1                         res 4
+                              % space for variable temp2
+temp2                         res 4
+                              % space for variable lit4
+lit4                          res 4
+                              % space for variable temp3
+temp3                         res 4
+                              % space for variable temp4
+temp4                         res 4
+                              % space for variable lit5
+lit5                          res 4
+                              % space for variable temp5
+temp5                         res 4
+                              % space for variable buf
+buf                           res 20
 
-               % space for variable lit6
-lit6           res 4
-               % space for variable temp6
-temp6          res 4
-               % space for variable lit7
-lit7           res 4
-               % space for variable lit8
-lit8           res 4
-               % space for variable temp7
-temp7          res 4
-               % space for variable lit9
-lit9           res 4
-               % space for variable temp8
-temp8          res 4
+                              % space for variable lit6
+lit6                          res 4
+                              % space for variable temp6
+temp6                         res 4
+                              % space for variable lit7
+lit7                          res 4
+                              % space for variable lit8
+lit8                          res 4
+                              % space for variable temp7
+temp7                         res 4
+                              % space for variable lit9
+lit9                          res 4
+                              % space for variable temp8
+temp8                         res 4

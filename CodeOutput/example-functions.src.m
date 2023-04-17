@@ -161,44 +161,44 @@ func21
                jl r11, func21
                hlt
 
-               % space for variable func2a
-func2a         res 4
-               % space for variable func2b
-func2b         res 4
-               % space for variable func2return
-func2return    res 4
-               % space for variable func2l
-func2l         res 4
-               % space for variable lit1
-lit1           res 4
-               % space for variable temp1
-temp1          res 4
-               % space for variable temp2
-temp2          res 4
-               % space for variable buf
-buf            res 20
+                              % space for variable func2a
+func2a                        res 4
+                              % space for variable func2b
+func2b                        res 4
+                              % space for variable func2return
+func2return                   res 4
+                              % space for variable func2l
+func2l                        res 4
+                              % space for variable lit1
+lit1                          res 4
+                              % space for variable temp1
+temp1                         res 4
+                              % space for variable temp2
+temp2                         res 4
+                              % space for variable buf
+buf                           res 20
 
-               % space for variable func21a
-func21a        res 4
-               % space for variable func21x
-func21x        res 4
-               % space for variable lit2
-lit2           res 4
-               % space for variable main0x
-main0x         res 4
-               % space for variable lit3
-lit3           res 4
-               % space for variable lit4
-lit4           res 4
-               % space for variable temp3
-temp3          res 4
-               % space for variable lit5
-lit5           res 4
-               % space for variable lit6
-lit6           res 4
-               % space for variable temp4
-temp4          res 4
-               % space for variable temp5
-temp5          res 4
-               % space for variable lit7
-lit7           res 4
+                              % space for variable func21a
+func21a                       res 4
+                              % space for variable func21x
+func21x                       res 4
+                              % space for variable lit2
+lit2                          res 4
+                              % space for variable main0x
+main0x                        res 4
+                              % space for variable lit3
+lit3                          res 4
+                              % space for variable lit4
+lit4                          res 4
+                              % space for variable temp3
+temp3                         res 4
+                              % space for variable lit5
+lit5                          res 4
+                              % space for variable lit6
+lit6                          res 4
+                              % space for variable temp4
+temp4                         res 4
+                              % space for variable temp5
+temp5                         res 4
+                              % space for variable lit7
+lit7                          res 4

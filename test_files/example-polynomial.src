@@ -15,6 +15,11 @@ class OBJECT {
   private attribute b: float;
 };
 
+class OBJECT2 {
+  private attribute c: OBJECT;
+  private attribute d: integer;
+};
+
 class QUADRATIC isa POLYNOMIAL {
   private attribute a: float;
   private attribute b: float;
@@ -56,6 +61,7 @@ function main() => void
 {
   localvar f1: LINEAR[2];
   localvar arraysize: OBJECT[5][2];
+  localvar objectWithObject: OBJECT2;
   localvar f2: QUADRATIC(-2.0, 1.0, 0.0);
   localvar counter: integer;
 

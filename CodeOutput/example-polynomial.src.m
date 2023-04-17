@@ -184,52 +184,54 @@ j gowhile1
 endwhile1
                hlt
 
-               % space for variable build3x
-build3x        res 8
-               % space for variable POLYNOMIAL0return
-POLYNOMIAL0retures 8
-               % space for variable lit1
-lit1           res 4
-               % space for variable QUADRATIC0return
-QUADRATIC0returres 8
-               % space for variable evaluate1result
-evaluate1resultres 8
-               % space for variable temp1
-temp1          res 8
-               % space for variable temp2
-temp2          res 8
-               % space for variable temp3
-temp3          res 8
-               % space for variable temp4
-temp4          res 8
-               % space for variable LINEAR0return
-LINEAR0return  res 8
-               % space for variable evaluate1result
-evaluate1resultres 8
-               % space for variable lit2
-lit2           res 8
-               % space for variable temp5
-temp5          res 8
-               % space for variable temp6
-temp6          res 8
-               % space for variable main0f1
-main0f1        res 144
-               % space for variable main0arraysize
-main0arraysize res 160
-               % space for variable lit3
-lit3           res 8
-               % space for variable lit4
-lit4           res 8
-               % space for variable lit5
-lit5           res 8
-               % space for variable main0f2
-main0f2        res 104
-               % space for variable main0counter
-main0counter   res 4
-               % space for variable lit6
-lit6           res 4
-               % space for variable temp7
-temp7          res 4
-               % space for variable buf
-buf            res 20
+                              % space for variable build3x
+build3x                       res 8
+                              % space for variable POLYNOMIAL0return
+POLYNOMIAL0return             res 8
+                              % space for variable lit1
+lit1                          res 4
+                              % space for variable QUADRATIC0return
+QUADRATIC0return              res 8
+                              % space for variable evaluate1result
+evaluate1result               res 8
+                              % space for variable temp1
+temp1                         res 8
+                              % space for variable temp2
+temp2                         res 8
+                              % space for variable temp3
+temp3                         res 8
+                              % space for variable temp4
+temp4                         res 8
+                              % space for variable LINEAR0return
+LINEAR0return                 res 8
+                              % space for variable evaluate1result
+evaluate1result               res 8
+                              % space for variable lit2
+lit2                          res 8
+                              % space for variable temp5
+temp5                         res 8
+                              % space for variable temp6
+temp6                         res 8
+                              % space for variable main0f1
+main0f1                       res 144
+                              % space for variable main0arraysize
+main0arraysize                res 160
+                              % space for variable main0objectWithObject
+main0objectWithObject         res 20
+                              % space for variable lit3
+lit3                          res 8
+                              % space for variable lit4
+lit4                          res 8
+                              % space for variable lit5
+lit5                          res 8
+                              % space for variable main0f2
+main0f2                       res 104
+                              % space for variable main0counter
+main0counter                  res 4
+                              % space for variable lit6
+lit6                          res 4
+                              % space for variable temp7
+temp7                         res 4
+                              % space for variable buf
+buf                           res 20
 
