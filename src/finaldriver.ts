@@ -9,11 +9,7 @@ import { writeFileSync } from "fs";
 
 async function main(): Promise<void>{
 
-    while(true){
-
-    console.log("\n");
-
-    const filename = await question("please enter the filename to compile: ");
+    const filename = process.env.npm_config_filename ?? "";
     
     try {
 
@@ -71,11 +67,6 @@ async function main(): Promise<void>{
     }catch(_){
         console.log("invalid file name: " + filename);
     }
-
-        
-    }
-
-
 
 }
 
