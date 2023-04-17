@@ -413,8 +413,8 @@ expressionsTest0
                sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
-% assigning temp80 to expressionsTest0x
-               lw r1, temp80(r0)
+% assigning  to expressionsTest0x
+               lw r1, (r0)
                sw expressionsTest0x(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
@@ -425,9 +425,9 @@ expressionsTest0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding temp82 with temp83
-               lw r1, temp82(r0)
-               lw r2, temp83(r0)
+%adding  with 
+               lw r1, (r0)
+               lw r2, (r0)
                add r3, r1, r2
                sw temp27(r0), r3
                sub r1, r1, r1
@@ -443,9 +443,9 @@ expressionsTest0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding lit26 with temp87
+%adding lit26 with 
                lw r1, lit26(r0)
-               lw r2, temp87(r0)
+               lw r2, (r0)
                sub r3, r1, r2
                sw temp28(r0), r3
                sub r1, r1, r1
@@ -487,9 +487,9 @@ expressionsTest0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%multiplying lit28 with temp94
+%multiplying lit28 with 
                lw r1, lit28(r0)
-               lw r2, temp94(r0)
+               lw r2, (r0)
                mul r3, r1, r2
                sw temp31(r0), r3
                sub r1, r1, r1
@@ -536,9 +536,9 @@ expressionsTest0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation temp102 gt expressionsTest0i
+%relation  gt expressionsTest0i
                lw r1, expressionsTest0i(r0)
-               lw r2, temp102(r0)
+               lw r2, (r0)
                cgt r3, r1, r2
                sw temp34(r0), r3
                sub r1, r1, r1

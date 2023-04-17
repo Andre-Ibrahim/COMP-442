@@ -1,0 +1,14 @@
+error: 6.2 :build: undefined member function decleration :0
+error: 6.2 :build: undefined member function decleration :0
+error: 15.2 :: non existing main function :0
+error: 8.3 :a: Multiply declared data member in class :28
+error: 6.2 :evaluate: undefined member function decleration :32
+error: 8.2 :evaluate: Multiply declared member function functions :33
+error: 6.2 :evaluate: undefined member function decleration :33
+error: 6.2 :evaluate: undefined member function decleration :37
+warning: 9.3 :evaluate: Overridden inherited member function :37
+error: 6.2 :evaluate: undefined member function decleration :43
+error: 6.2 :evaluate: undefined member function decleration :50
+warning: 9.3 :evaluate: Overridden inherited member function :50
+error: 6.2 :evaluate: undefined member function decleration :58
+warning: 9.3 :evaluate: Overridden inherited member function :58

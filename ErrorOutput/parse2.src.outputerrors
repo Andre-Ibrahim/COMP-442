@@ -1,4 +1,5 @@
-error: 8.2 :VOIDReturnType: Multipy declared functions :52
+error: 15.2 :: non existing main function :0
+error: 8.2 :VOIDReturnType: Multiply declared functions :52
 warning: 9.1 :VOIDReturnType: overloaded free function :57
 warning: 9.1 :printArray: overloaded free function :70
 warning: 9.1 :printArray: overloaded free function :76

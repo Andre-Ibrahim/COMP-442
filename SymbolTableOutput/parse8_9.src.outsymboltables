@@ -1,0 +1,15 @@
+global 
+function | variableIdNest | aparams: (arr:integer[] size:integer)| type: void| memsize: 52
+	function:variableIdNest 
+	parameter | id: arr | type: integer[]| memsize: 4
+	parameter | id: size | type: integer| memsize: 4
+	localvar | id: x | type: integer | memsize: 4
+	litvar | id: 1.0 | type: float | expressionId: 5| memsize: 8
+	litvar | id: 1.0 | type: float | expressionId: 14| memsize: 8
+	litvar | id: 1 | type: integer | expressionId: 16| memsize: 4
+	litvar | id: 9 | type: integer | expressionId: 16| memsize: 4
+	tempvar | id: temp1 | type: integer | expressionId: 16| memsize: 4
+	litvar | id: 10 | type: integer | expressionId: 26| memsize: 4
+	litvar | id: 9 | type: integer | expressionId: 26| memsize: 4
+	tempvar | id: temp2 | type: integer | expressionId: 26| memsize: 4
+

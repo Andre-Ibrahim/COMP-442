@@ -28,7 +28,7 @@ class QUADRATIC isa POLYNOMIAL {
 };
 
 class F isa QUADRATIC {
-  private attribute a: float;                                         // 8.5
+  private attribute a: float;                                         // 8.6
 	private attribute b: float;   
 };
 
@@ -75,6 +75,8 @@ function QUADRATIC::evaluate(x: float) => float
     result = a;
     result = result * x + b;
     result = result * x + c;
+    b = 1.1;     // 11.1 (no error because search in class table)
+    z = 1.1;     // 11.1 (error because not in class table)
 	result = self.a;
 	result = a.self;                                                       // 15.2
     return (result);
@@ -92,9 +94,6 @@ function QUADRATIC::constructor(A: float, B: float, C: float)
 function QUADRATIC::build2(A: float, B: float, C: float) => QUADRATIC      // 6.1
   {
     localvar new_function: QUADRATIC;
-    new_function.a = A;
-    new_function.b = B;
-    new_function.c = C;
     return (new_function);
   }
   

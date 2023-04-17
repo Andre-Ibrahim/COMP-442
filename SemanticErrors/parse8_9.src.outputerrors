@@ -1,0 +1,21 @@
+error: 15.2 :: non existing main function :0
+error: 15.1 :x: "." operator used on non-class type :23
+error: 11.1 :n: "." undelclared localvar :24
+error: 15.1 :x: "." operator used on non-class type :24
+error: 15.1 :x: "." operator used on non-class type :25
+error: 15.1 :x: "." operator used on non-class type :26
+error: 11.2 :x: "." undeclared data member :27
+error: 11.3 :x: "." undeclared member function :28
+error: 11.3 :x: "." undeclared member function :29
+error: 15.1 :x: "." operator used on non-class type :30
+error: 15.1 :x: "." operator used on non-class type :31
+error: 15.1 :x: "." operator used on non-class type :32
+error: 15.1 :x: "." operator used on non-class type :33
+error: 15.1 :x: "." operator used on non-class type :34
+error: 15.1 :x: "." operator used on non-class type :35
+error: 15.1 :x: "." operator used on non-class type :36
+error: 11.2 :x: "." undeclared data member :37
+error: 11.2 :x: "." undeclared data member :38
+error: 11.1 :a: "." undelclared localvar :40
+error: 11.1 :b: "." undelclared localvar :40
+error: 11.1 :c: "." undelclared localvar :40

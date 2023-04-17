@@ -1,3 +1,3 @@
-syntax error at 124: for TokenType: invalidchar and lexeme: @
-syntax error at 128: for TokenType: invalidnum and lexeme: 02
-syntax error at 128: for TokenType: semi and lexeme: ;
+syntax error at 123: for TokenType: invalidchar and lexeme: @
+syntax error at 127: for TokenType: invalidnum and lexeme: 02
+syntax error at 127: for TokenType: semi and lexeme: ;

@@ -1,5 +1,5 @@
 global 
-function | main | aparams: ()| type: void| memsize: 240
+function | main | aparams: ()| type: void| memsize: 252
 	function:main 
 	localvar | id: arr | type: integer[7] | memsize: 28
 	localvar | id: b | type: integer | memsize: 4
@@ -26,7 +26,7 @@ function | main | aparams: ()| type: void| memsize: 240
 	litvar | id: 90 | type: integer | expressionId: 7| memsize: 4
 	litvar | id: 7 | type: integer | expressionId: 8| memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 9| memsize: 4
-	tempvar | id: temp1 | type:  | expressionId: 10| memsize: 0
+	tempvar | id: temp1 | type: integer | expressionId: 10| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 12| memsize: 4
 	tempvar | id: temp2 | type: integer | expressionId: 12| memsize: 4
 	litvar | id: 7 | type: integer | expressionId: 13| memsize: 4
@@ -35,7 +35,7 @@ function | main | aparams: ()| type: void| memsize: 240
 	litvar | id: 0 | type: integer | expressionId: 16| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 17| memsize: 4
 	tempvar | id: temp3 | type: integer | expressionId: 17| memsize: 4
-	tempvar | id: temp4 | type:  | expressionId: 17| memsize: 0
+	tempvar | id: temp4 | type: integer | expressionId: 17| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 18| memsize: 4
 	tempvar | id: temp5 | type: integer | expressionId: 18| memsize: 4
 	tempvar | id: temp6 | type: integer | expressionId: 18| memsize: 4
@@ -55,7 +55,7 @@ function | main | aparams: ()| type: void| memsize: 240
 	litvar | id: 10000 | type: integer | expressionId: 26| memsize: 4
 	litvar | id: 7 | type: integer | expressionId: 27| memsize: 4
 	litvar | id: 0 | type: integer | expressionId: 28| memsize: 4
-	tempvar | id: temp14 | type:  | expressionId: 29| memsize: 0
+	tempvar | id: temp14 | type: integer | expressionId: 29| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 31| memsize: 4
 	tempvar | id: temp15 | type: integer | expressionId: 31| memsize: 4
 

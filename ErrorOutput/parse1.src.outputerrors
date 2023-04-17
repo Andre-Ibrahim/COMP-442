@@ -1,12 +1,13 @@
-error: 8.4 :i: Multipy declared identifier in function :21
-error: 8.4 :i: Multipy declared identifier in function :22
+error: 15.2 :: non existing main function :0
+error: 8.4 :i: Multiply declared identifier in function :21
+error: 8.4 :i: Multiply declared identifier in function :22
 error: 11.5 :id: undeclared class :22
-error: 8.4 :i: Multipy declared identifier in function :23
-error: 8.4 :i: Multipy declared identifier in function :24
-error: 8.4 :i: Multipy declared identifier in function :25
-error: 8.4 :i: Multipy declared identifier in function :26
-error: 8.4 :i: Multipy declared identifier in function :27
-error: 8.4 :i: Multipy declared identifier in function :28
-error: 8.4 :i: Multipy declared identifier in function :29
-error: 8.4 :i: Multipy declared identifier in function :30
-error: 8.4 :i: Multipy declared identifier in function :31
+error: 8.4 :i: Multiply declared identifier in function :23
+error: 8.4 :i: Multiply declared identifier in function :24
+error: 8.4 :i: Multiply declared identifier in function :25
+error: 8.4 :i: Multiply declared identifier in function :26
+error: 8.4 :i: Multiply declared identifier in function :27
+error: 8.4 :i: Multiply declared identifier in function :28
+error: 8.4 :i: Multiply declared identifier in function :29
+error: 8.4 :i: Multiply declared identifier in function :30
+error: 8.4 :i: Multiply declared identifier in function :31

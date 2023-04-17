@@ -1,0 +1,17 @@
+global 
+function | funcCallsParameters | aparams: (x:integer)| type: integer| memsize: 60
+	function:funcCallsParameters 
+	parameter | id: x | type: integer| memsize: 4
+	localvar | id: i | type: integer | memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 1| memsize: 4
+	litvar | id: 0 | type: integer | expressionId: 11| memsize: 4
+	litvar | id: 1.0 | type: float | expressionId: 12| memsize: 8
+	litvar | id: 0 | type: integer | expressionId: 17| memsize: 4
+	litvar | id: 1.0 | type: float | expressionId: 18| memsize: 8
+	litvar | id: 1 | type: integer | expressionId: 21| memsize: 4
+	litvar | id: 77 | type: integer | expressionId: 29| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 30| memsize: 4
+	tempvar | id: temp1 | type: integer | expressionId: 30| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 32| memsize: 4
+	tempvar | id: temp2 | type: integer | expressionId: 32| memsize: 4
+

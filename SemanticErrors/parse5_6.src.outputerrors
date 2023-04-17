@@ -1,0 +1,9 @@
+error: 15.2 :: non existing main function :0
+error: 11.1 :j: "." undelclared localvar :45
+error: 11.1 :j: "." undelclared localvar :45
+error: 11.1 :temp: "." undelclared localvar :47
+error: 11.1 :j: "." undelclared localvar :47
+error: 11.1 :j: "." undelclared localvar :50
+error: 11.1 :j: "." undelclared localvar :50
+error: 11.1 :temp: "." undelclared localvar :53
+error: 11.1 :j: "." undelclared localvar :53
