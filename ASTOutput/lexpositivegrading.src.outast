@@ -1,0 +1,4 @@
+
+CLASSDECLORFUNCDEF
+| CLASSDECL
+| | {"type":"class","lexeme":"class","position":4}

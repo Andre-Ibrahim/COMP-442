@@ -7,6 +7,16 @@ function main() => void
 function main() => void
 {
   localvar x: float;
+  localvar y: integer;
 
-  x = 1;
+  x = 1;;
+
+  d(,1);
+
+  y = 2;
 }
+
+
+function x() => integer {{
+    localvar recover: integer;
+}}

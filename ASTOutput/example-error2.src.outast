@@ -14,13 +14,45 @@ CLASSDECLORFUNCDEF
 | | | | {"type":"id","lexeme":"x","position":9}
 | | | | {"type":"float","lexeme":"float","position":9}
 | | | | ARRAYSIZE
+| | | VARDECL
+| | | | {"type":"id","lexeme":"y","position":10}
+| | | | {"type":"integer","lexeme":"integer","position":10}
+| | | | ARRAYSIZE
 | | | ASSIGNSTAT
 | | | | VARIABLE
-| | | | | {"type":"id","lexeme":"x","position":11}
+| | | | | {"type":"id","lexeme":"x","position":12}
 | | | | | INDICELIST
-| | | | {"type":"assign","lexeme":"=","position":11}
+| | | | {"type":"assign","lexeme":"=","position":12}
 | | | | EXPR
 | | | | | ARITHEXPR
 | | | | | | TERM
 | | | | | | | FACTOR
-| | | | | | | | {"type":"intnum","lexeme":"1","position":11}
+| | | | | | | | {"type":"intnum","lexeme":"1","position":12}
+| | | FUNCTIONCALLSTAT
+| | | | FUNCTIONCALL
+| | | | | {"type":"id","lexeme":"d","position":14}
+| | | | | APARAMS
+| | | | | | EXPR
+| | | | | | | ARITHEXPR
+| | | | | | | | TERM
+| | | | | | | | | FACTOR
+| | | | | | | | | | {"type":"intnum","lexeme":"1","position":14}
+| | | ASSIGNSTAT
+| | | | VARIABLE
+| | | | | {"type":"id","lexeme":"y","position":17}
+| | | | | INDICELIST
+| | | | {"type":"assign","lexeme":"=","position":17}
+| | | | EXPR
+| | | | | ARITHEXPR
+| | | | | | TERM
+| | | | | | | FACTOR
+| | | | | | | | {"type":"intnum","lexeme":"2","position":17}
+| FUNCDEF
+| | {"type":"id","lexeme":"x","position":21}
+| | FUNCARROW
+| | | {"type":"integer","lexeme":"integer","position":21}
+| | FUNCBODY
+| | | VARDECL
+| | | | {"type":"id","lexeme":"recover","position":22}
+| | | | {"type":"integer","lexeme":"integer","position":22}
+| | | | ARRAYSIZE

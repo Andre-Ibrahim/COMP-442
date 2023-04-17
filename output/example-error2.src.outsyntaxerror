@@ -1,0 +1,4 @@
+syntax error at 12: for TokenType: semi and lexeme: ;
+syntax error at 14: for TokenType: comma and lexeme: ,
+syntax error at 21: for TokenType: opencubr and lexeme: {
+syntax error at 23: for TokenType: closecubr and lexeme: }
