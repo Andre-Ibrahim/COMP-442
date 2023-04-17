@@ -6,5 +6,7 @@ function main() => void
 
 function main() => void
 {
-  
+  localvar x: float;
+
+  x = 1;
 }

@@ -3,5 +3,7 @@
 [closecubr, }, 4]
 [function, function, 7][id, main, 7][openpar, (, 7][closepar, ), 7][returntype, =>, 7][void, void, 7]
 [opencubr, {, 8]
-[closecubr, }, 10]
+[localvar, localvar, 9][id, x, 9][colon, :, 9][float, float, 9][semi, ;, 9]
+[id, x, 11][assign, =, 11][intnum, 1, 11][semi, ;, 11]
+[closecubr, }, 12]
 

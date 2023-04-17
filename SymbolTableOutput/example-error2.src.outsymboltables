@@ -2,6 +2,8 @@ global
 function | main | aparams: ()| type: void| memsize: 0
 	function:main 
 
-function | main | aparams: ()| type: void| memsize: 0
+function | main | aparams: ()| type: void| memsize: 12
 	function:main 
+	localvar | id: x | type: float | memsize: 8
+	litvar | id: 1 | type: integer | expressionId: 1| memsize: 4
 

@@ -1,8 +1,8 @@
-error: 8.1 :POLYNOMIAL: Multipy declared classes :7
-error: 8.3 :b: Multipy declared data member in class :15
+error: 8.1 :POLYNOMIAL: Multiply declared classes :7
+error: 8.3 :b: Multiply declared data member in class :15
 error: 6.1 :build2: undeclared member function definition :92
-error: 8.2 :f: Multipy declared functions :102
-error: 8.4 :counter: Multipy declared identifier in function :116
+error: 8.2 :f: Multiply declared functions :102
+error: 8.4 :counter: Multiply declared identifier in function :116
 error: 6.2 :evaluate2: undefined member function decleration :4
 error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9

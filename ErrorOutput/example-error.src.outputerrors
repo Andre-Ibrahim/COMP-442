@@ -1,10 +1,10 @@
 error: 15.2 :: non existing main function :0
 error: 6.2 :evaluate2: undefined member function decleration :4
-error: 8.1 :POLYNOMIAL: Multipy declared classes :7
+error: 8.1 :POLYNOMIAL: Multiply declared classes :7
 error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9
 warning: 9.2 :evaluate: overloaded member function :9
-error: 8.3 :b: Multipy declared data member in class :15
+error: 8.3 :b: Multiply declared data member in class :15
 warning: 9.3 :evaluate: Overridden inherited member function :18
 warning: 9.3 :evaluate: Overridden inherited member function :27
 warning: 8.6 :a: Shadowed inherited data member :31
@@ -22,10 +22,10 @@ error: 11.1 :B: "." undelclared localvar :96
 error: 11.1 :new_function: "." undelclared localvar :97
 error: 11.2 :c: "." undeclared data member :97
 error: 11.1 :C: "." undelclared localvar :97
-error: 8.2 :f: Multipy declared functions :102
+error: 8.2 :f: Multiply declared functions :102
 warning: 9.1 :f: overloaded free function :103
 error: 11.5 :a: undeclared class :111
-error: 8.4 :counter: Multipy declared identifier in function :116
+error: 8.4 :counter: Multiply declared identifier in function :116
 error: 11.2 :b: "." undeclared data member :121
 error: 11.3 :f: "." undeclared member function :122
 error: 11.4 :undefined: Undeclared free function :123
