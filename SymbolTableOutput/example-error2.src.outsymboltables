@@ -1,0 +1,7 @@
+global 
+function | main | aparams: ()| type: void| memsize: 0
+	function:main 
+
+function | main | aparams: ()| type: void| memsize: 0
+	function:main 
+

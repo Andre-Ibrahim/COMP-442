@@ -6,6 +6,7 @@ error: 8.4 :counter: Multipy declared identifier in function :116
 error: 6.2 :evaluate2: undefined member function decleration :4
 error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9
+error: 15.2 :: non existing main function :0
 error: 15.2 :a: "." incorrect use of self :78
 error: 15.1 :a: "." operator used on non-class type :79
 error: 10.1 :3: "." type error in expression :86

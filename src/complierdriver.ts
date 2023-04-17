@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import Parser from "./syntactical_analysis/Parser";
 import { SymbTabVisitor } from "./common/Visitors/SymbTabVisitor";
-import { getUndefinedMemberFunction } from "./common/Errors/undefinedMemberFunction";
+import { getSymbolTableErrors } from "./common/Errors/getSymbolTableErrors";
 import { CompilerError } from "./common/Errors/Error";
 import { TypeCheckVisitor } from "./common/Visitors/TypeCheckVisitor";
 import { IntermediateVarVisitor } from "./common/Visitors/IntermediateVarVisitor";
@@ -48,7 +48,7 @@ export function compileDriver(testCase: string): ErrorType[] {
     const errors: CompilerError[] = [];
 
     errors.push(...symTabVisitor.errors);
-    errors.push(...getUndefinedMemberFunction(parser.abstractSyntaxTree.symbolTable));
+    errors.push(...getSymbolTableErrors(parser.abstractSyntaxTree.symbolTable));
     errors.push(...typeCheckVisitor.errors);
 
     let errorsString = "";

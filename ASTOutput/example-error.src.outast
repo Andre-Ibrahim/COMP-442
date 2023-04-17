@@ -609,7 +609,7 @@ CLASSDECLORFUNCDEF
 | | | {"type":"integer","lexeme":"integer","position":105}
 | | FUNCBODY
 | FUNCDEF
-| | {"type":"id","lexeme":"main","position":109}
+| | {"type":"id","lexeme":"main2","position":109}
 | | FUNCARROW
 | | | {"type":"void","lexeme":"void","position":109}
 | | FUNCBODY

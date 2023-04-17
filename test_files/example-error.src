@@ -105,8 +105,8 @@ function f(i: integer, j: integer) => integer {}                           // 9.
 function f3(p1: integer[2][3]) => integer {}
 
 
-// ====== main ====== //
-function main() => void
+// ====== main2 ====== //
+function main2() => void
 {
   localvar a: a;                                                           // 11.5
   localvar c: C;

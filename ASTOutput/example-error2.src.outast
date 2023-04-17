@@ -1,0 +1,12 @@
+
+CLASSDECLORFUNCDEF
+| FUNCDEF
+| | {"type":"id","lexeme":"main","position":1}
+| | FUNCARROW
+| | | {"type":"void","lexeme":"void","position":1}
+| | FUNCBODY
+| FUNCDEF
+| | {"type":"id","lexeme":"main","position":7}
+| | FUNCARROW
+| | | {"type":"void","lexeme":"void","position":7}
+| | FUNCBODY

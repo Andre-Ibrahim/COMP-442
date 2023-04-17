@@ -140,7 +140,7 @@ export class SymbTabVisitor extends Visitor {
 
             node.symbolTable?.entries.forEach((entry) => {
                 if (entry instanceof ClassEntry && entry.id.lexeme === id.lexeme) {
-                    this.errors.push(new CompilerError("8.1", id, "Multipy declared classes"));
+                    this.errors.push(new CompilerError("8.1", id, "Multiply declared classes"));
                 }
             });
 
@@ -179,7 +179,7 @@ export class SymbTabVisitor extends Visitor {
                     entry.returnType === returnT
                 ) {
                     if (!error) {
-                        this.errors.push(new CompilerError("8.2", id, "Multipy declared member function functions"));
+                        this.errors.push(new CompilerError("8.2", id, "Multiply declared member function functions"));
                     }
 
                     error = true;
@@ -247,7 +247,7 @@ export class SymbTabVisitor extends Visitor {
                         entry.returnType === returnT
                     ) {
                         if (!error) {
-                            this.errors.push(new CompilerError("8.2", id, "Multipy declared functions"));
+                            this.errors.push(new CompilerError("8.2", id, "Multiply declared functions"));
                         }
 
                         error = true;
@@ -382,7 +382,7 @@ export class SymbTabVisitor extends Visitor {
             let errorFound = false;
             node.symbolTable?.entries.forEach((entry) => {
                 if (entry instanceof LocalVarEntry && entry.id.lexeme === id.lexeme && !errorFound) {
-                    this.errors.push(new CompilerError("8.4", id, "Multipy declared identifier in function"));
+                    this.errors.push(new CompilerError("8.4", id, "Multiply declared identifier in function"));
                     errorFound = true;
                 }
             });
@@ -408,7 +408,7 @@ export class SymbTabVisitor extends Visitor {
 
             node.symbolTable?.entries.forEach((entry) => {
                 if (entry instanceof DataMemberEntry && entry.id.lexeme === id.lexeme) {
-                    this.errors.push(new CompilerError("8.3", id, "Multipy declared data member in class"));
+                    this.errors.push(new CompilerError("8.3", id, "Multiply declared data member in class"));
                 }
             });
 

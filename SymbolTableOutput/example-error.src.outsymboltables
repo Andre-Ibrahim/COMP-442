@@ -109,8 +109,8 @@ function | f3 | aparams: (p1:integer[][])| type: integer| memsize: 4
 	function:f3 
 	parameter | id: p1 | type: integer[][]| memsize: 4
 
-function | main | aparams: ()| type: void| memsize: 360
-	function:main 
+function | main2 | aparams: ()| type: void| memsize: 360
+	function:main2 
 	localvar | id: a | type: a | memsize: 0
 	localvar | id: c | type: C | memsize: 4
 	localvar | id: f1 | type: LINEAR | memsize: 76

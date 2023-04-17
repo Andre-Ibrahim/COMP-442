@@ -1,13 +1,14 @@
+error: 15.2 :: non existing main function :0
 error: 6.2 :evaluate2: undefined member function decleration :4
 error: 8.1 :POLYNOMIAL: Multipy declared classes :7
 error: 6.2 :evaluate: undefined member function decleration :8
 error: 6.2 :evaluate: undefined member function decleration :9
-warning: 9.2 :evaluate: overloaded member function free function :9
+warning: 9.2 :evaluate: overloaded member function :9
 error: 8.3 :b: Multipy declared data member in class :15
 warning: 9.3 :evaluate: Overridden inherited member function :18
 warning: 9.3 :evaluate: Overridden inherited member function :27
-warning: 8.5 :a: Shadowed inherited data member :31
-warning: 8.5 :b: Shadowed inherited data member :32
+warning: 8.6 :a: Shadowed inherited data member :31
+warning: 8.6 :b: Shadowed inherited data member :32
 error: 15.2 :a: "." incorrect use of self :78
 error: 15.1 :a: "." operator used on non-class type :79
 error: 10.1 :3: "." type error in expression :86

@@ -204,8 +204,7 @@ f2
 f31
                jr r11
 % end of function
-               entry
-               addi r14, r0, topaddr
+main20
                sub r1, r1, r1
 %storing 2 into lit6
                addi r1, r0, 2
@@ -218,9 +217,9 @@ f31
                 addi r1, r0, 0
                jl r11, build2
                sub r1, r1, r1
-% assigning main0f1 to main0f1
-               lw r1, main0f1(r0)
-               sw main0f1(r0), r1
+% assigning main20f1 to main20f1
+               lw r1, main20f1(r0)
+               sw main20f1(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2.0 into lit8
@@ -239,9 +238,9 @@ f31
                 addi r1, r0, 0
                jl r11, build3
                sub r1, r1, r1
-% assigning main0f2 to main0f2
-               lw r1, main0f2(r0)
-               sw main0f2(r0), r1
+% assigning main20f2 to main20f2
+               lw r1, main20f2(r0)
+               sw main20f2(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit11
@@ -249,21 +248,21 @@ f31
                sw lit11(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning error to main0c
+% assigning error to main20c
                lw r1, error(r0)
-               sw main0c(r0), r1
+               sw main20c(r0), r1
                addi r1, r0, 0
                jl r11, f0
                sub r1, r1, r1
-% assigning main0c to main0counter
-               lw r1, main0c(r0)
-               sw main0counter(r0), r1
+% assigning main20c to main20counter
+               lw r1, main20c(r0)
+               sw main20counter(r0), r1
                addi r1, r0, 0
                jl r11, undefined0
                sub r1, r1, r1
-% assigning main0e to main0counter
-               lw r1, main0e(r0)
-               sw main0counter(r0), r1
+% assigning main20e to main20counter
+               lw r1, main20e(r0)
+               sw main20counter(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit12
@@ -319,10 +318,10 @@ f31
                add r1, r4, r3
                sw temp9(r0), r1
                sub r1, r1, r1
-% assigning lit18 to main0i with offset temp9
+% assigning lit18 to main20i with offset temp9
                lw r2, temp9(r0)
                lw r1, lit18(r0)
-               sw main0i(r2), r1
+               sw main20i(r2), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 2 into lit19
@@ -334,7 +333,7 @@ f31
                addi r1, r0, 1.3
                sw lit20(r0), r1
                 addi r1, r0, 0
-               lw r1, main0j(r0)
+               lw r1, main20j(r0)
                sw f31p1(r0), r1
                jl r11, f31
                lw r1, f31return(r0)
@@ -354,10 +353,10 @@ f31
                add r1, r4, r3
                sw temp11(r0), r1
                sub r1, r1, r1
-% assigning temp10 to main0i with offset temp11
+% assigning temp10 to main20i with offset temp11
                lw r2, temp11(r0)
                lw r1, temp10(r0)
-               sw main0i(r2), r1
+               sw main20i(r2), r1
                addi r1, r0, 0
                sub r1, r1, r1
 %storing 1 into lit21
@@ -365,14 +364,14 @@ f31
                sw lit21(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning error to main0counter
+% assigning error to main20counter
                lw r1, error(r0)
-               sw main0counter(r0), r1
+               sw main20counter(r0), r1
                addi r1, r0, 0
                sub r1, r1, r1
-% assigning main0self to main0counter
-               lw r1, main0self(r0)
-               sw main0counter(r0), r1
+% assigning main20self to main20counter
+               lw r1, main20self(r0)
+               sw main20counter(r0), r1
                addi r1, r0, 0
 %starting while loop
 gowhile1
@@ -384,15 +383,15 @@ gowhile1
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation lit22 leq main0counter
-               lw r1, main0counter(r0)
+%relation lit22 leq main20counter
+               lw r1, main20counter(r0)
                lw r2, lit22(r0)
                cle r3, r1, r2
                sw temp12(r0), r3
                lw r1, temp12(r0)
                bz r1, endwhile1
-               % processing: write(main0counter)
-               lw r1, main0counter(r0)
+               % processing: write(main20counter)
+               lw r1, main20counter(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -407,8 +406,8 @@ gowhile1
                addi r6, r6, 10
                putc r6
                jl r11, evaluate1
-               % processing: write(main0f1)
-               lw r1, main0f1(r0)
+               % processing: write(main20f1)
+               lw r1, main20f1(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -423,8 +422,8 @@ gowhile1
                addi r6, r6, 10
                putc r6
                jl r11, evaluate1
-               % processing: write(main0f2)
-               lw r1, main0f2(r0)
+               % processing: write(main20f2)
+               lw r1, main20f2(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -440,7 +439,8 @@ gowhile1
                putc r6
 j gowhile1
 endwhile1
-               hlt
+               jr r11
+% end of function
 
                % space for variable POLYNOMIAL0return
 POLYNOMIAL0retures 8
@@ -498,26 +498,26 @@ f2return       res 4
 f31p1          res 4
                % space for variable f31return
 f31return      res 4
-               % space for variable main0a
-main0a         res 0
-               % space for variable main0c
-main0c         res 4
-               % space for variable main0f1
-main0f1        res 76
-               % space for variable main0f2
-main0f2        res 124
-               % space for variable main0counter
-main0counter   res 4
-               % space for variable main0counter
-main0counter   res 8
-               % space for variable main0counter
-main0counter   res 4
-               % space for variable main0counter
-main0counter   res 8
-               % space for variable main0i
-main0i         res 24
-               % space for variable main0j
-main0j         res 24
+               % space for variable main20a
+main20a        res 0
+               % space for variable main20c
+main20c        res 4
+               % space for variable main20f1
+main20f1       res 76
+               % space for variable main20f2
+main20f2       res 124
+               % space for variable main20counter
+main20counter  res 4
+               % space for variable main20counter
+main20counter  res 8
+               % space for variable main20counter
+main20counter  res 4
+               % space for variable main20counter
+main20counter  res 8
+               % space for variable main20i
+main20i        res 24
+               % space for variable main20j
+main20j        res 24
                % space for variable lit6
 lit6           res 4
                % space for variable lit7
