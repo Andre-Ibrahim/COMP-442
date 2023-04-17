@@ -362,92 +362,92 @@
                putc r6
                hlt
 
-               % space for variable main0x
-main0x         res 800
-               % space for variable main0p
-main0p         res 72
-               % space for variable main0y
-main0y         res 4
-               % space for variable main0z
-main0z         res 4
-               % space for variable lit1
-lit1           res 4
-               % space for variable lit2
-lit2           res 4
-               % space for variable lit3
-lit3           res 4
-               % space for variable temp1
-temp1          res 4
-               % space for variable lit4
-lit4           res 4
-               % space for variable lit5
-lit5           res 4
-               % space for variable lit6
-lit6           res 4
-               % space for variable temp2
-temp2          res 4
-               % space for variable lit7
-lit7           res 4
-               % space for variable lit8
-lit8           res 4
-               % space for variable lit9
-lit9           res 4
-               % space for variable lit10
-lit10          res 4
-               % space for variable temp3
-temp3          res 4
-               % space for variable lit11
-lit11          res 4
-               % space for variable lit12
-lit12          res 4
-               % space for variable lit13
-lit13          res 4
-               % space for variable lit14
-lit14          res 4
-               % space for variable temp4
-temp4          res 4
-               % space for variable lit15
-lit15          res 4
-               % space for variable lit16
-lit16          res 4
-               % space for variable temp5
-temp5          res 4
-               % space for variable temp6
-temp6          res 4
-               % space for variable lit17
-lit17          res 4
-               % space for variable lit18
-lit18          res 4
-               % space for variable lit19
-lit19          res 4
-               % space for variable temp7
-temp7          res 4
-               % space for variable temp8
-temp8          res 4
-               % space for variable temp9
-temp9          res 4
-               % space for variable buf
-buf            res 20
+                              % space for variable main0x
+main0x                        res 800
+                              % space for variable main0p
+main0p                        res 72
+                              % space for variable main0y
+main0y                        res 4
+                              % space for variable main0z
+main0z                        res 4
+                              % space for variable lit1
+lit1                          res 4
+                              % space for variable lit2
+lit2                          res 4
+                              % space for variable lit3
+lit3                          res 4
+                              % space for variable temp1
+temp1                         res 4
+                              % space for variable lit4
+lit4                          res 4
+                              % space for variable lit5
+lit5                          res 4
+                              % space for variable lit6
+lit6                          res 4
+                              % space for variable temp2
+temp2                         res 4
+                              % space for variable lit7
+lit7                          res 4
+                              % space for variable lit8
+lit8                          res 4
+                              % space for variable lit9
+lit9                          res 4
+                              % space for variable lit10
+lit10                         res 4
+                              % space for variable temp3
+temp3                         res 4
+                              % space for variable lit11
+lit11                         res 4
+                              % space for variable lit12
+lit12                         res 4
+                              % space for variable lit13
+lit13                         res 4
+                              % space for variable lit14
+lit14                         res 4
+                              % space for variable temp4
+temp4                         res 4
+                              % space for variable lit15
+lit15                         res 4
+                              % space for variable lit16
+lit16                         res 4
+                              % space for variable temp5
+temp5                         res 4
+                              % space for variable temp6
+temp6                         res 4
+                              % space for variable lit17
+lit17                         res 4
+                              % space for variable lit18
+lit18                         res 4
+                              % space for variable lit19
+lit19                         res 4
+                              % space for variable temp7
+temp7                         res 4
+                              % space for variable temp8
+temp8                         res 4
+                              % space for variable temp9
+temp9                         res 4
+                              % space for variable buf
+buf                           res 20
 
-               % space for variable lit20
-lit20          res 4
-               % space for variable lit21
-lit21          res 4
-               % space for variable temp10
-temp10         res 4
-               % space for variable temp11
-temp11         res 4
-               % space for variable temp12
-temp12         res 4
-               % space for variable lit22
-lit22          res 4
-               % space for variable lit23
-lit23          res 4
-               % space for variable lit24
-lit24          res 4
-               % space for variable temp13
-temp13         res 4
-               % space for variable temp14
-temp14         res 4
-               % space for variable temp15
-temp15         res 4
+                              % space for variable lit20
+lit20                         res 4
+                              % space for variable lit21
+lit21                         res 4
+                              % space for variable temp10
+temp10                        res 4
+                              % space for variable temp11
+temp11                        res 4
+                              % space for variable temp12
+temp12                        res 4
+                              % space for variable lit22
+lit22                         res 4
+                              % space for variable lit23
+lit23                         res 4
+                              % space for variable lit24
+lit24                         res 4
+                              % space for variable temp13
+temp13                        res 4
+                              % space for variable temp14
+temp14                        res 4
+                              % space for variable temp15
+temp15                        res 4
