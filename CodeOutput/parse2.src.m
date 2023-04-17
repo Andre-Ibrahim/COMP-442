@@ -164,104 +164,104 @@ printArray1
                jr r11
 % end of function
 
-               % space for variable POLYNOMIAL0return
-POLYNOMIAL0retures 8
-               % space for variable lit1
-lit1           res 4
-               % space for variable VOIDReturnType2arr
-VOIDReturnType2res 4
-               % space for variable VOIDReturnType2size
-VOIDReturnType2res 4
-               % space for variable VOIDReturnType2n
-VOIDReturnType2res 4
-               % space for variable FLOATReturnType2arr
-FLOATReturnTyperes 4
-               % space for variable FLOATReturnType2size
-FLOATReturnTyperes 4
-               % space for variable FLOATReturnType2return
-FLOATReturnTyperes 8
-               % space for variable FLOATReturnType2n
-FLOATReturnTyperes 4
-               % space for variable buf
-buf            res 20
+                              % space for variable POLYNOMIAL0return
+POLYNOMIAL0return             res 8
+                              % space for variable lit1
+lit1                          res 4
+                              % space for variable VOIDReturnType2arr
+VOIDReturnType2arr            res 4
+                              % space for variable VOIDReturnType2size
+VOIDReturnType2size           res 4
+                              % space for variable VOIDReturnType2n
+VOIDReturnType2n              res 4
+                              % space for variable FLOATReturnType2arr
+FLOATReturnType2arr           res 4
+                              % space for variable FLOATReturnType2size
+FLOATReturnType2size          res 4
+                              % space for variable FLOATReturnType2return
+FLOATReturnType2return        res 8
+                              % space for variable FLOATReturnType2n
+FLOATReturnType2n             res 4
+                              % space for variable buf
+buf                           res 20
 
-               % space for variable lit2
-lit2           res 8
-               % space for variable temp1
-temp1          res 4
-               % space for variable VOIDReturnType2arr
-VOIDReturnType2res 4
-               % space for variable VOIDReturnType2size
-VOIDReturnType2res 4
-               % space for variable VOIDReturnType2n
-VOIDReturnType2res 4
-               % space for variable VOIDReturnType2arr
-VOIDReturnType2res 4
-               % space for variable VOIDReturnType2size
-VOIDReturnType2res 8
-               % space for variable VOIDReturnType2n
-VOIDReturnType2res 4
-               % space for variable functionParams4x
-functionParams4res 4
-               % space for variable functionParams4y
-functionParams4res 8
-               % space for variable functionParams4z
-functionParams4res 4
-               % space for variable functionParams4a
-functionParams4res 4
-               % space for variable printArray1x
-printArray1x   res 8
-               % space for variable printArray1return
-printArray1retures 4
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit3
-lit3           res 4
-               % space for variable printArray1x
-printArray1x   res 4
-               % space for variable printArray1return
-printArray1retures 4
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit4
-lit4           res 4
-               % space for variable printArray1x
-printArray1x   res 4
-               % space for variable printArray1return
-printArray1retures 4
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit5
-lit5           res 4
-               % space for variable printArray1x
-printArray1x   res 8
-               % space for variable printArray1return
-printArray1retures 4
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit6
-lit6           res 4
-               % space for variable printArray1x
-printArray1x   res 8
-               % space for variable printArray1return
-printArray1retures 8
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit7
-lit7           res 4
-               % space for variable printArray1x
-printArray1x   res 8
-               % space for variable printArray1return
-printArray1retures 8
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit8
-lit8           res 4
-               % space for variable printArray1x
-printArray1x   res 8
-               % space for variable printArray1return
-printArray1retures 8
-               % space for variable printArray1i
-printArray1i   res 4
-               % space for variable lit9
-lit9           res 4
+                              % space for variable lit2
+lit2                          res 8
+                              % space for variable temp1
+temp1                         res 4
+                              % space for variable VOIDReturnType2arr
+VOIDReturnType2arr            res 4
+                              % space for variable VOIDReturnType2size
+VOIDReturnType2size           res 4
+                              % space for variable VOIDReturnType2n
+VOIDReturnType2n              res 4
+                              % space for variable VOIDReturnType2arr
+VOIDReturnType2arr            res 4
+                              % space for variable VOIDReturnType2size
+VOIDReturnType2size           res 8
+                              % space for variable VOIDReturnType2n
+VOIDReturnType2n              res 4
+                              % space for variable functionParams4x
+functionParams4x              res 4
+                              % space for variable functionParams4y
+functionParams4y              res 8
+                              % space for variable functionParams4z
+functionParams4z              res 4
+                              % space for variable functionParams4a
+functionParams4a              res 4
+                              % space for variable printArray1x
+printArray1x                  res 8
+                              % space for variable printArray1return
+printArray1return             res 4
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit3
+lit3                          res 4
+                              % space for variable printArray1x
+printArray1x                  res 4
+                              % space for variable printArray1return
+printArray1return             res 4
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit4
+lit4                          res 4
+                              % space for variable printArray1x
+printArray1x                  res 4
+                              % space for variable printArray1return
+printArray1return             res 4
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit5
+lit5                          res 4
+                              % space for variable printArray1x
+printArray1x                  res 8
+                              % space for variable printArray1return
+printArray1return             res 4
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit6
+lit6                          res 4
+                              % space for variable printArray1x
+printArray1x                  res 8
+                              % space for variable printArray1return
+printArray1return             res 8
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit7
+lit7                          res 4
+                              % space for variable printArray1x
+printArray1x                  res 8
+                              % space for variable printArray1return
+printArray1return             res 8
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit8
+lit8                          res 4
+                              % space for variable printArray1x
+printArray1x                  res 8
+                              % space for variable printArray1return
+printArray1return             res 8
+                              % space for variable printArray1i
+printArray1i                  res 4
+                              % space for variable lit9
+lit9                          res 4
