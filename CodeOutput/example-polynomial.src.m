@@ -63,19 +63,6 @@ QUADRATIC0
                sw evaluate1return(r0), r1
                jr r11
 % end of function
-QUADRATIC0
-               sub r1, r1, r1
-% assigning error0A to error0a
-               lw r1, error0A(r0)
-               sw error0a(r0), r1
-               addi r1, r0, 0
-               sub r1, r1, r1
-% assigning error0B to error0b
-               lw r1, error0B(r0)
-               sw error0b(r0), r1
-               addi r1, r0, 0
-               jr r11
-% end of function
 LINEAR0
                sub r1, r1, r1
 %storing 0.0 into lit2
@@ -227,6 +214,8 @@ temp5          res 8
 temp6          res 8
                % space for variable main0f1
 main0f1        res 144
+               % space for variable main0arraysize
+main0arraysize res 160
                % space for variable lit3
 lit3           res 8
                % space for variable lit4
@@ -235,6 +224,8 @@ lit4           res 8
 lit5           res 8
                % space for variable main0f2
 main0f2        res 104
+               % space for variable main0counter
+main0counter   res 4
                % space for variable lit6
 lit6           res 4
                % space for variable temp7

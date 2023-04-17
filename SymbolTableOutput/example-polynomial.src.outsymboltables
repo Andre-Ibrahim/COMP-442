@@ -21,10 +21,15 @@ class | id: LINEAR | MemSize: 72
 	function:evaluate 
 		parameter | id: x | type: float| memsize: 8
 		localvar | id: result | type: float | memsize: 8
-		litvar | id: 0.0 | type: float | expressionId: 8| memsize: 8
-		tempvar | id: temp5 | type: float | expressionId: 9| memsize: 8
-		tempvar | id: temp6 | type: float | expressionId: 9| memsize: 8
+		litvar | id: 0.0 | type: float | expressionId: 6| memsize: 8
+		tempvar | id: temp5 | type: float | expressionId: 7| memsize: 8
+		tempvar | id: temp6 | type: float | expressionId: 7| memsize: 8
 
+
+class | id: OBJECT | MemSize: 16
+	class:OBJECT 
+	data | id: a | type: float | visibility: private | MemSize: 8
+	data | id: b | type: float | visibility: private | MemSize: 8
 
 class | id: QUADRATIC | MemSize: 104
 	class:QUADRATIC 
@@ -49,13 +54,15 @@ class | id: QUADRATIC | MemSize: 104
 		tempvar | id: temp4 | type: float | expressionId: 4| memsize: 8
 
 
-function | main | aparams: ()| type: void| memsize: 280
+function | main | aparams: ()| type: void| memsize: 444
 	function:main 
 	localvar | id: f1 | type: LINEAR[2] | memsize: 144
+	localvar | id: arraysize | type: OBJECT[5][2] | memsize: 160
 	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 104
-	litvar | id: 2.0 | type: float | expressionId: 11| memsize: 8
-	litvar | id: 1.0 | type: float | expressionId: 12| memsize: 8
-	litvar | id: 0.0 | type: float | expressionId: 13| memsize: 8
-	litvar | id: 10 | type: integer | expressionId: 14| memsize: 4
-	tempvar | id: temp7 | type: integer | expressionId: 14| memsize: 4
+	localvar | id: counter | type: integer | memsize: 4
+	litvar | id: 2.0 | type: float | expressionId: 9| memsize: 8
+	litvar | id: 1.0 | type: float | expressionId: 10| memsize: 8
+	litvar | id: 0.0 | type: float | expressionId: 11| memsize: 8
+	litvar | id: 10 | type: integer | expressionId: 12| memsize: 4
+	tempvar | id: temp7 | type: integer | expressionId: 12| memsize: 4
 

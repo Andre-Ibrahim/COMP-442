@@ -10,6 +10,11 @@ class LINEAR isa POLYNOMIAL {
   public  function evaluate: (x: float) => float;
 };
 
+class OBJECT {
+  private attribute a: float;
+  private attribute b: float;
+};
+
 class QUADRATIC isa POLYNOMIAL {
   private attribute a: float;
   private attribute b: float;
@@ -38,12 +43,6 @@ function QUADRATIC::evaluate(x: float) => float
   return (result);
 }
 
-function QUADRATIC::constructor(A: float, B: float) 
-{
-  a = A;
-  b = B;
-}
-
 function LINEAR::evaluate(x: float) => float 
 {
   localvar result: float;
@@ -56,7 +55,9 @@ function LINEAR::evaluate(x: float) => float
 function main() => void
 {
   localvar f1: LINEAR[2];
+  localvar arraysize: OBJECT[5][2];
   localvar f2: QUADRATIC(-2.0, 1.0, 0.0);
+  localvar counter: integer;
 
   while(counter <= 10)
   {
