@@ -22,36 +22,58 @@ function main() => void
   localvar x: integer;
   localvar i: integer;
   localvar z: integer;
+  localvar arr: integer[20];
+  arr[20] = 12;
+  arr[9] = 2;
 
   i = 10;
   x = i;
-
   write(x);
 
   x = x + 2;
+  write(x);
+
   x = x - 2;
+  write(x);
+
   x = x * 10;
+  write(x);
+
   x = x / 10;
+  write(x);
+
   x = x > 5;
+  write(x);
+
   x = x < 5;
+  write(x);
+
   x = x >= 5;
+  write(x);
+
   x = x <= 5;
+  write(x);
+
   x = x <> 5;
+  write(x);
+
   x = x + 5 * 10;
+  write(x);
   x = x - 5 * 10;
+  write(x);
+
   x = x * 10 / 5;
+  write(x);
+
   x = x * 6 / 44 > 9;
+  write(x);
+
   x = x * 6 / 44 > i;
+  write(x);
   x = (x+10) * 8;
+  write(x);
   x = (x + (8 * i) / 9);
-  x = -x;
-  z = -19 + -x;
-  x = 2 - -x;
-  x = 2 - --x;
-  x = 17 * -x;
-  x = 10.99 * 0.99 + i;
-  x = not 8 > i;
-  x = 7 > 0 and i;
-  x = 7 > 0 or i;
-  x = x[9] * 9 + x[i*2];
+  write(x);
+  x = arr[9] * 9 + arr[i*2];
+  write(x);
 } 
