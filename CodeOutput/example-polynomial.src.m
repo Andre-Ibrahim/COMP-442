@@ -102,84 +102,63 @@ LINEAR0
                entry
                addi r14, r0, topaddr
                sub r1, r1, r1
-%storing 2.0 into lit3
-               addi r1, r0, 2.0
+%storing 1 into lit3
+               addi r1, r0, 1
                sw lit3(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-%storing 1.0 into lit4
-               addi r1, r0, 1.0
+%storing 1 into lit4
+               addi r1, r0, 1
                sw lit4(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-%storing 0.0 into lit5
-               addi r1, r0, 0.0
-               sw lit5(r0), r1
-                addi r1, r0, 0
+               sub r2, r2, r2
+               sub r3, r3, r3
+%multiplying lit3 with lit4
+               lw r1, lit3(r0)
+               lw r2, lit4(r0)
+               mul r3, r1, r2
+               sw temp7(r0), r3
+               sub r1, r1, r1
+% assigning temp7 to main0counter
+               lw r1, temp7(r0)
+               sw main0counter(r0), r1
+               addi r1, r0, 0
 %starting while loop
 gowhile1
                sub r1, r1, r1
-%storing 10 into lit6
+%storing 10 into lit5
                addi r1, r0, 10
+               sw lit5(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
+               sub r2, r2, r2
+               sub r3, r3, r3
+%relation lit5 leq main0counter
+               lw r1, main0counter(r0)
+               lw r2, lit5(r0)
+               cle r3, r1, r2
+               sw temp8(r0), r3
+               lw r1, temp8(r0)
+               bz r1, endwhile1
+               sub r1, r1, r1
+%storing 1 into lit6
+               addi r1, r0, 1
                sw lit6(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation lit6 leq main0counter
+%adding main0counter with lit6
                lw r1, main0counter(r0)
                lw r2, lit6(r0)
-               cle r3, r1, r2
-               sw temp7(r0), r3
-               lw r1, temp7(r0)
-               bz r1, endwhile1
-               % processing: write(main0counter)
-               lw r1, main0counter(r0)
-               % put value on stack
-               sw -8(r14), r1
-               % Link buffer to stack
-               addi r1,r0, buf
-               sw -12(r14), r1
-               % convert int to string for output
-               jl r15, intstr
-               sw -8 (r14), r13
-               % output to console
-               jl r15, putstr
-               sub r6, r6, r6
-               addi r6, r6, 10
-               putc r6
-               jl r11, evaluate1
-               % processing: write(main0f1)
-               lw r1, main0f1(r0)
-               % put value on stack
-               sw -8(r14), r1
-               % Link buffer to stack
-               addi r1,r0, buf
-               sw -12(r14), r1
-               % convert int to string for output
-               jl r15, intstr
-               sw -8 (r14), r13
-               % output to console
-               jl r15, putstr
-               sub r6, r6, r6
-               addi r6, r6, 10
-               putc r6
-               jl r11, evaluate1
-               % processing: write(main0f2)
-               lw r1, main0f2(r0)
-               % put value on stack
-               sw -8(r14), r1
-               % Link buffer to stack
-               addi r1,r0, buf
-               sw -12(r14), r1
-               % convert int to string for output
-               jl r15, intstr
-               sw -8 (r14), r13
-               % output to console
-               jl r15, putstr
-               sub r6, r6, r6
-               addi r6, r6, 10
-               putc r6
+               add r3, r1, r2
+               sw temp9(r0), r3
+               sub r1, r1, r1
+% assigning temp9 to main0counter
+               lw r1, temp9(r0)
+               sw main0counter(r0), r1
+               addi r1, r0, 0
 j gowhile1
 endwhile1
                hlt
@@ -212,26 +191,29 @@ lit2                          res 8
 temp5                         res 8
                               % space for variable temp6
 temp6                         res 8
-                              % space for variable main0f1
-main0f1                       res 144
-                              % space for variable main0arraysize
-main0arraysize                res 160
-                              % space for variable main0objectWithObject
-main0objectWithObject         res 20
-                              % space for variable lit3
-lit3                          res 8
-                              % space for variable lit4
-lit4                          res 8
-                              % space for variable lit5
-lit5                          res 8
-                              % space for variable main0f2
-main0f2                       res 104
                               % space for variable main0counter
 main0counter                  res 4
-                              % space for variable lit6
-lit6                          res 4
+                              % space for variable main0arr
+main0arr                      res 12
+                              % space for variable main0obj
+main0obj                      res 16
+                              % space for variable main0objectWithObject
+main0objectWithObject         res 20
+                              % space for variable main0f1
+main0f1                       res 40
+                              % space for variable main0arraysize
+main0arraysize                res 160
+                              % space for variable lit3
+lit3                          res 4
+                              % space for variable lit4
+lit4                          res 4
                               % space for variable temp7
 temp7                         res 4
-                              % space for variable buf
-buf                           res 20
-
+                              % space for variable lit5
+lit5                          res 4
+                              % space for variable temp8
+temp8                         res 4
+                              % space for variable lit6
+lit6                          res 4
+                              % space for variable temp9
+temp9                         res 4

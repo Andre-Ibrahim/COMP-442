@@ -19,6 +19,7 @@ function func2(a: integer) => void
 function main() => void 
 {
   localvar x: integer;
+  //     11              18
   x = func(1, 9) - func(5, 12);
 
   write(x);

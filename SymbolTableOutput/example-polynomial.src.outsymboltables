@@ -59,16 +59,19 @@ class | id: QUADRATIC | MemSize: 104
 		tempvar | id: temp4 | type: float | expressionId: 4| memsize: 8
 
 
-function | main | aparams: ()| type: void| memsize: 464
+function | main | aparams: ()| type: void| memsize: 280
 	function:main 
-	localvar | id: f1 | type: LINEAR[2] | memsize: 144
-	localvar | id: arraysize | type: OBJECT[5][2] | memsize: 160
-	localvar | id: objectWithObject | type: OBJECT2 | memsize: 20
-	localvar | id: f2 | type: QUADRATIC[][][] | memsize: 104
 	localvar | id: counter | type: integer | memsize: 4
-	litvar | id: 2.0 | type: float | expressionId: 9| memsize: 8
-	litvar | id: 1.0 | type: float | expressionId: 10| memsize: 8
-	litvar | id: 0.0 | type: float | expressionId: 11| memsize: 8
-	litvar | id: 10 | type: integer | expressionId: 12| memsize: 4
-	tempvar | id: temp7 | type: integer | expressionId: 12| memsize: 4
+	localvar | id: arr | type: integer[3] | memsize: 12
+	localvar | id: obj | type: OBJECT | memsize: 16
+	localvar | id: objectWithObject | type: OBJECT2 | memsize: 20
+	localvar | id: f1 | type: OBJECT2[2] | memsize: 40
+	localvar | id: arraysize | type: OBJECT[5][2] | memsize: 160
+	litvar | id: 1 | type: integer | expressionId: 9| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 9| memsize: 4
+	tempvar | id: temp7 | type: integer | expressionId: 9| memsize: 4
+	litvar | id: 10 | type: integer | expressionId: 10| memsize: 4
+	tempvar | id: temp8 | type: integer | expressionId: 10| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 11| memsize: 4
+	tempvar | id: temp9 | type: integer | expressionId: 11| memsize: 4
 

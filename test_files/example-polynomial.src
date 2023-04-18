@@ -59,17 +59,18 @@ function LINEAR::evaluate(x: float) => float
 // ====== main ====== //
 function main() => void
 {
-  localvar f1: LINEAR[2];
-  localvar arraysize: OBJECT[5][2];
-  localvar objectWithObject: OBJECT2;
-  localvar f2: QUADRATIC(-2.0, 1.0, 0.0);
   localvar counter: integer;
+  localvar arr: integer[3];
+  localvar obj: OBJECT;
+  localvar objectWithObject: OBJECT2;
+  localvar f1: OBJECT2[2];
+  localvar arraysize: OBJECT[5][2];
+
+  counter = 1 * 1;
 
   while(counter <= 10)
   {
-    write(counter);
-    write(f1.evaluate(counter));
-    write(f2.evaluate(counter));
+    counter = counter + 1;
   };
 }
 /*

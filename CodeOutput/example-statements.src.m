@@ -93,23 +93,81 @@
                sub r6, r6, r6
                addi r6, r6, 10
                putc r6
-               j endif1
-else1
                sub r1, r1, r1
-%storing 1 into lit6
-               addi r1, r0, 1
+%storing 2 into lit6
+               addi r1, r0, 2
                sw lit6(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding main0x with lit6
+%relation lit6 gt main0x
                lw r1, main0x(r0)
                lw r2, lit6(r0)
-               add r3, r1, r2
+               cgt r3, r1, r2
                sw temp6(r0), r3
-               % processing: write(temp6)
-               lw r1, temp6(r0)
+% starting if statment
+                lw r1, temp6(r0)
+                bz r1, else2
+               sub r1, r1, r1
+%storing 9999 into lit7
+               addi r1, r0, 9999
+               sw lit7(r0), r1
+                addi r1, r0, 0
+               % processing: write(lit7)
+               lw r1, lit7(r0)
+               % put value on stack
+               sw -8(r14), r1
+               % Link buffer to stack
+               addi r1,r0, buf
+               sw -12(r14), r1
+               % convert int to string for output
+               jl r15, intstr
+               sw -8 (r14), r13
+               % output to console
+               jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
+               j endif2
+else2
+               sub r1, r1, r1
+%storing 3 into lit8
+               addi r1, r0, 3
+               sw lit8(r0), r1
+                addi r1, r0, 0
+               % processing: write(lit8)
+               lw r1, lit8(r0)
+               % put value on stack
+               sw -8(r14), r1
+               % Link buffer to stack
+               addi r1,r0, buf
+               sw -12(r14), r1
+               % convert int to string for output
+               jl r15, intstr
+               sw -8 (r14), r13
+               % output to console
+               jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
+endif2               j endif1
+else1
+               sub r1, r1, r1
+%storing 1 into lit9
+               addi r1, r0, 1
+               sw lit9(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
+               sub r2, r2, r2
+               sub r3, r3, r3
+%adding main0x with lit9
+               lw r1, main0x(r0)
+               lw r2, lit9(r0)
+               add r3, r1, r2
+               sw temp7(r0), r3
+               % processing: write(temp7)
+               lw r1, temp7(r0)
                % put value on stack
                sw -8(r14), r1
                % Link buffer to stack
@@ -124,31 +182,31 @@ else1
                addi r6, r6, 10
                putc r6
 endif1               sub r1, r1, r1
-%storing 0 into lit7
+%storing 0 into lit10
                addi r1, r0, 0
-               sw lit7(r0), r1
+               sw lit10(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
-% assigning lit7 to main0z
-               lw r1, lit7(r0)
+% assigning lit10 to main0z
+               lw r1, lit10(r0)
                sw main0z(r0), r1
                addi r1, r0, 0
 %starting while loop
 gowhile1
                sub r1, r1, r1
-%storing 10 into lit8
+%storing 10 into lit11
                addi r1, r0, 10
-               sw lit8(r0), r1
+               sw lit11(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%relation lit8 leq main0z
+%relation lit11 leq main0z
                lw r1, main0z(r0)
-               lw r2, lit8(r0)
+               lw r2, lit11(r0)
                cle r3, r1, r2
-               sw temp7(r0), r3
-               lw r1, temp7(r0)
+               sw temp8(r0), r3
+               lw r1, temp8(r0)
                bz r1, endwhile1
                % processing: write(main0z)
                lw r1, main0z(r0)
@@ -166,23 +224,85 @@ gowhile1
                addi r6, r6, 10
                putc r6
                sub r1, r1, r1
-%storing 1 into lit9
+%storing 1 into lit12
                addi r1, r0, 1
-               sw lit9(r0), r1
+               sw lit12(r0), r1
                 addi r1, r0, 0
                sub r1, r1, r1
                sub r2, r2, r2
                sub r3, r3, r3
-%adding main0z with lit9
+%adding main0z with lit12
                lw r1, main0z(r0)
-               lw r2, lit9(r0)
+               lw r2, lit12(r0)
                add r3, r1, r2
-               sw temp8(r0), r3
+               sw temp9(r0), r3
                sub r1, r1, r1
-% assigning temp8 to main0z
-               lw r1, temp8(r0)
+% assigning temp9 to main0z
+               lw r1, temp9(r0)
                sw main0z(r0), r1
                addi r1, r0, 0
+               sub r1, r1, r1
+%storing 88 into lit13
+               addi r1, r0, 88
+               sw lit13(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
+% assigning lit13 to main0p
+               lw r1, lit13(r0)
+               sw main0p(r0), r1
+               addi r1, r0, 0
+%starting while loop
+gowhile2
+               sub r1, r1, r1
+%storing 89 into lit14
+               addi r1, r0, 89
+               sw lit14(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
+               sub r2, r2, r2
+               sub r3, r3, r3
+%relation lit14 leq main0p
+               lw r1, main0p(r0)
+               lw r2, lit14(r0)
+               cle r3, r1, r2
+               sw temp10(r0), r3
+               lw r1, temp10(r0)
+               bz r1, endwhile2
+               % processing: write(main0p)
+               lw r1, main0p(r0)
+               % put value on stack
+               sw -8(r14), r1
+               % Link buffer to stack
+               addi r1,r0, buf
+               sw -12(r14), r1
+               % convert int to string for output
+               jl r15, intstr
+               sw -8 (r14), r13
+               % output to console
+               jl r15, putstr
+               sub r6, r6, r6
+               addi r6, r6, 10
+               putc r6
+               sub r1, r1, r1
+%storing 1 into lit15
+               addi r1, r0, 1
+               sw lit15(r0), r1
+                addi r1, r0, 0
+               sub r1, r1, r1
+               sub r2, r2, r2
+               sub r3, r3, r3
+%adding main0p with lit15
+               lw r1, main0p(r0)
+               lw r2, lit15(r0)
+               add r3, r1, r2
+               sw temp11(r0), r3
+               sub r1, r1, r1
+% assigning temp11 to main0p
+               lw r1, temp11(r0)
+               sw main0p(r0), r1
+               addi r1, r0, 0
+j gowhile2
+endwhile2
 j gowhile1
 endwhile1
                hlt
@@ -193,6 +313,8 @@ main0x                        res 4
 main0y                        res 4
                               % space for variable main0z
 main0z                        res 4
+                              % space for variable main0p
+main0p                        res 4
                               % space for variable lit1
 lit1                          res 4
                               % space for variable lit2
@@ -224,9 +346,27 @@ temp6                         res 4
 lit7                          res 4
                               % space for variable lit8
 lit8                          res 4
-                              % space for variable temp7
-temp7                         res 4
                               % space for variable lit9
 lit9                          res 4
+                              % space for variable temp7
+temp7                         res 4
+                              % space for variable lit10
+lit10                         res 4
+                              % space for variable lit11
+lit11                         res 4
                               % space for variable temp8
 temp8                         res 4
+                              % space for variable lit12
+lit12                         res 4
+                              % space for variable temp9
+temp9                         res 4
+                              % space for variable lit13
+lit13                         res 4
+                              % space for variable lit14
+lit14                         res 4
+                              % space for variable temp10
+temp10                        res 4
+                              % space for variable lit15
+lit15                         res 4
+                              % space for variable temp11
+temp11                        res 4

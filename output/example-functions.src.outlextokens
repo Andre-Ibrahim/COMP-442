@@ -15,8 +15,9 @@
 [function, function, 19][id, main, 19][openpar, (, 19][closepar, ), 19][returntype, =>, 19][void, void, 19]
 [opencubr, {, 20]
 [localvar, localvar, 21][id, x, 21][colon, :, 21][integer, integer, 21][semi, ;, 21]
-[id, x, 22][assign, =, 22][id, func, 22][openpar, (, 22][intnum, 1, 22][comma, ,, 22][intnum, 9, 22][closepar, ), 22][minus, -, 22][id, func, 22][openpar, (, 22][intnum, 5, 22][comma, ,, 22][intnum, 12, 22][closepar, ), 22][semi, ;, 22]
-[write, write, 24][openpar, (, 24][id, x, 24][closepar, ), 24][semi, ;, 24]
-[id, func2, 26][openpar, (, 26][intnum, 1000, 26][closepar, ), 26][semi, ;, 26]
-[closecubr, }, 27]
+[inlinecmt, //     11              18, 22]
+[id, x, 23][assign, =, 23][id, func, 23][openpar, (, 23][intnum, 1, 23][comma, ,, 23][intnum, 9, 23][closepar, ), 23][minus, -, 23][id, func, 23][openpar, (, 23][intnum, 5, 23][comma, ,, 23][intnum, 12, 23][closepar, ), 23][semi, ;, 23]
+[write, write, 25][openpar, (, 25][id, x, 25][closepar, ), 25][semi, ;, 25]
+[id, func2, 27][openpar, (, 27][intnum, 1000, 27][closepar, ), 27][semi, ;, 27]
+[closecubr, }, 28]
 

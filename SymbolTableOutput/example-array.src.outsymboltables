@@ -1,35 +1,36 @@
 global 
-function | main | aparams: ()| type: void| memsize: 988
+function | main | aparams: ()| type: void| memsize: 992
 	function:main 
 	localvar | id: x | type: integer[10][20] | memsize: 800
 	localvar | id: p | type: integer[2][3][3] | memsize: 72
 	localvar | id: y | type: integer | memsize: 4
 	localvar | id: z | type: integer | memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 0| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 0| memsize: 4
-	litvar | id: 5 | type: integer | expressionId: 1| memsize: 4
-	litvar | id: 5 | type: integer | expressionId: 1| memsize: 4
-	litvar | id: 3 | type: integer | expressionId: 1| memsize: 4
-	litvar | id: 7 | type: integer | expressionId: 2| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 2| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 2| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 2| memsize: 4
-	litvar | id: 2 | type: integer | expressionId: 3| memsize: 4
+	localvar | id: number | type: integer | memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 1| memsize: 4
+	litvar | id: 5 | type: integer | expressionId: 2| memsize: 4
+	litvar | id: 5 | type: integer | expressionId: 2| memsize: 4
+	litvar | id: 2 | type: integer | expressionId: 2| memsize: 4
+	tempvar | id: temp1 | type: integer | expressionId: 2| memsize: 4
+	litvar | id: 7 | type: integer | expressionId: 3| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 3| memsize: 4
-	litvar | id: 3 | type: integer | expressionId: 3| memsize: 4
-	litvar | id: 3 | type: integer | expressionId: 3| memsize: 4
-	litvar | id: 7 | type: integer | expressionId: 4| memsize: 4
-	litvar | id: 5 | type: integer | expressionId: 5| memsize: 4
-	litvar | id: 3 | type: integer | expressionId: 5| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 5| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 5| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 5| memsize: 4
-	tempvar | id: temp1 | type: integer | expressionId: 5| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 7| memsize: 4
-	litvar | id: 1 | type: integer | expressionId: 7| memsize: 4
-	tempvar | id: temp2 | type: integer | expressionId: 8| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 3| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 3| memsize: 4
+	litvar | id: 2 | type: integer | expressionId: 4| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 4| memsize: 4
+	litvar | id: 3 | type: integer | expressionId: 4| memsize: 4
+	litvar | id: 3 | type: integer | expressionId: 4| memsize: 4
+	litvar | id: 7 | type: integer | expressionId: 5| memsize: 4
+	litvar | id: 5 | type: integer | expressionId: 6| memsize: 4
+	litvar | id: 2 | type: integer | expressionId: 6| memsize: 4
+	tempvar | id: temp2 | type: integer | expressionId: 6| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 6| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 6| memsize: 4
+	tempvar | id: temp3 | type: integer | expressionId: 6| memsize: 4
 	litvar | id: 1 | type: integer | expressionId: 8| memsize: 4
-	litvar | id: 3 | type: integer | expressionId: 8| memsize: 4
-	litvar | id: 3 | type: integer | expressionId: 8| memsize: 4
-	tempvar | id: temp3 | type: integer | expressionId: 8| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 8| memsize: 4
+	tempvar | id: temp4 | type: integer | expressionId: 9| memsize: 4
+	litvar | id: 1 | type: integer | expressionId: 9| memsize: 4
+	litvar | id: 3 | type: integer | expressionId: 9| memsize: 4
+	litvar | id: 3 | type: integer | expressionId: 9| memsize: 4
+	tempvar | id: temp5 | type: integer | expressionId: 9| memsize: 4
 
